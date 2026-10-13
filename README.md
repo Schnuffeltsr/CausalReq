@@ -4,8 +4,18 @@ Reference implementation, analysis code and case data for the paper
 
 > **CausalReq: Dependency-Guided Requirement-Gap Diagnosis and Evidence-Constrained Completion**
 
+Repository: <https://github.com/Schnuffeltsr/CausalReq>
+
 This file is the map. Every folder and every file in the repository is listed below with
 its role.
+
+## Data availability
+
+This repository is the published artefact for the paper. It contains the implementation,
+the prompt templates, the 42 source specifications with their reference specifications,
+and the processed artefacts of the three reported case studies, including the human-review
+verdict tables. See [`samples/README.md`](samples/README.md) for the dataset description
+and the per-document output contract.
 
 ## Repository layout
 

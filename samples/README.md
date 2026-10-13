@@ -1,5 +1,7 @@
 # samples — case validation data (reference samples)
 
+Published with the paper at <https://github.com/Schnuffeltsr/CausalReq>.
+
 These are the artefacts produced by running the code in `core/`, `rq1/`–`rq4/` and
 `tools/` on three specifications. They are kept as **reference samples**: they show that
 the pipeline runs end to end, and they define the exact output contract that the analysis
