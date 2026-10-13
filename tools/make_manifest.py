@@ -21,7 +21,7 @@ def mb(n):
 
 lines = ["# Repository manifest",
          "",
-         "CausalReq — dependency-guided requirement-gap diagnosis and "
+         "CausalReq — causal dependency-guided requirement gap diagnosis and "
          "evidence-constrained completion.",
          "",
          "Executable code lives in `core/`, `rq1/`–`rq4/` and `tools/`; the case "

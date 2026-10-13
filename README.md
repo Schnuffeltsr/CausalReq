@@ -2,7 +2,7 @@
 
 Reference implementation, analysis code and case data for the paper
 
-> **CausalReq: Dependency-Guided Requirement-Gap Diagnosis and Evidence-Constrained Completion**
+> **CausalReq: Causal Dependency-Guided Requirement Gap Diagnosis and Evidence-Constrained Completion**
 
 This file is the map. Every folder and every file in the repository is listed below with
 its role.

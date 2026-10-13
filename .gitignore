@@ -10,6 +10,9 @@ samples/*/cache/
 # figure output directory, written by rq2/make_figure.py and rq4/make_figure.py
 figures/
 
+# inventory written by tools/make_manifest.py
+MANIFEST.md
+
 # python
 __pycache__/
 *.py[cod]
