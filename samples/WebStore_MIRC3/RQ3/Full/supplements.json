@@ -1,0 +1,79 @@
+[
+  {
+    "output_id": "OUT-9d26a069de79",
+    "source_nomination_id": "OPERATION-8d85e564504b",
+    "origin": "operation",
+    "text": "When a duplicate email is detected during customer registration, the system shall define and execute a documented next step, such as presenting a recovery or account-update path, without requiring full CRUD functionality.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-32da68385055",
+    "source_nomination_id": "OPERATION-9f2b1be930db",
+    "origin": "operation",
+    "text": "The system shall validate updated contact information fields according to specified criteria before storing the update.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-f7073ba04c5f",
+    "source_nomination_id": "OPERATION-b0ed70a62769",
+    "origin": "operation",
+    "text": "The system shall, when active orders or cart references are found during product removal, prevent the product removal and notify the administrator that the product is still in use.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-234ca45dfee8",
+    "source_nomination_id": "OPERATION-4fcbe2f8b02f",
+    "origin": "operation",
+    "text": "The system shall check product availability before recording the product in the shopping cart when the customer invokes Add to Cart.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-94ece43a6f38",
+    "source_nomination_id": "OPERATION-aaa14549d825",
+    "origin": "operation",
+    "text": "The system shall handle inventory update failures that occur after a product is added to the shopping cart, including ensuring cart/inventory consistency and notifying the customer.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-f9db5494330c",
+    "source_nomination_id": "OPERATION-ed3c03254259",
+    "origin": "operation",
+    "text": "The system shall invoke the Compliance Check operation when the Compliance Check Initiation event occurs. The operation shall generate a compliance report, highlight non-compliant elements, and record the compliance check event in Purchase History.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-9a95b47d2985",
+    "source_nomination_id": "OPERATION-621372d73bca",
+    "origin": "operation",
+    "text": "The system shall adjust inventory levels by the difference between the previous and new cart item quantities when a customer changes the quantity of an item in the cart.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-a1f5f93972e6",
+    "source_nomination_id": "OPERATION-cf9ef4f13201",
+    "origin": "operation",
+    "text": "The system shall record, for each Payment Viewing Event, the viewed payment identifier, the viewing actor, and the view timestamp.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-e6e5a166323c",
+    "source_nomination_id": "OPERATION-87fa1dae7471",
+    "origin": "operation",
+    "text": "The system shall treat deactivation of an administrator account as a distinct operation from update, changing the account status without overwriting the account's personal or contact information.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-d64190b74bf2",
+    "source_nomination_id": "OPERATION-6cff1477f20b",
+    "origin": "operation",
+    "text": "The system shall apply only validated, changed personal information fields to the Personal Information data entity when an update is requested.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-b40df8346a0d",
+    "source_nomination_id": "ISOLATED-793c8d40ef6f",
+    "origin": "isolated",
+    "text": "The system shall validate the selected order against the defined cancellation eligibility rule before executing the Order Cancellation function.",
+    "status": "model_preliminarily_retained"
+  }
+]

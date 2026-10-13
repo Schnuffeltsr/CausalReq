@@ -1,0 +1,21 @@
+1. When a duplicate email is detected during customer registration, the system shall define and execute a documented next step, such as presenting a recovery or account-update path, without requiring full CRUD functionality.
+
+2. The system shall validate updated contact information fields according to specified criteria before storing the update.
+
+3. The system shall, when active orders or cart references are found during product removal, prevent the product removal and notify the administrator that the product is still in use.
+
+4. The system shall check product availability before recording the product in the shopping cart when the customer invokes Add to Cart.
+
+5. The system shall handle inventory update failures that occur after a product is added to the shopping cart, including ensuring cart/inventory consistency and notifying the customer.
+
+6. The system shall invoke the Compliance Check operation when the Compliance Check Initiation event occurs. The operation shall generate a compliance report, highlight non-compliant elements, and record the compliance check event in Purchase History.
+
+7. The system shall adjust inventory levels by the difference between the previous and new cart item quantities when a customer changes the quantity of an item in the cart.
+
+8. The system shall record, for each Payment Viewing Event, the viewed payment identifier, the viewing actor, and the view timestamp.
+
+9. The system shall treat deactivation of an administrator account as a distinct operation from update, changing the account status without overwriting the account's personal or contact information.
+
+10. The system shall apply only validated, changed personal information fields to the Personal Information data entity when an update is requested.
+
+11. The system shall validate the selected order against the defined cancellation eligibility rule before executing the Order Cancellation function.

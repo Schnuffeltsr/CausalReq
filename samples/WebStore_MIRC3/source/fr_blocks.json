@@ -1,0 +1,167 @@
+[
+  {
+    "fr_id": "FRBLOCK-001",
+    "heading": "## 1.1 Customer Registration Function  ",
+    "text": "## 1.1 Customer Registration Function  \n**Function ID:** FR-01  \n**Description:** Customers can register for a new account by providing valid personal information and a valid email address. The system validates the email, checks for duplicate entries, and sends a confirmation email.  \n**Input:** Name, email, password, and optional contact information.  \n**Output:** A new customer account is created and stored in the Personal Information and Contact Information data entities. A confirmation email is sent to the customer's email address."
+  },
+  {
+    "fr_id": "FRBLOCK-002",
+    "heading": "## 1.2 Customer Login Function  ",
+    "text": "## 1.2 Customer Login Function  \n**Function ID:** FR-02  \n**Description:** Customers can log in to the system by entering their registered email and password. The system validates the credentials and logs the login event.  \n**Input:** Email and password.  \n**Output:** The customer is authenticated and redirected to their personalized dashboard. The login event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-003",
+    "heading": "## 1.3 Customer Logout Function  ",
+    "text": "## 1.3 Customer Logout Function  \n**Function ID:** FR-03  \n**Description:** Customers can log out of the system. The session is terminated and the logout event is recorded.  \n**Input:** The customer clicks the \"Logout\" button.  \n**Output:** The session is terminated, and the customer is redirected to the homepage or login page. The logout event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-004",
+    "heading": "## 1.4 Personal Information Update Function  ",
+    "text": "## 1.4 Personal Information Update Function  \n**Function ID:** FR-04  \n**Description:** Customers can update their personal information, such as name or email. The system validates the updated information and logs the event.  \n**Input:** Updated personal information fields.  \n**Output:** Updated personal information is stored in the Personal Information data entity. A confirmation email is sent, and the update event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-005",
+    "heading": "## 1.5 Contact Information Management Function  ",
+    "text": "## 1.5 Contact Information Management Function  \n**Function ID:** FR-05  \n**Description:** Customers can manage their contact information, such as phone number or address. The system validates the updated information and logs the event.  \n**Input:** Updated contact information fields.  \n**Output:** Updated contact information is stored in the Contact Information data entity. The update event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-006",
+    "heading": "## 1.6 Purchase History Viewing Function  ",
+    "text": "## 1.6 Purchase History Viewing Function  \n**Function ID:** FR-06  \n**Description:** Customers can view their purchase history, including order details and status. The system retrieves the history and logs the event.  \n**Input:** The customer navigates to the \"Purchase History\" section.  \n**Output:** The purchase history is displayed on the interface, including order number, date, product names, quantities, total amount, and status. The viewing event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-007",
+    "heading": "## 1.7 Product Addition Function  ",
+    "text": "## 1.7 Product Addition Function  \n**Function ID:** FR-07  \n**Description:** Administrators can add new products to the system, specifying details such as name, description, price, category, and inventory.  \n**Input:** Product name, description, price, category, and inventory quantity.  \n**Output:** A new product is stored in the Product data entity, associated with the selected category. The inventory is updated accordingly. The addition event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-008",
+    "heading": "## 1.8 Product Removal Function  ",
+    "text": "## 1.8 Product Removal Function  \n**Function ID:** FR-08  \n**Description:** Administrators can remove existing products from the system. The system checks for active orders or cart references before proceeding.  \n**Input:** The product to be removed is selected and the \"Remove Product\" button is clicked.  \n**Output:** The product is removed from the Product data entity, and the inventory is updated. The removal event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-009",
+    "heading": "## 1.9 Product Information Update Function  ",
+    "text": "## 1.9 Product Information Update Function  \n**Function ID:** FR-09  \n**Description:** Administrators can update the information of existing products, such as name, description, price, category, or inventory.  \n**Input:** Updated product information fields.  \n**Output:** Updated product information is stored in the Product data entity. The inventory and category are updated accordingly. The update event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-010",
+    "heading": "## 1.10 Product Categorization Function  ",
+    "text": "## 1.10 Product Categorization Function  \n**Function ID:** FR-10  \n**Description:** Administrators can assign or modify the category of a product. The system validates the category and updates the association.  \n**Input:** Product and new category selection.  \n**Output:** The product is assigned to the selected category in the Category data entity. The update is logged in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-011",
+    "heading": "## 1.11 Inventory Management Function  ",
+    "text": "## 1.11 Inventory Management Function  \n**Function ID:** FR-11  \n**Description:** Administrators can view and modify inventory levels for products. The system updates the inventory quantity and logs the event.  \n**Input:** Updated inventory quantity for a product.  \n**Output:** Updated inventory levels are stored in the Inventory data entity. The management event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-012",
+    "heading": "## 1.12 Shopping Cart Creation Function  ",
+    "text": "## 1.12 Shopping Cart Creation Function  \n**Function ID:** FR-12  \n**Description:** Customers can add products to their shopping cart. The system checks product availability and updates inventory.  \n**Input:** Product selection and \"Add to Cart\" action.  \n**Output:** The product is added to the Shopping Cart data entity. Inventory quantity is updated. The customer is shown a confirmation message."
+  },
+  {
+    "fr_id": "FRBLOCK-013",
+    "heading": "## 1.13 Shopping Cart Modification Function  ",
+    "text": "## 1.13 Shopping Cart Modification Function  \n**Function ID:** FR-13  \n**Description:** Customers can modify the quantity or remove items from their shopping cart. The system updates the cart and inventory.  \n**Input:** Cart item selection, quantity change, or \"Remove\" action.  \n**Output:** The cart is updated in the Shopping Cart and CartItem data entities. Inventory levels are adjusted accordingly. The modification event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-014",
+    "heading": "## 1.14 Shopping Cart Viewing Function  ",
+    "text": "## 1.14 Shopping Cart Viewing Function  \n**Function ID:** FR-14  \n**Description:** Customers can view the contents of their shopping cart. The system displays a summary of the cart items and their total cost.  \n**Input:** The customer navigates to the \"Shopping Cart\" section.  \n**Output:** The system displays the list of cart items, including product name, quantity, price, and total amount. The viewing event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-015",
+    "heading": "## 1.15 Checkout Function  ",
+    "text": "## 1.15 Checkout Function  \n**Function ID:** FR-15  \n**Description:** Customers can proceed to checkout, select a shipping address, and make a payment. The system processes the payment and creates an order.  \n**Input:** Cart items, shipping address, and payment method.  \n**Output:** An order is created in the Order data entity. Inventory levels are updated. A payment is processed and stored in the Payment data entity. An order confirmation email is sent. The checkout event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-016",
+    "heading": "## 1.16 Order Confirmation Email Sending Function  ",
+    "text": "## 1.16 Order Confirmation Email Sending Function  \n**Function ID:** FR-16  \n**Description:** The system automatically sends an order confirmation email to the customer after successful checkout. The email includes order details and a confirmation message.  \n**Input:** Order details from the Order data entity.  \n**Output:** An Order Confirmation Email is stored in the EmailRecord data entity and sent to the customer's email address. The confirmation event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-017",
+    "heading": "## 1.17 Payment Processing Function  ",
+    "text": "## 1.17 Payment Processing Function  \n**Function ID:** FR-17  \n**Description:** The system processes the customer's selected payment method and validates the payment details. A successful payment is stored and associated with the order.  \n**Input:** Payment method and payment details.  \n**Output:** The payment is stored in the Payment data entity. The order is created and stored in the Order data entity. Inventory levels are updated. The payment event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-018",
+    "heading": "## 1.18 Plugin Development Function  ",
+    "text": "## 1.18 Plugin Development Function  \n**Function ID:** FR-18  \n**Description:** Administrators can develop or install new plugins to expand the system's functionality. The system validates the plugin and activates it.  \n**Input:** Plugin details or file.  \n**Output:** The plugin is stored in the Plugin data entity and activated. The system interface is updated to reflect the new functionality. The development or installation event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-019",
+    "heading": "## 1.19 Plugin Configuration Function  ",
+    "text": "## 1.19 Plugin Configuration Function  \n**Function ID:** FR-19  \n**Description:** Administrators can configure the settings of an installed plugin. The system validates and applies the configuration.  \n**Input:** Plugin configuration settings.  \n**Output:** The Plugin data entity is updated with the new configuration. The system interface reflects the updated settings. The configuration event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-020",
+    "heading": "## 1.20 User Interface Specification Compliance Checking Function  ",
+    "text": "## 1.20 User Interface Specification Compliance Checking Function  \n**Function ID:** FR-20  \n**Description:** Administrators can check the system's interface for compliance with the defined User Interface Specification. The system identifies and reports non-compliant elements.  \n**Input:** The administrator initiates a compliance check.  \n**Output:** A compliance report is generated and displayed to the administrator. Non-compliant elements are highlighted. The compliance check event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-021",
+    "heading": "## 1.21 Manage CartItem Function  ",
+    "text": "## 1.21 Manage CartItem Function  \n**Function ID:** FR-21  \n**Description:** Customers can modify the quantity or remove items in their shopping cart. The system updates the cart and inventory accordingly.  \n**Input:** Cart item selection, quantity change, or \"Remove\" action.  \n**Output:** The cart is updated in the CartItem data entity. Inventory levels are adjusted accordingly. The modification event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-022",
+    "heading": "## 1.22 Manage OrderItem Function  ",
+    "text": "## 1.22 Manage OrderItem Function  \n**Function ID:** FR-22  \n**Description:** Administrators can edit, remove, or update the status of items in an order. The system updates the order and inventory accordingly.  \n**Input:** Order item selection, quantity change, or \"Remove\" action.  \n**Output:** The order item is updated in the OrderItem data entity. Inventory levels are adjusted accordingly. The modification event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-023",
+    "heading": "## 1.23 Manage EmailRecord Function  ",
+    "text": "## 1.23 Manage EmailRecord Function  \n**Function ID:** FR-23  \n**Description:** Administrators can view, edit, or delete email records. The system updates the EmailRecord data entity and logs the event.  \n**Input:** Email record selection and action (view, edit, or delete).  \n**Output:** The EmailRecord data entity is updated. The system displays a confirmation message. The management event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-024",
+    "heading": "## 1.24 View EmailRecord Function  ",
+    "text": "## 1.24 View EmailRecord Function  \n**Function ID:** FR-24  \n**Description:** Customers and administrators can view the details of an email record. The system displays the email content and logs the viewing event.  \n**Input:** Email record selection.  \n**Output:** The system displays the email details from the EmailRecord data entity. The viewing event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-025",
+    "heading": "## 1.25 View CartItem Function  ",
+    "text": "## 1.25 View CartItem Function  \n**Function ID:** FR-25  \n**Description:** Customers can view the details of a specific cart item. The system displays the product description, price, and quantity.  \n**Input:** Cart item selection.  \n**Output:** The system displays the cart item details from the CartItem data entity. The viewing event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-026",
+    "heading": "## 1.26 View Payment Function  ",
+    "text": "## 1.26 View Payment Function  \n**Function ID:** FR-26  \n**Description:** Customers and administrators can view the details of a payment record. The system displays the payment method, amount, date, and status.  \n**Input:** Payment record selection.  \n**Output:** The system displays the payment details from the Payment data entity. The viewing event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-027",
+    "heading": "## 1.27 Manage Administrator Function  ",
+    "text": "## 1.27 Manage Administrator Function  \n**Function ID:** FR-27  \n**Description:** Administrators can manage other administrator accounts by updating or deactivating them. The system updates the administrator's information and logs the event.  \n**Input:** Administrator account selection and action (update or deactivate).  \n**Output:** The administrator account is updated in the Personal Information and Contact Information data entities. The management event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-028",
+    "heading": "## 1.28 Manage Customer Function  ",
+    "text": "## 1.28 Manage Customer Function  \n**Function ID:** FR-28  \n**Description:** Administrators can manage customer accounts, including updating personal information or deactivating accounts.  \n**Input:** Customer account selection and action (update or deactivate).  \n**Output:** The customer's information is updated in the Personal Information and Contact Information data entities. The management event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-029",
+    "heading": "## 1.29 Manage Category Function  ",
+    "text": "## 1.29 Manage Category Function  \n**Function ID:** FR-29  \n**Description:** Administrators can add, update, or remove product categories. The system validates the category and updates the associations with products.  \n**Input:** Category selection and action (add, update, or delete).  \n**Output:** The Category data entity is updated. Product associations are modified accordingly. The management event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-030",
+    "heading": "## 1.30 Manage User Interface Specification Function  ",
+    "text": "## 1.30 Manage User Interface Specification Function  \n**Function ID:** FR-30  \n**Description:** Administrators can modify the User Interface Specification to align with new design or functionality requirements. The system applies the changes and logs the event.  \n**Input:** Updated UI specification details.  \n**Output:** The User Interface Specification data entity is updated. The system interface is modified to reflect the changes. The management event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-031",
+    "heading": "## 1.31 Manage Personal Information Function  ",
+    "text": "## 1.31 Manage Personal Information Function  \n**Function ID:** FR-31  \n**Description:** Customers or administrators can view or update a customer's personal information. The system validates the changes and logs the event.  \n**Input:** Personal information selection and action (view or update).  \n**Output:** The Personal Information data entity is updated if changes are made. The viewing or update event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-032",
+    "heading": "## 1.32 Manage Contact Information Function  ",
+    "text": "## 1.32 Manage Contact Information Function  \n**Function ID:** FR-32  \n**Description:** Customers or administrators can view or update a customer's contact information. The system validates the changes and logs the event.  \n**Input:** Contact information selection and action (view or update).  \n**Output:** The Contact Information data entity is updated if changes are made. The viewing or update event is recorded in the Purchase History data entity."
+  },
+  {
+    "fr_id": "FRBLOCK-033",
+    "heading": "## 1.33 Order Cancellation Function  ",
+    "text": "## 1.33 Order Cancellation Function  \n**Function ID:** FR-33  \n**Description:** Customers or administrators can cancel an order if it is in an eligible status. The system updates the order and inventory.  \n**Input:** Order selection and \"Cancel Order\" action.  \n**Output:** The order is marked as \"Cancelled\" in the Order data entity. Inventory levels are updated. The cancellation event is recorded in the Purchase History data entity."
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "output_id": "OUT-7736c37768ab",
+    "source_nomination_id": "DEP-001",
+    "origin": "dependency",
+    "text": "The system shall check product availability before allowing a selected product to be added to the shopping cart; if product availability is not confirmed, the product shall not be added to the cart.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-e3d5b4b1ee2e",
+    "source_nomination_id": "DEP-009",
+    "origin": "dependency",
+    "text": "The system shall update inventory quantity only after confirming that the product is available when a customer adds a product to the shopping cart.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-688e272c0cae",
+    "source_nomination_id": "DEP-013",
+    "origin": "dependency",
+    "text": "The system shall show the customer a confirmation message only after the product availability check confirms that the product can be added to the cart; if the check does not confirm availability, the system shall not show the confirmation message.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-3b9e6a0f0335",
+    "source_nomination_id": "DEP-014",
+    "origin": "dependency",
+    "text": "The system shall adjust Inventory Levels for each Manage OrderItem action (edit, remove, or update status) that changes the ordered item, with the adjustment determined by the difference between the prior and new order-item state.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-f269d30d6931",
+    "source_nomination_id": "DEP-020",
+    "origin": "dependency",
+    "text": "The system shall define the conditions under which processing and validating a selected payment method results in a successful payment that is stored and associated with the order, and shall specify the resulting payment and order state when that successful outcome is not achieved.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-68f36b7045c1",
+    "source_nomination_id": "OPERATION-5d63800f134a",
+    "origin": "operation",
+    "text": "The system shall define and document the complete set of updatable Personal Information fields, including at least name and email, and shall distinguish them from Contact Information fields such as phone and address.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-01460d9dcc22",
+    "source_nomination_id": "OPERATION-1511ed73c094",
+    "origin": "operation",
+    "text": "The system shall ensure that a customer can only update their own personal information.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-ffe5a22ae96e",
+    "source_nomination_id": "ISOLATED-204257a4bf59",
+    "origin": "isolated",
+    "text": "The system shall allow administrators to view current product inventory levels by retrieving and displaying the current inventory quantity from the Inventory data entity.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-277d32aa3af9",
+    "source_nomination_id": "ISOLATED-9e91296938ab",
+    "origin": "isolated",
+    "text": "The system shall ensure that the checkout user interface, including the selection of a shipping address and payment method, complies with the documented User Interface Specification.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-eba4bd29e87f",
+    "source_nomination_id": "OPERATION-e732d7fa3d3e",
+    "origin": "operation",
+    "text": "The system shall provide an operation for administrators to deactivate or remove an installed plugin, updating the Plugin data entity and system interface accordingly.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-dc2f07fed334",
+    "source_nomination_id": "OPERATION-8c39b62c4f68",
+    "origin": "operation",
+    "text": "The system shall define which administrator account attributes the administrator account update operation may modify, and shall map each modifiable attribute to either the Personal Information or Contact Information data entity.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-f997c82dde70",
+    "source_nomination_id": "OPERATION-fe94b2f0319c",
+    "origin": "operation",
+    "text": "The system shall define and enforce distinct validation rules and error handling for adding, updating, and removing product categories, and shall update product associations appropriately for each operation.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-c844620db41d",
+    "source_nomination_id": "ISOLATED-28d6e2f69644",
+    "origin": "isolated",
+    "text": "The system shall explicitly identify the system component responsible for applying UI specification changes and logging the event.",
+    "status": "model_preliminarily_retained"
+  }
+]

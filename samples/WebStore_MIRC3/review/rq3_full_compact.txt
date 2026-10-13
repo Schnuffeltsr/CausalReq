@@ -1,0 +1,1509 @@
+# RQ3 compact worksheet — WebStore_MIRC3
+
+Full: 215 nominations. 每行格式：
+ID | route | model | subject | question | draft | evidence FRs | reference(top2)
+
+DEP-001 | dependency | unsupported
+  subj: Check Product Availability → Shopping Cart Creation Function
+  q:    Does the requirements specification define the product availability check as a prerequisite for shopping cart creation, such that a customer can add a…
+  draft:When a customer selects a product and invokes Add to Cart, the system shall check product availability and update inventory before allowing the shopping cart creation function to add that product to t…
+  ev:   FRBLOCK-012
+  ref:  1.21 (0.41) Shopping Cart Addition Function :: Shopping Cart Addition Function Description: Customers can add products to their shopping cart during a valid customer session. The system validates product existence, av… || 1.23 (0.25) Shopping Cart Modification Function :: Shopping Cart Modification Function Description: Customers can modify item quantities or remove items from their shopping cart. The system validates the cart item, reques…
+
+DEP-002 | dependency | covered
+  subj: Customer Login Function → Personalized Dashboard
+  q:    Does the requirement define the expected behavior and acceptance criteria for redirecting an authenticated customer from the Customer Login Function t…
+  draft:Upon successful authentication of a customer's registered email and password, the system shall redirect that customer to their personalized dashboard.
+  ev:   FRBLOCK-002
+  ref:  1.2 (0.49) Customer Login Function :: Customer Login Function Description: Customers can log in by entering their registered email and password. The system validates credentials, creates an authenticated cust… || 1.3 (0.13) Customer Logout Function :: Customer Logout Function Description: Customers can log out of the system. The system terminates or invalidates the active session, redirects the customer to the homepage…
+
+DEP-003 | dependency | covered
+  subj: User Interface Specification Compliance Checking Function → Compliance Report
+  q:    Does the User Interface Specification Compliance Checking Function requirement need to define what the generated Compliance Report must contain so tha…
+  draft:When an administrator performs the User Interface Specification compliance checking function, the system shall generate and display a compliance report that presents the results of checking the system…
+  ev:   FRBLOCK-020
+  ref:  1.43 (0.66) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.41 (0.10) Plugin Installation Function :: Plugin Installation Function Description: Authorized administrators can install plugins to expand system functionality. The system validates the plugin before activation,…
+
+DEP-004 | dependency | covered
+  subj: Order Cancellation → Cancellation Event Recorded
+  q:    Does the requirement state that executing the Order Cancellation Function for a selected order produces a recorded cancellation event in the Purchase …
+  draft:When the Order Cancellation Function is executed for a selected order, the cancellation event shall be recorded in the Purchase History data entity.
+  ev:   FRBLOCK-033
+  ref:  1.11 (0.31) Purchase History Synchronization with Orders :: Purchase History Synchronization with Orders Description: Purchase history must reflect current order data and status. When an order is created, updated, cancelled, or ch… || 1.35 (0.29) Order Cancellation Function :: Order Cancellation Function Description: Customers or administrators can cancel an order if it is in an eligible status. The system validates the actor’s authorization an…
+
+DEP-005 | dependency | unresolved
+  subj: Shopping Cart Creation Function → Product Added to Shopping Cart
+  q:    Does the requirement explicitly state that the Shopping Cart Creation Function must produce the observable outcome of the product being added to the S…
+  draft:When a customer adds a product to their shopping cart, the system shall record that product in the Shopping Cart data entity.
+  ev:   FRBLOCK-012
+  ref:  1.21 (0.46) Shopping Cart Addition Function :: Shopping Cart Addition Function Description: Customers can add products to their shopping cart during a valid customer session. The system validates product existence, av… || 1.22 (0.33) Shopping Cart Viewing Function :: Shopping Cart Viewing Function Description: Customers can view the contents of their shopping cart, including product name, quantity, unit price, line total, and cart tot…
+
+DEP-006 | dependency | covered
+  subj: Customer Registration Function → Customer Account Created
+  q:    Does the requirement specify that when the Customer Registration Function is used by a customer to register for a new account, a new customer account …
+  draft:When a customer registers for a new account, the system shall create a new customer account and store it in the Personal Information and Contact Information data entities.
+  ev:   FRBLOCK-001
+  ref:  1.1 (0.48) Customer Registration Function :: Customer Registration Function Description: Customers can register for a new account by providing valid personal information, a valid email address, password, and optiona… || 1.40 (0.28) Personal and Contact Information Query Function :: Personal and Contact Information Query Function Description: Customers and authorized administrators can retrieve stored personal and contact information records. Custome…
+
+DEP-007 | dependency | covered
+  subj: Order Confirmation Email Sending Function → Confirmation Event
+  q:    Given FRBLOCK-016 states that the system automatically sends an order confirmation email after successful checkout and that the confirmation event is …
+  draft:The system shall record the confirmation event in the Purchase History data entity for the order confirmation email sent after successful checkout.
+  ev:   FRBLOCK-016
+  ref:  1.32 (0.56) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde… || 1.11 (0.29) Purchase History Synchronization with Orders :: Purchase History Synchronization with Orders Description: Purchase history must reflect current order data and status. When an order is created, updated, cancelled, or ch…
+
+DEP-008 | dependency | covered
+  subj: Order → Order Confirmation Email Sent
+  q:    Do the requirements explicitly state that, when order details are available from the Order data entity, the Order Confirmation Email Sending Function …
+  draft:When order details are available from the Order data entity, the system shall automatically send an order confirmation email to the customer's email address and store it in the EmailRecord data entity…
+  ev:   FRBLOCK-016
+  ref:  1.32 (0.54) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde… || 1.33 (0.34) Order Confirmation Email Failure Handling :: Order Confirmation Email Failure Handling Description: If an order confirmation email cannot be sent or its EmailRecord cannot be retrieved, the system must record the fa…
+
+DEP-009 | dependency | covered
+  subj: Check Product Availability → Inventory Quantity Updated
+  q:    For FRBLOCK-012, when the system checks product availability and the customer adds the product to the shopping cart, is the expected transition to 'In…
+  draft:When product availability is confirmed and the product is added to the shopping cart, the system shall update the inventory quantity to reflect that addition.
+  ev:   FRBLOCK-012
+  ref:  1.21 (0.46) Shopping Cart Addition Function :: Shopping Cart Addition Function Description: Customers can add products to their shopping cart during a valid customer session. The system validates product existence, av… || 1.23 (0.31) Shopping Cart Modification Function :: Shopping Cart Modification Function Description: Customers can modify item quantities or remove items from their shopping cart. The system validates the cart item, reques…
+
+DEP-010 | dependency | covered
+  subj: Product Addition Function → Product Data Entity
+  q:    Does the Product Addition Function requirement explicitly specify that a new product is stored in the Product data entity when the function is used to…
+  draft:When the Product Addition Function adds a new product, the new product shall be stored in the Product data entity.
+  ev:   FRBLOCK-007
+  ref:  1.12 (0.32) Product Addition Function :: Product Addition Function Description: Authorized administrators can add new products to the system by providing product details such as name, description, price, categor… || 1.13 (0.22) Product Addition Failure Handling :: Product Addition Failure Handling Description: If product creation, category association, or inventory initialization fails, the system must roll back any partial product…
+
+DEP-011 | dependency | covered
+  subj: Order Cancellation → Cancelled Order Status
+  q:    Is it required that executing the Order Cancellation Function for a selected order produces the Cancelled status on that order?
+  draft:When the Order Cancellation Function is executed for a selected order, the order shall be marked as Cancelled.
+  ev:   FRBLOCK-033
+  ref:  1.35 (0.54) Order Cancellation Function :: Order Cancellation Function Description: Customers or administrators can cancel an order if it is in an eligible status. The system validates the actor’s authorization an… || 1.11 (0.28) Purchase History Synchronization with Orders :: Purchase History Synchronization with Orders Description: Purchase history must reflect current order data and status. When an order is created, updated, cancelled, or ch…
+
+DEP-012 | dependency | covered
+  subj: Payment Processing → Inventory Levels
+  q:    Does the requirement clearly define how payment processing and validation of the customer's selected payment method lead to an update of inventory lev…
+  draft:When the system has processed the customer's selected payment method and validated the payment details, inventory levels should be updated accordingly.
+  ev:   FRBLOCK-017
+  ref:  1.30 (0.40) Payment Processing Function :: Payment Processing Function Description: The system processes the customer’s selected payment method and validates payment details. A successful payment must be stored, a… || 1.25 (0.34) Checkout Function :: Checkout Function Description: Customers can proceed to checkout using a valid authenticated session, selected shipping address, current cart items, and payment method. T…
+
+DEP-013 | dependency | unsupported
+  subj: Check Product Availability → Confirmation Message Shown
+  q:    Does FRBLOCK-012 specify whether the confirmation message is shown only after the product availability check succeeds, or whether it is also shown whe…
+  draft:The system shall show the customer a confirmation message only after the product availability check confirms the product can be added and the product is successfully added to the shopping cart.
+  ev:   FRBLOCK-012
+  ref:  1.21 (0.26) Shopping Cart Addition Function :: Shopping Cart Addition Function Description: Customers can add products to their shopping cart during a valid customer session. The system validates product existence, av… || 1.15 (0.21) Product Removal Impact Handling :: Product Removal Impact Handling Description: When a product is removed or made unavailable, carts containing the affected product must be updated so the product is no lon…
+
+DEP-014 | dependency | covered
+  subj: Manage OrderItem → Inventory Levels
+  q:    When an administrator edits, removes, or updates the status of items in an order, what inventory-level adjustments must occur for each action?
+  draft:The system shall adjust inventory levels to reflect the administrator's edit, removal, or status update of items in an order.
+  ev:   FRBLOCK-022
+  ref:  1.36 (0.36) Order Item Management Function :: Order Item Management Function Description: Authorized administrators can edit, remove, or update the status of items in an order where business rules permit. The system … || 1.20 (0.35) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides …
+
+DEP-015 | dependency | covered
+  subj: Product Categorization Function → Product Assigned to Selected Category
+  q:    Does FRBLOCK-010 explicitly require that a successful Product Categorization Function results in the product being assigned to the selected category i…
+  draft:The system shall assign the product to the selected category in the Category data entity after the Product Categorization Function validates the category and updates the association.
+  ev:   FRBLOCK-010
+  ref:  1.18 (0.44) Product Categorization Function :: Product Categorization Function Description: Authorized administrators can assign or modify product categories. The system validates the category and updates the product-… || 1.12 (0.28) Product Addition Function :: Product Addition Function Description: Authorized administrators can add new products to the system by providing product details such as name, description, price, categor…
+
+DEP-016 | dependency | covered
+  subj: Checkout Function → Order Created
+  q:    For the documented dependency from Checkout Function to Order Created, what requirement wording verifies that executing the Checkout Function results …
+  draft:The Checkout Function shall create an order and store it in the Order data entity.
+  ev:   FRBLOCK-015
+  ref:  1.27 (0.25) Order Creation from Checkout :: Order Creation from Checkout Description: Upon successful checkout, the system creates a persistent order record and corresponding order item records from the current car… || 1.32 (0.24) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde…
+
+DEP-017 | dependency | covered
+  subj: Management Event Recording → Purchase History Recorded
+  q:    Does the requirement intend that every logged management event must be recorded in the Purchase History data entity, or is the recording conditional o…
+  draft:When a management event is logged, the system shall record that management event in the Purchase History data entity.
+  ev:   FRBLOCK-011
+  ref:  1.10 (0.31) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent… || 1.11 (0.28) Purchase History Synchronization with Orders :: Purchase History Synchronization with Orders Description: Purchase history must reflect current order data and status. When an order is created, updated, cancelled, or ch…
+
+DEP-018 | dependency | covered
+  subj: Checkout Function → Payment Processed
+  q:    Does the requirement text for FRBLOCK-015 make explicit that executing the Checkout Function, which 'processes the payment and creates an order,' must…
+  draft:The Checkout Function shall produce a processed payment that is stored in the Payment data entity.
+  ev:   FRBLOCK-015
+  ref:  1.30 (0.33) Payment Processing Function :: Payment Processing Function Description: The system processes the customer’s selected payment method and validates payment details. A successful payment must be stored, a… || 1.25 (0.28) Checkout Function :: Checkout Function Description: Customers can proceed to checkout using a valid authenticated session, selected shipping address, current cart items, and payment method. T…
+
+DEP-019 | dependency | covered
+  subj: Inventory Management Function → Inventory Levels Stored
+  q:    Does the requirements specification require that updated inventory levels produced by the Inventory Management Function are stored in the Inventory da…
+  draft:When an administrator performs the Inventory Management Function, the updated inventory levels shall be stored in the Inventory data entity.
+  ev:   FRBLOCK-011
+  ref:  1.20 (0.32) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides … || 1.43 (0.19) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de…
+
+DEP-020 | dependency | covered
+  subj: Payment Processing → Successful Payment
+  q:    Does the requirement specify what must occur after the customer's selected payment method is processed and validated so that a successful payment is s…
+  draft:After the customer's selected payment method is processed and validated, the system shall store the successful payment and associate it with the order.
+  ev:   FRBLOCK-017
+  ref:  1.30 (0.55) Payment Processing Function :: Payment Processing Function Description: The system processes the customer’s selected payment method and validates payment details. A successful payment must be stored, a… || 1.25 (0.35) Checkout Function :: Checkout Function Description: Customers can proceed to checkout using a valid authenticated session, selected shipping address, current cart items, and payment method. T…
+
+OPERATION-8d85e564504b | operation | retained
+  subj: Customer Registration Function
+  q:    Does the registration workflow need a documented operation for handling duplicate email attempts, such as presenting a recovery or update path?
+  draft:The system should define the documented next step when a duplicate email is detected during registration, without assuming full CRUD.
+  ev:   FRBLOCK-001
+  ref:  1.1 (0.30) Customer Registration Function :: Customer Registration Function Description: Customers can register for a new account by providing valid personal information, a valid email address, password, and optiona… || 1.44 (0.16) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+OPERATION-16474f53a790 | operation | covered
+  subj: Personal Information
+  q:    Should the registration function define whether Personal Information can be viewed or updated after account creation, or is it strictly written at reg…
+  draft:The system should document whether and how Personal Information is viewable or updatable after registration, without mandating full CRUD.
+  ev:   FRBLOCK-001
+  ref:  1.1 (0.35) Customer Registration Function :: Customer Registration Function Description: Customers can register for a new account by providing valid personal information, a valid email address, password, and optiona… || 1.5 (0.21) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m…
+
+OPERATION-03711fe91783 | operation | covered
+  subj: Contact Information
+  q:    Should the registration function define whether optional Contact Information can be viewed or updated after account creation?
+  draft:The system should document post-registration access or update of Contact Information, if applicable.
+  ev:   FRBLOCK-001
+  ref:  1.1 (0.44) Customer Registration Function :: Customer Registration Function Description: Customers can register for a new account by providing valid personal information, a valid email address, password, and optiona… || 1.7 (0.29) Contact Information Management Function :: Contact Information Management Function Description: Customers can add, update, view, or delete their own contact information, such as phone number and address. The syste…
+
+ISOLATED-4caaa0405613 | isolated | unsupported
+  subj: Personal Information View or Update Event
+  q:    Is there a documented connection between the Customer Registration Function and the Personal Information View or Update Event, given that registration…
+  draft:The system should document whether registration should connect to a Personal Information View or Update Event, without treating isolation alone as proof of a gap.
+  ev:   FRBLOCK-001
+  ref:  1.5 (0.30) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m… || 1.1 (0.30) Customer Registration Function :: Customer Registration Function Description: Customers can register for a new account by providing valid personal information, a valid email address, password, and optiona…
+
+ISOLATED-b557e934f48f | isolated | unsupported
+  subj: Validate Changes
+  q:    Should the Customer Registration Function be connected to Validate Changes, or is registration validation separate from change validation?
+  draft:The system should document whether registration validation reuses or connects to Validate Changes, without assuming an update operation.
+  ev:   FRBLOCK-001
+  ref:  1.1 (0.16) Customer Registration Function :: Customer Registration Function Description: Customers can register for a new account by providing valid personal information, a valid email address, password, and optiona… || 1.44 (0.15) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+ISOLATED-077d5abc8181 | isolated | covered
+  subj: System
+  q:    Should the System be explicitly documented as the component responsible for email validation, duplicate checks, and confirmation email sending in this…
+  draft:The system should document the responsible System component for registration validation and notification.
+  ev:   FRBLOCK-001
+  ref:  1.1 (0.32) Customer Registration Function :: Customer Registration Function Description: Customers can register for a new account by providing valid personal information, a valid email address, password, and optiona… || 1.32 (0.25) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde…
+
+ISOLATED-5380395bca3b | isolated | covered
+  subj: System
+  q:    Should the isolated 'System' element be explicitly connected to the Customer Login Function or the credential validation operation, given that the FR …
+  draft:The system must validate customer credentials during login.
+  ev:   FRBLOCK-002
+  ref:  1.2 (0.29) Customer Login Function :: Customer Login Function Description: Customers can log in by entering their registered email and password. The system validates credentials, creates an authenticated cust… || 1.44 (0.13) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+OPERATION-446932587fb7 | operation | covered
+  subj: Purchase History
+  q:    Does the documented login workflow require a specific operation (e.g., create or record) on the Purchase History data entity to store the login event?
+  draft:The system must record login events in the Purchase History data entity.
+  ev:   FRBLOCK-002
+  ref:  1.11 (0.30) Purchase History Synchronization with Orders :: Purchase History Synchronization with Orders Description: Purchase history must reflect current order data and status. When an order is created, updated, cancelled, or ch… || 1.44 (0.29) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+OPERATION-ed02427cec99 | operation | covered
+  subj: Login Event
+  q:    What operation is required to log the Login Event when a customer logs in?
+  draft:The system must log a login event after successful credential validation.
+  ev:   FRBLOCK-002
+  ref:  1.2 (0.32) Customer Login Function :: Customer Login Function Description: Customers can log in by entering their registered email and password. The system validates credentials, creates an authenticated cust… || 1.44 (0.26) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+OPERATION-1d4c98d96e5d | operation | covered
+  subj: Authenticated
+  q:    Is there a specific authentication operation that transitions the customer to the Authenticated state?
+  draft:The system must authenticate the customer upon valid credentials.
+  ev:   FRBLOCK-002
+  ref:  1.2 (0.21) Customer Login Function :: Customer Login Function Description: Customers can log in by entering their registered email and password. The system validates credentials, creates an authenticated cust… || 1.4 (0.18) Customer Session and Access Control :: Customer Session and Access Control Description: Customer-protected actions must require a valid authenticated session belonging to the account owner. This includes perso…
+
+OPERATION-4a45abd7f912 | operation | covered
+  subj: Personalized Dashboard
+  q:    What operation redirects the authenticated customer to the Personalized Dashboard state?
+  draft:The system must redirect authenticated customers to their personalized dashboard.
+  ev:   FRBLOCK-002
+  ref:  1.2 (0.28) Customer Login Function :: Customer Login Function Description: Customers can log in by entering their registered email and password. The system validates credentials, creates an authenticated cust… || 1.3 (0.16) Customer Logout Function :: Customer Logout Function Description: Customers can log out of the system. The system terminates or invalidates the active session, redirects the customer to the homepage…
+
+ISOLATED-24d8707ccd22 | isolated | covered
+  subj: System
+  q:    Should the isolated 'System' element have a documented connection to the Customer Logout Function, given that customers log out of the system?
+  draft:The system must terminate the customer session upon logout.
+  ev:   FRBLOCK-003
+  ref:  1.3 (0.39) Customer Logout Function :: Customer Logout Function Description: Customers can log out of the system. The system terminates or invalidates the active session, redirects the customer to the homepage… || 1.2 (0.14) Customer Login Function :: Customer Login Function Description: Customers can log in by entering their registered email and password. The system validates credentials, creates an authenticated cust…
+
+ISOLATED-384e46ff76e0 | isolated | unsupported
+  subj: User Interface Specification Compliance
+  q:    Does the isolated 'User Interface Specification Compliance' element need a documented connection to the logout button interaction described in this FR…
+  draft:The logout button must comply with the applicable user interface specification.
+  ev:   FRBLOCK-003
+  ref:  1.43 (0.56) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.3 (0.16) Customer Logout Function :: Customer Logout Function Description: Customers can log out of the system. The system terminates or invalidates the active session, redirects the customer to the homepage…
+
+OPERATION-fa20d5953a08 | operation | covered
+  subj: Purchase History
+  q:    Should the action of recording the logout event in the Purchase History data entity be modeled as a Create operation on Purchase History?
+  draft:The system must create a logout event record in the Purchase History data entity.
+  ev:   FRBLOCK-003
+  ref:  1.11 (0.33) Purchase History Synchronization with Orders :: Purchase History Synchronization with Orders Description: Purchase history must reflect current order data and status. When an order is created, updated, cancelled, or ch… || 1.9 (0.31) Purchase History Viewing Function :: Purchase History Viewing Function Description: Customers can view their own purchase history, including order number, date, product names, quantities, line totals, total …
+
+OPERATION-081e0d0c48f0 | operation | covered
+  subj: Session Terminated
+  q:    Should 'Session Terminated' be modeled as an Update or Delete operation on the customer session when logout occurs?
+  draft:The system must terminate the customer session upon logout.
+  ev:   FRBLOCK-003
+  ref:  1.3 (0.32) Customer Logout Function :: Customer Logout Function Description: Customers can log out of the system. The system terminates or invalidates the active session, redirects the customer to the homepage… || 1.4 (0.17) Customer Session and Access Control :: Customer Session and Access Control Description: Customer-protected actions must require a valid authenticated session belonging to the account owner. This includes perso…
+
+ISOLATED-c70714fe010f | isolated | covered
+  subj: Personal Information View or Update Event
+  q:    Is there a documented connection between 'Personal Information View or Update Event' and FR-04's update workflow, or is it intentionally outside this …
+  draft:If 'Personal Information View or Update Event' is in scope, the FR must document how it relates to the personal information update workflow.
+  ev:   FRBLOCK-004
+  ref:  1.5 (0.37) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m… || 1.6 (0.33) Personal Information Update Notification and Audit :: Personal Information Update Notification and Audit Description: Successful personal information updates should generate an update status notification or confirmation emai…
+
+OPERATION-dbf00bcf2a33 | operation | unsupported
+  subj: Personal Information
+  q:    Does the workflow require a Read/retrieve operation on the Personal Information data entity before an update, or is the updated data supplied directly…
+  draft:If existing values must be displayed before update, the FR should document a Read operation on Personal Information.
+  ev:   FRBLOCK-004
+  ref:  1.5 (0.35) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m… || 1.40 (0.34) Personal and Contact Information Query Function :: Personal and Contact Information Query Function Description: Customers and authorized administrators can retrieve stored personal and contact information records. Custome…
+
+OPERATION-960661ea1272 | operation | covered
+  subj: Purchase History
+  q:    Does recording the update event require a Create/append operation on the Purchase History data entity, and is that operation defined?
+  draft:When a personal information update occurs, the system must record the event in Purchase History using a documented operation.
+  ev:   FRBLOCK-004
+  ref:  1.44 (0.33) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, … || 1.11 (0.30) Purchase History Synchronization with Orders :: Purchase History Synchronization with Orders Description: Purchase history must reflect current order data and status. When an order is created, updated, cancelled, or ch…
+
+OPERATION-d82810dc2dde | operation | unresolved
+  subj: Manage Contact Information
+  q:    What operations are included in 'manage' for contact information, and is a view/read operation required before a customer can update a phone number or…
+  draft:The system should define the contact information management operations in scope, including update, and specify whether customers must be able to view current contact information to support that update…
+  ev:   FRBLOCK-005
+  ref:  1.7 (0.45) Contact Information Management Function :: Contact Information Management Function Description: Customers can add, update, view, or delete their own contact information, such as phone number and address. The syste… || 1.8 (0.36) Contact Information Validation and Failure Handling :: Contact Information Validation and Failure Handling Description: Contact information updates must be validated atomically. If any submitted field is invalid, no partial c…
+
+OPERATION-9f2b1be930db | operation | retained
+  subj: Validate Updated Information (CONSTRAINT)
+  q:    What validation rules apply to updated contact information fields, such as phone number format or address completeness, before the system stores the u…
+  draft:The system should specify validation criteria for updated contact information fields before storing them.
+  ev:   FRBLOCK-005
+  ref:  1.7 (0.47) Contact Information Management Function :: Contact Information Management Function Description: Customers can add, update, view, or delete their own contact information, such as phone number and address. The syste… || 1.8 (0.43) Contact Information Validation and Failure Handling :: Contact Information Validation and Failure Handling Description: Contact information updates must be validated atomically. If any submitted field is invalid, no partial c…
+
+OPERATION-ac2361b373ee | operation | unsupported
+  subj: Contact Information Update Event
+  q:    What data must be captured when logging a contact information update event, and why is the event recorded in Purchase History rather than in a contact…
+  draft:The system should define the contents and storage location for contact information update events, including timestamp, actor, and changed fields, and confirm whether Purchase History is the correct en…
+  ev:   FRBLOCK-005
+  ref:  1.44 (0.35) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, … || 1.6 (0.28) Personal Information Update Notification and Audit :: Personal Information Update Notification and Audit Description: Successful personal information updates should generate an update status notification or confirmation emai…
+
+ISOLATED-1f64b8401451 | isolated | covered
+  subj: Validate Changes
+  q:    Is the isolated element 'Validate Changes' intended to cover the validation step described in FR-05 for updated contact information, or is it a separa…
+  draft:The system should clarify whether the existing validation step for contact information is the same as the isolated 'Validate Changes' element or requires its own documented operation.
+  ev:   FRBLOCK-005
+  ref:  1.7 (0.26) Contact Information Management Function :: Contact Information Management Function Description: Customers can add, update, view, or delete their own contact information, such as phone number and address. The syste… || 1.8 (0.23) Contact Information Validation and Failure Handling :: Contact Information Validation and Failure Handling Description: Contact information updates must be validated atomically. If any submitted field is invalid, no partial c…
+
+ISOLATED-6f874d259c39 | isolated | covered
+  subj: System
+  q:    Does the generic 'System' in FR-05 refer to the same system boundary responsible for validating and logging contact information updates, or is it an u…
+  draft:The system should identify the actor or component responsible for validation and logging in contact information management.
+  ev:   FRBLOCK-005
+  ref:  1.7 (0.34) Contact Information Management Function :: Contact Information Management Function Description: Customers can add, update, view, or delete their own contact information, such as phone number and address. The syste… || 1.44 (0.33) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+ISOLATED-f14532a239c1 | isolated | unsupported
+  subj: User Interface Specification Compliance
+  q:    Should FR-06 document how the Purchase History display must comply with the User Interface Specification Compliance element, given that the output say…
+  draft:The Purchase History display must comply with the applicable user interface specification.
+  ev:   FRBLOCK-006
+  ref:  1.43 (0.50) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.9 (0.26) Purchase History Viewing Function :: Purchase History Viewing Function Description: Customers can view their own purchase history, including order number, date, product names, quantities, line totals, total …
+
+ISOLATED-a32f8a385172 | isolated | covered
+  subj: System
+  q:    Should FR-06 explicitly associate the isolated System element with the retrieval and logging behavior described in the function?
+  draft:The system must retrieve purchase history data and record the viewing event when a customer views purchase history.
+  ev:   FRBLOCK-006
+  ref:  1.10 (0.46) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent… || 1.9 (0.33) Purchase History Viewing Function :: Purchase History Viewing Function Description: Customers can view their own purchase history, including order number, date, product names, quantities, line totals, total …
+
+OPERATION-0a9707a29159 | operation | covered
+  subj: Purchase History
+  q:    Should the recording of a viewing event be modeled as a distinct operation on the Purchase History data entity, given that FR-06 states the viewing ev…
+  draft:The system must record a viewing event in the Purchase History data entity whenever a customer views purchase history.
+  ev:   FRBLOCK-006
+  ref:  1.10 (0.42) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent… || 1.9 (0.35) Purchase History Viewing Function :: Purchase History Viewing Function Description: Customers can view their own purchase history, including order number, date, product names, quantities, line totals, total …
+
+OPERATION-a1d6ff835018 | operation | covered
+  subj: Purchase History Viewing Function
+  q:    Should FR-06 define a Retrieve Purchase History operation that supplies the data for the viewing function, rather than leaving retrieval implicit in t…
+  draft:The system must retrieve the customer's purchase history data to support display in the Purchase History Viewing Function.
+  ev:   FRBLOCK-006
+  ref:  1.10 (0.42) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent… || 1.9 (0.40) Purchase History Viewing Function :: Purchase History Viewing Function Description: Customers can view their own purchase history, including order number, date, product names, quantities, line totals, total …
+
+OPERATION-553e9ea9b3fc | operation | covered
+  subj: Modify Inventory Levels
+  q:    Does the Product Addition Function require a documented Modify Inventory Levels operation when a new product is added with a specified inventory quant…
+  draft:When a new product is added, the system shall modify inventory levels to reflect the specified inventory quantity.
+  ev:   FRBLOCK-007
+  ref:  1.20 (0.32) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides … || 1.12 (0.29) Product Addition Function :: Product Addition Function Description: Authorized administrators can add new products to the system by providing product details such as name, description, price, categor…
+
+OPERATION-8ef0d91c87f8 | operation | unsupported
+  subj: Validate Changes
+  q:    Does the Product Addition Function require a documented Validate Changes operation before the new product details are stored?
+  draft:The system shall validate the supplied product details before storing a new product.
+  ev:   FRBLOCK-007
+  ref:  1.12 (0.26) Product Addition Function :: Product Addition Function Description: Authorized administrators can add new products to the system by providing product details such as name, description, price, categor… || 1.38 (0.22) Administrator Management Function :: Administrator Management Function Description: Authorized administrators can manage administrator accounts by updating, deactivating, or managing permitted administrator …
+
+OPERATION-c60e04f67c6d | operation | covered
+  subj: Addition Event
+  q:    Does the Product Addition Function require a dedicated operation to record the addition event in Purchase History?
+  draft:The system shall record a product addition event in the Purchase History data entity.
+  ev:   FRBLOCK-007
+  ref:  1.10 (0.29) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent… || 1.44 (0.29) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+ISOLATED-ed86eb2978ba | isolated | unsupported
+  subj: System
+  q:    Does the Product Addition Function need a documented connection to the System element as the target of product addition?
+  draft:The system boundary for product addition shall be documented.
+  ev:   FRBLOCK-007
+  ref:  1.13 (0.35) Product Addition Failure Handling :: Product Addition Failure Handling Description: If product creation, category association, or inventory initialization fails, the system must roll back any partial product… || 1.12 (0.28) Product Addition Function :: Product Addition Function Description: Authorized administrators can add new products to the system by providing product details such as name, description, price, categor…
+
+OPERATION-b0ed70a62769 | operation | retained
+  subj: Active Order/Cart Check
+  q:    Does the Active Order/Cart Check operation define what happens when the check finds active orders or cart references, or does it only prevent proceedi…
+  draft:Define the system behavior when active orders or cart references are found during product removal.
+  ev:   FRBLOCK-008
+  ref:  1.14 (0.54) Product Removal Function :: Product Removal Function Description: Authorized administrators can remove products from the system only when removal will not break active purchasing activity. Before re… || 1.15 (0.18) Product Removal Impact Handling :: Product Removal Impact Handling Description: When a product is removed or made unavailable, carts containing the affected product must be updated so the product is no lon…
+
+OPERATION-9409987c52ab | operation | unsupported
+  subj: Modify Inventory Levels
+  q:    When a product is removed and inventory is updated, should the Modify Inventory Levels operation be explicitly invoked to adjust inventory quantities?
+  draft:Specify the inventory modification operation triggered by product removal, including quantity adjustment rules.
+  ev:   FRBLOCK-008
+  ref:  1.20 (0.35) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides … || 1.15 (0.24) Product Removal Impact Handling :: Product Removal Impact Handling Description: When a product is removed or made unavailable, carts containing the affected product must be updated so the product is no lon…
+
+OPERATION-526d3f1cb20b | operation | covered
+  subj: Validate Changes
+  q:    Does the product removal workflow require a Validate Changes operation before finalizing the removal and inventory update?
+  draft:Determine whether validation of changes is required before finalizing product removal and inventory update.
+  ev:   FRBLOCK-008
+  ref:  1.37 (0.25) Product Management Authorization :: Product Management Authorization Description: Product catalog operations, including product addition, removal, update, categorization, and inventory management, must be r… || 1.14 (0.22) Product Removal Function :: Product Removal Function Description: Authorized administrators can remove products from the system only when removal will not break active purchasing activity. Before re…
+
+ISOLATED-b7f72d9c6562 | isolated | out_of_scope
+  subj: User Interface Specification Compliance
+  q:    Does the User Interface Specification Compliance element need a documented connection to the 'Remove Product' button interaction?
+  draft:Determine whether UI specification compliance is required for the Remove Product button and selection workflow.
+  ev:   FRBLOCK-008
+  ref:  1.43 (0.51) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.19 (0.10) Category Management Function :: Category Management Function Description: Authorized administrators can add, update, or remove product categories. The system validates category data and updates associat…
+
+ISOLATED-ba0bf790bfa9 | isolated | covered
+  subj: System
+  q:    Does the System element need a documented connection as the actor performing the active order/cart check and inventory update?
+  draft:Clarify whether 'System' is the responsible actor for the product removal checks and updates.
+  ev:   FRBLOCK-008
+  ref:  1.14 (0.35) Product Removal Function :: Product Removal Function Description: Authorized administrators can remove products from the system only when removal will not break active purchasing activity. Before re… || 1.37 (0.28) Product Management Authorization :: Product Management Authorization Description: Product catalog operations, including product addition, removal, update, categorization, and inventory management, must be r…
+
+ISOLATED-82912a0f5399 | isolated | unsupported
+  subj: Eligibility Constraint for Cancellation
+  q:    Does the Eligibility Constraint for Cancellation need a documented connection to the active order/cart reference check for product removal, or is it u…
+  draft:Determine whether cancellation eligibility constraints apply when active orders or cart references block product removal.
+  ev:   FRBLOCK-008
+  ref:  1.14 (0.47) Product Removal Function :: Product Removal Function Description: Authorized administrators can remove products from the system only when removal will not break active purchasing activity. Before re… || 1.35 (0.20) Order Cancellation Function :: Order Cancellation Function Description: Customers or administrators can cancel an order if it is in an eligible status. The system validates the actor’s authorization an…
+
+ISOLATED-54e4368bed94 | isolated | covered
+  subj: Modify Inventory Levels
+  q:    Should the isolated 'Modify Inventory Levels' element be documented as a connection to FR-09's inventory update, or is it intentionally outside this p…
+  draft:If connected, FR-09 must state that product information updates may modify inventory levels and identify the Administrator as the actor.
+  ev:   FRBLOCK-009
+  ref:  1.20 (0.41) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides … || 1.16 (0.32) Product Information Update Function :: Product Information Update Function Description: Authorized administrators can update existing product information, including name, description, price, category, and inve…
+
+ISOLATED-64aadaf417cb | isolated | unsupported
+  subj: Validate Changes
+  q:    Should the isolated 'Validate Changes' element be documented as a required validation step for the updated product information fields, or is validatio…
+  draft:If in scope, the product information update must validate changed fields before storing them in the Product data entity.
+  ev:   FRBLOCK-009
+  ref:  1.16 (0.31) Product Information Update Function :: Product Information Update Function Description: Authorized administrators can update existing product information, including name, description, price, category, and inve… || 1.7 (0.28) Contact Information Management Function :: Contact Information Management Function Description: Customers can add, update, view, or delete their own contact information, such as phone number and address. The syste…
+
+OPERATION-8803f0002f23 | operation | covered
+  subj: Update Product Information
+  q:    Does the 'Update Product Information' operation need to include inventory field changes, or should inventory modification be a separate operation?
+  draft:The Update Product Information operation must either include inventory field changes or explicitly delegate them to a separate inventory modification operation.
+  ev:   FRBLOCK-009
+  ref:  1.17 (0.29) Product Price and Inventory Quantity Constraints :: Product Price and Inventory Quantity Constraints Description: Product prices and inventory quantities must be validated before product creation or update. Price must be a… || 1.16 (0.29) Product Information Update Function :: Product Information Update Function Description: Authorized administrators can update existing product information, including name, description, price, category, and inve…
+
+OPERATION-4e4f3150ac54 | operation | covered
+  subj: Update Event
+  q:    Should recording the 'Update Event' in Purchase History be defined as a triggered operation of product information updates?
+  draft:The system must record an update event in Purchase History whenever product information is updated.
+  ev:   FRBLOCK-009
+  ref:  1.44 (0.32) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, … || 1.10 (0.31) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent…
+
+OPERATION-d1a9f5830695 | operation | covered
+  subj: Validate Changes
+  q:    Should 'Validate Changes' be documented as an applicable operation in FR-10 because the workflow specifies that the system validates the category befo…
+  draft:The system shall validate the selected category before updating the product-category association.
+  ev:   FRBLOCK-010
+  ref:  1.18 (0.34) Product Categorization Function :: Product Categorization Function Description: Authorized administrators can assign or modify product categories. The system validates the category and updates the product-… || 1.12 (0.27) Product Addition Function :: Product Addition Function Description: Authorized administrators can add new products to the system by providing product details such as name, description, price, categor…
+
+ISOLATED-5263691677ac | isolated | covered
+  subj: System
+  q:    Does 'System' need a documented connection as the component responsible for validating the category and updating the association in FR-10?
+  draft:The system shall validate the selected category and update the product-category association.
+  ev:   FRBLOCK-010
+  ref:  1.18 (0.41) Product Categorization Function :: Product Categorization Function Description: Authorized administrators can assign or modify product categories. The system validates the category and updates the product-… || 1.12 (0.35) Product Addition Function :: Product Addition Function Description: Authorized administrators can add new products to the system by providing product details such as name, description, price, categor…
+
+ISOLATED-39b76ffc44e9 | isolated | unsupported
+  subj: User Interface Specification Compliance
+  q:    Should 'User Interface Specification Compliance' be connected to the administrator category assignment/modification workflow in FR-10?
+  draft:The administrator category assignment/modification interface shall comply with the applicable user interface specification.
+  ev:   FRBLOCK-010
+  ref:  1.43 (0.51) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.18 (0.18) Product Categorization Function :: Product Categorization Function Description: Authorized administrators can assign or modify product categories. The system validates the category and updates the product-…
+
+ISOLATED-ecd2a44d808d | isolated | covered
+  subj: Modify Inventory Levels
+  q:    Is the isolated 'Modify Inventory Levels' element documented as the operation by which an administrator changes a product's inventory quantity, or is …
+  draft:If 'Modify Inventory Levels' is in scope, the system must let an authorized administrator update a product's inventory quantity and store the result in the Inventory entity.
+  ev:   FRBLOCK-011
+  ref:  1.20 (0.40) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides … || 1.17 (0.27) Product Price and Inventory Quantity Constraints :: Product Price and Inventory Quantity Constraints Description: Product prices and inventory quantities must be validated before product creation or update. Price must be a…
+
+ISOLATED-0459b98094ab | isolated | covered
+  subj: View Inventory Levels
+  q:    Does 'View Inventory Levels' need a documented connection to the Administrator actor and Inventory data entity, or is viewing simply part of the inven…
+  draft:Administrators can read current inventory levels for products when performing inventory management, if viewing is a distinct supported operation.
+  ev:   FRBLOCK-011
+  ref:  1.20 (0.40) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides … || 1.26 (0.21) Checkout Inventory Validation :: Checkout Inventory Validation Description: Checkout may proceed only when requested quantities are available in current inventory. The system must validate live inventory…
+
+ISOLATED-3bc6a765ecbf | isolated | covered
+  subj: System
+  q:    Is the isolated 'System' element intended to be the performer of the inventory quantity update and event logging described in the FR, and if so, what …
+  draft:The system must update inventory quantity and record a management event when an administrator modifies inventory levels.
+  ev:   FRBLOCK-011
+  ref:  1.20 (0.33) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides … || 1.44 (0.28) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+ISOLATED-7433f63a1c9a | isolated | unsupported
+  subj: Validate Changes
+  q:    Does the isolated 'Validate Changes' element need a documented connection to the inventory modification workflow, for example to validate that a new i…
+  draft:Before applying an inventory quantity update, the system must validate the change against applicable inventory rules and authorization.
+  ev:   FRBLOCK-011
+  ref:  1.23 (0.27) Shopping Cart Modification Function :: Shopping Cart Modification Function Description: Customers can modify item quantities or remove items from their shopping cart. The system validates the cart item, reques… || 1.17 (0.21) Product Price and Inventory Quantity Constraints :: Product Price and Inventory Quantity Constraints Description: Product prices and inventory quantities must be validated before product creation or update. Price must be a…
+
+OPERATION-a9520d81eb55 | operation | covered
+  subj: Modify Inventory Levels
+  q:    What update-operation details are required when an administrator modifies inventory levels, such as validation rules, reason code, timestamp, or actor…
+  draft:The system must accept and apply an updated inventory quantity for a product from an authorized administrator, and record the associated management event.
+  ev:   FRBLOCK-011
+  ref:  1.20 (0.37) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides … || 1.12 (0.27) Product Addition Function :: Product Addition Function Description: Authorized administrators can add new products to the system by providing product details such as name, description, price, categor…
+
+OPERATION-f265d9b3e153 | operation | unsupported
+  subj: Inventory Quantity Update
+  q:    Does the 'Inventory Quantity Update' event require recording the previous and new quantity, or is it sufficient to log only that a management event oc…
+  draft:The system must log inventory quantity updates with enough detail to identify the product, old quantity, new quantity, administrator, and timestamp.
+  ev:   FRBLOCK-011
+  ref:  1.12 (0.28) Product Addition Function :: Product Addition Function Description: Authorized administrators can add new products to the system by providing product details such as name, description, price, categor… || 1.20 (0.27) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides …
+
+OPERATION-35996338317d | operation | covered
+  subj: Management Event Recording
+  q:    Should the management event recording operation always target the Purchase History data entity for inventory modifications, including non-purchase adj…
+  draft:Inventory management events must be recorded in the Purchase History data entity as stated, or the FR must clarify the correct log for non-purchase adjustments.
+  ev:   FRBLOCK-011
+  ref:  1.9 (0.27) Purchase History Viewing Function :: Purchase History Viewing Function Description: Customers can view their own purchase history, including order number, date, product names, quantities, line totals, total … || 1.11 (0.27) Purchase History Synchronization with Orders :: Purchase History Synchronization with Orders Description: Purchase history must reflect current order data and status. When an order is created, updated, cancelled, or ch…
+
+OPERATION-4fcbe2f8b02f | operation | retained
+  subj: Add to Cart
+  q:    Should the Add to Cart operation check product availability before adding the product to the cart?
+  draft:FR-12 shall define whether Add to Cart performs product availability checking and inventory update before or after recording the product in the shopping cart.
+  ev:   FRBLOCK-012
+  ref:  1.21 (0.47) Shopping Cart Addition Function :: Shopping Cart Addition Function Description: Customers can add products to their shopping cart during a valid customer session. The system validates product existence, av… || 1.37 (0.22) Product Management Authorization :: Product Management Authorization Description: Product catalog operations, including product addition, removal, update, categorization, and inventory management, must be r…
+
+OPERATION-7f2a75b6d6bd | operation | unsupported
+  subj: Check Product Availability
+  q:    Does the Check Product Availability function define the outcome when a product is unavailable?
+  draft:FR-12 shall define the system behavior when the product availability check fails during Add to Cart.
+  ev:   FRBLOCK-012
+  ref:  1.21 (0.26) Shopping Cart Addition Function :: Shopping Cart Addition Function Description: Customers can add products to their shopping cart during a valid customer session. The system validates product existence, av… || 1.15 (0.23) Product Removal Impact Handling :: Product Removal Impact Handling Description: When a product is removed or made unavailable, carts containing the affected product must be updated so the product is no lon…
+
+OPERATION-ebb278528096 | operation | unsupported
+  subj: Modify Inventory Levels
+  q:    Does the documented inventory update imply the Modify Inventory Levels operation?
+  draft:FR-12 shall clarify whether adding a product to the cart invokes a Modify Inventory Levels operation or only updates inventory as a side effect.
+  ev:   FRBLOCK-012
+  ref:  1.20 (0.34) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides … || 1.26 (0.20) Checkout Inventory Validation :: Checkout Inventory Validation Description: Checkout may proceed only when requested quantities are available in current inventory. The system must validate live inventory…
+
+OPERATION-11f4e1b69a3f | operation | unresolved
+  subj: View Inventory Levels
+  q:    Does the product availability check require a View Inventory Levels operation?
+  draft:FR-12 shall specify whether the availability check requires a View Inventory Levels operation or another stock availability query.
+  ev:   FRBLOCK-012
+  ref:  1.20 (0.28) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides … || 1.37 (0.20) Product Management Authorization :: Product Management Authorization Description: Product catalog operations, including product addition, removal, update, categorization, and inventory management, must be r…
+
+OPERATION-9597f5538e1f | operation | unsupported
+  subj: Validate Changes
+  q:    Should inventory changes be validated before the cart addition is confirmed?
+  draft:FR-12 shall define whether inventory quantity changes are validated before the confirmation message is shown.
+  ev:   FRBLOCK-012
+  ref:  1.26 (0.20) Checkout Inventory Validation :: Checkout Inventory Validation Description: Checkout may proceed only when requested quantities are available in current inventory. The system must validate live inventory… || 1.21 (0.19) Shopping Cart Addition Function :: Shopping Cart Addition Function Description: Customers can add products to their shopping cart during a valid customer session. The system validates product existence, av…
+
+ISOLATED-35331bd04470 | isolated | covered
+  subj: System
+  q:    Should the System actor be explicitly connected to the Shopping Cart Creation Function for availability checks and inventory updates?
+  draft:FR-12 shall document the System actor as responsible for checking product availability and updating inventory during cart creation.
+  ev:   FRBLOCK-012
+  ref:  1.21 (0.32) Shopping Cart Addition Function :: Shopping Cart Addition Function Description: Customers can add products to their shopping cart during a valid customer session. The system validates product existence, av… || 1.15 (0.25) Product Removal Impact Handling :: Product Removal Impact Handling Description: When a product is removed or made unavailable, carts containing the affected product must be updated so the product is no lon…
+
+ISOLATED-e690bc271511 | isolated | unsupported
+  subj: User Interface Specification Compliance
+  q:    Does the confirmation message need to be connected to User Interface Specification Compliance?
+  draft:FR-12 shall state whether the confirmation message must comply with the User Interface Specification Compliance element.
+  ev:   FRBLOCK-012
+  ref:  1.43 (0.57) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.41 (0.09) Plugin Installation Function :: Plugin Installation Function Description: Authorized administrators can install plugins to expand system functionality. The system validates the plugin before activation,…
+
+OPERATION-aaa14549d825 | operation | retained
+  subj: Shopping Cart Creation Function
+  q:    Is the Shopping Cart Creation Function complete with respect to inventory update failure?
+  draft:FR-12 shall specify error handling if inventory update fails after the product is added to the shopping cart.
+  ev:   FRBLOCK-012
+  ref:  1.21 (0.37) Shopping Cart Addition Function :: Shopping Cart Addition Function Description: Customers can add products to their shopping cart during a valid customer session. The system validates product existence, av… || 1.13 (0.34) Product Addition Failure Handling :: Product Addition Failure Handling Description: If product creation, category association, or inventory initialization fails, the system must roll back any partial product…
+
+ISOLATED-9bb2feed9366 | isolated | covered
+  subj: Modify Inventory Levels
+  q:    Should FRBLOCK-013 explicitly document a connection to the isolated element 'Modify Inventory Levels' as the operation that adjusts inventory when a c…
+  draft:When a cart item quantity changes or an item is removed, the system must modify the corresponding inventory level to reflect the change.
+  ev:   FRBLOCK-013
+  ref:  1.20 (0.36) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides … || 1.23 (0.34) Shopping Cart Modification Function :: Shopping Cart Modification Function Description: Customers can modify item quantities or remove items from their shopping cart. The system validates the cart item, reques…
+
+OPERATION-004daf596129 | operation | covered
+  subj: Remove action
+  q:    Does the 'Remove' action operation require a documented inventory replenishment step when an item is removed from the shopping cart?
+  draft:When a customer removes an item from the shopping cart, the system must increment the related inventory level by the removed quantity.
+  ev:   FRBLOCK-013
+  ref:  1.23 (0.41) Shopping Cart Modification Function :: Shopping Cart Modification Function Description: Customers can modify item quantities or remove items from their shopping cart. The system validates the cart item, reques… || 1.24 (0.35) Cart Item Management Function :: Cart Item Management Function Description: Customers can manage individual cart items by viewing details, changing quantities, or removing specific items. The system must…
+
+OPERATION-1877178cbacd | operation | covered
+  subj: quantity change
+  q:    Does the quantity change operation require a documented inventory adjustment based on the difference between the old and new quantity?
+  draft:When a cart item quantity is modified, the system must adjust the related inventory level by the difference between the new and previous quantities.
+  ev:   FRBLOCK-013
+  ref:  1.23 (0.30) Shopping Cart Modification Function :: Shopping Cart Modification Function Description: Customers can modify item quantities or remove items from their shopping cart. The system validates the cart item, reques… || 1.20 (0.23) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides …
+
+OPERATION-f889f10d8565 | operation | unsupported
+  subj: Modification Event
+  q:    Does the modification event recording operation need to capture the type of modification (quantity change or removal) and the affected cart item?
+  draft:The system must record a modification event in Purchase History that identifies the affected cart item and whether the modification was a quantity change or removal.
+  ev:   FRBLOCK-013
+  ref:  1.23 (0.39) Shopping Cart Modification Function :: Shopping Cart Modification Function Description: Customers can modify item quantities or remove items from their shopping cart. The system validates the cart item, reques… || 1.15 (0.20) Product Removal Impact Handling :: Product Removal Impact Handling Description: When a product is removed or made unavailable, carts containing the affected product must be updated so the product is no lon…
+
+OPERATION-c85adf57b667 | operation | unresolved
+  subj: Customer
+  q:    Does the Customer initiate the Shopping Cart Viewing Function by navigating to the Shopping Cart section, and is this navigation the only trigger for …
+  draft:The Customer shall be able to navigate to the Shopping Cart section to initiate viewing of the cart contents.
+  ev:   FRBLOCK-014
+  ref:  1.22 (0.45) Shopping Cart Viewing Function :: Shopping Cart Viewing Function Description: Customers can view the contents of their shopping cart, including product name, quantity, unit price, line total, and cart tot… || 1.21 (0.28) Shopping Cart Addition Function :: Shopping Cart Addition Function Description: Customers can add products to their shopping cart during a valid customer session. The system validates product existence, av…
+
+OPERATION-b03f012b638b | operation | covered
+  subj: Shopping Cart
+  q:    Does viewing the cart require a Read operation on the Shopping Cart data entity to retrieve the cart contents for display?
+  draft:The system shall retrieve the contents of the customer's Shopping Cart to display them.
+  ev:   FRBLOCK-014
+  ref:  1.22 (0.40) Shopping Cart Viewing Function :: Shopping Cart Viewing Function Description: Customers can view the contents of their shopping cart, including product name, quantity, unit price, line total, and cart tot… || 1.21 (0.21) Shopping Cart Addition Function :: Shopping Cart Addition Function Description: Customers can add products to their shopping cart during a valid customer session. The system validates product existence, av…
+
+OPERATION-45edffd8a4b4 | operation | covered
+  subj: Cart Items
+  q:    Does the display operation require reading Cart Items from the Shopping Cart, and should the read operation include product name, quantity, price, and…
+  draft:The system shall retrieve and display Cart Items with product name, quantity, price, and total amount.
+  ev:   FRBLOCK-014
+  ref:  1.22 (0.47) Shopping Cart Viewing Function :: Shopping Cart Viewing Function Description: Customers can view the contents of their shopping cart, including product name, quantity, unit price, line total, and cart tot… || 1.12 (0.27) Product Addition Function :: Product Addition Function Description: Authorized administrators can add new products to the system by providing product details such as name, description, price, categor…
+
+OPERATION-023f74f89f22 | operation | covered
+  subj: Cart Summary Displayed
+  q:    Is displaying the cart summary a distinct operation that should be documented, and does it include the total cost?
+  draft:The system shall display a summary of the cart items and their total cost to the customer.
+  ev:   FRBLOCK-014
+  ref:  1.22 (0.40) Shopping Cart Viewing Function :: Shopping Cart Viewing Function Description: Customers can view the contents of their shopping cart, including product name, quantity, unit price, line total, and cart tot… || 1.27 (0.28) Order Creation from Checkout :: Order Creation from Checkout Description: Upon successful checkout, the system creates a persistent order record and corresponding order item records from the current car…
+
+OPERATION-9e5af1a6bad4 | operation | covered
+  subj: Purchase History
+  q:    Does recording the viewing event require a Create operation on the Purchase History data entity, and is that operation triggered every time the cart i…
+  draft:The system shall create a viewing event record in Purchase History when the customer views the shopping cart.
+  ev:   FRBLOCK-014
+  ref:  1.10 (0.35) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent… || 1.4 (0.32) Customer Session and Access Control :: Customer Session and Access Control Description: Customer-protected actions must require a valid authenticated session belonging to the account owner. This includes perso…
+
+OPERATION-ad04480a3580 | operation | covered
+  subj: Viewing Event Recorded
+  q:    Is the Viewing Event Recorded operation a discrete system operation that should be triggered by the viewing action, and does it require any additional…
+  draft:The system shall record a viewing event in Purchase History upon the customer viewing the shopping cart.
+  ev:   FRBLOCK-014
+  ref:  1.10 (0.34) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent… || 1.4 (0.32) Customer Session and Access Control :: Customer Session and Access Control Description: Customer-protected actions must require a valid authenticated session belonging to the account owner. This includes perso…
+
+OPERATION-a6e0d8d9b8f4 | operation | covered
+  subj: Shopping Cart Viewing Function
+  q:    Is the Shopping Cart Viewing Function limited to the view/display operation, or does the documented workflow require any additional operations such as…
+  draft:The Shopping Cart Viewing Function shall enable customers to view the contents of their shopping cart and display the summary without modifying cart data.
+  ev:   FRBLOCK-014
+  ref:  1.22 (0.50) Shopping Cart Viewing Function :: Shopping Cart Viewing Function Description: Customers can view the contents of their shopping cart, including product name, quantity, unit price, line total, and cart tot… || 1.21 (0.25) Shopping Cart Addition Function :: Shopping Cart Addition Function Description: Customers can add products to their shopping cart during a valid customer session. The system validates product existence, av…
+
+ISOLATED-fbcb67ed153b | isolated | covered
+  subj: System
+  q:    Should the System element be explicitly connected to the Shopping Cart Viewing Function as the actor responsible for displaying the cart summary and r…
+  draft:The System shall display the cart summary and record the viewing event in Purchase History when the customer views the shopping cart.
+  ev:   FRBLOCK-014
+  ref:  1.22 (0.36) Shopping Cart Viewing Function :: Shopping Cart Viewing Function Description: Customers can view the contents of their shopping cart, including product name, quantity, unit price, line total, and cart tot… || 1.10 (0.31) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent…
+
+ISOLATED-43a541a03650 | isolated | unsupported
+  subj: User Interface Specification Compliance
+  q:    Does the display of the cart summary need to comply with the User Interface Specification, and should this constraint be documented in the Shopping Ca…
+  draft:The system shall display the cart summary in compliance with the User Interface Specification.
+  ev:   FRBLOCK-014
+  ref:  1.43 (0.51) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.22 (0.26) Shopping Cart Viewing Function :: Shopping Cart Viewing Function Description: Customers can view the contents of their shopping cart, including product name, quantity, unit price, line total, and cart tot…
+
+OPERATION-e9639f301f12 | operation | covered
+  subj: Modify Inventory Levels
+  q:    Does the checkout workflow require the Modify Inventory Levels operation when FRBLOCK-015 states that inventory levels are updated?
+  draft:Checkout shall perform inventory modification for ordered items and record the resulting inventory levels.
+  ev:   FRBLOCK-015
+  ref:  1.20 (0.32) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides … || 1.26 (0.28) Checkout Inventory Validation :: Checkout Inventory Validation Description: Checkout may proceed only when requested quantities are available in current inventory. The system must validate live inventory…
+
+OPERATION-fc365b2cda3f | operation | unsupported
+  subj: Validate Changes
+  q:    Does checkout require a Validate Changes operation before processing payment and creating an order, given the documented input of cart items, shipping…
+  draft:Before payment processing, checkout shall validate cart items, shipping address, and payment method.
+  ev:   FRBLOCK-015
+  ref:  1.25 (0.65) Checkout Function :: Checkout Function Description: Customers can proceed to checkout using a valid authenticated session, selected shipping address, current cart items, and payment method. T… || 1.30 (0.29) Payment Processing Function :: Payment Processing Function Description: The system processes the customer’s selected payment method and validates payment details. A successful payment must be stored, a…
+
+OPERATION-2eede297e2fe | operation | unsupported
+  subj: View Inventory Levels
+  q:    Does checkout require a View Inventory Levels operation to check availability before payment, or does FRBLOCK-015 only document inventory update after…
+  draft:If checkout depends on inventory availability, it shall view inventory levels before completing payment or order creation.
+  ev:   FRBLOCK-015
+  ref:  1.26 (0.34) Checkout Inventory Validation :: Checkout Inventory Validation Description: Checkout may proceed only when requested quantities are available in current inventory. The system must validate live inventory… || 1.25 (0.30) Checkout Function :: Checkout Function Description: Customers can proceed to checkout using a valid authenticated session, selected shipping address, current cart items, and payment method. T…
+
+ISOLATED-1580b7a90b4f | isolated | covered
+  subj: System
+  q:    Should the isolated element 'System' be documented as the actor responsible for 'The system processes the payment and creates an order' in FRBLOCK-015…
+  draft:The system actor responsible for payment processing and order creation shall be identified in the checkout process.
+  ev:   FRBLOCK-015
+  ref:  1.30 (0.32) Payment Processing Function :: Payment Processing Function Description: The system processes the customer’s selected payment method and validates payment details. A successful payment must be stored, a… || 1.25 (0.29) Checkout Function :: Checkout Function Description: Customers can proceed to checkout using a valid authenticated session, selected shipping address, current cart items, and payment method. T…
+
+ISOLATED-11ebd15df5d8 | isolated | unsupported
+  subj: Personal Information View or Update Event
+  q:    Does selecting a shipping address in FRBLOCK-015 document a connection to the isolated element 'Personal Information View or Update Event', or is that…
+  draft:When checkout collects or updates a shipping address, the system shall record it as a personal information view or update event if in scope.
+  ev:   FRBLOCK-015
+  ref:  1.25 (0.33) Checkout Function :: Checkout Function Description: Customers can proceed to checkout using a valid authenticated session, selected shipping address, current cart items, and payment method. T… || 1.5 (0.33) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m…
+
+ISOLATED-5359761dbfb5 | isolated | unsupported
+  subj: Eligibility Constraint for Cancellation
+  q:    Does FRBLOCK-015's creation of an order and processing of payment imply a documented cancellation eligibility constraint at checkout, or is that isola…
+  draft:If cancellation eligibility is determined at checkout, the system shall record the eligibility constraint when creating the order and processing payment.
+  ev:   FRBLOCK-015
+  ref:  1.25 (0.35) Checkout Function :: Checkout Function Description: Customers can proceed to checkout using a valid authenticated session, selected shipping address, current cart items, and payment method. T… || 1.35 (0.27) Order Cancellation Function :: Order Cancellation Function Description: Customers or administrators can cancel an order if it is in an eligible status. The system validates the actor’s authorization an…
+
+ISOLATED-7c4d8de57279 | isolated | unsupported
+  subj: User Interface Specification Compliance
+  q:    Does the customer-facing checkout flow - selecting a shipping address and making a payment - have a documented obligation to comply with the isolated …
+  draft:The checkout interface shall comply with the applicable user interface specification if UI compliance is in scope for this function.
+  ev:   FRBLOCK-015
+  ref:  1.43 (0.56) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.25 (0.23) Checkout Function :: Checkout Function Description: Customers can proceed to checkout using a valid authenticated session, selected shipping address, current cart items, and payment method. T…
+
+OPERATION-a0339d21be16 | operation | covered
+  subj: Order
+  q:    To compose the order confirmation email, should the function perform a Read operation on the Order data entity to obtain the required order details?
+  draft:The order confirmation function must read the relevant order details from the Order data entity before composing the confirmation email.
+  ev:   FRBLOCK-016
+  ref:  1.32 (0.38) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde… || 1.33 (0.23) Order Confirmation Email Failure Handling :: Order Confirmation Email Failure Handling Description: If an order confirmation email cannot be sent or its EmailRecord cannot be retrieved, the system must record the fa…
+
+OPERATION-23592760472d | operation | covered
+  subj: EmailRecord
+  q:    Should the Order Confirmation Email be persisted using a Create operation on the EmailRecord data entity, and if so, what fields must be stored?
+  draft:The order confirmation function must create an EmailRecord entry containing the order confirmation email content when the email is sent.
+  ev:   FRBLOCK-016
+  ref:  1.32 (0.44) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde… || 1.33 (0.35) Order Confirmation Email Failure Handling :: Order Confirmation Email Failure Handling Description: If an order confirmation email cannot be sent or its EmailRecord cannot be retrieved, the system must record the fa…
+
+OPERATION-2d2dc5d36afb | operation | unsupported
+  subj: Purchase History
+  q:    Should recording the confirmation event in Purchase History use an Update or Create operation on that data entity, and what event attributes must be c…
+  draft:The confirmation event must be recorded in the Purchase History data entity with sufficient detail to identify the related order and confirmation email.
+  ev:   FRBLOCK-016
+  ref:  1.32 (0.37) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde… || 1.11 (0.36) Purchase History Synchronization with Orders :: Purchase History Synchronization with Orders Description: Purchase history must reflect current order data and status. When an order is created, updated, cancelled, or ch…
+
+OPERATION-c8b02d6f4ede | operation | unsupported
+  subj: Order Confirmation Email Sending Function
+  q:    Does the function require a send operation to deliver the email to the customer's email address, and what failure handling applies if delivery fails?
+  draft:The system must perform the email send operation to the customer's email address and handle delivery failures.
+  ev:   FRBLOCK-016
+  ref:  1.33 (0.36) Order Confirmation Email Failure Handling :: Order Confirmation Email Failure Handling Description: If an order confirmation email cannot be sent or its EmailRecord cannot be retrieved, the system must record the fa… || 1.32 (0.36) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde…
+
+ISOLATED-cb72231d3ad8 | isolated | covered
+  subj: System
+  q:    Is the System actor sufficiently connected to the Order Confirmation Email Sending Function and the checkout workflow, or is it only a generic actor r…
+  draft:The system actor should have a documented responsibility for triggering and executing the order confirmation email after successful checkout.
+  ev:   FRBLOCK-016
+  ref:  1.32 (0.36) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde… || 1.27 (0.22) Order Creation from Checkout :: Order Creation from Checkout Description: Upon successful checkout, the system creates a persistent order record and corresponding order item records from the current car…
+
+OPERATION-ff9a50e838ca | operation | covered
+  subj: Payment Processing
+  q:    Does the Payment Processing function define a separate operation for validating payment details before the payment is stored?
+  draft:The Payment Processing function must validate payment details before storing the payment as successful.
+  ev:   FRBLOCK-017
+  ref:  1.30 (0.42) Payment Processing Function :: Payment Processing Function Description: The system processes the customer’s selected payment method and validates payment details. A successful payment must be stored, a… || 1.25 (0.29) Checkout Function :: Checkout Function Description: Customers can proceed to checkout using a valid authenticated session, selected shipping address, current cart items, and payment method. T…
+
+OPERATION-96a3f77e438a | operation | covered
+  subj: Payment Data Entity
+  q:    Does the Payment Processing function document a store operation for writing the successful payment into the Payment data entity?
+  draft:The system must store a successful payment in the Payment data entity and associate it with the order.
+  ev:   FRBLOCK-017
+  ref:  1.30 (0.30) Payment Processing Function :: Payment Processing Function Description: The system processes the customer’s selected payment method and validates payment details. A successful payment must be stored, a… || 1.44 (0.26) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+OPERATION-021cbb3a50be | operation | covered
+  subj: Order Data Entity
+  q:    Does the Payment Processing function document a create operation for the order after a successful payment?
+  draft:The system must create and store an order in the Order data entity upon successful payment.
+  ev:   FRBLOCK-017
+  ref:  1.30 (0.36) Payment Processing Function :: Payment Processing Function Description: The system processes the customer’s selected payment method and validates payment details. A successful payment must be stored, a… || 1.44 (0.26) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+OPERATION-b94a9159cdbc | operation | covered
+  subj: Inventory Updated
+  q:    Does the Payment Processing function document an update operation for inventory levels as part of payment success?
+  draft:The system must update inventory levels when a payment is successfully processed and an order is created.
+  ev:   FRBLOCK-017
+  ref:  1.30 (0.34) Payment Processing Function :: Payment Processing Function Description: The system processes the customer’s selected payment method and validates payment details. A successful payment must be stored, a… || 1.20 (0.28) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides …
+
+OPERATION-3fd8cb956c00 | operation | covered
+  subj: Payment Event
+  q:    Does the Payment Processing function document a record operation for the payment event in Purchase History?
+  draft:The system must record a payment event in the Purchase History data entity after a successful payment.
+  ev:   FRBLOCK-017
+  ref:  1.44 (0.38) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, … || 1.10 (0.29) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent…
+
+ISOLATED-be0094c67890 | isolated | unsupported
+  subj: Validate Changes
+  q:    Does the supplied FR block document any connection between 'Validate Changes' and the Payment Processing workflow?
+  draft:If 'Validate Changes' is intended to apply to payment processing, the FR must document the specific changes it validates and when.
+  ev:   FRBLOCK-017
+  ref:  1.30 (0.20) Payment Processing Function :: Payment Processing Function Description: The system processes the customer’s selected payment method and validates payment details. A successful payment must be stored, a… || 1.26 (0.18) Checkout Inventory Validation :: Checkout Inventory Validation Description: Checkout may proceed only when requested quantities are available in current inventory. The system must validate live inventory…
+
+ISOLATED-89bf156ad239 | isolated | unsupported
+  subj: Modify Inventory Levels
+  q:    Does the supplied FR block document any connection between 'Modify Inventory Levels' and the inventory update after payment?
+  draft:If 'Modify Inventory Levels' is the operation used by payment processing, the FR must state that connection explicitly.
+  ev:   FRBLOCK-017
+  ref:  1.20 (0.31) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides … || 1.26 (0.23) Checkout Inventory Validation :: Checkout Inventory Validation Description: Checkout may proceed only when requested quantities are available in current inventory. The system must validate live inventory…
+
+ISOLATED-17a94d9ab9ac | isolated | unsupported
+  subj: View Inventory Levels
+  q:    Does the supplied FR block document any connection between 'View Inventory Levels' and the payment processing workflow?
+  draft:If 'View Inventory Levels' is relevant to payment processing, the FR must document how inventory is viewed as part of the workflow.
+  ev:   FRBLOCK-017
+  ref:  1.20 (0.28) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides … || 1.26 (0.27) Checkout Inventory Validation :: Checkout Inventory Validation Description: Checkout may proceed only when requested quantities are available in current inventory. The system must validate live inventory…
+
+OPERATION-e08534fbc252 | operation | covered
+  subj: Administrator
+  q:    How does an Administrator initiate the development or installation of a new plugin, and are the required plugin details or file submission steps docum…
+  draft:Define the administrator-facing operation for submitting plugin details or a plugin file to start development or installation.
+  ev:   FRBLOCK-018
+  ref:  1.41 (0.53) Plugin Installation Function :: Plugin Installation Function Description: Authorized administrators can install plugins to expand system functionality. The system validates the plugin before activation,… || 1.42 (0.23) Plugin Configuration Function :: Plugin Configuration Function Description: Authorized administrators can configure installed plugins. The system validates configuration settings, applies valid changes, …
+
+OPERATION-7457a49b17a1 | operation | unresolved
+  subj: Plugin Development Function
+  q:    Does the Plugin Development Function include a distinct activation operation after validation, or is activation automatic when validation succeeds?
+  draft:Specify whether plugin activation is an explicit operation or an automatic consequence of successful validation.
+  ev:   FRBLOCK-018
+  ref:  1.41 (0.34) Plugin Installation Function :: Plugin Installation Function Description: Authorized administrators can install plugins to expand system functionality. The system validates the plugin before activation,… || 1.42 (0.25) Plugin Configuration Function :: Plugin Configuration Function Description: Authorized administrators can configure installed plugins. The system validates configuration settings, applies valid changes, …
+
+OPERATION-5dd481659a71 | operation | unsupported
+  subj: Plugin Validation Constraint
+  q:    What specific validation checks are required by the Plugin Validation Constraint, and what happens if validation fails?
+  draft:Document the validation criteria and failure behavior for plugin validation.
+  ev:   FRBLOCK-018
+  ref:  1.41 (0.32) Plugin Installation Function :: Plugin Installation Function Description: Authorized administrators can install plugins to expand system functionality. The system validates the plugin before activation,… || 1.42 (0.31) Plugin Configuration Function :: Plugin Configuration Function Description: Authorized administrators can configure installed plugins. The system validates configuration settings, applies valid changes, …
+
+ISOLATED-7032db173ea7 | isolated | unsupported
+  subj: System
+  q:    Does the 'system' referenced in FR-18 correspond to the supplied 'System' element, and if so, should that relationship be documented?
+  draft:Clarify and document whether the system in FR-18 is the supplied System element.
+  ev:   FRBLOCK-018
+  ref:  1.30 (0.15) Payment Processing Function :: Payment Processing Function Description: The system processes the customer’s selected payment method and validates payment details. A successful payment must be stored, a… || 1.1 (0.00) Customer Registration Function :: Customer Registration Function Description: Customers can register for a new account by providing valid personal information, a valid email address, password, and optiona…
+
+ISOLATED-92837d639609 | isolated | unsupported
+  subj: User Interface Specification Compliance
+  q:    Must the system interface update in FR-18 comply with the supplied 'User Interface Specification Compliance' element?
+  draft:Ensure that plugin-driven interface updates adhere to the applicable user interface specification compliance requirements.
+  ev:   FRBLOCK-018
+  ref:  1.43 (0.63) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.41 (0.24) Plugin Installation Function :: Plugin Installation Function Description: Authorized administrators can install plugins to expand system functionality. The system validates the plugin before activation,…
+
+ISOLATED-3fef0c9e682d | isolated | covered
+  subj: Validate Changes
+  q:    Is the plugin validation described in FR-18 a specific instance of the supplied 'Validate Changes' element?
+  draft:Determine whether plugin validation should be linked to the Validate Changes element and document any required connection.
+  ev:   FRBLOCK-018
+  ref:  1.42 (0.25) Plugin Configuration Function :: Plugin Configuration Function Description: Authorized administrators can configure installed plugins. The system validates configuration settings, applies valid changes, … || 1.41 (0.20) Plugin Installation Function :: Plugin Installation Function Description: Authorized administrators can install plugins to expand system functionality. The system validates the plugin before activation,…
+
+OPERATION-86d0953b3c7a | operation | unsupported
+  subj: Configure Plugin Settings
+  q:    Does the configuration operation need a documented rollback or reset step when a validated and applied configuration causes operational issues?
+  draft:Provide a documented rollback or reset operation for plugin configuration changes after a successful but problematic application.
+  ev:   FRBLOCK-019
+  ref:  1.42 (0.55) Plugin Configuration Function :: Plugin Configuration Function Description: Authorized administrators can configure installed plugins. The system validates configuration settings, applies valid changes, … || 1.41 (0.16) Plugin Installation Function :: Plugin Installation Function Description: Authorized administrators can install plugins to expand system functionality. The system validates the plugin before activation,…
+
+OPERATION-1b3bfb3f17aa | operation | unsupported
+  subj: Plugin Data Entity
+  q:    Should the system validate all configuration settings before updating the Plugin data entity, and must it reject the entire update if any setting is i…
+  draft:Validate all plugin configuration settings before updating the Plugin data entity and reject the update atomically if any setting is invalid.
+  ev:   FRBLOCK-019
+  ref:  1.42 (0.50) Plugin Configuration Function :: Plugin Configuration Function Description: Authorized administrators can configure installed plugins. The system validates configuration settings, applies valid changes, … || 1.41 (0.21) Plugin Installation Function :: Plugin Installation Function Description: Authorized administrators can install plugins to expand system functionality. The system validates the plugin before activation,…
+
+OPERATION-37b68e1d5387 | operation | unsupported
+  subj: Configuration Event
+  q:    What minimum fields must the configuration event contain when recorded in Purchase History to support audit and traceability?
+  draft:Record configuration events with actor, timestamp, plugin identifier, and changed settings sufficient for audit.
+  ev:   FRBLOCK-019
+  ref:  1.42 (0.51) Plugin Configuration Function :: Plugin Configuration Function Description: Authorized administrators can configure installed plugins. The system validates configuration settings, applies valid changes, … || 1.10 (0.26) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent…
+
+OPERATION-3246e03199f6 | operation | unsupported
+  subj: System Interface Reflects Updated Settings
+  q:    Must the system interface reflect updated plugin settings immediately after a successful configuration update, or is a manual refresh acceptable?
+  draft:After a successful plugin configuration update, the system interface must reflect the updated settings without requiring a manual refresh, unless a documented caching delay applies.
+  ev:   FRBLOCK-019
+  ref:  1.42 (0.58) Plugin Configuration Function :: Plugin Configuration Function Description: Authorized administrators can configure installed plugins. The system validates configuration settings, applies valid changes, … || 1.41 (0.23) Plugin Installation Function :: Plugin Installation Function Description: Authorized administrators can install plugins to expand system functionality. The system validates the plugin before activation,…
+
+ISOLATED-44d96d1f07df | isolated | unsupported
+  subj: System
+  q:    Is the generic System actor that validates and applies plugin configuration already identified in a system component or architecture specification, or…
+  draft:Identify or reference the system component responsible for validating and applying plugin configuration changes.
+  ev:   FRBLOCK-019
+  ref:  1.42 (0.52) Plugin Configuration Function :: Plugin Configuration Function Description: Authorized administrators can configure installed plugins. The system validates configuration settings, applies valid changes, … || 1.41 (0.23) Plugin Installation Function :: Plugin Installation Function Description: Authorized administrators can install plugins to expand system functionality. The system validates the plugin before activation,…
+
+OPERATION-510793654eca | operation | covered
+  subj: Administrator
+  q:    What specific operation does an Administrator perform when initiating a user interface compliance check, and is that operation adequately captured in …
+  draft:Document the administrator-initiated compliance check operation.
+  ev:   FRBLOCK-020
+  ref:  1.43 (0.40) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.44 (0.20) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+OPERATION-ed3c03254259 | operation | retained
+  subj: Compliance Check Initiation
+  q:    Should the Compliance Check Initiation event trigger a documented operation, and what operation should it invoke?
+  draft:Define the operation triggered by the Compliance Check Initiation event.
+  ev:   FRBLOCK-020
+  ref:  1.43 (0.33) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.37 (0.19) Product Management Authorization :: Product Management Authorization Description: Product catalog operations, including product addition, removal, update, categorization, and inventory management, must be r…
+
+OPERATION-f79b958616ca | operation | covered
+  subj: User Interface Specification Compliance Checking Function
+  q:    What operation does the User Interface Specification Compliance Checking Function perform when identifying and reporting non-compliant elements?
+  draft:Specify the compliance-check operation for identifying and reporting non-compliant UI elements.
+  ev:   FRBLOCK-020
+  ref:  1.43 (0.76) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.37 (0.10) Product Management Authorization :: Product Management Authorization Description: Product catalog operations, including product addition, removal, update, categorization, and inventory management, must be r…
+
+OPERATION-2e6b71c0618e | operation | covered
+  subj: Compliance Report
+  q:    What operation generates and displays the Compliance Report to the administrator?
+  draft:Define the report generation and display operation for the compliance report.
+  ev:   FRBLOCK-020
+  ref:  1.43 (0.33) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.44 (0.11) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+OPERATION-74ae7fb05c57 | operation | covered
+  subj: Non-compliant Element Highlight
+  q:    What operation applies the Non-compliant Element Highlight to non-compliant UI elements in the report?
+  draft:Specify the highlighting operation for non-compliant elements in the compliance report.
+  ev:   FRBLOCK-020
+  ref:  1.43 (0.53) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.17 (0.12) Product Price and Inventory Quantity Constraints :: Product Price and Inventory Quantity Constraints Description: Product prices and inventory quantities must be validated before product creation or update. Price must be a…
+
+OPERATION-3dde4468c8b2 | operation | covered
+  subj: Purchase History
+  q:    What operation records the compliance check event in the Purchase History data entity?
+  draft:Define the recording operation for compliance check events in Purchase History.
+  ev:   FRBLOCK-020
+  ref:  1.11 (0.30) Purchase History Synchronization with Orders :: Purchase History Synchronization with Orders Description: Purchase history must reflect current order data and status. When an order is created, updated, cancelled, or ch… || 1.9 (0.29) Purchase History Viewing Function :: Purchase History Viewing Function Description: Customers can view their own purchase history, including order number, date, product names, quantities, line totals, total …
+
+ISOLATED-8b57de6bcdf1 | isolated | covered
+  subj: System
+  q:    Is the System element documented as the actor or component that performs the compliance check, or does it need a clearer connection to the compliance …
+  draft:Document the System's role in performing the UI compliance check.
+  ev:   FRBLOCK-020
+  ref:  1.43 (0.39) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.37 (0.23) Product Management Authorization :: Product Management Authorization Description: Product catalog operations, including product addition, removal, update, categorization, and inventory management, must be r…
+
+ISOLATED-f3de809f8186 | isolated | covered
+  subj: User Interface Specification Compliance
+  q:    How is the User Interface Specification Compliance constraint connected to the compliance checking function and the report output?
+  draft:Document the relationship between the UI Specification Compliance constraint and the compliance checking function.
+  ev:   FRBLOCK-020
+  ref:  1.43 (0.62) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.41 (0.08) Plugin Installation Function :: Plugin Installation Function Description: Authorized administrators can install plugins to expand system functionality. The system validates the plugin before activation,…
+
+OPERATION-1fff7e14dd04 | operation | covered
+  subj: Manage CartItem Function
+  q:    When a customer removes an item from the cart, how should the Manage CartItem Function adjust inventory and record the modification event?
+  draft:The system shall, upon cart item removal, reverse or release the associated inventory adjustment, update the CartItem data entity, and record a modification event in the Purchase History data entity.
+  ev:   FRBLOCK-021
+  ref:  1.24 (0.27) Cart Item Management Function :: Cart Item Management Function Description: Customers can manage individual cart items by viewing details, changing quantities, or removing specific items. The system must… || 1.23 (0.22) Shopping Cart Modification Function :: Shopping Cart Modification Function Description: Customers can modify item quantities or remove items from their shopping cart. The system validates the cart item, reques…
+
+OPERATION-621372d73bca | operation | retained
+  subj: Inventory Adjustment
+  q:    For a quantity change, should inventory be adjusted by the difference between the previous and new quantity?
+  draft:The system shall adjust inventory levels by the delta between the previous and new cart item quantities.
+  ev:   FRBLOCK-021
+  ref:  1.23 (0.27) Shopping Cart Modification Function :: Shopping Cart Modification Function Description: Customers can modify item quantities or remove items from their shopping cart. The system validates the cart item, reques… || 1.20 (0.23) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides …
+
+OPERATION-e1247f9f10ef | operation | covered
+  subj: CartItem Data Entity
+  q:    Does a quantity change require updating the CartItem Data Entity's quantity value, and does removal require deleting the CartItem record?
+  draft:The CartItem data entity shall reflect the new quantity for quantity changes and shall remove the item record for removal actions.
+  ev:   FRBLOCK-021
+  ref:  1.23 (0.18) Shopping Cart Modification Function :: Shopping Cart Modification Function Description: Customers can modify item quantities or remove items from their shopping cart. The system validates the cart item, reques… || 1.24 (0.15) Cart Item Management Function :: Cart Item Management Function Description: Customers can manage individual cart items by viewing details, changing quantities, or removing specific items. The system must…
+
+OPERATION-7753d27aebb3 | operation | unsupported
+  subj: Modification Event
+  q:    What information must the modification event capture to support auditing of cart changes?
+  draft:The modification event shall record the action type, cart item identifier, prior and new quantity (if applicable), and timestamp in the Purchase History data entity.
+  ev:   FRBLOCK-021
+  ref:  1.23 (0.30) Shopping Cart Modification Function :: Shopping Cart Modification Function Description: Customers can modify item quantities or remove items from their shopping cart. The system validates the cart item, reques… || 1.10 (0.22) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent…
+
+ISOLATED-d501037d9ab5 | isolated | unsupported
+  subj: Validate Changes
+  q:    Should the isolated 'Validate Changes' element be documented as a step before applying cart modifications, such as verifying quantity limits or item a…
+  draft:The system shall validate requested cart item changes before updating the CartItem data entity and inventory levels.
+  ev:   FRBLOCK-021
+  ref:  1.23 (0.32) Shopping Cart Modification Function :: Shopping Cart Modification Function Description: Customers can modify item quantities or remove items from their shopping cart. The system validates the cart item, reques… || 1.26 (0.31) Checkout Inventory Validation :: Checkout Inventory Validation Description: Checkout may proceed only when requested quantities are available in current inventory. The system must validate live inventory…
+
+ISOLATED-ea8ff157820b | isolated | covered
+  subj: Modify Inventory Levels
+  q:    Does the isolated 'Modify Inventory Levels' element describe the operation by which the Manage CartItem Function adjusts inventory after a quantity ch…
+  draft:Inventory levels shall be modified to reflect cart item quantity changes and removals as part of the Manage CartItem function.
+  ev:   FRBLOCK-021
+  ref:  1.20 (0.28) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides … || 1.23 (0.26) Shopping Cart Modification Function :: Shopping Cart Modification Function Description: Customers can modify item quantities or remove items from their shopping cart. The system validates the cart item, reques…
+
+OPERATION-455e9d9256b2 | operation | unsupported
+  subj: Validate Changes
+  q:    Does the documented edit/remove/update workflow require a validation operation before order item changes are applied?
+  draft:Validate proposed order item edits, removals, and status updates against applicable business rules before applying them.
+  ev:   FRBLOCK-022
+  ref:  1.36 (0.42) Order Item Management Function :: Order Item Management Function Description: Authorized administrators can edit, remove, or update the status of items in an order where business rules permit. The system … || 1.23 (0.19) Shopping Cart Modification Function :: Shopping Cart Modification Function Description: Customers can modify item quantities or remove items from their shopping cart. The system validates the cart item, reques…
+
+OPERATION-ed619e979b99 | operation | covered
+  subj: Modify Inventory Levels
+  q:    Should the inventory adjustment operation be explicitly documented as part of this function's workflow?
+  draft:Adjust inventory levels in response to order item quantity changes or removals.
+  ev:   FRBLOCK-022
+  ref:  1.20 (0.36) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides … || 1.36 (0.22) Order Item Management Function :: Order Item Management Function Description: Authorized administrators can edit, remove, or update the status of items in an order where business rules permit. The system …
+
+OPERATION-d768703b48aa | operation | unsupported
+  subj: Eligibility Constraint for Cancellation
+  q:    Should removal of an order item be subject to an eligibility constraint for cancellation?
+  draft:Apply any cancellation eligibility constraints when an administrator removes an order item.
+  ev:   FRBLOCK-022
+  ref:  1.35 (0.32) Order Cancellation Function :: Order Cancellation Function Description: Customers or administrators can cancel an order if it is in an eligible status. The system validates the actor’s authorization an… || 1.36 (0.22) Order Item Management Function :: Order Item Management Function Description: Authorized administrators can edit, remove, or update the status of items in an order where business rules permit. The system …
+
+ISOLATED-9b582e062f47 | isolated | covered
+  subj: View Inventory Levels
+  q:    Is viewing inventory levels intentionally out of scope for this FR, or is a documented connection needed for administrators to verify inventory adjust…
+  draft:If inventory verification is required, document the read access path for administrators.
+  ev:   FRBLOCK-022
+  ref:  1.20 (0.28) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides … || 1.26 (0.17) Checkout Inventory Validation :: Checkout Inventory Validation Description: Checkout may proceed only when requested quantities are available in current inventory. The system must validate live inventory…
+
+ISOLATED-abc5e84c6191 | isolated | unsupported
+  subj: User Interface Specification Compliance
+  q:    Does this function need to comply with a user interface specification for the order item selection, quantity change, or Remove inputs?
+  draft:Document any UI specification compliance requirements for order item management inputs.
+  ev:   FRBLOCK-022
+  ref:  1.43 (0.56) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.36 (0.26) Order Item Management Function :: Order Item Management Function Description: Authorized administrators can edit, remove, or update the status of items in an order where business rules permit. The system …
+
+OPERATION-14cd699a8f75 | operation | covered
+  subj: Manage EmailRecord
+  q:    For the view action within Manage EmailRecord, should the system update the EmailRecord data entity, or is view intended to be read-only?
+  draft:Clarify that viewing an email record is read-only unless a separate update is explicitly required; if read-only, do not update EmailRecord for a view action.
+  ev:   FRBLOCK-023
+  ref:  1.34 (0.35) Email Record Management Function :: Email Record Management Function Description: Authorized administrators can view, manage, or delete EmailRecord entries according to permissions. Customers may view email… || 1.32 (0.21) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde…
+
+OPERATION-57ba231c91cd | operation | covered
+  subj: Manage EmailRecord
+  q:    Does the view action within Manage EmailRecord record a management event in Purchase History, or is the management event recorded only for edit and de…
+  draft:Define whether the view action is a management event that must be logged to Purchase History, or whether logging applies only to edit and delete.
+  ev:   FRBLOCK-023
+  ref:  1.34 (0.31) Email Record Management Function :: Email Record Management Function Description: Authorized administrators can view, manage, or delete EmailRecord entries according to permissions. Customers may view email… || 1.10 (0.23) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent…
+
+OPERATION-ee1c99b17e50 | operation | unresolved
+  subj: EmailRecord
+  q:    When an administrator deletes an EmailRecord, should deletion physically remove the record or logically mark it deleted, and how should the EmailRecor…
+  draft:Specify the deletion semantics for EmailRecord (physical removal or logical deletion) and ensure the update and logged event reflect the selected semantics.
+  ev:   FRBLOCK-023
+  ref:  1.34 (0.20) Email Record Management Function :: Email Record Management Function Description: Authorized administrators can view, manage, or delete EmailRecord entries according to permissions. Customers may view email… || 1.32 (0.20) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde…
+
+ISOLATED-4df74bdc7fee | isolated | unsupported
+  subj: Validate Changes
+  q:    Should the edit action on an EmailRecord include a Validate Changes step before the EmailRecord data entity is updated?
+  draft:When an email record is edited, validate the changed data before updating the EmailRecord data entity.
+  ev:   FRBLOCK-023
+  ref:  1.38 (0.24) Administrator Management Function :: Administrator Management Function Description: Authorized administrators can manage administrator accounts by updating, deactivating, or managing permitted administrator … || 1.32 (0.21) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde…
+
+ISOLATED-0f21836bc504 | isolated | unsupported
+  subj: Personal Information View or Update Event
+  q:    Should viewing or editing an EmailRecord that contains personal information trigger a Personal Information View or Update Event in addition to the man…
+  draft:If an EmailRecord contains personal information, determine whether view or edit actions must also log a Personal Information View or Update Event.
+  ev:   FRBLOCK-023
+  ref:  1.5 (0.30) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m… || 1.6 (0.25) Personal Information Update Notification and Audit :: Personal Information Update Notification and Audit Description: Successful personal information updates should generate an update status notification or confirmation emai…
+
+ISOLATED-874950bfbb7c | isolated | unsupported
+  subj: User Interface Specification Compliance
+  q:    Should the confirmation message displayed after managing an EmailRecord comply with the supplied User Interface Specification Compliance requirements?
+  draft:Ensure the confirmation message displayed for EmailRecord management complies with applicable User Interface Specification Compliance requirements.
+  ev:   FRBLOCK-023
+  ref:  1.43 (0.54) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.32 (0.16) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde…
+
+ISOLATED-29319ceb76aa | isolated | covered
+  subj: System
+  q:    Does 'System' in this FR refer to the same system boundary responsible for both updating EmailRecord and recording the management event in Purchase Hi…
+  draft:Clarify the System boundary responsible for updating EmailRecord and logging the management event.
+  ev:   FRBLOCK-023
+  ref:  1.10 (0.25) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent… || 1.32 (0.24) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde…
+
+ISOLATED-5a0bdf4665dd | isolated | covered
+  subj: System
+  q:    Should the 'System' actor be explicitly connected to the View EmailRecord Function as the component responsible for displaying email details and loggi…
+  draft:The System must be documented as the actor that displays email content and logs the viewing event for the View EmailRecord function.
+  ev:   FRBLOCK-024
+  ref:  1.32 (0.32) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde… || 1.34 (0.28) Email Record Management Function :: Email Record Management Function Description: Authorized administrators can view, manage, or delete EmailRecord entries according to permissions. Customers may view email…
+
+ISOLATED-e1b8eb311070 | isolated | unsupported
+  subj: Personal Information View or Update Event
+  q:    Should the 'Personal Information View or Update Event' be considered as the classification for the viewing event that is recorded when an email record…
+  draft:The viewing event for an email record must be evaluated for classification as a Personal Information View or Update Event.
+  ev:   FRBLOCK-024
+  ref:  1.5 (0.36) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m… || 1.6 (0.34) Personal Information Update Notification and Audit :: Personal Information Update Notification and Audit Description: Successful personal information updates should generate an update status notification or confirmation emai…
+
+ISOLATED-c927ae0d1828 | isolated | unsupported
+  subj: User Interface Specification Compliance
+  q:    Should the display of email details be required to comply with the 'User Interface Specification' given that FR-24 mandates the system to display emai…
+  draft:The display of email details in the View EmailRecord function must comply with the User Interface Specification.
+  ev:   FRBLOCK-024
+  ref:  1.43 (0.45) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.34 (0.19) Email Record Management Function :: Email Record Management Function Description: Authorized administrators can view, manage, or delete EmailRecord entries according to permissions. Customers may view email…
+
+OPERATION-f595515b8616 | operation | covered
+  subj: View EmailRecord Function
+  q:    Should the View EmailRecord Function be restricted to read-only viewing, or should it also support updating or deleting email records?
+  draft:The View EmailRecord Function must be scoped to read-only viewing unless additional operations are explicitly required.
+  ev:   FRBLOCK-024
+  ref:  1.34 (0.26) Email Record Management Function :: Email Record Management Function Description: Authorized administrators can view, manage, or delete EmailRecord entries according to permissions. Customers may view email… || 1.31 (0.22) Payment Viewing Function :: Payment Viewing Function Description: Customers and administrators can view payment details only when authorized. Customers may view payment records associated with their…
+
+OPERATION-f307568d90f3 | operation | unsupported
+  subj: Viewing Event
+  q:    Should the Viewing Event trigger any additional operations, such as updating an activity log or notifying administrators?
+  draft:The Viewing Event must be recorded in Purchase History, and any additional triggered operations must be documented.
+  ev:   FRBLOCK-024
+  ref:  1.10 (0.31) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent… || 1.44 (0.24) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+ISOLATED-563cfbb1c4ab | isolated | covered
+  subj: System
+  q:    Is the System's role in displaying cart item details explicitly connected to the View CartItem Function, or is the passive mention 'The system display…
+  draft:The System shall display the selected cart item's product description, price, and quantity to the customer.
+  ev:   FRBLOCK-025
+  ref:  1.24 (0.38) Cart Item Management Function :: Cart Item Management Function Description: Customers can manage individual cart items by viewing details, changing quantities, or removing specific items. The system must… || 1.22 (0.35) Shopping Cart Viewing Function :: Shopping Cart Viewing Function Description: Customers can view the contents of their shopping cart, including product name, quantity, unit price, line total, and cart tot…
+
+OPERATION-5e6b3de90d98 | operation | covered
+  subj: CartItem Data Entity
+  q:    Does the View CartItem Function imply a read operation on the CartItem Data Entity, and should that read operation be documented separately?
+  draft:The View CartItem Function shall read the selected cart item's description, price, and quantity from the CartItem data entity.
+  ev:   FRBLOCK-025
+  ref:  1.24 (0.24) Cart Item Management Function :: Cart Item Management Function Description: Customers can manage individual cart items by viewing details, changing quantities, or removing specific items. The system must… || 1.22 (0.17) Shopping Cart Viewing Function :: Shopping Cart Viewing Function Description: Customers can view the contents of their shopping cart, including product name, quantity, unit price, line total, and cart tot…
+
+OPERATION-c8c3105c6248 | operation | covered
+  subj: Purchase History data entity
+  q:    Should recording the viewing event in the Purchase History data entity be documented as an operation triggered by the View CartItem Function?
+  draft:The View CartItem Function shall record the cart item viewing event in the Purchase History data entity.
+  ev:   FRBLOCK-025
+  ref:  1.9 (0.34) Purchase History Viewing Function :: Purchase History Viewing Function Description: Customers can view their own purchase history, including order number, date, product names, quantities, line totals, total … || 1.10 (0.33) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent…
+
+OPERATION-123f682b47f8 | operation | covered
+  subj: View CartItem Function
+  q:    Does the View CartItem Function need a documented operation boundary for viewing a single cart item, or is the description 'Customers can view the det…
+  draft:The View CartItem Function shall allow a customer to view the details of one selected cart item.
+  ev:   FRBLOCK-025
+  ref:  1.24 (0.44) Cart Item Management Function :: Cart Item Management Function Description: Customers can manage individual cart items by viewing details, changing quantities, or removing specific items. The system must… || 1.22 (0.28) Shopping Cart Viewing Function :: Shopping Cart Viewing Function Description: Customers can view the contents of their shopping cart, including product name, quantity, unit price, line total, and cart tot…
+
+OPERATION-87ef7d6f9e4b | operation | covered
+  subj: Viewing Event Recorded
+  q:    Is the Viewing Event Recorded event an operation that should be linked to the View CartItem Function, or is it merely a data logging side effect?
+  draft:The View CartItem Function shall create a Viewing Event Recorded entry when a customer views a cart item.
+  ev:   FRBLOCK-025
+  ref:  1.44 (0.27) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, … || 1.32 (0.23) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde…
+
+OPERATION-5ea8ac5f70c4 | operation | unsupported
+  subj: Customer
+  q:    When a Customer views a payment record, what authorization rule determines which payment records the Customer may select?
+  draft:The system must restrict a customer's payment-detail view to payment records the customer is authorized to access.
+  ev:   FRBLOCK-026
+  ref:  1.31 (0.42) Payment Viewing Function :: Payment Viewing Function Description: Customers and administrators can view payment details only when authorized. Customers may view payment records associated with their… || 1.34 (0.25) Email Record Management Function :: Email Record Management Function Description: Authorized administrators can view, manage, or delete EmailRecord entries according to permissions. Customers may view email…
+
+OPERATION-5e6f44a938d6 | operation | unsupported
+  subj: Administrator
+  q:    Do Administrators require a separate permission or elevated role to view any payment record, or is administrator access unrestricted?
+  draft:The system must allow administrators to view payment details in accordance with their administrative permissions.
+  ev:   FRBLOCK-026
+  ref:  1.31 (0.57) Payment Viewing Function :: Payment Viewing Function Description: Customers and administrators can view payment details only when authorized. Customers may view payment records associated with their… || 1.34 (0.31) Email Record Management Function :: Email Record Management Function Description: Authorized administrators can view, manage, or delete EmailRecord entries according to permissions. Customers may view email…
+
+OPERATION-d84565ab9777 | operation | covered
+  subj: Payment Data Entity
+  q:    Which fields of the Payment data entity must be read and displayed when viewing a payment record?
+  draft:The system must display the payment method, amount, date, and status from the selected Payment data entity record.
+  ev:   FRBLOCK-026
+  ref:  1.30 (0.31) Payment Processing Function :: Payment Processing Function Description: The system processes the customer’s selected payment method and validates payment details. A successful payment must be stored, a… || 1.31 (0.26) Payment Viewing Function :: Payment Viewing Function Description: Customers and administrators can view payment details only when authorized. Customers may view payment records associated with their…
+
+OPERATION-cf9ef4f13201 | operation | retained
+  subj: Payment Viewing Event
+  q:    What data must be captured for a Payment Viewing Event when payment details are viewed?
+  draft:The system must record a Payment Viewing Event with sufficient details to identify the viewed payment, the viewing actor, and the view time.
+  ev:   FRBLOCK-026
+  ref:  1.31 (0.38) Payment Viewing Function :: Payment Viewing Function Description: Customers and administrators can view payment details only when authorized. Customers may view payment records associated with their… || 1.44 (0.25) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+OPERATION-6feee3ba4d82 | operation | covered
+  subj: Purchase History data entity
+  q:    Should each payment-detail view append a new record to the Purchase History data entity, or update an existing history entry?
+  draft:The system must record payment-detail viewing events in the Purchase History data entity as required for audit or history purposes.
+  ev:   FRBLOCK-026
+  ref:  1.9 (0.34) Purchase History Viewing Function :: Purchase History Viewing Function Description: Customers can view their own purchase history, including order number, date, product names, quantities, line totals, total … || 1.11 (0.32) Purchase History Synchronization with Orders :: Purchase History Synchronization with Orders Description: Purchase history must reflect current order data and status. When an order is created, updated, cancelled, or ch…
+
+OPERATION-24437c892444 | operation | unsupported
+  subj: View Payment Function
+  q:    What preconditions and triggers allow the View Payment Function to be invoked?
+  draft:The system must make the View Payment Function available only when a valid payment record selection is provided.
+  ev:   FRBLOCK-026
+  ref:  1.31 (0.44) Payment Viewing Function :: Payment Viewing Function Description: Customers and administrators can view payment details only when authorized. Customers may view payment records associated with their… || 1.34 (0.23) Email Record Management Function :: Email Record Management Function Description: Authorized administrators can view, manage, or delete EmailRecord entries according to permissions. Customers may view email…
+
+ISOLATED-24a838eb0929 | isolated | covered
+  subj: System
+  q:    Is 'System' intended to be the documented acting component for displaying payment details in FR-26, or is it a generic reference that does not need a …
+  draft:The system must display payment details from the Payment data entity when an authorized user selects a payment record.
+  ev:   FRBLOCK-026
+  ref:  1.31 (0.33) Payment Viewing Function :: Payment Viewing Function Description: Customers and administrators can view payment details only when authorized. Customers may view payment records associated with their… || 1.30 (0.29) Payment Processing Function :: Payment Processing Function Description: The system processes the customer’s selected payment method and validates payment details. A successful payment must be stored, a…
+
+OPERATION-87fa1dae7471 | operation | retained
+  subj: Administrator
+  q:    Does the Manage Administrator Function need to treat 'update' and 'deactivate' as distinct operations for an administrator account?
+  draft:The system should support deactivation as a distinct operation that changes account status without necessarily overwriting personal or contact information.
+  ev:   FRBLOCK-027
+  ref:  1.38 (0.36) Administrator Management Function :: Administrator Management Function Description: Authorized administrators can manage administrator accounts by updating, deactivating, or managing permitted administrator … || 1.39 (0.31) Customer Management Function :: Customer Management Function Description: Authorized administrators can manage customer accounts, including updating customer information or deactivating accounts where p…
+
+OPERATION-f3c3af799c05 | operation | unsupported
+  subj: Management Event
+  q:    What information must the management event record for an administrator update or deactivation?
+  draft:The management event should capture the acting administrator, target account, action type, and timestamp.
+  ev:   FRBLOCK-027
+  ref:  1.38 (0.33) Administrator Management Function :: Administrator Management Function Description: Authorized administrators can manage administrator accounts by updating, deactivating, or managing permitted administrator … || 1.39 (0.31) Customer Management Function :: Customer Management Function Description: Authorized administrators can manage customer accounts, including updating customer information or deactivating accounts where p…
+
+OPERATION-1f53e2c4a0c3 | operation | unsupported
+  subj: Personal Information
+  q:    Should updates to an administrator's Personal Information and Contact Information be handled as a coordinated operation?
+  draft:Administrator profile updates affecting Personal Information and Contact Information should be coordinated to avoid partial or inconsistent updates.
+  ev:   FRBLOCK-027
+  ref:  1.40 (0.36) Personal and Contact Information Query Function :: Personal and Contact Information Query Function Description: Customers and authorized administrators can retrieve stored personal and contact information records. Custome… || 1.8 (0.30) Contact Information Validation and Failure Handling :: Contact Information Validation and Failure Handling Description: Contact information updates must be validated atomically. If any submitted field is invalid, no partial c…
+
+ISOLATED-1d2984a37dd5 | isolated | unsupported
+  subj: Validate Changes
+  q:    Does the administrator management workflow need a documented connection to Validate Changes before persisting updates?
+  draft:If administrator updates are processed, Validate Changes should be considered to prevent invalid updates.
+  ev:   FRBLOCK-027
+  ref:  1.38 (0.37) Administrator Management Function :: Administrator Management Function Description: Authorized administrators can manage administrator accounts by updating, deactivating, or managing permitted administrator … || 1.39 (0.25) Customer Management Function :: Customer Management Function Description: Authorized administrators can manage customer accounts, including updating customer information or deactivating accounts where p…
+
+ISOLATED-d2dcd83d025d | isolated | unsupported
+  subj: Personal Information View or Update Event
+  q:    Should a Personal Information View or Update Event be emitted when an administrator's Personal Information is updated?
+  draft:Personal Information changes for administrator accounts may need to emit the dedicated view or update event in addition to the management event.
+  ev:   FRBLOCK-027
+  ref:  1.5 (0.36) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m… || 1.6 (0.31) Personal Information Update Notification and Audit :: Personal Information Update Notification and Audit Description: Successful personal information updates should generate an update status notification or confirmation emai…
+
+ISOLATED-9effd7bfa3d9 | isolated | unsupported
+  subj: Eligibility Constraint for Cancellation
+  q:    Should deactivating an administrator account be subject to an eligibility constraint for cancellation, such as preventing deactivation of the last act…
+  draft:Deactivation of administrator accounts should enforce eligibility constraints where required to preserve administrative access.
+  ev:   FRBLOCK-027
+  ref:  1.39 (0.40) Customer Management Function :: Customer Management Function Description: Authorized administrators can manage customer accounts, including updating customer information or deactivating accounts where p… || 1.38 (0.34) Administrator Management Function :: Administrator Management Function Description: Authorized administrators can manage administrator accounts by updating, deactivating, or managing permitted administrator …
+
+ISOLATED-599798f466ef | isolated | unsupported
+  subj: User Interface Specification Compliance
+  q:    Does the administrator account selection and action input need to comply with a documented UI specification?
+  draft:The administrator management interface should comply with the applicable UI specification for selection and action controls.
+  ev:   FRBLOCK-027
+  ref:  1.43 (0.52) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.38 (0.30) Administrator Management Function :: Administrator Management Function Description: Authorized administrators can manage administrator accounts by updating, deactivating, or managing permitted administrator …
+
+ISOLATED-3b794647c0b0 | isolated | covered
+  subj: System
+  q:    Is System the responsible actor for updating administrator information and logging the event, and does it need a documented connection in this FR?
+  draft:The system component responsible for administrator updates and event logging should be documented if it is a distinct element.
+  ev:   FRBLOCK-027
+  ref:  1.44 (0.37) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, … || 1.38 (0.20) Administrator Management Function :: Administrator Management Function Description: Authorized administrators can manage administrator accounts by updating, deactivating, or managing permitted administrator …
+
+OPERATION-21d2374ab698 | operation | covered
+  subj: Personal Information
+  q:    Does the Manage Customer Function require an Update operation on Personal Information because the FR states administrators can update personal informa…
+  draft:The system may need to support updating Personal Information records when an administrator performs the update action in the Manage Customer Function.
+  ev:   FRBLOCK-028
+  ref:  1.5 (0.41) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m… || 1.6 (0.32) Personal Information Update Notification and Audit :: Personal Information Update Notification and Audit Description: Successful personal information updates should generate an update status notification or confirmation emai…
+
+OPERATION-706ce6e156f5 | operation | covered
+  subj: Contact Information
+  q:    Does the Manage Customer Function require an Update operation on Contact Information because the FR states customer information is updated in the Cont…
+  draft:The system may need to support updating Contact Information records when an administrator performs the update action in the Manage Customer Function.
+  ev:   FRBLOCK-028
+  ref:  1.8 (0.32) Contact Information Validation and Failure Handling :: Contact Information Validation and Failure Handling Description: Contact information updates must be validated atomically. If any submitted field is invalid, no partial c… || 1.7 (0.31) Contact Information Management Function :: Contact Information Management Function Description: Customers can add, update, view, or delete their own contact information, such as phone number and address. The syste…
+
+OPERATION-f524efafc3c7 | operation | covered
+  subj: Purchase History
+  q:    Does recording the management event in Purchase History imply a Create operation on Purchase History for each customer account update or deactivation?
+  draft:The system may need to create a Purchase History record for the management event when a customer account is updated or deactivated.
+  ev:   FRBLOCK-028
+  ref:  1.9 (0.36) Purchase History Viewing Function :: Purchase History Viewing Function Description: Customers can view their own purchase history, including order number, date, product names, quantities, line totals, total … || 1.10 (0.34) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent…
+
+OPERATION-756799872933 | operation | covered
+  subj: Management Event
+  q:    Does the Manage Customer Function require a Create operation for a Management Event when an administrator updates or deactivates a customer account?
+  draft:The system may need to create a Management Event for each customer account update or deactivation action.
+  ev:   FRBLOCK-028
+  ref:  1.38 (0.34) Administrator Management Function :: Administrator Management Function Description: Authorized administrators can manage administrator accounts by updating, deactivating, or managing permitted administrator … || 1.39 (0.33) Customer Management Function :: Customer Management Function Description: Authorized administrators can manage customer accounts, including updating customer information or deactivating accounts where p…
+
+OPERATION-1c04df487c3d | operation | covered
+  subj: Manage Customer Function
+  q:    Does the Manage Customer Function require both update and deactivate operations for customer accounts, as described in the FR?
+  draft:The Manage Customer Function may need to support both update and deactivate actions for customer accounts.
+  ev:   FRBLOCK-028
+  ref:  1.39 (0.28) Customer Management Function :: Customer Management Function Description: Authorized administrators can manage customer accounts, including updating customer information or deactivating accounts where p… || 1.38 (0.19) Administrator Management Function :: Administrator Management Function Description: Authorized administrators can manage administrator accounts by updating, deactivating, or managing permitted administrator …
+
+ISOLATED-3370a6dda3fc | isolated | unsupported
+  subj: Validate Changes
+  q:    Should the Manage Customer Function document a connection to Validate Changes before applying the update or deactivate action?
+  draft:The Manage Customer Function may need to validate proposed customer account changes before applying an update or deactivation.
+  ev:   FRBLOCK-028
+  ref:  1.38 (0.34) Administrator Management Function :: Administrator Management Function Description: Authorized administrators can manage administrator accounts by updating, deactivating, or managing permitted administrator … || 1.39 (0.28) Customer Management Function :: Customer Management Function Description: Authorized administrators can manage customer accounts, including updating customer information or deactivating accounts where p…
+
+ISOLATED-fbd8dbfef3ee | isolated | covered
+  subj: Personal Information View or Update Event
+  q:    Should the Manage Customer Function document a connection to the Personal Information View or Update Event when an administrator updates personal info…
+  draft:The system may need to emit or record a Personal Information View or Update Event when personal information is updated.
+  ev:   FRBLOCK-028
+  ref:  1.5 (0.42) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m… || 1.6 (0.37) Personal Information Update Notification and Audit :: Personal Information Update Notification and Audit Description: Successful personal information updates should generate an update status notification or confirmation emai…
+
+ISOLATED-2659cdc76cfd | isolated | unsupported
+  subj: Eligibility Constraint for Cancellation
+  q:    Does deactivating a customer account require evaluating an Eligibility Constraint for Cancellation before the account is deactivated?
+  draft:The Manage Customer Function may need to evaluate an Eligibility Constraint for Cancellation before deactivating a customer account.
+  ev:   FRBLOCK-028
+  ref:  1.38 (0.36) Administrator Management Function :: Administrator Management Function Description: Authorized administrators can manage administrator accounts by updating, deactivating, or managing permitted administrator … || 1.39 (0.35) Customer Management Function :: Customer Management Function Description: Authorized administrators can manage customer accounts, including updating customer information or deactivating accounts where p…
+
+ISOLATED-3d833e3d41a0 | isolated | unsupported
+  subj: User Interface Specification Compliance
+  q:    Should the Manage Customer Function document compliance with the User Interface Specification for the administrator's account management actions?
+  draft:The Manage Customer Function may need to comply with the User Interface Specification for customer account management screens.
+  ev:   FRBLOCK-028
+  ref:  1.43 (0.60) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.38 (0.26) Administrator Management Function :: Administrator Management Function Description: Authorized administrators can manage administrator accounts by updating, deactivating, or managing permitted administrator …
+
+ISOLATED-3cb9c66859b1 | isolated | unsupported
+  subj: System
+  q:    Should the Manage Customer Function identify the System component that updates customer information and records the management event?
+  draft:The Manage Customer Function may need to document which System component performs the customer information update and management event recording.
+  ev:   FRBLOCK-028
+  ref:  1.5 (0.25) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m… || 1.39 (0.25) Customer Management Function :: Customer Management Function Description: Authorized administrators can manage customer accounts, including updating customer information or deactivating accounts where p…
+
+OPERATION-a4a20d4238ef | operation | unsupported
+  subj: Validate Category
+  q:    What validation rules must the system apply to category data before an administrator's add, update, or delete action is accepted?
+  draft:The system must validate category data prior to accepting any category management action.
+  ev:   FRBLOCK-029
+  ref:  1.19 (0.29) Category Management Function :: Category Management Function Description: Authorized administrators can add, update, or remove product categories. The system validates category data and updates associat… || 1.39 (0.25) Customer Management Function :: Customer Management Function Description: Authorized administrators can manage customer accounts, including updating customer information or deactivating accounts where p…
+
+OPERATION-87806f67a0cd | operation | covered
+  subj: Management Event
+  q:    Is a management event required in Purchase History for every category add, update, and delete action, or only for certain actions?
+  draft:The system must record a management event in Purchase History for each category management action.
+  ev:   FRBLOCK-029
+  ref:  1.10 (0.27) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent… || 1.9 (0.23) Purchase History Viewing Function :: Purchase History Viewing Function Description: Customers can view their own purchase history, including order number, date, product names, quantities, line totals, total …
+
+OPERATION-a15d44bb910d | operation | unresolved
+  subj: Product Associations
+  q:    How should product associations be modified when a category is deleted versus updated, and what happens to products linked to a removed category?
+  draft:The system must define and apply rules for updating product associations when categories are added, updated, or removed.
+  ev:   FRBLOCK-029
+  ref:  1.19 (0.42) Category Management Function :: Category Management Function Description: Authorized administrators can add, update, or remove product categories. The system validates category data and updates associat… || 1.18 (0.34) Product Categorization Function :: Product Categorization Function Description: Authorized administrators can assign or modify product categories. The system validates the category and updates the product-…
+
+OPERATION-43be5c00eedd | operation | unresolved
+  subj: Category Data Entity
+  q:    Which fields in the Category data entity are updated for add, update, and delete actions, and is a delete a physical removal or a status change?
+  draft:The system must persist category changes to the Category data entity according to the selected add, update, or delete action.
+  ev:   FRBLOCK-029
+  ref:  1.19 (0.28) Category Management Function :: Category Management Function Description: Authorized administrators can add, update, or remove product categories. The system validates category data and updates associat… || 1.16 (0.24) Product Information Update Function :: Product Information Update Function Description: Authorized administrators can update existing product information, including name, description, price, category, and inve…
+
+ISOLATED-207b2c069cde | isolated | unsupported
+  subj: Validate Changes
+  q:    Does the category validation described in this FR correspond to the isolated Validate Changes element, or does the workflow need a documented connecti…
+  draft:The system must document whether the category validation step is performed by Validate Changes or by a separate validation mechanism.
+  ev:   FRBLOCK-029
+  ref:  1.18 (0.19) Product Categorization Function :: Product Categorization Function Description: Authorized administrators can assign or modify product categories. The system validates the category and updates the product-… || 1.12 (0.17) Product Addition Function :: Product Addition Function Description: Authorized administrators can add new products to the system by providing product details such as name, description, price, categor…
+
+ISOLATED-f739b3756862 | isolated | unsupported
+  subj: User Interface Specification Compliance
+  q:    Is there a documented requirement that modifications to the User Interface Specification must be checked against User Interface Specification Complian…
+  draft:The system shall validate modified User Interface Specification details against documented compliance requirements before applying the changes, if such requirements exist.
+  ev:   FRBLOCK-030
+  ref:  1.43 (0.57) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.41 (0.10) Plugin Installation Function :: Plugin Installation Function Description: Authorized administrators can install plugins to expand system functionality. The system validates the plugin before activation,…
+
+ISOLATED-302534d142f4 | isolated | unsupported
+  subj: Validate Changes
+  q:    Does the documented workflow require explicit validation of updated UI specification details before the system applies them and logs the event?
+  draft:The system shall validate updated UI specification details before applying changes and recording the management event.
+  ev:   FRBLOCK-030
+  ref:  1.43 (0.25) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.38 (0.23) Administrator Management Function :: Administrator Management Function Description: Authorized administrators can manage administrator accounts by updating, deactivating, or managing permitted administrator …
+
+ISOLATED-8d1f0250a05c | isolated | covered
+  subj: System
+  q:    Which system component is responsible for applying UI specification changes and modifying the system interface?
+  draft:The system shall apply approved UI specification changes to the system interface and record the event.
+  ev:   FRBLOCK-030
+  ref:  1.43 (0.45) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.41 (0.13) Plugin Installation Function :: Plugin Installation Function Description: Authorized administrators can install plugins to expand system functionality. The system validates the plugin before activation,…
+
+OPERATION-800dd8b4e771 | operation | covered
+  subj: Manage User Interface Specification Function
+  q:    Does the 'modify' operation cover only updates to an existing User Interface Specification, or must it also support creating or deleting specification…
+  draft:The system shall support modification (update) of the User Interface Specification; create and delete operations are not required unless separately specified.
+  ev:   FRBLOCK-030
+  ref:  1.43 (0.40) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.23 (0.11) Shopping Cart Modification Function :: Shopping Cart Modification Function Description: Customers can modify item quantities or remove items from their shopping cart. The system validates the cart item, reques…
+
+OPERATION-37484ba33b1c | operation | unsupported
+  subj: Management Event Recorded
+  q:    What specific event details must be recorded when an administrator modifies the User Interface Specification?
+  draft:The system shall record the management event with administrator identity, timestamp, and changed UI specification details in the Purchase History data entity.
+  ev:   FRBLOCK-030
+  ref:  1.43 (0.29) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.10 (0.28) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent…
+
+OPERATION-8aee8e74127b | operation | unsupported
+  subj: Administrators
+  q:    Are all Administrators authorized to modify the User Interface Specification, or is a specific administrative role required?
+  draft:The system shall restrict modification of the User Interface Specification to authorized administrators.
+  ev:   FRBLOCK-030
+  ref:  1.43 (0.40) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.31 (0.15) Payment Viewing Function :: Payment Viewing Function Description: Customers and administrators can view payment details only when authorized. Customers may view payment records associated with their…
+
+OPERATION-b639e08250e8 | operation | unsupported
+  subj: User Interface Specification data entity
+  q:    Does updating the User Interface Specification data entity overwrite the existing specification or create a new version?
+  draft:The system shall update the User Interface Specification data entity, preserving version history if required.
+  ev:   FRBLOCK-030
+  ref:  1.43 (0.36) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.11 (0.11) Purchase History Synchronization with Orders :: Purchase History Synchronization with Orders Description: Purchase history must reflect current order data and status. When an order is created, updated, cancelled, or ch…
+
+OPERATION-44c71d193b0f | operation | unsupported
+  subj: Personal Information View or Update Event
+  q:    Should the recorded event distinguish whether the action was a view or an update, and include actor identity and timestamp for audit purposes?
+  draft:Record each view or update of personal information in Purchase History with action type, actor identity, and timestamp.
+  ev:   FRBLOCK-031
+  ref:  1.6 (0.38) Personal Information Update Notification and Audit :: Personal Information Update Notification and Audit Description: Successful personal information updates should generate an update status notification or confirmation emai… || 1.5 (0.28) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m…
+
+OPERATION-6cff1477f20b | operation | retained
+  subj: Personal Information Data Entity
+  q:    When an update is requested, should the system update only the changed attributes or replace the entire Personal Information record?
+  draft:Apply only validated, changed personal information fields to the Personal Information data entity.
+  ev:   FRBLOCK-031
+  ref:  1.6 (0.36) Personal Information Update Notification and Audit :: Personal Information Update Notification and Audit Description: Successful personal information updates should generate an update status notification or confirmation emai… || 1.5 (0.36) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m…
+
+OPERATION-a44c17e0c62e | operation | unsupported
+  subj: Administrator
+  q:    Should administrators be permitted to view or update any customer's personal information, while customers are restricted to their own record?
+  draft:Enforce role-based access so customers access only their own personal information and administrators can manage customer records as authorized.
+  ev:   FRBLOCK-031
+  ref:  1.31 (0.46) Payment Viewing Function :: Payment Viewing Function Description: Customers and administrators can view payment details only when authorized. Customers may view payment records associated with their… || 1.40 (0.42) Personal and Contact Information Query Function :: Personal and Contact Information Query Function Description: Customers and authorized administrators can retrieve stored personal and contact information records. Custome…
+
+ISOLATED-b1fdab7d1981 | isolated | unsupported
+  subj: Validate Changes
+  q:    Does the isolated 'Validate Changes' element need a documented connection to the validation rules applied to personal information updates?
+  draft:Define and apply validation rules for personal information changes before updating the Personal Information data entity.
+  ev:   FRBLOCK-031
+  ref:  1.5 (0.24) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m… || 1.6 (0.24) Personal Information Update Notification and Audit :: Personal Information Update Notification and Audit Description: Successful personal information updates should generate an update status notification or confirmation emai…
+
+OPERATION-1006feed7b33 | operation | unresolved
+  subj: Manage Personal Information
+  q:    Should view and update be modeled as distinct operations with different permissions and audit outcomes?
+  draft:Model view and update as distinct operations with appropriate validation, permission, and logging behavior.
+  ev:   FRBLOCK-031
+  ref:  1.5 (0.24) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m… || 1.6 (0.22) Personal Information Update Notification and Audit :: Personal Information Update Notification and Audit Description: Successful personal information updates should generate an update status notification or confirmation emai…
+
+ISOLATED-099787d282f9 | isolated | unsupported
+  subj: Validate Changes
+  q:    What specific validation rules determine whether a customer's Contact Information changes are accepted?
+  draft:The system must validate Contact Information updates against defined data quality and format rules before persisting them.
+  ev:   FRBLOCK-032
+  ref:  1.7 (0.23) Contact Information Management Function :: Contact Information Management Function Description: Customers can add, update, view, or delete their own contact information, such as phone number and address. The syste… || 1.8 (0.21) Contact Information Validation and Failure Handling :: Contact Information Validation and Failure Handling Description: Contact information updates must be validated atomically. If any submitted field is invalid, no partial c…
+
+ISOLATED-d2a18fbd7319 | isolated | covered
+  subj: System
+  q:    Which system responsibilities are explicitly assigned when Contact Information is viewed or updated?
+  draft:The System must validate changes on update and log both view and update events for Contact Information.
+  ev:   FRBLOCK-032
+  ref:  1.7 (0.36) Contact Information Management Function :: Contact Information Management Function Description: Customers can add, update, view, or delete their own contact information, such as phone number and address. The syste… || 1.8 (0.34) Contact Information Validation and Failure Handling :: Contact Information Validation and Failure Handling Description: Contact information updates must be validated atomically. If any submitted field is invalid, no partial c…
+
+OPERATION-5babe5ecb961 | operation | covered
+  subj: Contact Information
+  q:    Is the view operation applicable to Contact Information without triggering an update?
+  draft:The system must allow Customers or Administrators to view Contact Information without modifying the Contact Information data entity.
+  ev:   FRBLOCK-032
+  ref:  1.7 (0.35) Contact Information Management Function :: Contact Information Management Function Description: Customers can add, update, view, or delete their own contact information, such as phone number and address. The syste… || 1.8 (0.32) Contact Information Validation and Failure Handling :: Contact Information Validation and Failure Handling Description: Contact information updates must be validated atomically. If any submitted field is invalid, no partial c…
+
+OPERATION-59b48c3585bd | operation | covered
+  subj: Manage Contact Information
+  q:    Is the update operation applicable to the Manage Contact Information function, and who may perform it?
+  draft:Authorized Customers or Administrators must be able to update Contact Information, with the system validating and logging the change.
+  ev:   FRBLOCK-032
+  ref:  1.8 (0.33) Contact Information Validation and Failure Handling :: Contact Information Validation and Failure Handling Description: Contact information updates must be validated atomically. If any submitted field is invalid, no partial c… || 1.7 (0.32) Contact Information Management Function :: Contact Information Management Function Description: Customers can add, update, view, or delete their own contact information, such as phone number and address. The syste…
+
+OPERATION-65c6755d27b1 | operation | covered
+  subj: Viewing or Update Event
+  q:    Should a view-only action also record a Viewing event in Purchase History?
+  draft:The system must record a Viewing or Update event in Purchase History for both view and update actions on Contact Information.
+  ev:   FRBLOCK-032
+  ref:  1.10 (0.38) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent… || 1.9 (0.32) Purchase History Viewing Function :: Purchase History Viewing Function Description: Customers can view their own purchase history, including order number, date, product names, quantities, line totals, total …
+
+ISOLATED-793c8d40ef6f | isolated | retained
+  subj: Eligibility Constraint for Cancellation
+  q:    What documented rule set defines an order as being in an eligible status for cancellation, and how is that rule enforced when a customer or administra…
+  draft:The system must validate the selected order against a defined cancellation eligibility rule before executing the Order Cancellation function.
+  ev:   FRBLOCK-033
+  ref:  1.35 (0.40) Order Cancellation Function :: Order Cancellation Function Description: Customers or administrators can cancel an order if it is in an eligible status. The system validates the actor’s authorization an… || 1.28 (0.14) Order Item Construction Function :: Order Item Construction Function Description: Order items must accurately match the customer’s selected cart items at checkout confirmation. The system preserves selected…
+
+ISOLATED-d2426ebd3a24 | isolated | unsupported
+  subj: Modify Inventory Levels
+  q:    How should inventory levels be modified after a cancellation, and is the adjustment a release of reserved stock, a restock, or another inventory opera…
+  draft:The system should define the inventory modification behavior triggered by order cancellation, including the type and quantity of adjustment.
+  ev:   FRBLOCK-033
+  ref:  1.20 (0.22) Inventory Management Function :: Inventory Management Function Description: Authorized administrators can view and modify inventory levels for products. The system updates inventory quantities, provides … || 1.35 (0.21) Order Cancellation Function :: Order Cancellation Function Description: Customers or administrators can cancel an order if it is in an eligible status. The system validates the actor’s authorization an…
+
+ISOLATED-e2e63e5c7aa6 | isolated | unsupported
+  subj: Validate Changes
+  q:    What validation is required before applying the cancellation to the order and inventory records, and what happens if validation fails?
+  draft:The system should validate cancellation-related order and inventory changes before committing them.
+  ev:   FRBLOCK-033
+  ref:  1.35 (0.28) Order Cancellation Function :: Order Cancellation Function Description: Customers or administrators can cancel an order if it is in an eligible status. The system validates the actor’s authorization an… || 1.26 (0.18) Checkout Inventory Validation :: Checkout Inventory Validation Description: Checkout may proceed only when requested quantities are available in current inventory. The system must validate live inventory…
+
+ISOLATED-0aa010cd46c7 | isolated | unsupported
+  subj: System
+  q:    Which system component owns the order status update and inventory update during cancellation, and are responsibilities documented across internal and …
+  draft:The system responsibilities for updating order status and inventory during cancellation should be documented.
+  ev:   FRBLOCK-033
+  ref:  1.35 (0.35) Order Cancellation Function :: Order Cancellation Function Description: Customers or administrators can cancel an order if it is in an eligible status. The system validates the actor’s authorization an… || 1.36 (0.23) Order Item Management Function :: Order Item Management Function Description: Authorized administrators can edit, remove, or update the status of items in an order where business rules permit. The system …
+
+ISOLATED-43072cbd0f98 | isolated | unsupported
+  subj: User Interface Specification Compliance
+  q:    Does the Cancel Order action need to comply with a documented user interface specification, including order selection, confirmation, and error display…
+  draft:The Cancel Order action should conform to the documented user interface specification for order cancellation.
+  ev:   FRBLOCK-033
+  ref:  1.43 (0.43) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.35 (0.34) Order Cancellation Function :: Order Cancellation Function Description: Customers or administrators can cancel an order if it is in an eligible status. The system validates the actor’s authorization an…
+
+OPERATION-301dcdaba024 | operation | unsupported
+  subj: Order Cancellation
+  q:    Does the Order Cancellation operation require actor-specific permissions, confirmation, or reason capture when initiated by a customer versus an admin…
+  draft:The Order Cancellation operation should specify actor permissions and any required confirmation or reason capture.
+  ev:   FRBLOCK-033
+  ref:  1.35 (0.29) Order Cancellation Function :: Order Cancellation Function Description: Customers or administrators can cancel an order if it is in an eligible status. The system validates the actor’s authorization an… || 1.44 (0.21) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+OPERATION-c72a82a5b93d | operation | unresolved
+  subj: Cancelled Order Status
+  q:    Which order status transitions are permitted into Cancelled Order Status, and which prior statuses are explicitly ineligible?
+  draft:The system should enforce allowed and disallowed status transitions for marking an order as Cancelled.
+  ev:   FRBLOCK-033
+  ref:  1.35 (0.42) Order Cancellation Function :: Order Cancellation Function Description: Customers or administrators can cancel an order if it is in an eligible status. The system validates the actor’s authorization an… || 1.11 (0.33) Purchase History Synchronization with Orders :: Purchase History Synchronization with Orders Description: Purchase history must reflect current order data and status. When an order is created, updated, cancelled, or ch…
+
+OPERATION-fb933fbc07c5 | operation | unsupported
+  subj: Cancellation Event Recorded
+  q:    What details must be captured when the cancellation event is recorded in Purchase History, and is recording this event an auditable operation with act…
+  draft:The system should record cancellation events in Purchase History with sufficient audit details.
+  ev:   FRBLOCK-033
+  ref:  1.10 (0.38) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent… || 1.44 (0.37) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+OPERATION-24c5945214da | operation | unresolved
+  subj: Inventory Updated
+  q:    Is the inventory update operation triggered only after a successful order cancellation, and how should it behave if the inventory update fails?
+  draft:The system should define ordering and failure handling between order cancellation and inventory update.
+  ev:   FRBLOCK-033
+  ref:  1.35 (0.30) Order Cancellation Function :: Order Cancellation Function Description: Customers or administrators can cancel an order if it is in an eligible status. The system validates the actor’s authorization an… || 1.36 (0.24) Order Item Management Function :: Order Item Management Function Description: Authorized administrators can edit, remove, or update the status of items in an order where business rules permit. The system …

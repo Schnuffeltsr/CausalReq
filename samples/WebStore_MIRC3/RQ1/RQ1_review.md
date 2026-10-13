@@ -1,0 +1,232 @@
+# RQ1 人工审查材料：WebStore_MIRC3
+
+本文件只包含原始需求与 CausalReq 生成的新增需求；不包含任何基线输出，也没有自动质量评分。
+
+## 原始需求
+
+Functional Requirement
+# 1. Functional Requirements
+
+## 1.1 Customer Registration Function  
+**Function ID:** FR-01  
+**Description:** Customers can register for a new account by providing valid personal information and a valid email address. The system validates the email, checks for duplicate entries, and sends a confirmation email.  
+**Input:** Name, email, password, and optional contact information.  
+**Output:** A new customer account is created and stored in the Personal Information and Contact Information data entities. A confirmation email is sent to the customer's email address.
+
+## 1.2 Customer Login Function  
+**Function ID:** FR-02  
+**Description:** Customers can log in to the system by entering their registered email and password. The system validates the credentials and logs the login event.  
+**Input:** Email and password.  
+**Output:** The customer is authenticated and redirected to their personalized dashboard. The login event is recorded in the Purchase History data entity.
+
+## 1.3 Customer Logout Function  
+**Function ID:** FR-03  
+**Description:** Customers can log out of the system. The session is terminated and the logout event is recorded.  
+**Input:** The customer clicks the "Logout" button.  
+**Output:** The session is terminated, and the customer is redirected to the homepage or login page. The logout event is recorded in the Purchase History data entity.
+
+## 1.4 Personal Information Update Function  
+**Function ID:** FR-04  
+**Description:** Customers can update their personal information, such as name or email. The system validates the updated information and logs the event.  
+**Input:** Updated personal information fields.  
+**Output:** Updated personal information is stored in the Personal Information data entity. A confirmation email is sent, and the update event is recorded in the Purchase History data entity.
+
+## 1.5 Contact Information Management Function  
+**Function ID:** FR-05  
+**Description:** Customers can manage their contact information, such as phone number or address. The system validates the updated information and logs the event.  
+**Input:** Updated contact information fields.  
+**Output:** Updated contact information is stored in the Contact Information data entity. The update event is recorded in the Purchase History data entity.
+
+## 1.6 Purchase History Viewing Function  
+**Function ID:** FR-06  
+**Description:** Customers can view their purchase history, including order details and status. The system retrieves the history and logs the event.  
+**Input:** The customer navigates to the "Purchase History" section.  
+**Output:** The purchase history is displayed on the interface, including order number, date, product names, quantities, total amount, and status. The viewing event is recorded in the Purchase History data entity.
+
+## 1.7 Product Addition Function  
+**Function ID:** FR-07  
+**Description:** Administrators can add new products to the system, specifying details such as name, description, price, category, and inventory.  
+**Input:** Product name, description, price, category, and inventory quantity.  
+**Output:** A new product is stored in the Product data entity, associated with the selected category. The inventory is updated accordingly. The addition event is recorded in the Purchase History data entity.
+
+## 1.8 Product Removal Function  
+**Function ID:** FR-08  
+**Description:** Administrators can remove existing products from the system. The system checks for active orders or cart references before proceeding.  
+**Input:** The product to be removed is selected and the "Remove Product" button is clicked.  
+**Output:** The product is removed from the Product data entity, and the inventory is updated. The removal event is recorded in the Purchase History data entity.
+
+## 1.9 Product Information Update Function  
+**Function ID:** FR-09  
+**Description:** Administrators can update the information of existing products, such as name, description, price, category, or inventory.  
+**Input:** Updated product information fields.  
+**Output:** Updated product information is stored in the Product data entity. The inventory and category are updated accordingly. The update event is recorded in the Purchase History data entity.
+
+## 1.10 Product Categorization Function  
+**Function ID:** FR-10  
+**Description:** Administrators can assign or modify the category of a product. The system validates the category and updates the association.  
+**Input:** Product and new category selection.  
+**Output:** The product is assigned to the selected category in the Category data entity. The update is logged in the Purchase History data entity.
+
+## 1.11 Inventory Management Function  
+**Function ID:** FR-11  
+**Description:** Administrators can view and modify inventory levels for products. The system updates the inventory quantity and logs the event.  
+**Input:** Updated inventory quantity for a product.  
+**Output:** Updated inventory levels are stored in the Inventory data entity. The management event is recorded in the Purchase History data entity.
+
+## 1.12 Shopping Cart Creation Function  
+**Function ID:** FR-12  
+**Description:** Customers can add products to their shopping cart. The system checks product availability and updates inventory.  
+**Input:** Product selection and "Add to Cart" action.  
+**Output:** The product is added to the Shopping Cart data entity. Inventory quantity is updated. The customer is shown a confirmation message.
+
+## 1.13 Shopping Cart Modification Function  
+**Function ID:** FR-13  
+**Description:** Customers can modify the quantity or remove items from their shopping cart. The system updates the cart and inventory.  
+**Input:** Cart item selection, quantity change, or "Remove" action.  
+**Output:** The cart is updated in the Shopping Cart and CartItem data entities. Inventory levels are adjusted accordingly. The modification event is recorded in the Purchase History data entity.
+
+## 1.14 Shopping Cart Viewing Function  
+**Function ID:** FR-14  
+**Description:** Customers can view the contents of their shopping cart. The system displays a summary of the cart items and their total cost.  
+**Input:** The customer navigates to the "Shopping Cart" section.  
+**Output:** The system displays the list of cart items, including product name, quantity, price, and total amount. The viewing event is recorded in the Purchase History data entity.
+
+## 1.15 Checkout Function  
+**Function ID:** FR-15  
+**Description:** Customers can proceed to checkout, select a shipping address, and make a payment. The system processes the payment and creates an order.  
+**Input:** Cart items, shipping address, and payment method.  
+**Output:** An order is created in the Order data entity. Inventory levels are updated. A payment is processed and stored in the Payment data entity. An order confirmation email is sent. The checkout event is recorded in the Purchase History data entity.
+
+## 1.16 Order Confirmation Email Sending Function  
+**Function ID:** FR-16  
+**Description:** The system automatically sends an order confirmation email to the customer after successful checkout. The email includes order details and a confirmation message.  
+**Input:** Order details from the Order data entity.  
+**Output:** An Order Confirmation Email is stored in the EmailRecord data entity and sent to the customer's email address. The confirmation event is recorded in the Purchase History data entity.
+
+## 1.17 Payment Processing Function  
+**Function ID:** FR-17  
+**Description:** The system processes the customer's selected payment method and validates the payment details. A successful payment is stored and associated with the order.  
+**Input:** Payment method and payment details.  
+**Output:** The payment is stored in the Payment data entity. The order is created and stored in the Order data entity. Inventory levels are updated. The payment event is recorded in the Purchase History data entity.
+
+## 1.18 Plugin Development Function  
+**Function ID:** FR-18  
+**Description:** Administrators can develop or install new plugins to expand the system's functionality. The system validates the plugin and activates it.  
+**Input:** Plugin details or file.  
+**Output:** The plugin is stored in the Plugin data entity and activated. The system interface is updated to reflect the new functionality. The development or installation event is recorded in the Purchase History data entity.
+
+## 1.19 Plugin Configuration Function  
+**Function ID:** FR-19  
+**Description:** Administrators can configure the settings of an installed plugin. The system validates and applies the configuration.  
+**Input:** Plugin configuration settings.  
+**Output:** The Plugin data entity is updated with the new configuration. The system interface reflects the updated settings. The configuration event is recorded in the Purchase History data entity.
+
+## 1.20 User Interface Specification Compliance Checking Function  
+**Function ID:** FR-20  
+**Description:** Administrators can check the system's interface for compliance with the defined User Interface Specification. The system identifies and reports non-compliant elements.  
+**Input:** The administrator initiates a compliance check.  
+**Output:** A compliance report is generated and displayed to the administrator. Non-compliant elements are highlighted. The compliance check event is recorded in the Purchase History data entity.
+
+## 1.21 Manage CartItem Function  
+**Function ID:** FR-21  
+**Description:** Customers can modify the quantity or remove items in their shopping cart. The system updates the cart and inventory accordingly.  
+**Input:** Cart item selection, quantity change, or "Remove" action.  
+**Output:** The cart is updated in the CartItem data entity. Inventory levels are adjusted accordingly. The modification event is recorded in the Purchase History data entity.
+
+## 1.22 Manage OrderItem Function  
+**Function ID:** FR-22  
+**Description:** Administrators can edit, remove, or update the status of items in an order. The system updates the order and inventory accordingly.  
+**Input:** Order item selection, quantity change, or "Remove" action.  
+**Output:** The order item is updated in the OrderItem data entity. Inventory levels are adjusted accordingly. The modification event is recorded in the Purchase History data entity.
+
+## 1.23 Manage EmailRecord Function  
+**Function ID:** FR-23  
+**Description:** Administrators can view, edit, or delete email records. The system updates the EmailRecord data entity and logs the event.  
+**Input:** Email record selection and action (view, edit, or delete).  
+**Output:** The EmailRecord data entity is updated. The system displays a confirmation message. The management event is recorded in the Purchase History data entity.
+
+## 1.24 View EmailRecord Function  
+**Function ID:** FR-24  
+**Description:** Customers and administrators can view the details of an email record. The system displays the email content and logs the viewing event.  
+**Input:** Email record selection.  
+**Output:** The system displays the email details from the EmailRecord data entity. The viewing event is recorded in the Purchase History data entity.
+
+## 1.25 View CartItem Function  
+**Function ID:** FR-25  
+**Description:** Customers can view the details of a specific cart item. The system displays the product description, price, and quantity.  
+**Input:** Cart item selection.  
+**Output:** The system displays the cart item details from the CartItem data entity. The viewing event is recorded in the Purchase History data entity.
+
+## 1.26 View Payment Function  
+**Function ID:** FR-26  
+**Description:** Customers and administrators can view the details of a payment record. The system displays the payment method, amount, date, and status.  
+**Input:** Payment record selection.  
+**Output:** The system displays the payment details from the Payment data entity. The viewing event is recorded in the Purchase History data entity.
+
+## 1.27 Manage Administrator Function  
+**Function ID:** FR-27  
+**Description:** Administrators can manage other administrator accounts by updating or deactivating them. The system updates the administrator's information and logs the event.  
+**Input:** Administrator account selection and action (update or deactivate).  
+**Output:** The administrator account is updated in the Personal Information and Contact Information data entities. The management event is recorded in the Purchase History data entity.
+
+## 1.28 Manage Customer Function  
+**Function ID:** FR-28  
+**Description:** Administrators can manage customer accounts, including updating personal information or deactivating accounts.  
+**Input:** Customer account selection and action (update or deactivate).  
+**Output:** The customer's information is updated in the Personal Information and Contact Information data entities. The management event is recorded in the Purchase History data entity.
+
+## 1.29 Manage Category Function  
+**Function ID:** FR-29  
+**Description:** Administrators can add, update, or remove product categories. The system validates the category and updates the associations with products.  
+**Input:** Category selection and action (add, update, or delete).  
+**Output:** The Category data entity is updated. Product associations are modified accordingly. The management event is recorded in the Purchase History data entity.
+
+## 1.30 Manage User Interface Specification Function  
+**Function ID:** FR-30  
+**Description:** Administrators can modify the User Interface Specification to align with new design or functionality requirements. The system applies the changes and logs the event.  
+**Input:** Updated UI specification details.  
+**Output:** The User Interface Specification data entity is updated. The system interface is modified to reflect the changes. The management event is recorded in the Purchase History data entity.
+
+## 1.31 Manage Personal Information Function  
+**Function ID:** FR-31  
+**Description:** Customers or administrators can view or update a customer's personal information. The system validates the changes and logs the event.  
+**Input:** Personal information selection and action (view or update).  
+**Output:** The Personal Information data entity is updated if changes are made. The viewing or update event is recorded in the Purchase History data entity.
+
+## 1.32 Manage Contact Information Function  
+**Function ID:** FR-32  
+**Description:** Customers or administrators can view or update a customer's contact information. The system validates the changes and logs the event.  
+**Input:** Contact information selection and action (view or update).  
+**Output:** The Contact Information data entity is updated if changes are made. The viewing or update event is recorded in the Purchase History data entity.
+
+## 1.33 Order Cancellation Function  
+**Function ID:** FR-33  
+**Description:** Customers or administrators can cancel an order if it is in an eligible status. The system updates the order and inventory.  
+**Input:** Order selection and "Cancel Order" action.  
+**Output:** The order is marked as "Cancelled" in the Order data entity. Inventory levels are updated. The cancellation event is recorded in the Purchase History data entity.
+
+---
+
+## CausalReq：仅新增需求
+
+1. When a duplicate email is detected during customer registration, the system shall define and execute a documented next step, such as presenting a recovery or account-update path, without requiring full CRUD functionality.
+
+2. The system shall validate updated contact information fields according to specified criteria before storing the update.
+
+3. The system shall, when active orders or cart references are found during product removal, prevent the product removal and notify the administrator that the product is still in use.
+
+4. The system shall check product availability before recording the product in the shopping cart when the customer invokes Add to Cart.
+
+5. The system shall handle inventory update failures that occur after a product is added to the shopping cart, including ensuring cart/inventory consistency and notifying the customer.
+
+6. The system shall invoke the Compliance Check operation when the Compliance Check Initiation event occurs. The operation shall generate a compliance report, highlight non-compliant elements, and record the compliance check event in Purchase History.
+
+7. The system shall adjust inventory levels by the difference between the previous and new cart item quantities when a customer changes the quantity of an item in the cart.
+
+8. The system shall record, for each Payment Viewing Event, the viewed payment identifier, the viewing actor, and the view timestamp.
+
+9. The system shall treat deactivation of an administrator account as a distinct operation from update, changing the account status without overwriting the account's personal or contact information.
+
+10. The system shall apply only validated, changed personal information fields to the Personal Information data entity when an update is requested.
+
+11. The system shall validate the selected order against the defined cancellation eligibility rule before executing the Order Cancellation function.

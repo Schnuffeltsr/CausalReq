@@ -1,0 +1,2025 @@
+[
+  {
+    "name": "Customer Registration Function",
+    "type": "FUNCTION",
+    "active_meaning": "the customer registration function is available and can be used by customers to register a new account",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "Customer Registration Function"
+      }
+    ]
+  },
+  {
+    "name": "Customers",
+    "type": "ACTOR",
+    "active_meaning": "",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "Customers"
+      },
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "Customers"
+      },
+      {
+        "fr_id": "FRBLOCK-015",
+        "quote": "Customers"
+      },
+      {
+        "fr_id": "FRBLOCK-024",
+        "quote": "Customers"
+      }
+    ]
+  },
+  {
+    "name": "Personal Information",
+    "type": "DATA",
+    "active_meaning": "",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "Personal Information"
+      },
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "Personal Information data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-027",
+        "quote": "Personal Information"
+      },
+      {
+        "fr_id": "FRBLOCK-028",
+        "quote": "Personal Information"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Contact Information",
+    "type": "DATA",
+    "active_meaning": "",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "Contact Information"
+      },
+      {
+        "fr_id": "FRBLOCK-027",
+        "quote": "Contact Information"
+      },
+      {
+        "fr_id": "FRBLOCK-028",
+        "quote": "Contact Information"
+      },
+      {
+        "fr_id": "FRBLOCK-032",
+        "quote": "Contact Information data entity"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Confirmation Email Sent",
+    "type": "EVENT",
+    "active_meaning": "",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "sends a confirmation email"
+      },
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "A confirmation email is sent"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Valid Registration Information",
+    "type": "CONSTRAINT",
+    "active_meaning": "the requirement to provide valid personal information and a valid email address is enforced during registration",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "valid personal information and a valid email address"
+      }
+    ]
+  },
+  {
+    "name": "Customer Account Created",
+    "type": "EVENT",
+    "active_meaning": "a new customer account has been created and stored",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "A new customer account is created"
+      }
+    ]
+  },
+  {
+    "name": "Customer",
+    "type": "ACTOR",
+    "active_meaning": "",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "Customers"
+      },
+      {
+        "fr_id": "FRBLOCK-003",
+        "quote": "customer"
+      },
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "Customers"
+      },
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "Customers"
+      },
+      {
+        "fr_id": "FRBLOCK-012",
+        "quote": "Customers"
+      },
+      {
+        "fr_id": "FRBLOCK-013",
+        "quote": "Customers"
+      },
+      {
+        "fr_id": "FRBLOCK-014",
+        "quote": "The customer"
+      },
+      {
+        "fr_id": "FRBLOCK-016",
+        "quote": "customer"
+      },
+      {
+        "fr_id": "FRBLOCK-017",
+        "quote": "customer"
+      },
+      {
+        "fr_id": "FRBLOCK-021",
+        "quote": "Customers"
+      },
+      {
+        "fr_id": "FRBLOCK-025",
+        "quote": "Customers"
+      },
+      {
+        "fr_id": "FRBLOCK-026",
+        "quote": "Customers"
+      },
+      {
+        "fr_id": "FRBLOCK-031",
+        "quote": "Customers"
+      },
+      {
+        "fr_id": "FRBLOCK-032",
+        "quote": "Customers"
+      }
+    ]
+  },
+  {
+    "name": "Customer Login Function",
+    "type": "FUNCTION",
+    "active_meaning": "the customer login function is currently being performed for a customer",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "Customer Login Function"
+      }
+    ]
+  },
+  {
+    "name": "Login Event",
+    "type": "EVENT",
+    "active_meaning": "a customer login event has occurred and is recorded",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "login event"
+      }
+    ]
+  },
+  {
+    "name": "Authenticated",
+    "type": "STATE",
+    "active_meaning": "the customer has been successfully authenticated by the system",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "authenticated"
+      }
+    ]
+  },
+  {
+    "name": "Personalized Dashboard",
+    "type": "STATE",
+    "active_meaning": "the customer has been redirected to their personalized dashboard",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "personalized dashboard"
+      }
+    ]
+  },
+  {
+    "name": "Purchase History",
+    "type": "DATA",
+    "active_meaning": "",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-003",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-013",
+        "quote": "Purchase History"
+      },
+      {
+        "fr_id": "FRBLOCK-014",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-016",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-020",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-022",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-023",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-027",
+        "quote": "Purchase History"
+      },
+      {
+        "fr_id": "FRBLOCK-028",
+        "quote": "Purchase History"
+      },
+      {
+        "fr_id": "FRBLOCK-032",
+        "quote": "Purchase History data entity"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Customer Logout Function",
+    "type": "FUNCTION",
+    "active_meaning": "the customer logout function is executed successfully, terminating the session and recording the logout event",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-003",
+        "quote": "Customer Logout Function"
+      }
+    ]
+  },
+  {
+    "name": "Logout Event",
+    "type": "EVENT",
+    "active_meaning": "the customer has logged out and the logout event has been recorded",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-003",
+        "quote": "logout event"
+      }
+    ]
+  },
+  {
+    "name": "Session Terminated",
+    "type": "STATE",
+    "active_meaning": "the customer session is in the terminated state",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-003",
+        "quote": "session is terminated"
+      }
+    ]
+  },
+  {
+    "name": "Personal Information Update",
+    "type": "FUNCTION",
+    "active_meaning": "the customer updates their personal information (name or email) using this function",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "Personal Information Update"
+      }
+    ]
+  },
+  {
+    "name": "Validate Updated Information (FUNCTION)",
+    "type": "FUNCTION",
+    "active_meaning": "the system successfully validates the updated personal information fields",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "The system validates the updated information"
+      }
+    ],
+    "name_collision_resolved": true
+  },
+  {
+    "name": "Update Event Recorded",
+    "type": "EVENT",
+    "active_meaning": "the personal information update event is recorded in the Purchase History data entity",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "the update event is recorded"
+      }
+    ]
+  },
+  {
+    "name": "Personal Information Updated",
+    "type": "STATE",
+    "active_meaning": "the customer's personal information has been successfully updated and stored",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "Updated personal information is stored"
+      }
+    ]
+  },
+  {
+    "name": "Manage Contact Information",
+    "type": "FUNCTION",
+    "active_meaning": "",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "manage their contact information"
+      },
+      {
+        "fr_id": "FRBLOCK-032",
+        "quote": "Manage Contact Information Function"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Validate Updated Information (CONSTRAINT)",
+    "type": "CONSTRAINT",
+    "active_meaning": "the updated contact information has passed validation",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "validates the updated information"
+      }
+    ],
+    "name_collision_resolved": true
+  },
+  {
+    "name": "Contact Information Update Event",
+    "type": "EVENT",
+    "active_meaning": "the contact information update event has been recorded in Purchase History",
+    "confidence": 0.93,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "update event"
+      }
+    ]
+  },
+  {
+    "name": "Contact Information data entity",
+    "type": "DATA",
+    "active_meaning": "the Contact Information data entity contains the updated contact information",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "Contact Information data entity"
+      }
+    ]
+  },
+  {
+    "name": "Purchase History data entity",
+    "type": "DATA",
+    "active_meaning": "",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-009",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-010",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-017",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-019",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-021",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-024",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-025",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-026",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-029",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-030",
+        "quote": "Purchase History data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-031",
+        "quote": "Purchase History data entity"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Updated contact information fields",
+    "type": "DATA",
+    "active_meaning": "the customer has provided updated contact information fields",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "Updated contact information fields"
+      }
+    ]
+  },
+  {
+    "name": "Contact Information Stored",
+    "type": "STATE",
+    "active_meaning": "the updated contact information has been stored in the Contact Information data entity",
+    "confidence": 0.93,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "Updated contact information is stored"
+      }
+    ]
+  },
+  {
+    "name": "Purchase History Viewing Function",
+    "type": "FUNCTION",
+    "active_meaning": "the purchase history viewing function is executed to retrieve and display the customer's purchase history",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "Purchase History Viewing Function"
+      }
+    ]
+  },
+  {
+    "name": "Purchase History Displayed",
+    "type": "STATE",
+    "active_meaning": "the purchase history is displayed on the interface",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "The purchase history is displayed on the interface"
+      }
+    ]
+  },
+  {
+    "name": "Viewing Event Recorded",
+    "type": "EVENT",
+    "active_meaning": "",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "The viewing event is recorded in the Purchase History data entity."
+      },
+      {
+        "fr_id": "FRBLOCK-014",
+        "quote": "The viewing event is recorded in the Purchase History data entity."
+      },
+      {
+        "fr_id": "FRBLOCK-025",
+        "quote": "The viewing event is recorded in the Purchase History data entity."
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Product Addition Function",
+    "type": "FUNCTION",
+    "active_meaning": "an administrator adds a new product to the system",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "Product Addition Function"
+      }
+    ]
+  },
+  {
+    "name": "Administrator",
+    "type": "ACTOR",
+    "active_meaning": "",
+    "confidence": 0.98,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-009",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-011",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-018",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-020",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-022",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-023",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-026",
+        "quote": "administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-027",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-031",
+        "quote": "administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-032",
+        "quote": "administrators"
+      }
+    ]
+  },
+  {
+    "name": "Product",
+    "type": "DATA",
+    "active_meaning": "",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "Product data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "existing products"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Addition Event",
+    "type": "EVENT",
+    "active_meaning": "the product addition event has been recorded in the Purchase History data entity",
+    "confidence": 0.92,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "The addition event is recorded in the Purchase History data entity"
+      }
+    ]
+  },
+  {
+    "name": "Inventory Updated",
+    "type": "STATE",
+    "active_meaning": "",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "The inventory is updated accordingly."
+      },
+      {
+        "fr_id": "FRBLOCK-015",
+        "quote": "Inventory levels are updated."
+      },
+      {
+        "fr_id": "FRBLOCK-017",
+        "quote": "Inventory levels are updated"
+      },
+      {
+        "fr_id": "FRBLOCK-033",
+        "quote": "Inventory levels are updated"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Product Removal Function",
+    "type": "FUNCTION",
+    "active_meaning": "the product removal function has removed the selected product from the system",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "Product Removal Function"
+      }
+    ]
+  },
+  {
+    "name": "Administrators",
+    "type": "ACTOR",
+    "active_meaning": "",
+    "confidence": 0.98,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-010",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-019",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-024",
+        "quote": "administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-028",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-029",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-030",
+        "quote": "Administrators"
+      }
+    ]
+  },
+  {
+    "name": "Inventory",
+    "type": "DATA",
+    "active_meaning": "",
+    "confidence": 0.93,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "inventory is updated"
+      },
+      {
+        "fr_id": "FRBLOCK-013",
+        "quote": "Inventory levels"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Product Removal Recorded",
+    "type": "EVENT",
+    "active_meaning": "the removal event has been recorded in the Purchase History data entity",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "The removal event is recorded in the Purchase History data entity."
+      }
+    ]
+  },
+  {
+    "name": "Active Order/Cart Check",
+    "type": "CONSTRAINT",
+    "active_meaning": "the system has checked and found no active orders or cart references that prevent product removal",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "The system checks for active orders or cart references before proceeding."
+      }
+    ]
+  },
+  {
+    "name": "Update Product Information",
+    "type": "FUNCTION",
+    "active_meaning": "The product information update function has been successfully executed by an Administrator and the product data is updated.",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-009",
+        "quote": "Product Information Update Function"
+      }
+    ]
+  },
+  {
+    "name": "Updated Product Information Fields",
+    "type": "DATA",
+    "active_meaning": "The updated product information fields contain the new values for name, description, price, category, or inventory.",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-009",
+        "quote": "Updated product information fields"
+      }
+    ]
+  },
+  {
+    "name": "Product Data Entity",
+    "type": "DATA",
+    "active_meaning": "The Product data entity has been updated with the new product information fields.",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-009",
+        "quote": "Product data entity"
+      }
+    ]
+  },
+  {
+    "name": "Update Event",
+    "type": "EVENT",
+    "active_meaning": "The update event has been recorded in the Purchase History data entity.",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-009",
+        "quote": "update event"
+      }
+    ]
+  },
+  {
+    "name": "Inventory and Category Updated",
+    "type": "STATE",
+    "active_meaning": "The inventory and category have been updated accordingly after the product information update.",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-009",
+        "quote": "The inventory and category are updated accordingly"
+      }
+    ]
+  },
+  {
+    "name": "Product Categorization Function",
+    "type": "FUNCTION",
+    "active_meaning": "the product categorization function has been executed, including validation of the category and update of the association",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-010",
+        "quote": "Product Categorization Function"
+      }
+    ]
+  },
+  {
+    "name": "Product Assigned to Selected Category",
+    "type": "STATE",
+    "active_meaning": "the product is currently associated with the selected category in the Category data entity",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-010",
+        "quote": "The product is assigned to the selected category"
+      }
+    ]
+  },
+  {
+    "name": "Category Update Logged",
+    "type": "EVENT",
+    "active_meaning": "the category update has been logged in the Purchase History data entity",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-010",
+        "quote": "The update is logged in the Purchase History data entity"
+      }
+    ]
+  },
+  {
+    "name": "Category Validation",
+    "type": "CONSTRAINT",
+    "active_meaning": "the selected category passes the system's validation rules before the association is updated",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-010",
+        "quote": "The system validates the category"
+      }
+    ]
+  },
+  {
+    "name": "Category Data Entity",
+    "type": "DATA",
+    "active_meaning": "",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-010",
+        "quote": "Category data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-029",
+        "quote": "Category data entity"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Inventory Management Function",
+    "type": "FUNCTION",
+    "active_meaning": "the inventory management function is being performed by an administrator",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-011",
+        "quote": "Inventory Management Function"
+      }
+    ]
+  },
+  {
+    "name": "View Inventory Levels",
+    "type": "FUNCTION",
+    "active_meaning": "an administrator is viewing inventory levels for products",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-011",
+        "quote": "view"
+      }
+    ]
+  },
+  {
+    "name": "Modify Inventory Levels",
+    "type": "FUNCTION",
+    "active_meaning": "an administrator has modified inventory levels for a product",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-011",
+        "quote": "modify inventory levels"
+      }
+    ]
+  },
+  {
+    "name": "Inventory Quantity Update",
+    "type": "EVENT",
+    "active_meaning": "the system has updated the inventory quantity for a product",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-011",
+        "quote": "updates the inventory quantity"
+      }
+    ]
+  },
+  {
+    "name": "Management Event Recording",
+    "type": "EVENT",
+    "active_meaning": "the system has logged the inventory management event",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-011",
+        "quote": "logs the event"
+      }
+    ]
+  },
+  {
+    "name": "Inventory Levels Stored",
+    "type": "STATE",
+    "active_meaning": "the updated inventory levels are stored in the Inventory data entity",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-011",
+        "quote": "Updated inventory levels are stored"
+      }
+    ]
+  },
+  {
+    "name": "Purchase History Recorded",
+    "type": "STATE",
+    "active_meaning": "the management event is recorded in the Purchase History data entity",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-011",
+        "quote": "The management event is recorded"
+      }
+    ]
+  },
+  {
+    "name": "Shopping Cart Creation Function",
+    "type": "FUNCTION",
+    "active_meaning": "The shopping cart creation function is active when a customer selects products and invokes Add to Cart.",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-012",
+        "quote": "Shopping Cart Creation Function"
+      }
+    ]
+  },
+  {
+    "name": "Shopping Cart",
+    "type": "DATA",
+    "active_meaning": "",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-012",
+        "quote": "Shopping Cart data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-013",
+        "quote": "Shopping Cart"
+      },
+      {
+        "fr_id": "FRBLOCK-014",
+        "quote": "their shopping cart"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Check Product Availability",
+    "type": "FUNCTION",
+    "active_meaning": "The system has checked product availability and confirmed that the product can be added to the cart.",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-012",
+        "quote": "checks product availability"
+      }
+    ]
+  },
+  {
+    "name": "Add to Cart",
+    "type": "EVENT",
+    "active_meaning": "The customer has triggered the Add to Cart action for the selected product.",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-012",
+        "quote": "\"Add to Cart\" action"
+      }
+    ]
+  },
+  {
+    "name": "Product Added to Shopping Cart",
+    "type": "STATE",
+    "active_meaning": "The product has been successfully recorded in the shopping cart data entity.",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-012",
+        "quote": "The product is added to the Shopping Cart data entity"
+      }
+    ]
+  },
+  {
+    "name": "Inventory Quantity Updated",
+    "type": "STATE",
+    "active_meaning": "The inventory quantity has been updated to reflect the product addition.",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-012",
+        "quote": "Inventory quantity is updated"
+      }
+    ]
+  },
+  {
+    "name": "Confirmation Message Shown",
+    "type": "STATE",
+    "active_meaning": "The customer has been shown a confirmation message after the product addition.",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-012",
+        "quote": "The customer is shown a confirmation message"
+      }
+    ]
+  },
+  {
+    "name": "Shopping Cart Modification Function",
+    "type": "FUNCTION",
+    "active_meaning": "the customer modifies the quantity or removes an item from the shopping cart",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-013",
+        "quote": "Shopping Cart Modification Function"
+      }
+    ]
+  },
+  {
+    "name": "CartItem",
+    "type": "DATA",
+    "active_meaning": "the cart item data entity has been updated to reflect the quantity change or removal",
+    "confidence": 0.93,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-013",
+        "quote": "CartItem"
+      }
+    ]
+  },
+  {
+    "name": "Modification Event",
+    "type": "EVENT",
+    "active_meaning": "",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-013",
+        "quote": "modification event"
+      },
+      {
+        "fr_id": "FRBLOCK-021",
+        "quote": "modification event"
+      },
+      {
+        "fr_id": "FRBLOCK-022",
+        "quote": "The modification event is recorded"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Shopping Cart Viewing Function",
+    "type": "FUNCTION",
+    "active_meaning": "the customer is actively viewing the contents of their shopping cart",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-014",
+        "quote": "Shopping Cart Viewing Function"
+      }
+    ]
+  },
+  {
+    "name": "Cart Items",
+    "type": "DATA",
+    "active_meaning": "the cart items are present in the shopping cart and are included in the displayed summary",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-014",
+        "quote": "cart items"
+      }
+    ]
+  },
+  {
+    "name": "Cart Summary Displayed",
+    "type": "STATE",
+    "active_meaning": "the system is currently displaying the cart summary to the customer",
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-014",
+        "quote": "The system displays a summary of the cart items and their total cost."
+      }
+    ]
+  },
+  {
+    "name": "Checkout Function",
+    "type": "FUNCTION",
+    "active_meaning": "the checkout process is executed: the customer selects a shipping address and payment method, and the system processes the payment and creates an order",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-015",
+        "quote": "Checkout Function"
+      }
+    ]
+  },
+  {
+    "name": "Order Created",
+    "type": "STATE",
+    "active_meaning": "an order has been created and stored in the Order data entity",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-015",
+        "quote": "An order is created in the Order data entity."
+      }
+    ]
+  },
+  {
+    "name": "Payment Processed",
+    "type": "STATE",
+    "active_meaning": "the payment has been processed and stored in the Payment data entity",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-015",
+        "quote": "A payment is processed and stored in the Payment data entity."
+      }
+    ]
+  },
+  {
+    "name": "Order Confirmation Email Sent",
+    "type": "EVENT",
+    "active_meaning": "an order confirmation email has been sent",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-015",
+        "quote": "An order confirmation email is sent."
+      }
+    ]
+  },
+  {
+    "name": "Checkout Event Recorded",
+    "type": "EVENT",
+    "active_meaning": "the checkout event has been recorded in the Purchase History data entity",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-015",
+        "quote": "The checkout event is recorded in the Purchase History data entity."
+      }
+    ]
+  },
+  {
+    "name": "Order Confirmation Email Sending Function",
+    "type": "FUNCTION",
+    "active_meaning": "the system automatically sends an order confirmation email to the customer after successful checkout",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-016",
+        "quote": "Order Confirmation Email Sending Function"
+      }
+    ]
+  },
+  {
+    "name": "Successful Checkout",
+    "type": "STATE",
+    "active_meaning": "the customer has completed the checkout process successfully",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-016",
+        "quote": "successful checkout"
+      }
+    ]
+  },
+  {
+    "name": "Order",
+    "type": "DATA",
+    "active_meaning": "order details are available from the Order data entity as input to the function",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-016",
+        "quote": "Order data entity"
+      }
+    ]
+  },
+  {
+    "name": "EmailRecord",
+    "type": "DATA",
+    "active_meaning": "",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-016",
+        "quote": "EmailRecord data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-023",
+        "quote": "EmailRecord data entity"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Confirmation Event",
+    "type": "EVENT",
+    "active_meaning": "the confirmation event has occurred and is recorded in the Purchase History data entity",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-016",
+        "quote": "confirmation event"
+      }
+    ]
+  },
+  {
+    "name": "System",
+    "type": "ACTOR",
+    "active_meaning": "",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-016",
+        "quote": "system"
+      }
+    ]
+  },
+  {
+    "name": "Payment Processing",
+    "type": "FUNCTION",
+    "active_meaning": "the system has processed the customer's selected payment method and validated the payment details",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-017",
+        "quote": "Payment Processing Function"
+      }
+    ]
+  },
+  {
+    "name": "Payment Data Entity",
+    "type": "DATA",
+    "active_meaning": "",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-017",
+        "quote": "Payment data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-026",
+        "quote": "Payment data entity"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Order Data Entity",
+    "type": "DATA",
+    "active_meaning": "the order data entity contains the created order record",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-017",
+        "quote": "Order data entity"
+      }
+    ]
+  },
+  {
+    "name": "Successful Payment",
+    "type": "STATE",
+    "active_meaning": "the payment has been successfully processed, stored, and associated with the order",
+    "confidence": 0.92,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-017",
+        "quote": "successful payment"
+      }
+    ]
+  },
+  {
+    "name": "Payment Event",
+    "type": "EVENT",
+    "active_meaning": "the payment event has been recorded in the Purchase History data entity",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-017",
+        "quote": "payment event"
+      }
+    ]
+  },
+  {
+    "name": "Plugin Development Function",
+    "type": "FUNCTION",
+    "active_meaning": "the system is executing the process of developing or installing a new plugin",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-018",
+        "quote": "develop or install new plugins"
+      }
+    ]
+  },
+  {
+    "name": "Plugin Data",
+    "type": "DATA",
+    "active_meaning": "the plugin record has been stored in the Plugin data entity",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-018",
+        "quote": "Plugin data entity"
+      }
+    ]
+  },
+  {
+    "name": "Purchase History Data",
+    "type": "DATA",
+    "active_meaning": "a record of the plugin development or installation event has been created in the Purchase History data entity",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-018",
+        "quote": "Purchase History data entity"
+      }
+    ]
+  },
+  {
+    "name": "Plugin Validation Constraint",
+    "type": "CONSTRAINT",
+    "active_meaning": "the plugin has passed validation and is allowed to be activated",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-018",
+        "quote": "validates the plugin"
+      }
+    ]
+  },
+  {
+    "name": "Plugin Activated State",
+    "type": "STATE",
+    "active_meaning": "the plugin is active and its functionality is available in the system",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-018",
+        "quote": "activated"
+      }
+    ]
+  },
+  {
+    "name": "Plugin Development Event",
+    "type": "EVENT",
+    "active_meaning": "the development or installation of the plugin has occurred and been recorded",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-018",
+        "quote": "development or installation event"
+      }
+    ]
+  },
+  {
+    "name": "System Interface Updated",
+    "type": "STATE",
+    "active_meaning": "the system interface has been updated to reflect the new plugin functionality",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-018",
+        "quote": "system interface is updated"
+      }
+    ]
+  },
+  {
+    "name": "Configure Plugin Settings",
+    "type": "FUNCTION",
+    "active_meaning": "the administrator is configuring the settings of an installed plugin and the system validates and applies the configuration",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-019",
+        "quote": "Administrators can configure the settings of an installed plugin."
+      }
+    ]
+  },
+  {
+    "name": "Plugin Data Entity",
+    "type": "DATA",
+    "active_meaning": "the Plugin data entity has been updated with the new configuration",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-019",
+        "quote": "Plugin data entity"
+      }
+    ]
+  },
+  {
+    "name": "Configuration Event",
+    "type": "EVENT",
+    "active_meaning": "the configuration event has been recorded in the Purchase History data entity",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-019",
+        "quote": "configuration event"
+      }
+    ]
+  },
+  {
+    "name": "System Interface Reflects Updated Settings",
+    "type": "STATE",
+    "active_meaning": "the system interface is reflecting the updated plugin settings",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-019",
+        "quote": "The system interface reflects the updated settings."
+      }
+    ]
+  },
+  {
+    "name": "User Interface Specification Compliance Checking Function",
+    "type": "FUNCTION",
+    "active_meaning": "the compliance check function is performed on the system's interface",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-020",
+        "quote": "User Interface Specification Compliance Checking Function"
+      }
+    ]
+  },
+  {
+    "name": "Compliance Check Initiation",
+    "type": "EVENT",
+    "active_meaning": "an administrator has initiated a compliance check",
+    "confidence": 0.92,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-020",
+        "quote": "The administrator initiates a compliance check."
+      }
+    ]
+  },
+  {
+    "name": "User Interface Specification Compliance",
+    "type": "CONSTRAINT",
+    "active_meaning": "the system's interface is compliant with the defined User Interface Specification",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-020",
+        "quote": "compliance with the defined User Interface Specification"
+      }
+    ]
+  },
+  {
+    "name": "Compliance Report",
+    "type": "DATA",
+    "active_meaning": "a compliance report has been generated and is ready for display to the administrator",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-020",
+        "quote": "A compliance report is generated"
+      }
+    ]
+  },
+  {
+    "name": "Non-compliant Element Highlight",
+    "type": "STATE",
+    "active_meaning": "at least one non-compliant UI element is highlighted in the compliance report",
+    "confidence": 0.88,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-020",
+        "quote": "Non-compliant elements are highlighted."
+      }
+    ]
+  },
+  {
+    "name": "Manage CartItem Function",
+    "type": "FUNCTION",
+    "active_meaning": "the Manage CartItem function is executed successfully when a customer modifies the quantity of an item or removes it from the cart, and the system updates the cart and inventory accordingly",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-021",
+        "quote": "Manage CartItem Function"
+      }
+    ]
+  },
+  {
+    "name": "CartItem Data Entity",
+    "type": "DATA",
+    "active_meaning": "",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-021",
+        "quote": "CartItem data entity"
+      },
+      {
+        "fr_id": "FRBLOCK-025",
+        "quote": "CartItem data entity"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Inventory Adjustment",
+    "type": "STATE",
+    "active_meaning": "inventory levels have been adjusted to reflect the cart item quantity change or item removal",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-021",
+        "quote": "Inventory levels are adjusted accordingly"
+      }
+    ]
+  },
+  {
+    "name": "Manage OrderItem",
+    "type": "FUNCTION",
+    "active_meaning": "an administrator is editing, removing, or updating the status of items in an order",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-022",
+        "quote": "Manage OrderItem"
+      }
+    ]
+  },
+  {
+    "name": "OrderItem",
+    "type": "DATA",
+    "active_meaning": "the order item has been updated in the OrderItem data entity",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-022",
+        "quote": "OrderItem data entity"
+      }
+    ]
+  },
+  {
+    "name": "Inventory Levels",
+    "type": "DATA",
+    "active_meaning": "inventory levels have been adjusted accordingly",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-022",
+        "quote": "Inventory levels"
+      }
+    ]
+  },
+  {
+    "name": "Order Item Status Update",
+    "type": "STATE",
+    "active_meaning": "the status of an item in an order has been updated",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-022",
+        "quote": "update the status of items"
+      }
+    ]
+  },
+  {
+    "name": "Manage EmailRecord",
+    "type": "FUNCTION",
+    "active_meaning": "the Manage EmailRecord function is currently being performed (viewing, editing, or deleting an email record)",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-023",
+        "quote": "Manage EmailRecord Function"
+      }
+    ]
+  },
+  {
+    "name": "Email Record Management Event",
+    "type": "EVENT",
+    "active_meaning": "the email record management event (view, edit, or delete) has been logged by the system",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-023",
+        "quote": "management event is recorded in the Purchase History data entity"
+      }
+    ]
+  },
+  {
+    "name": "Confirmation Message Displayed",
+    "type": "EVENT",
+    "active_meaning": "the system has displayed a confirmation message to the administrator",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-023",
+        "quote": "The system displays a confirmation message"
+      }
+    ]
+  },
+  {
+    "name": "View EmailRecord Function",
+    "type": "FUNCTION",
+    "active_meaning": "the view email record function is executed to display email details and log the viewing event",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-024",
+        "quote": "View EmailRecord Function"
+      }
+    ]
+  },
+  {
+    "name": "EmailRecord Data Entity",
+    "type": "DATA",
+    "active_meaning": "the EmailRecord data entity is instantiated with the selected email details and displayed",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-024",
+        "quote": "EmailRecord data entity"
+      }
+    ]
+  },
+  {
+    "name": "Viewing Event",
+    "type": "EVENT",
+    "active_meaning": "the viewing event for the email record has been logged/recorded in Purchase History",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-024",
+        "quote": "viewing event"
+      }
+    ]
+  },
+  {
+    "name": "View CartItem Function",
+    "type": "FUNCTION",
+    "active_meaning": "the customer is using the View CartItem function to view details of a specific cart item",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-025",
+        "quote": "View CartItem Function"
+      }
+    ]
+  },
+  {
+    "name": "Cart Item Details Displayed",
+    "type": "STATE",
+    "active_meaning": "the system is displaying the product description, price, and quantity of the specific cart item to the customer",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-025",
+        "quote": "The system displays the product description, price, and quantity."
+      }
+    ]
+  },
+  {
+    "name": "View Payment Function",
+    "type": "FUNCTION",
+    "active_meaning": "the payment details are displayed by the system to the customer or administrator",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-026",
+        "quote": "View Payment Function"
+      }
+    ]
+  },
+  {
+    "name": "Payment Viewing Event",
+    "type": "EVENT",
+    "active_meaning": "the viewing event has been recorded in the Purchase History data entity",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-026",
+        "quote": "The viewing event is recorded in the Purchase History data entity."
+      }
+    ]
+  },
+  {
+    "name": "Manage Administrator Function",
+    "type": "FUNCTION",
+    "active_meaning": "an administrator manages another administrator account by updating or deactivating it",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-027",
+        "quote": "Manage Administrator Function"
+      }
+    ]
+  },
+  {
+    "name": "Management Event",
+    "type": "EVENT",
+    "active_meaning": "",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-027",
+        "quote": "management event"
+      },
+      {
+        "fr_id": "FRBLOCK-028",
+        "quote": "management event"
+      },
+      {
+        "fr_id": "FRBLOCK-029",
+        "quote": "management event"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Manage Customer Function",
+    "type": "FUNCTION",
+    "active_meaning": "the manage customer function is executed to update or deactivate a customer account",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-028",
+        "quote": "Manage Customer Function"
+      }
+    ]
+  },
+  {
+    "name": "Manage Category Function",
+    "type": "FUNCTION",
+    "active_meaning": "the manage category function is being executed by an administrator",
+    "confidence": 0.96,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-029",
+        "quote": "Manage Category Function"
+      }
+    ]
+  },
+  {
+    "name": "Validate Category",
+    "type": "FUNCTION",
+    "active_meaning": "the system is validating the category during the manage category function",
+    "confidence": 0.88,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-029",
+        "quote": "validates the category"
+      }
+    ]
+  },
+  {
+    "name": "Product Associations",
+    "type": "DATA",
+    "active_meaning": "product associations have been modified accordingly",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-029",
+        "quote": "Product associations"
+      }
+    ]
+  },
+  {
+    "name": "Manage User Interface Specification Function",
+    "type": "FUNCTION",
+    "active_meaning": "the system is executing the function that modifies the User Interface Specification based on administrator input",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-030",
+        "quote": "Manage User Interface Specification Function"
+      }
+    ]
+  },
+  {
+    "name": "User Interface Specification data entity",
+    "type": "DATA",
+    "active_meaning": "the User Interface Specification data entity has been updated with the latest specification details",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-030",
+        "quote": "User Interface Specification data entity"
+      }
+    ]
+  },
+  {
+    "name": "System Interface Modified",
+    "type": "STATE",
+    "active_meaning": "the system interface reflects the modified User Interface Specification",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-030",
+        "quote": "system interface is modified"
+      }
+    ]
+  },
+  {
+    "name": "Management Event Recorded",
+    "type": "EVENT",
+    "active_meaning": "the management event for the User Interface Specification change has been recorded in the Purchase History data entity",
+    "confidence": 0.94,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-030",
+        "quote": "management event is recorded"
+      }
+    ]
+  },
+  {
+    "name": "Manage Personal Information",
+    "type": "FUNCTION",
+    "active_meaning": "the system provides customers or administrators the ability to view or update a customer's personal information",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-031",
+        "quote": "Manage Personal Information"
+      }
+    ]
+  },
+  {
+    "name": "Personal Information Data Entity",
+    "type": "DATA",
+    "active_meaning": "the personal information data entity has been updated with validated changes",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-031",
+        "quote": "Personal Information data entity"
+      }
+    ]
+  },
+  {
+    "name": "Validate Personal Information Changes",
+    "type": "FUNCTION",
+    "active_meaning": "the system has successfully validated the personal information changes before updating the data entity",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-031",
+        "quote": "validates the changes"
+      }
+    ]
+  },
+  {
+    "name": "Personal Information View or Update Event",
+    "type": "EVENT",
+    "active_meaning": "a customer or administrator has viewed or updated personal information and the event has been recorded in Purchase History",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-031",
+        "quote": "viewing or update event"
+      }
+    ]
+  },
+  {
+    "name": "Viewing or Update Event",
+    "type": "EVENT",
+    "active_meaning": "the viewing or update event has been recorded in the Purchase History data entity",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-032",
+        "quote": "viewing or update event"
+      }
+    ]
+  },
+  {
+    "name": "Validate Changes",
+    "type": "CONSTRAINT",
+    "active_meaning": "the system has validated the changes to contact information",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-032",
+        "quote": "validates the changes"
+      }
+    ]
+  },
+  {
+    "name": "Order Cancellation",
+    "type": "FUNCTION",
+    "active_meaning": "the order cancellation function is executed for a selected order",
+    "confidence": 0.96,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-033",
+        "quote": "Order Cancellation Function"
+      }
+    ]
+  },
+  {
+    "name": "Eligible Order Status",
+    "type": "STATE",
+    "active_meaning": "the selected order is in an eligible status for cancellation",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-033",
+        "quote": "eligible status"
+      }
+    ]
+  },
+  {
+    "name": "Cancelled Order Status",
+    "type": "STATE",
+    "active_meaning": "the order is marked as Cancelled in the Order data entity",
+    "confidence": 0.97,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-033",
+        "quote": "The order is marked as \"Cancelled\" in the Order data entity"
+      }
+    ]
+  },
+  {
+    "name": "Cancellation Event Recorded",
+    "type": "EVENT",
+    "active_meaning": "the cancellation event is recorded in the Purchase History data entity",
+    "confidence": 0.97,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-033",
+        "quote": "The cancellation event is recorded in the Purchase History data entity"
+      }
+    ]
+  },
+  {
+    "name": "Eligibility Constraint for Cancellation",
+    "type": "CONSTRAINT",
+    "active_meaning": "the system enforces that an order can only be cancelled if it is in an eligible status",
+    "confidence": 0.92,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-033",
+        "quote": "can cancel an order if it is in an eligible status"
+      }
+    ]
+  }
+]

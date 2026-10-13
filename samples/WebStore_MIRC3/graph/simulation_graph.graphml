@@ -1,0 +1,1058 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d5" for="edge" attr.name="weight" attr.type="string"/>
+<key id="d4" for="edge" attr.name="direction" attr.type="string"/>
+<key id="d3" for="edge" attr.name="sign" attr.type="string"/>
+<key id="d2" for="node" attr.name="active_meaning" attr.type="string"/>
+<key id="d1" for="node" attr.name="confidence" attr.type="string"/>
+<key id="d0" for="node" attr.name="type" attr.type="string"/>
+<graph edgedefault="directed"><node id="Customer Registration Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the customer registration function is available and can be used by customers to register a new account</data>
+</node>
+<node id="Valid Registration Information">
+  <data key="d0">CONSTRAINT</data>
+  <data key="d1">0.85</data>
+  <data key="d2">the requirement to provide valid personal information and a valid email address is enforced during registration</data>
+</node>
+<node id="Customer Account Created">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.95</data>
+  <data key="d2">a new customer account has been created and stored</data>
+</node>
+<node id="Customer Login Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the customer login function is currently being performed for a customer</data>
+</node>
+<node id="Login Event">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">a customer login event has occurred and is recorded</data>
+</node>
+<node id="Authenticated">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the customer has been successfully authenticated by the system</data>
+</node>
+<node id="Personalized Dashboard">
+  <data key="d0">STATE</data>
+  <data key="d1">0.85</data>
+  <data key="d2">the customer has been redirected to their personalized dashboard</data>
+</node>
+<node id="Customer Logout Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the customer logout function is executed successfully, terminating the session and recording the logout event</data>
+</node>
+<node id="Logout Event">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the customer has logged out and the logout event has been recorded</data>
+</node>
+<node id="Session Terminated">
+  <data key="d0">STATE</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the customer session is in the terminated state</data>
+</node>
+<node id="Personal Information Update">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the customer updates their personal information (name or email) using this function</data>
+</node>
+<node id="Validate Updated Information (FUNCTION)">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system successfully validates the updated personal information fields</data>
+</node>
+<node id="Update Event Recorded">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the personal information update event is recorded in the Purchase History data entity</data>
+</node>
+<node id="Personal Information Updated">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the customer's personal information has been successfully updated and stored</data>
+</node>
+<node id="Validate Updated Information (CONSTRAINT)">
+  <data key="d0">CONSTRAINT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the updated contact information has passed validation</data>
+</node>
+<node id="Contact Information Update Event">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.93</data>
+  <data key="d2">the contact information update event has been recorded in Purchase History</data>
+</node>
+<node id="Contact Information data entity">
+  <data key="d0">DATA</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the Contact Information data entity contains the updated contact information</data>
+</node>
+<node id="Updated contact information fields">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the customer has provided updated contact information fields</data>
+</node>
+<node id="Contact Information Stored">
+  <data key="d0">STATE</data>
+  <data key="d1">0.93</data>
+  <data key="d2">the updated contact information has been stored in the Contact Information data entity</data>
+</node>
+<node id="Purchase History Viewing Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the purchase history viewing function is executed to retrieve and display the customer's purchase history</data>
+</node>
+<node id="Purchase History Displayed">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the purchase history is displayed on the interface</data>
+</node>
+<node id="Product Addition Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">an administrator adds a new product to the system</data>
+</node>
+<node id="Addition Event">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.92</data>
+  <data key="d2">the product addition event has been recorded in the Purchase History data entity</data>
+</node>
+<node id="Product Removal Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the product removal function has removed the selected product from the system</data>
+</node>
+<node id="Product Removal Recorded">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the removal event has been recorded in the Purchase History data entity</data>
+</node>
+<node id="Active Order/Cart Check">
+  <data key="d0">CONSTRAINT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system has checked and found no active orders or cart references that prevent product removal</data>
+</node>
+<node id="Update Product Information">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">The product information update function has been successfully executed by an Administrator and the product data is updated.</data>
+</node>
+<node id="Updated Product Information Fields">
+  <data key="d0">DATA</data>
+  <data key="d1">0.85</data>
+  <data key="d2">The updated product information fields contain the new values for name, description, price, category, or inventory.</data>
+</node>
+<node id="Product Data Entity">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">The Product data entity has been updated with the new product information fields.</data>
+</node>
+<node id="Update Event">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.95</data>
+  <data key="d2">The update event has been recorded in the Purchase History data entity.</data>
+</node>
+<node id="Inventory and Category Updated">
+  <data key="d0">STATE</data>
+  <data key="d1">0.85</data>
+  <data key="d2">The inventory and category have been updated accordingly after the product information update.</data>
+</node>
+<node id="Product Categorization Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the product categorization function has been executed, including validation of the category and update of the association</data>
+</node>
+<node id="Product Assigned to Selected Category">
+  <data key="d0">STATE</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the product is currently associated with the selected category in the Category data entity</data>
+</node>
+<node id="Category Update Logged">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the category update has been logged in the Purchase History data entity</data>
+</node>
+<node id="Category Validation">
+  <data key="d0">CONSTRAINT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the selected category passes the system's validation rules before the association is updated</data>
+</node>
+<node id="Inventory Management Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the inventory management function is being performed by an administrator</data>
+</node>
+<node id="View Inventory Levels">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.85</data>
+  <data key="d2">an administrator is viewing inventory levels for products</data>
+</node>
+<node id="Modify Inventory Levels">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.85</data>
+  <data key="d2">an administrator has modified inventory levels for a product</data>
+</node>
+<node id="Inventory Quantity Update">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system has updated the inventory quantity for a product</data>
+</node>
+<node id="Management Event Recording">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system has logged the inventory management event</data>
+</node>
+<node id="Inventory Levels Stored">
+  <data key="d0">STATE</data>
+  <data key="d1">0.85</data>
+  <data key="d2">the updated inventory levels are stored in the Inventory data entity</data>
+</node>
+<node id="Purchase History Recorded">
+  <data key="d0">STATE</data>
+  <data key="d1">0.85</data>
+  <data key="d2">the management event is recorded in the Purchase History data entity</data>
+</node>
+<node id="Shopping Cart Creation Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">The shopping cart creation function is active when a customer selects products and invokes Add to Cart.</data>
+</node>
+<node id="Check Product Availability">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">The system has checked product availability and confirmed that the product can be added to the cart.</data>
+</node>
+<node id="Add to Cart">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">The customer has triggered the Add to Cart action for the selected product.</data>
+</node>
+<node id="Product Added to Shopping Cart">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">The product has been successfully recorded in the shopping cart data entity.</data>
+</node>
+<node id="Inventory Quantity Updated">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">The inventory quantity has been updated to reflect the product addition.</data>
+</node>
+<node id="Confirmation Message Shown">
+  <data key="d0">STATE</data>
+  <data key="d1">0.9</data>
+  <data key="d2">The customer has been shown a confirmation message after the product addition.</data>
+</node>
+<node id="Shopping Cart Modification Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the customer modifies the quantity or removes an item from the shopping cart</data>
+</node>
+<node id="CartItem">
+  <data key="d0">DATA</data>
+  <data key="d1">0.93</data>
+  <data key="d2">the cart item data entity has been updated to reflect the quantity change or removal</data>
+</node>
+<node id="Shopping Cart Viewing Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the customer is actively viewing the contents of their shopping cart</data>
+</node>
+<node id="Cart Items">
+  <data key="d0">DATA</data>
+  <data key="d1">0.85</data>
+  <data key="d2">the cart items are present in the shopping cart and are included in the displayed summary</data>
+</node>
+<node id="Cart Summary Displayed">
+  <data key="d0">STATE</data>
+  <data key="d1">0.8</data>
+  <data key="d2">the system is currently displaying the cart summary to the customer</data>
+</node>
+<node id="Checkout Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the checkout process is executed: the customer selects a shipping address and payment method, and the system processes the payment and creates an order</data>
+</node>
+<node id="Order Created">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">an order has been created and stored in the Order data entity</data>
+</node>
+<node id="Payment Processed">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the payment has been processed and stored in the Payment data entity</data>
+</node>
+<node id="Order Confirmation Email Sent">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.95</data>
+  <data key="d2">an order confirmation email has been sent</data>
+</node>
+<node id="Checkout Event Recorded">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the checkout event has been recorded in the Purchase History data entity</data>
+</node>
+<node id="Order Confirmation Email Sending Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system automatically sends an order confirmation email to the customer after successful checkout</data>
+</node>
+<node id="Successful Checkout">
+  <data key="d0">STATE</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the customer has completed the checkout process successfully</data>
+</node>
+<node id="Order">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">order details are available from the Order data entity as input to the function</data>
+</node>
+<node id="Confirmation Event">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the confirmation event has occurred and is recorded in the Purchase History data entity</data>
+</node>
+<node id="Payment Processing">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has processed the customer's selected payment method and validated the payment details</data>
+</node>
+<node id="Order Data Entity">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the order data entity contains the created order record</data>
+</node>
+<node id="Successful Payment">
+  <data key="d0">STATE</data>
+  <data key="d1">0.92</data>
+  <data key="d2">the payment has been successfully processed, stored, and associated with the order</data>
+</node>
+<node id="Payment Event">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the payment event has been recorded in the Purchase History data entity</data>
+</node>
+<node id="Plugin Development Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system is executing the process of developing or installing a new plugin</data>
+</node>
+<node id="Plugin Data">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the plugin record has been stored in the Plugin data entity</data>
+</node>
+<node id="Purchase History Data">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">a record of the plugin development or installation event has been created in the Purchase History data entity</data>
+</node>
+<node id="Plugin Validation Constraint">
+  <data key="d0">CONSTRAINT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the plugin has passed validation and is allowed to be activated</data>
+</node>
+<node id="Plugin Activated State">
+  <data key="d0">STATE</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the plugin is active and its functionality is available in the system</data>
+</node>
+<node id="Plugin Development Event">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the development or installation of the plugin has occurred and been recorded</data>
+</node>
+<node id="System Interface Updated">
+  <data key="d0">STATE</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system interface has been updated to reflect the new plugin functionality</data>
+</node>
+<node id="Configure Plugin Settings">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the administrator is configuring the settings of an installed plugin and the system validates and applies the configuration</data>
+</node>
+<node id="Plugin Data Entity">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the Plugin data entity has been updated with the new configuration</data>
+</node>
+<node id="Configuration Event">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the configuration event has been recorded in the Purchase History data entity</data>
+</node>
+<node id="System Interface Reflects Updated Settings">
+  <data key="d0">STATE</data>
+  <data key="d1">0.85</data>
+  <data key="d2">the system interface is reflecting the updated plugin settings</data>
+</node>
+<node id="User Interface Specification Compliance Checking Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the compliance check function is performed on the system's interface</data>
+</node>
+<node id="Compliance Check Initiation">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.92</data>
+  <data key="d2">an administrator has initiated a compliance check</data>
+</node>
+<node id="User Interface Specification Compliance">
+  <data key="d0">CONSTRAINT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system's interface is compliant with the defined User Interface Specification</data>
+</node>
+<node id="Compliance Report">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">a compliance report has been generated and is ready for display to the administrator</data>
+</node>
+<node id="Non-compliant Element Highlight">
+  <data key="d0">STATE</data>
+  <data key="d1">0.88</data>
+  <data key="d2">at least one non-compliant UI element is highlighted in the compliance report</data>
+</node>
+<node id="Manage CartItem Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the Manage CartItem function is executed successfully when a customer modifies the quantity of an item or removes it from the cart, and the system updates the cart and inventory accordingly</data>
+</node>
+<node id="Inventory Adjustment">
+  <data key="d0">STATE</data>
+  <data key="d1">0.9</data>
+  <data key="d2">inventory levels have been adjusted to reflect the cart item quantity change or item removal</data>
+</node>
+<node id="Manage OrderItem">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">an administrator is editing, removing, or updating the status of items in an order</data>
+</node>
+<node id="OrderItem">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the order item has been updated in the OrderItem data entity</data>
+</node>
+<node id="Inventory Levels">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">inventory levels have been adjusted accordingly</data>
+</node>
+<node id="Order Item Status Update">
+  <data key="d0">STATE</data>
+  <data key="d1">0.85</data>
+  <data key="d2">the status of an item in an order has been updated</data>
+</node>
+<node id="Manage EmailRecord">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the Manage EmailRecord function is currently being performed (viewing, editing, or deleting an email record)</data>
+</node>
+<node id="Email Record Management Event">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.85</data>
+  <data key="d2">the email record management event (view, edit, or delete) has been logged by the system</data>
+</node>
+<node id="Confirmation Message Displayed">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.85</data>
+  <data key="d2">the system has displayed a confirmation message to the administrator</data>
+</node>
+<node id="View EmailRecord Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the view email record function is executed to display email details and log the viewing event</data>
+</node>
+<node id="EmailRecord Data Entity">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the EmailRecord data entity is instantiated with the selected email details and displayed</data>
+</node>
+<node id="Viewing Event">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the viewing event for the email record has been logged/recorded in Purchase History</data>
+</node>
+<node id="View CartItem Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the customer is using the View CartItem function to view details of a specific cart item</data>
+</node>
+<node id="Cart Item Details Displayed">
+  <data key="d0">STATE</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system is displaying the product description, price, and quantity of the specific cart item to the customer</data>
+</node>
+<node id="View Payment Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the payment details are displayed by the system to the customer or administrator</data>
+</node>
+<node id="Payment Viewing Event">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the viewing event has been recorded in the Purchase History data entity</data>
+</node>
+<node id="Manage Administrator Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">an administrator manages another administrator account by updating or deactivating it</data>
+</node>
+<node id="Manage Customer Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the manage customer function is executed to update or deactivate a customer account</data>
+</node>
+<node id="Manage Category Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.96</data>
+  <data key="d2">the manage category function is being executed by an administrator</data>
+</node>
+<node id="Validate Category">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.88</data>
+  <data key="d2">the system is validating the category during the manage category function</data>
+</node>
+<node id="Product Associations">
+  <data key="d0">DATA</data>
+  <data key="d1">0.85</data>
+  <data key="d2">product associations have been modified accordingly</data>
+</node>
+<node id="Manage User Interface Specification Function">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system is executing the function that modifies the User Interface Specification based on administrator input</data>
+</node>
+<node id="User Interface Specification data entity">
+  <data key="d0">DATA</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the User Interface Specification data entity has been updated with the latest specification details</data>
+</node>
+<node id="System Interface Modified">
+  <data key="d0">STATE</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system interface reflects the modified User Interface Specification</data>
+</node>
+<node id="Management Event Recorded">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.94</data>
+  <data key="d2">the management event for the User Interface Specification change has been recorded in the Purchase History data entity</data>
+</node>
+<node id="Manage Personal Information">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system provides customers or administrators the ability to view or update a customer's personal information</data>
+</node>
+<node id="Personal Information Data Entity">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the personal information data entity has been updated with validated changes</data>
+</node>
+<node id="Validate Personal Information Changes">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system has successfully validated the personal information changes before updating the data entity</data>
+</node>
+<node id="Personal Information View or Update Event">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">a customer or administrator has viewed or updated personal information and the event has been recorded in Purchase History</data>
+</node>
+<node id="Viewing or Update Event">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the viewing or update event has been recorded in the Purchase History data entity</data>
+</node>
+<node id="Validate Changes">
+  <data key="d0">CONSTRAINT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system has validated the changes to contact information</data>
+</node>
+<node id="Order Cancellation">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.96</data>
+  <data key="d2">the order cancellation function is executed for a selected order</data>
+</node>
+<node id="Eligible Order Status">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the selected order is in an eligible status for cancellation</data>
+</node>
+<node id="Cancelled Order Status">
+  <data key="d0">STATE</data>
+  <data key="d1">0.97</data>
+  <data key="d2">the order is marked as Cancelled in the Order data entity</data>
+</node>
+<node id="Cancellation Event Recorded">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.97</data>
+  <data key="d2">the cancellation event is recorded in the Purchase History data entity</data>
+</node>
+<node id="Eligibility Constraint for Cancellation">
+  <data key="d0">CONSTRAINT</data>
+  <data key="d1">0.92</data>
+  <data key="d2">the system enforces that an order can only be cancelled if it is in an eligible status</data>
+</node>
+<edge source="Customer Registration Function" target="Customer Account Created">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Valid Registration Information" target="Customer Registration Function">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Customer Login Function" target="Authenticated">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Customer Login Function" target="Login Event">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Customer Login Function" target="Personalized Dashboard">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Customer Logout Function" target="Logout Event">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Customer Logout Function" target="Session Terminated">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Personal Information Update" target="Personal Information Updated">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Personal Information Update" target="Update Event Recorded">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Personal Information Update" target="Personal Information Data Entity">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Personal Information Update" target="Validate Updated Information (FUNCTION)">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Validate Updated Information (FUNCTION)" target="Personal Information Data Entity">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Validate Updated Information (FUNCTION)" target="Personal Information Updated">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Validate Updated Information (CONSTRAINT)" target="Contact Information data entity">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Validate Updated Information (CONSTRAINT)" target="Contact Information Stored">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Purchase History Viewing Function" target="Purchase History Displayed">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Product Addition Function" target="Addition Event">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Product Addition Function" target="Product Data Entity">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Product Addition Function" target="Product Assigned to Selected Category">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Product Removal Function" target="Product Removal Recorded">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Update Product Information" target="Update Event">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Update Product Information" target="Inventory and Category Updated">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Updated Product Information Fields" target="Update Product Information">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Product Categorization Function" target="Category Update Logged">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Product Categorization Function" target="Product Assigned to Selected Category">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Product Categorization Function" target="Category Validation">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Category Validation" target="Product Assigned to Selected Category">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Inventory Management Function" target="Inventory Quantity Update">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Inventory Management Function" target="Inventory Levels Stored">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Inventory Management Function" target="Management Event Recording">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Inventory Management Function" target="Purchase History Recorded">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Inventory Quantity Update" target="Inventory Levels Stored">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Management Event Recording" target="Purchase History Recorded">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Shopping Cart Creation Function" target="Confirmation Message Shown">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Shopping Cart Creation Function" target="Inventory Quantity Updated">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Shopping Cart Creation Function" target="Product Added to Shopping Cart">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Check Product Availability" target="Product Added to Shopping Cart">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Check Product Availability" target="Shopping Cart Creation Function">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Add to Cart" target="Shopping Cart Creation Function">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Shopping Cart Modification Function" target="Inventory Adjustment">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Shopping Cart Viewing Function" target="Cart Summary Displayed">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Cart Items" target="Checkout Function">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Cart Items" target="Shopping Cart Viewing Function">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Checkout Function" target="Checkout Event Recorded">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Checkout Function" target="Order Confirmation Email Sent">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Checkout Function" target="Order Created">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Checkout Function" target="Payment Processed">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Order Created" target="Order Data Entity">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Order Confirmation Email Sending Function" target="Confirmation Event">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Order Confirmation Email Sending Function" target="Order Confirmation Email Sent">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Successful Checkout" target="Order Confirmation Email Sending Function">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Order" target="Order Confirmation Email Sending Function">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Payment Processing" target="Order Data Entity">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Payment Processing" target="Successful Payment">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Payment Processing" target="Inventory Levels">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Payment Processing" target="Payment Event">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Plugin Development Function" target="Plugin Data">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Plugin Development Function" target="Plugin Activated State">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Plugin Development Function" target="Plugin Development Event">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Plugin Development Function" target="System Interface Updated">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Plugin Development Function" target="Purchase History Data">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Plugin Validation Constraint" target="Plugin Activated State">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Plugin Development Event" target="Purchase History Data">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Configure Plugin Settings" target="Configuration Event">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Configure Plugin Settings" target="Plugin Data Entity">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Configure Plugin Settings" target="System Interface Reflects Updated Settings">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="User Interface Specification Compliance Checking Function" target="Compliance Report">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="User Interface Specification Compliance Checking Function" target="Non-compliant Element Highlight">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Compliance Check Initiation" target="User Interface Specification Compliance Checking Function">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Manage OrderItem" target="Inventory Levels">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Manage OrderItem" target="Order Item Status Update">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Manage EmailRecord" target="Confirmation Message Displayed">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Manage EmailRecord" target="EmailRecord Data Entity">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Manage EmailRecord" target="Email Record Management Event">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="View EmailRecord Function" target="Viewing Event">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="View CartItem Function" target="Cart Item Details Displayed">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="View CartItem Function" target="Viewing Event">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="View Payment Function" target="Payment Viewing Event">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Manage Category Function" target="Management Event Recorded">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Manage Category Function" target="Product Associations">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Manage Category Function" target="Validate Category">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Manage User Interface Specification Function" target="Management Event Recorded">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Manage User Interface Specification Function" target="System Interface Modified">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Manage User Interface Specification Function" target="User Interface Specification data entity">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Manage Personal Information" target="Personal Information Data Entity">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Manage Personal Information" target="Viewing or Update Event">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Manage Personal Information" target="Validate Personal Information Changes">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Validate Personal Information Changes" target="Personal Information Data Entity">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Order Cancellation" target="Cancelled Order Status">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Order Cancellation" target="Cancellation Event Recorded">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Order Cancellation" target="Inventory Levels">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Eligible Order Status" target="Order Cancellation">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+</graph></graphml>

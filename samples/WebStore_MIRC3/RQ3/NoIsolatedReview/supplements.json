@@ -1,0 +1,72 @@
+[
+  {
+    "output_id": "OUT-c41c10de3296",
+    "source_nomination_id": "DEP-001",
+    "origin": "dependency",
+    "text": "If the product availability check does not confirm availability, the system shall not create the shopping cart for that product.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-a4c33e1892c4",
+    "source_nomination_id": "DEP-009",
+    "origin": "dependency",
+    "text": "The system shall update the inventory quantity to reflect a product addition when product availability is confirmed and the product is added to the shopping cart.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-ead9350ac2d9",
+    "source_nomination_id": "DEP-013",
+    "origin": "dependency",
+    "text": "The system shall show the customer confirmation message after the product availability check confirms the product can be added and the shopping cart has been created.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-c5ea22676bc5",
+    "source_nomination_id": "OPERATION-45c01ea2a051",
+    "origin": "operation",
+    "text": "The system shall load and present personalized dashboard content when an authenticated customer is redirected to their personalized dashboard after login.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-4c5d47116386",
+    "source_nomination_id": "OPERATION-578798c6d093",
+    "origin": "operation",
+    "text": "The system shall enforce authorization for the product information update operation so that only authorized Administrators can perform it.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-afb4b1d7ce82",
+    "source_nomination_id": "OPERATION-3c54c237a217",
+    "origin": "operation",
+    "text": "The system shall perform a product availability check before adding an item to the shopping cart.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-1f6bcf7b36ba",
+    "source_nomination_id": "OPERATION-101a3a6bbac2",
+    "origin": "operation",
+    "text": "The system shall record the confirmation event in Purchase History with sufficient status and timestamp information to distinguish generation from successful delivery.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-3a26934231df",
+    "source_nomination_id": "OPERATION-fa562cda6147",
+    "origin": "operation",
+    "text": "The system shall record only successful plugin development or installation events in Purchase History data.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-1238ae0a8ae1",
+    "source_nomination_id": "OPERATION-bbf20fc4d0ed",
+    "origin": "operation",
+    "text": "The system shall define how existing product associations are detached or reassigned before completing the removal of a category.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-65cf748e01ea",
+    "source_nomination_id": "OPERATION-dd7b899e3870",
+    "origin": "operation",
+    "text": "The system shall define and enforce a category deletion policy that specifies whether a deleted category is physically removed or marked inactive and how associated product records are affected.",
+    "status": "model_preliminarily_retained"
+  }
+]

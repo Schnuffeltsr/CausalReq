@@ -1,0 +1,17 @@
+{
+  "doc_id": "WebStore_MIRC3",
+  "source_path": "C:\\Users\\32851\\Desktop\\工作区\\测试数据\\WebStore\\Document\\filtered_WebStore_MIRC3_doc.docx",
+  "source_fr_count": 33,
+  "element_count": 140,
+  "elements_with_active_meaning": 118,
+  "evidence_relation_count": 387,
+  "evidence_nodes": 140,
+  "evidence_edges": 387,
+  "simulation_nodes": 118,
+  "simulation_edges": 92,
+  "exclusions": 109,
+  "fixed_pool_count": 20,
+  "model_version": "MODEL-ed936aeafef8",
+  "llm_calls": 98,
+  "minutes": 83.2
+}

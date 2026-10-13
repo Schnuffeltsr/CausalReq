@@ -1,0 +1,51 @@
+[
+  {
+    "output_id": "OUT-981d886cb117",
+    "source_nomination_id": "DEP-010",
+    "origin": "dependency",
+    "text": "The system shall define and enforce completeness and validation rules for required product information fields when an administrator adds a new product via the Product Addition Function, so that the Product Data Entity is correctly updated.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-23892f05415a",
+    "source_nomination_id": "DEP-013",
+    "origin": "dependency",
+    "text": "The system shall show the customer a confirmation message only after successfully checking product availability and confirming that the product can be added to the shopping cart.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-cbe64b63bcdf",
+    "source_nomination_id": "DEP-015",
+    "origin": "dependency",
+    "text": "The system shall not assign the product to the selected category in the Category data entity when the Product Categorization Function cannot validate the selected category or cannot update the association; the product's existing category assignment shall remain unchanged.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-508177975807",
+    "source_nomination_id": "ISOLATED-b29def2d38e2",
+    "origin": "isolated",
+    "text": "The system shall define and document the inventory adjustment rule, trigger timing, and responsible authority for the inventory update that occurs when a product is added to the cart (FR-12).",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-d64266a10c7b",
+    "source_nomination_id": "ISOLATED-9b59be8d3e31",
+    "origin": "isolated",
+    "text": "The system shall provide a confirmation message to the customer after checking product availability and updating inventory in FR-12.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-70fbed54d8ba",
+    "source_nomination_id": "ISOLATED-d46a8e39a29d",
+    "origin": "isolated",
+    "text": "The system shall define and apply inventory-level adjustment rules when an order item is edited, removed, or its status changes, ensuring inventory is updated based on the specific order-item change.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-5f409f5316b3",
+    "source_nomination_id": "ISOLATED-34a4643e1319",
+    "origin": "isolated",
+    "text": "The system shall define the specific order statuses that are eligible for cancellation and enforce that a cancellation is permitted only when the order is in one of those eligible statuses.",
+    "status": "model_preliminarily_retained"
+  }
+]

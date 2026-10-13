@@ -1,0 +1,413 @@
+
+# 消融版相对 Full 的新增条目
+
+
+## NoSignedPropagation: 219 nominations, 17 new vs Full
+
+OPERATION-3175c14372cc | operation | covered | best_full=DEP-008 sim=0.69
+  subj: Confirmation Email Sent
+  q:    Is sending a confirmation email a required operation triggered by successful customer registration?
+  draft:The Customer Registration Function must trigger a confirmation email to the customer's email address after account creation.
+  ev:   FRBLOCK-001
+  ref:  1.32 (0.40) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde… || 1.1 (0.37) Customer Registration Function :: Customer Registration Function Description: Customers can register for a new account by providing valid personal information, a valid email address, password, and optiona…
+
+OPERATION-373b1e2d8461 | operation | covered | best_full=OPERATION-a0339d21be16 sim=0.60
+  subj: Valid Registration Information
+  q:    Does the Valid Registration Information constraint require an explicit validation operation for the email address and duplicate entries before account…
+  draft:The Customer Registration Function must validate the email address and check for duplicate entries before creating the account.
+  ev:   FRBLOCK-001
+  ref:  1.1 (0.43) Customer Registration Function :: Customer Registration Function Description: Customers can register for a new account by providing valid personal information, a valid email address, password, and optiona… || 1.34 (0.21) Email Record Management Function :: Email Record Management Function Description: Authorized administrators can view, manage, or delete EmailRecord entries according to permissions. Customers may view email…
+
+OPERATION-125e549de23c | operation | covered | best_full=OPERATION-1c04df487c3d sim=0.64
+  subj: Customer Logout Function
+  q:    Should the Customer Logout Function be represented as an invocable operation available to the Customer actor?
+  draft:The system shall expose a logout operation that customers can invoke.
+  ev:   FRBLOCK-003
+  ref:  1.44 (0.26) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, … || 1.3 (0.24) Customer Logout Function :: Customer Logout Function Description: Customers can log out of the system. The system terminates or invalidates the active session, redirects the customer to the homepage…
+
+OPERATION-70934b860e12 | operation | unsupported | best_full=DEP-008 sim=0.69
+  subj: Confirmation Email Sent
+  q:    Should the confirmation email include details of the updated personal information or only a generic confirmation?
+  draft:The system should send a confirmation email after a successful personal information update, including sufficient details to confirm the change.
+  ev:   FRBLOCK-004
+  ref:  1.6 (0.44) Personal Information Update Notification and Audit :: Personal Information Update Notification and Audit Description: Successful personal information updates should generate an update status notification or confirmation emai… || 1.5 (0.38) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m…
+
+OPERATION-9c68f5b5aad2 | operation | unsupported | best_full=OPERATION-ad04480a3580 sim=0.67
+  subj: Update Event Recorded
+  q:    What data should be recorded when the update event is logged, and in which data entity?
+  draft:The system must record the personal information update event with timestamp, changed fields, and customer identifier in the Purchase History data entity.
+  ev:   FRBLOCK-004
+  ref:  1.6 (0.29) Personal Information Update Notification and Audit :: Personal Information Update Notification and Audit Description: Successful personal information updates should generate an update status notification or confirmation emai… || 1.10 (0.25) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent…
+
+OPERATION-00db2efd8003 | operation | covered | best_full=OPERATION-446932587fb7 sim=0.69
+  subj: Purchase History Displayed
+  q:    Should the Purchase History Displayed state require all listed output fields—order number, date, product names, quantities, total amount, and status—t…
+  draft:The purchase history display should include the specified order details and status for each displayed order.
+  ev:   FRBLOCK-006
+  ref:  1.9 (0.58) Purchase History Viewing Function :: Purchase History Viewing Function Description: Customers can view their own purchase history, including order number, date, product names, quantities, line totals, total … || 1.11 (0.44) Purchase History Synchronization with Orders :: Purchase History Synchronization with Orders Description: Purchase history must reflect current order data and status. When an order is created, updated, cancelled, or ch…
+
+OPERATION-ac7125b290a1 | operation | covered | best_full=ISOLATED-5263691677ac sim=0.61
+  subj: Product Removal Function
+  q:    Is the Product Removal Function an operation that removes the selected Product from the Product data entity, as stated in the FR output?
+  draft:The system shall provide an operation that removes the selected Product from the Product data entity.
+  ev:   FRBLOCK-008
+  ref:  1.37 (0.24) Product Management Authorization :: Product Management Authorization Description: Product catalog operations, including product addition, removal, update, categorization, and inventory management, must be r… || 1.44 (0.21) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+OPERATION-747c7a75b689 | operation | covered | best_full=OPERATION-aaa14549d825 sim=0.58
+  subj: Product Categorization Function
+  q:    Does the Product Categorization Function cover both initial category assignment and later category modification, and are both supported by the same wo…
+  draft:The Product Categorization Function must support both assigning and modifying a product's category.
+  ev:   FRBLOCK-010
+  ref:  1.18 (0.44) Product Categorization Function :: Product Categorization Function Description: Authorized administrators can assign or modify product categories. The system validates the category and updates the product-… || 1.19 (0.25) Category Management Function :: Category Management Function Description: Authorized administrators can add, update, or remove product categories. The system validates category data and updates associat…
+
+OPERATION-e4b9bc8a9921 | operation | covered | best_full=DEP-015 sim=0.62
+  subj: Product Assigned to Selected Category
+  q:    Does the state 'Product Assigned to Selected Category' apply when modifying an existing category association as well as when assigning one for the fir…
+  draft:The system must update the product's category association to the selected category in the Category data entity.
+  ev:   FRBLOCK-010
+  ref:  1.18 (0.39) Product Categorization Function :: Product Categorization Function Description: Authorized administrators can assign or modify product categories. The system validates the category and updates the product-… || 1.16 (0.34) Product Information Update Function :: Product Information Update Function Description: Authorized administrators can update existing product information, including name, description, price, category, and inve…
+
+OPERATION-af63c87baa53 | operation | covered | best_full=OPERATION-fa20d5953a08 sim=0.60
+  subj: Product Added to Shopping Cart
+  q:    What operation results in the Product Added to Shopping Cart state?
+  draft:The system must provide an operation to persist the cart addition in the Shopping Cart data entity.
+  ev:   FRBLOCK-012
+  ref:  1.21 (0.35) Shopping Cart Addition Function :: Shopping Cart Addition Function Description: Customers can add products to their shopping cart during a valid customer session. The system validates product existence, av… || 1.22 (0.25) Shopping Cart Viewing Function :: Shopping Cart Viewing Function Description: Customers can view the contents of their shopping cart, including product name, quantity, unit price, line total, and cart tot…
+
+OPERATION-b3f49b04a9a0 | operation | covered | best_full=OPERATION-aaa14549d825 sim=0.65
+  subj: Confirmation Message Shown
+  q:    Should the Shopping Cart Creation Function document an operation to display the confirmation message?
+  draft:The system must display a confirmation message to the customer after a successful cart addition.
+  ev:   FRBLOCK-012
+  ref:  1.13 (0.26) Product Addition Failure Handling :: Product Addition Failure Handling Description: If product creation, category association, or inventory initialization fails, the system must roll back any partial product… || 1.21 (0.26) Shopping Cart Addition Function :: Shopping Cart Addition Function Description: Customers can add products to their shopping cart during a valid customer session. The system validates product existence, av…
+
+OPERATION-fbde8708f9b0 | operation | covered | best_full=OPERATION-a0339d21be16 sim=0.64
+  subj: OrderItem
+  q:    Does an order-item modification require updating the OrderItem data entity and adjusting inventory in the same transaction or workflow?
+  draft:The system should update the OrderItem entity and adjust inventory levels when an order item is modified.
+  ev:   FRBLOCK-022
+  ref:  1.36 (0.24) Order Item Management Function :: Order Item Management Function Description: Authorized administrators can edit, remove, or update the status of items in an order where business rules permit. The system … || 1.28 (0.20) Order Item Construction Function :: Order Item Construction Function Description: Order items must accurately match the customer’s selected cart items at checkout confirmation. The system preserves selected…
+
+OPERATION-6d73d1b45da3 | operation | unsupported | best_full=OPERATION-37b68e1d5387 sim=0.51
+  subj: Confirmation Message Displayed
+  q:    Is a confirmation message required after a view action, or only after edit and delete actions?
+  draft:The system must display a confirmation message for each EmailRecord management action that requires user feedback (e.g., edit, delete).
+  ev:   FRBLOCK-023
+  ref:  1.34 (0.23) Email Record Management Function :: Email Record Management Function Description: Authorized administrators can view, manage, or delete EmailRecord entries according to permissions. Customers may view email… || 1.32 (0.18) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde…
+
+OPERATION-9d943ddf09f2 | operation | covered | best_full=OPERATION-021cbb3a50be sim=0.68
+  subj: EmailRecord Data Entity
+  q:    Should the view operation include a retrieval step for the selected EmailRecord Data Entity before display, including selection and access criteria?
+  draft:The system must retrieve the selected EmailRecord data entity and display its details to an authorized viewer.
+  ev:   FRBLOCK-024
+  ref:  1.34 (0.19) Email Record Management Function :: Email Record Management Function Description: Authorized administrators can view, manage, or delete EmailRecord entries according to permissions. Customers may view email… || 1.40 (0.17) Personal and Contact Information Query Function :: Personal and Contact Information Query Function Description: Customers and authorized administrators can retrieve stored personal and contact information records. Custome…
+
+OPERATION-8c39b62c4f68 | operation | retained | best_full=OPERATION-1c04df487c3d sim=0.68
+  subj: Manage Administrator Function
+  q:    What specific attributes of an administrator account are changed by the update operation, and how are they mapped to Personal Information and Contact …
+  draft:The system shall define the administrator account attributes that the update operation may modify in Personal Information and Contact Information.
+  ev:   FRBLOCK-027
+  ref:  1.40 (0.29) Personal and Contact Information Query Function :: Personal and Contact Information Query Function Description: Customers and authorized administrators can retrieve stored personal and contact information records. Custome… || 1.6 (0.28) Personal Information Update Notification and Audit :: Personal Information Update Notification and Audit Description: Successful personal information updates should generate an update status notification or confirmation emai…
+
+OPERATION-dfe4ca08944e | operation | covered | best_full=ISOLATED-8d1f0250a05c sim=0.64
+  subj: System Interface Modified
+  q:    Does modifying the system interface require a separate operation or refresh trigger, or is it automatic after the UI specification update?
+  draft:The system should apply UI specification changes to the system interface, with clear propagation behavior if immediate consistency is required.
+  ev:   FRBLOCK-030
+  ref:  1.43 (0.37) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.41 (0.14) Plugin Installation Function :: Plugin Installation Function Description: Authorized administrators can install plugins to expand system functionality. The system validates the plugin before activation,…
+
+OPERATION-64c08257c416 | operation | unsupported | best_full=OPERATION-1006feed7b33 sim=0.68
+  subj: Validate Personal Information Changes
+  q:    Must the Validate Personal Information Changes operation occur before the Personal Information Data Entity is updated?
+  draft:The system must validate personal-information changes before persisting an update.
+  ev:   FRBLOCK-031
+  ref:  1.6 (0.31) Personal Information Update Notification and Audit :: Personal Information Update Notification and Audit Description: Successful personal information updates should generate an update status notification or confirmation emai… || 1.5 (0.30) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m…
+
+
+## NoIsolatedReview: 196 nominations, 26 new vs Full
+
+OPERATION-833626a27ae2 | operation | covered | best_full=DEP-008 sim=0.69
+  subj: Confirmation Email Sent
+  q:    Should the registration workflow include a send operation that triggers the confirmation email after successful account creation?
+  draft:The system shall send a confirmation email to the customer's email address after successfully creating the new account.
+  ev:   FRBLOCK-001
+  ref:  1.1 (0.43) Customer Registration Function :: Customer Registration Function Description: Customers can register for a new account by providing valid personal information, a valid email address, password, and optiona… || 1.32 (0.35) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde…
+
+OPERATION-d6d5220ac822 | operation | covered | best_full=OPERATION-d1a9f5830695 sim=0.62
+  subj: Valid Registration Information
+  q:    Should the registration workflow include validation operations for email validity and duplicate entry checking before account creation?
+  draft:The system shall validate the email address and check for duplicate entries before creating a new customer account.
+  ev:   FRBLOCK-001
+  ref:  1.1 (0.41) Customer Registration Function :: Customer Registration Function Description: Customers can register for a new account by providing valid personal information, a valid email address, password, and optiona… || 1.34 (0.20) Email Record Management Function :: Email Record Management Function Description: Authorized administrators can view, manage, or delete EmailRecord entries according to permissions. Customers may view email…
+
+OPERATION-2399c9f444b1 | operation | covered | best_full=OPERATION-756799872933 sim=0.57
+  subj: Customer Account Created
+  q:    Should the registration workflow include an explicit create operation for the new customer account after validation succeeds?
+  draft:The system shall create a new customer account after the registration information is successfully validated.
+  ev:   FRBLOCK-001
+  ref:  1.1 (0.29) Customer Registration Function :: Customer Registration Function Description: Customers can register for a new account by providing valid personal information, a valid email address, password, and optiona… || 1.44 (0.17) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+OPERATION-21895714cf3d | operation | covered | best_full=DEP-008 sim=0.69
+  subj: Confirmation Email Sent
+  q:    Should the Confirmation Email Sent event be produced only after successful validation and storage of updated personal information?
+  draft:The system shall send a confirmation email after a successful personal information update.
+  ev:   FRBLOCK-004
+  ref:  1.32 (0.39) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde… || 1.5 (0.38) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m…
+
+OPERATION-0e136bb15f44 | operation | unsupported | best_full=DEP-010 sim=0.58
+  subj: Product
+  q:    Does the product addition operation need to check whether the new product already exists before storing it in the Product data entity?
+  draft:The product addition operation shall check for duplicate or conflicting Product records before storing a new Product.
+  ev:   FRBLOCK-007
+  ref:  1.37 (0.31) Product Management Authorization :: Product Management Authorization Description: Product catalog operations, including product addition, removal, update, categorization, and inventory management, must be r… || 1.12 (0.27) Product Addition Function :: Product Addition Function Description: Authorized administrators can add new products to the system by providing product details such as name, description, price, categor…
+
+OPERATION-61f98acf8c54 | operation | covered | best_full=OPERATION-b94a9159cdbc sim=0.62
+  subj: Inventory
+  q:    What inventory update is required after a product is removed: should the system decrement, zero out, or archive the inventory record?
+  draft:The system must update the inventory data entity to reflect the removed product according to a defined inventory adjustment rule.
+  ev:   FRBLOCK-008
+  ref:  1.15 (0.24) Product Removal Impact Handling :: Product Removal Impact Handling Description: When a product is removed or made unavailable, carts containing the affected product must be updated so the product is no lon… || 1.16 (0.21) Product Information Update Function :: Product Information Update Function Description: Authorized administrators can update existing product information, including name, description, price, category, and inve…
+
+OPERATION-013eae113b5d | operation | unsupported | best_full=OPERATION-cf9ef4f13201 sim=0.66
+  subj: Product Removal Recorded
+  q:    Which details of the product removal event must be captured in Purchase History for audit or reporting purposes?
+  draft:The system must record product removal events in Purchase History with sufficient detail to identify the product, administrator, and timestamp.
+  ev:   FRBLOCK-008
+  ref:  1.10 (0.35) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent… || 1.9 (0.28) Purchase History Viewing Function :: Purchase History Viewing Function Description: Customers can view their own purchase history, including order number, date, product names, quantities, line totals, total …
+
+OPERATION-001f1fed161d | operation | unsupported | best_full=OPERATION-24c5945214da sim=0.50
+  subj: Product
+  q:    Does removing a product mean permanently deleting it from the Product data entity, or marking it inactive while retaining the record?
+  draft:The system must define product removal as either permanent deletion or deactivation, and apply the chosen behavior consistently.
+  ev:   FRBLOCK-008
+  ref:  1.19 (0.22) Category Management Function :: Category Management Function Description: Authorized administrators can add, update, or remove product categories. The system validates category data and updates associat… || 1.14 (0.15) Product Removal Function :: Product Removal Function Description: Authorized administrators can remove products from the system only when removal will not break active purchasing activity. Before re…
+
+OPERATION-6edbd5779c92 | operation | unsupported | best_full=OPERATION-a15d44bb910d sim=0.57
+  subj: Product Removal Function
+  q:    Should the product removal operation require a confirmation step after the administrator clicks the Remove Product button?
+  draft:The system should require explicit confirmation before executing a product removal operation.
+  ev:   FRBLOCK-008
+  ref:  1.37 (0.31) Product Management Authorization :: Product Management Authorization Description: Product catalog operations, including product addition, removal, update, categorization, and inventory management, must be r… || 1.14 (0.26) Product Removal Function :: Product Removal Function Description: Authorized administrators can remove products from the system only when removal will not break active purchasing activity. Before re…
+
+OPERATION-75ef46297e5f | operation | unsupported | best_full=OPERATION-f265d9b3e153 sim=0.69
+  subj: Inventory and Category Updated
+  q:    Should inventory and category changes performed through the product update operation follow distinct validation or adjustment rules?
+  draft:The system shall apply appropriate validation rules for inventory quantity and category assignment when they are updated through the product information update operation.
+  ev:   FRBLOCK-009
+  ref:  1.16 (0.31) Product Information Update Function :: Product Information Update Function Description: Authorized administrators can update existing product information, including name, description, price, category, and inve… || 1.12 (0.28) Product Addition Function :: Product Addition Function Description: Authorized administrators can add new products to the system by providing product details such as name, description, price, categor…
+
+OPERATION-b0d90a1cdb3c | operation | covered | best_full=OPERATION-aaa14549d825 sim=0.58
+  subj: Product Categorization Function
+  q:    Does the Product Categorization Function need to support both assigning a category to a product and modifying an existing product-category association…
+  draft:The Product Categorization Function shall treat category assignment and category modification as supported operations, applying validation before updating the association.
+  ev:   FRBLOCK-010
+  ref:  1.18 (0.42) Product Categorization Function :: Product Categorization Function Description: Authorized administrators can assign or modify product categories. The system validates the category and updates the product-… || 1.12 (0.31) Product Addition Function :: Product Addition Function Description: Authorized administrators can add new products to the system by providing product details such as name, description, price, categor…
+
+OPERATION-e50505e236eb | operation | unsupported | best_full=ISOLATED-5263691677ac sim=0.64
+  subj: Product Assigned to Selected Category
+  q:    Does the Product Assigned to Selected Category state need a verification operation to confirm the association after the update?
+  draft:The system shall establish and verify the Product Assigned to Selected Category state after a category update.
+  ev:   FRBLOCK-010
+  ref:  1.18 (0.30) Product Categorization Function :: Product Categorization Function Description: Authorized administrators can assign or modify product categories. The system validates the category and updates the product-… || 1.16 (0.30) Product Information Update Function :: Product Information Update Function Description: Authorized administrators can update existing product information, including name, description, price, category, and inve…
+
+OPERATION-9f0a4a7850d5 | operation | covered | best_full=OPERATION-37b68e1d5387 sim=0.60
+  subj: Confirmation Message Shown
+  q:    Should the confirmation message display be treated as an operation step after the cart and inventory updates, with defined content and timing?
+  draft:The system should show a confirmation message as an operation step following successful cart addition.
+  ev:   FRBLOCK-012
+  ref:  1.29 (0.22) Order Lifecycle Persistence and Downstream Effects :: Order Lifecycle Persistence and Downstream Effects Description: After successful payment confirmation, the system must persist the order and order items, deduct purchased… || 1.13 (0.19) Product Addition Failure Handling :: Product Addition Failure Handling Description: If product creation, category association, or inventory initialization fails, the system must roll back any partial product…
+
+OPERATION-a8ab481ee5e1 | operation | covered | best_full=DEP-016 sim=0.61
+  subj: Checkout Function
+  q:    Should the Checkout Function be modeled as an operation that accepts cart items, shipping address, and payment method and produces an order?
+  draft:The system must provide a checkout operation that accepts cart items, shipping address, and payment method and completes the purchase by processing payment and creating an order.
+  ev:   FRBLOCK-015
+  ref:  1.25 (0.69) Checkout Function :: Checkout Function Description: Customers can proceed to checkout using a valid authenticated session, selected shipping address, current cart items, and payment method. T… || 1.30 (0.31) Payment Processing Function :: Payment Processing Function Description: The system processes the customer’s selected payment method and validates payment details. A successful payment must be stored, a…
+
+OPERATION-4bd5c8b0eff9 | operation | unsupported | best_full=DEP-020 sim=0.57
+  subj: Successful Payment
+  q:    Should Payment Processing define the transition to Successful Payment and trigger downstream store and associate operations only after validation succ…
+  draft:Payment Processing shall enter the Successful Payment state after validation succeeds and then store and associate the payment with the order.
+  ev:   FRBLOCK-017
+  ref:  1.29 (0.34) Order Lifecycle Persistence and Downstream Effects :: Order Lifecycle Persistence and Downstream Effects Description: After successful payment confirmation, the system must persist the order and order items, deduct purchased… || 1.30 (0.27) Payment Processing Function :: Payment Processing Function Description: The system processes the customer’s selected payment method and validates payment details. A successful payment must be stored, a…
+
+OPERATION-08082e73e4b4 | operation | unsupported | best_full=OPERATION-1b3bfb3f17aa sim=0.68
+  subj: Plugin Data
+  q:    Does the storage operation into the Plugin data entity occur before, during, or after plugin activation?
+  draft:The system should define the sequence between storing plugin data and activating the plugin.
+  ev:   FRBLOCK-018
+  ref:  1.41 (0.36) Plugin Installation Function :: Plugin Installation Function Description: Authorized administrators can install plugins to expand system functionality. The system validates the plugin before activation,… || 1.42 (0.25) Plugin Configuration Function :: Plugin Configuration Function Description: Authorized administrators can configure installed plugins. The system validates configuration settings, applies valid changes, …
+
+OPERATION-6c2e1f9c4d94 | operation | unsupported | best_full=OPERATION-3246e03199f6 sim=0.65
+  subj: System Interface Updated
+  q:    Is updating the system interface a distinct operation triggered after plugin activation, and must it be performed immediately for all users?
+  draft:The system should define when and how the system interface is updated after plugin activation.
+  ev:   FRBLOCK-018
+  ref:  1.41 (0.37) Plugin Installation Function :: Plugin Installation Function Description: Authorized administrators can install plugins to expand system functionality. The system validates the plugin before activation,… || 1.42 (0.19) Plugin Configuration Function :: Plugin Configuration Function Description: Authorized administrators can configure installed plugins. The system validates configuration settings, applies valid changes, …
+
+OPERATION-a8f2691922c5 | operation | covered | best_full=OPERATION-455e9d9256b2 sim=0.58
+  subj: Manage OrderItem
+  q:    Does the documented Manage OrderItem workflow require explicit support for the edit, remove, and update-status operations on order items?
+  draft:The Manage OrderItem function must support the operations explicitly required by the administrator workflow for editing, removing, or updating the status of order items.
+  ev:   FRBLOCK-022
+  ref:  1.36 (0.33) Order Item Management Function :: Order Item Management Function Description: Authorized administrators can edit, remove, or update the status of items in an order where business rules permit. The system … || 1.38 (0.17) Administrator Management Function :: Administrator Management Function Description: Authorized administrators can manage administrator accounts by updating, deactivating, or managing permitted administrator …
+
+OPERATION-171166a23356 | operation | covered | best_full=OPERATION-a0339d21be16 sim=0.64
+  subj: OrderItem
+  q:    Does the Manage OrderItem workflow require the update operation to be applied to the OrderItem data entity when an order item is edited, removed, or s…
+  draft:The system must apply the necessary update operation to the OrderItem data entity when an order item is modified.
+  ev:   FRBLOCK-022
+  ref:  1.36 (0.25) Order Item Management Function :: Order Item Management Function Description: Authorized administrators can edit, remove, or update the status of items in an order where business rules permit. The system … || 1.4 (0.22) Customer Session and Access Control :: Customer Session and Access Control Description: Customer-protected actions must require a valid authenticated session belonging to the account owner. This includes perso…
+
+OPERATION-2c6126c13967 | operation | covered | best_full=OPERATION-455e9d9256b2 sim=0.60
+  subj: Order Item Status Update
+  q:    Does the documented workflow require the update-status operation to be applied to order items as a distinct state transition?
+  draft:The system must support updating the status of an order item as a distinct operation within the Manage OrderItem workflow.
+  ev:   FRBLOCK-022
+  ref:  1.36 (0.30) Order Item Management Function :: Order Item Management Function Description: Authorized administrators can edit, remove, or update the status of items in an order where business rules permit. The system … || 1.17 (0.21) Product Price and Inventory Quantity Constraints :: Product Price and Inventory Quantity Constraints Description: Product prices and inventory quantities must be validated before product creation or update. Price must be a…
+
+OPERATION-71f67da72cc8 | operation | unresolved | best_full=OPERATION-f3c3af799c05 sim=0.64
+  subj: Email Record Management Event
+  q:    Should the Email Record Management Event be emitted for every action (view, edit, delete), and does it include the actor and action type?
+  draft:The system must define the trigger conditions and payload for Email Record Management Event, covering view, edit, and delete actions as applicable.
+  ev:   FRBLOCK-023
+  ref:  1.34 (0.37) Email Record Management Function :: Email Record Management Function Description: Authorized administrators can view, manage, or delete EmailRecord entries according to permissions. Customers may view email… || 1.44 (0.17) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+OPERATION-5920144f7d53 | operation | unsupported | best_full=OPERATION-57ba231c91cd sim=0.52
+  subj: Confirmation Message Displayed
+  q:    Is a confirmation message required for every Manage EmailRecord operation, including view, or only after edit and delete actions?
+  draft:The system must display a confirmation message after each completed Manage EmailRecord operation as specified for that operation type.
+  ev:   FRBLOCK-023
+  ref:  1.32 (0.22) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde… || 1.44 (0.22) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+OPERATION-245e4b947d38 | operation | covered | best_full=OPERATION-021cbb3a50be sim=0.68
+  subj: EmailRecord Data Entity
+  q:    Does the documented workflow require an operation to retrieve the selected email details from the EmailRecord Data Entity for display?
+  draft:The View EmailRecord Function must retrieve the selected email record's details from the EmailRecord Data Entity for display.
+  ev:   FRBLOCK-024
+  ref:  1.34 (0.24) Email Record Management Function :: Email Record Management Function Description: Authorized administrators can view, manage, or delete EmailRecord entries according to permissions. Customers may view email… || 1.32 (0.24) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde…
+
+OPERATION-1beef9332bb3 | operation | covered | best_full=OPERATION-1c04df487c3d sim=0.68
+  subj: Manage Administrator Function
+  q:    Should the Manage Administrator Function accept both update and deactivate as valid action inputs?
+  draft:The Manage Administrator Function shall accept an action input with update or deactivate values.
+  ev:   FRBLOCK-027
+  ref:  1.38 (0.31) Administrator Management Function :: Administrator Management Function Description: Authorized administrators can manage administrator accounts by updating, deactivating, or managing permitted administrator … || 1.39 (0.26) Customer Management Function :: Customer Management Function Description: Authorized administrators can manage customer accounts, including updating customer information or deactivating accounts where p…
+
+OPERATION-4e2c0221bc2a | operation | covered | best_full=ISOLATED-43a541a03650 sim=0.62
+  subj: System Interface Modified
+  q:    What operation applies the updated User Interface Specification to the running system interface so that the interface reflects the changes?
+  draft:The system shall modify the system interface to reflect the updated User Interface Specification after a successful modification.
+  ev:   FRBLOCK-030
+  ref:  1.43 (0.45) User Interface Specification Management Function :: User Interface Specification Management Function Description: Authorized administrators can manage user interface specifications and check interface compliance against de… || 1.23 (0.12) Shopping Cart Modification Function :: Shopping Cart Modification Function Description: Customers can modify item quantities or remove items from their shopping cart. The system validates the cart item, reques…
+
+OPERATION-98dbf21185c6 | operation | unsupported | best_full=OPERATION-1006feed7b33 sim=0.68
+  subj: Validate Personal Information Changes
+  q:    Which validation operation must run before Personal Information Data Entity update, and what happens when validation fails?
+  draft:The system shall validate personal information changes before committing them to the Personal Information Data Entity and shall block invalid updates with an error.
+  ev:   FRBLOCK-031
+  ref:  1.5 (0.30) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m… || 1.6 (0.27) Personal Information Update Notification and Audit :: Personal Information Update Notification and Audit Description: Successful personal information updates should generate an update status notification or confirmation emai…
+
+
+## NoOperationReview: 191 nominations, 0 new vs Full
+
+
+## NoFullDocumentValidation: 214 nominations, 14 new vs Full
+
+OPERATION-5a1de396f407 | operation | not_checked | best_full=DEP-008 sim=0.69
+  subj: Confirmation Email Sent
+  q:    Is there a documented operation to resend the confirmation email if the customer does not receive it?
+  draft:The system must define whether the confirmation email can be resent on customer request.
+  ev:   FRBLOCK-001
+  ref:  1.33 (0.31) Order Confirmation Email Failure Handling :: Order Confirmation Email Failure Handling Description: If an order confirmation email cannot be sent or its EmailRecord cannot be retrieved, the system must record the fa… || 1.32 (0.23) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde…
+
+OPERATION-8710bc9767ce | operation | not_checked | best_full=DEP-006 sim=0.53
+  subj: Customer Account Created
+  q:    What operations are immediately available after the 'Customer Account Created' event, such as login or profile update?
+  draft:The system must define the post-registration operations available to a newly created customer account.
+  ev:   FRBLOCK-001
+  ref:  1.1 (0.21) Customer Registration Function :: Customer Registration Function Description: Customers can register for a new account by providing valid personal information, a valid email address, password, and optiona… || 1.44 (0.18) Event Logging and Audit Recovery :: Event Logging and Audit Recovery Description: Significant actions must be recorded for traceability, including registration, login, logout, personal information updates, …
+
+OPERATION-9003d29e4217 | operation | not_checked | best_full=OPERATION-1c04df487c3d sim=0.64
+  subj: Customer Logout Function
+  q:    Should the Customer Logout Function record the logout event only in Purchase History, or also in a dedicated session/audit log?
+  draft:Confirm the authoritative data destination(s) for logout event recording before implementation.
+  ev:   FRBLOCK-003
+  ref:  1.3 (0.33) Customer Logout Function :: Customer Logout Function Description: Customers can log out of the system. The system terminates or invalidates the active session, redirects the customer to the homepage… || 1.11 (0.24) Purchase History Synchronization with Orders :: Purchase History Synchronization with Orders Description: Purchase history must reflect current order data and status. When an order is created, updated, cancelled, or ch…
+
+OPERATION-e56851938295 | operation | not_checked | best_full=OPERATION-ad04480a3580 sim=0.67
+  subj: Update Event Recorded
+  q:    What audit details must be captured when the personal information update event is recorded?
+  draft:Define audit fields such as actor, timestamp, and changed fields for personal information update events.
+  ev:   FRBLOCK-004
+  ref:  1.6 (0.45) Personal Information Update Notification and Audit :: Personal Information Update Notification and Audit Description: Successful personal information updates should generate an update status notification or confirmation emai… || 1.5 (0.37) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m…
+
+OPERATION-cd2c63bed4cf | operation | not_checked | best_full=DEP-008 sim=0.69
+  subj: Confirmation Email Sent
+  q:    What triggers the confirmation email and what content must it include after a personal information update?
+  draft:Specify trigger, recipient, and content requirements for the personal information update confirmation email.
+  ev:   FRBLOCK-004
+  ref:  1.5 (0.38) Personal Information Management Function :: Personal Information Management Function Description: Customers can view and update their own personal information, such as name or email. Authorized administrators may m… || 1.6 (0.37) Personal Information Update Notification and Audit :: Personal Information Update Notification and Audit Description: Successful personal information updates should generate an update status notification or confirmation emai…
+
+OPERATION-7c007f8c3009 | operation | not_checked | best_full=OPERATION-446932587fb7 sim=0.69
+  subj: Purchase History Displayed
+  q:    Should the Purchase History Displayed state define behavior for empty or unavailable history, or is the listed output format sufficient?
+  draft:The Purchase History Displayed state should define empty-state and unavailable-history behavior.
+  ev:   FRBLOCK-006
+  ref:  1.10 (0.31) Purchase History Failure Handling and Logging :: Purchase History Failure Handling and Logging Description: If purchase history cannot be retrieved, the system must show a user-facing failure message instead of a silent… || 1.11 (0.28) Purchase History Synchronization with Orders :: Purchase History Synchronization with Orders Description: Purchase history must reflect current order data and status. When an order is created, updated, cancelled, or ch…
+
+OPERATION-63f07c0090a7 | operation | not_checked | best_full=DEP-010 sim=0.62
+  subj: Product Addition Function
+  q:    Should the product addition operation include a duplicate check before storing a new product in the Product data entity?
+  draft:The system should define whether duplicate product names are allowed and, if not, validate against existing products before storing the new product.
+  ev:   FRBLOCK-007
+  ref:  1.37 (0.25) Product Management Authorization :: Product Management Authorization Description: Product catalog operations, including product addition, removal, update, categorization, and inventory management, must be r… || 1.12 (0.19) Product Addition Function :: Product Addition Function Description: Authorized administrators can add new products to the system by providing product details such as name, description, price, categor…
+
+OPERATION-97b81bc9f6c3 | operation | not_checked | best_full=OPERATION-aaa14549d825 sim=0.58
+  subj: Product Categorization Function
+  q:    Does the documented assign-or-modify workflow require distinct operations for assigning a category to an uncategorized product and modifying an existi…
+  draft:Administrators can assign a category to an uncategorized product and modify an existing category association.
+  ev:   FRBLOCK-010
+  ref:  1.18 (0.44) Product Categorization Function :: Product Categorization Function Description: Authorized administrators can assign or modify product categories. The system validates the category and updates the product-… || 1.12 (0.27) Product Addition Function :: Product Addition Function Description: Authorized administrators can add new products to the system by providing product details such as name, description, price, categor…
+
+OPERATION-7a571ccc9ca5 | operation | not_checked | best_full=OPERATION-37b68e1d5387 sim=0.60
+  subj: Confirmation Message Shown
+  q:    Does FR-12 define the conditions under which the confirmation message is shown relative to inventory update success?
+  draft:Specify confirmation message timing and conditions, including whether it depends on successful cart and inventory updates.
+  ev:   FRBLOCK-012
+  ref:  1.6 (0.21) Personal Information Update Notification and Audit :: Personal Information Update Notification and Audit Description: Successful personal information updates should generate an update status notification or confirmation emai… || 1.30 (0.19) Payment Processing Function :: Payment Processing Function Description: The system processes the customer’s selected payment method and validates payment details. A successful payment must be stored, a…
+
+OPERATION-22d7b392cd93 | operation | not_checked | best_full=OPERATION-1b3bfb3f17aa sim=0.68
+  subj: Plugin Data
+  q:    Should the plugin details or file be stored in the Plugin data entity upon development or installation?
+  draft:The system must store the plugin in the Plugin data entity upon development or installation.
+  ev:   FRBLOCK-018
+  ref:  1.41 (0.50) Plugin Installation Function :: Plugin Installation Function Description: Authorized administrators can install plugins to expand system functionality. The system validates the plugin before activation,… || 1.42 (0.22) Plugin Configuration Function :: Plugin Configuration Function Description: Authorized administrators can configure installed plugins. The system validates configuration settings, applies valid changes, …
+
+OPERATION-1d95db76a24d | operation | not_checked | best_full=DEP-014 sim=0.56
+  subj: Manage OrderItem
+  q:    Which specific operations within Manage OrderItem are required for this FR, and what preconditions or validation rules apply to each?
+  draft:The Manage OrderItem function shall support administrator-initiated edit, remove, and status-update operations as documented.
+  ev:   FRBLOCK-022
+  ref:  1.36 (0.24) Order Item Management Function :: Order Item Management Function Description: Authorized administrators can edit, remove, or update the status of items in an order where business rules permit. The system … || 1.17 (0.16) Product Price and Inventory Quantity Constraints :: Product Price and Inventory Quantity Constraints Description: Product prices and inventory quantities must be validated before product creation or update. Price must be a…
+
+OPERATION-84e55483d0c1 | operation | not_checked | best_full=OPERATION-a0339d21be16 sim=0.64
+  subj: OrderItem
+  q:    What OrderItem attributes and state changes must be persisted when an administrator edits, removes, or updates the status of an order item?
+  draft:OrderItem records shall be updated to reflect approved edit, removal, and status-update operations.
+  ev:   FRBLOCK-022
+  ref:  1.36 (0.36) Order Item Management Function :: Order Item Management Function Description: Authorized administrators can edit, remove, or update the status of items in an order where business rules permit. The system … || 1.11 (0.25) Purchase History Synchronization with Orders :: Purchase History Synchronization with Orders Description: Purchase history must reflect current order data and status. When an order is created, updated, cancelled, or ch…
+
+OPERATION-f2ff876d9ad7 | operation | not_checked | best_full=OPERATION-c72a82a5b93d sim=0.51
+  subj: Order Item Status Update
+  q:    What are the valid status values and allowed transitions for an order item, and who may perform the status update?
+  draft:Order item status updates shall follow documented valid transitions and authorization rules.
+  ev:   FRBLOCK-022
+  ref:  1.36 (0.35) Order Item Management Function :: Order Item Management Function Description: Authorized administrators can edit, remove, or update the status of items in an order where business rules permit. The system … || 1.35 (0.21) Order Cancellation Function :: Order Cancellation Function Description: Customers or administrators can cancel an order if it is in an eligible status. The system validates the actor’s authorization an…
+
+OPERATION-c66ae4c0a920 | operation | not_checked | best_full=OPERATION-021cbb3a50be sim=0.68
+  subj: EmailRecord Data Entity
+  q:    Is the EmailRecord data entity expected to be read when a customer or administrator views an email record, and should that read operation be explicitl…
+  draft:The View EmailRecord Function shall read the selected EmailRecord data entity to display its details.
+  ev:   FRBLOCK-024
+  ref:  1.34 (0.25) Email Record Management Function :: Email Record Management Function Description: Authorized administrators can view, manage, or delete EmailRecord entries according to permissions. Customers may view email… || 1.32 (0.25) Order Confirmation Email Sending Function :: Order Confirmation Email Sending Function Description: The system sends an order confirmation email after successful order finalization. The email must use finalized orde…
