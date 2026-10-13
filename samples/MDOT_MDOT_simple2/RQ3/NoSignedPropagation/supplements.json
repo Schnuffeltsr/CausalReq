@@ -1,0 +1,163 @@
+[
+  {
+    "output_id": "OUT-91523aaf7bea",
+    "source_nomination_id": "DEP-002",
+    "origin": "dependency",
+    "text": "The system shall ensure that historical data ingested in batch is made available and suitable for training the machine learning models used for predictive analysis of traffic trends and incident likelihood.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-b9115ab50a28",
+    "source_nomination_id": "DEP-007",
+    "origin": "dependency",
+    "text": "The system shall validate each of the listed input data fields—GPS data, speed, location, road condition reports, temperature, precipitation, and visibility—against applicable predefined quality rules and reject any incoming record where one or more of these fields is invalid or malformed.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-c8aa0ebe9386",
+    "source_nomination_id": "DEP-008",
+    "origin": "dependency",
+    "text": "The system shall process historical data ingested via batch for archive backfill and make it available for publishing in standardized formats (SAE J2354, TMDD).",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-04eda7baa408",
+    "source_nomination_id": "DEP-014",
+    "origin": "dependency",
+    "text": "The system shall deliver the scheduled report email to the designated recipients when automatic report generation and email delivery is scheduled.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-f3e1efec5442",
+    "source_nomination_id": "DEP-020",
+    "origin": "dependency",
+    "text": "The system shall store normalized data in the central database that contains the accepted real-time input data fields: GPS data, speed, location, road condition reports, temperature, precipitation, and visibility.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-06c683e893e7",
+    "source_nomination_id": "ISOLATED-aca033bbe5bb",
+    "origin": "isolated",
+    "text": "The system shall define the scope and relationship between automated data quality checks and the validation process specified in FR-DCI-002, including any checks that extend beyond predefined validation rules.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-393b94e2622c",
+    "source_nomination_id": "ISOLATED-f12d49b4de50",
+    "origin": "isolated",
+    "text": "The system shall provide ad-hoc reporting tools with access to the normalized data stored in the central database through a defined data access method or interface.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-6ca7da4e0fdf",
+    "source_nomination_id": "ISOLATED-6a13da768f75",
+    "origin": "isolated",
+    "text": "The system shall ensure that newly configured data source types are processed by the existing data validation and storage pipelines.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-b18b3cfed2f5",
+    "source_nomination_id": "ISOLATED-2c8d1e438169",
+    "origin": "isolated",
+    "text": "The system documentation shall specify the data flow and consumer(s) for computed traffic metrics, including whether they are delivered to downstream consumers or stored, and the delivery mechanism or storage location.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-1278cd6a85b0",
+    "source_nomination_id": "ISOLATED-1f828497c34d",
+    "origin": "isolated",
+    "text": "The system documentation shall specify the handling and notification process for flagged data quality issues.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-30ea22e5277b",
+    "source_nomination_id": "OPERATION-b56de95a86b8",
+    "origin": "operation",
+    "text": "The system shall provide an operation for authorized users to retrieve incident reports.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-a37f409bed31",
+    "source_nomination_id": "ISOLATED-2c34e50b08b4",
+    "origin": "isolated",
+    "text": "The system shall document the relationship between dynamic caching for frequently accessed data and the archive/purging functions to ensure coordinated performance and storage management.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-4a5f98d9871e",
+    "source_nomination_id": "ISOLATED-684d54da7081",
+    "origin": "isolated",
+    "text": "The system shall compute traffic metrics (e.g., average speed, volume, occupancy) to support alert generation and API data consumption.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-e8c017e80870",
+    "source_nomination_id": "ISOLATED-b62cc7c2f226",
+    "origin": "isolated",
+    "text": "The system shall perform automated data quality checks on processed data before publishing it in standardized formats.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-31948a23838a",
+    "source_nomination_id": "OPERATION-10dce4e98af3",
+    "origin": "operation",
+    "text": "The system shall enable users to select which data fields to include when exporting data in the supported formats.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-50f0516a3774",
+    "source_nomination_id": "ISOLATED-15cc4318b445",
+    "origin": "isolated",
+    "text": "The system shall ensure computed traffic metrics are accessible through the web-based interface for viewing traffic data.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-48207c359c51",
+    "source_nomination_id": "ISOLATED-652707b10793",
+    "origin": "isolated",
+    "text": "The system shall allow users to add generated statistical summaries to custom dashboards.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-a3616b22d80c",
+    "source_nomination_id": "OPERATION-fbce9be4ba4f",
+    "origin": "operation",
+    "text": "The system shall automatically update map displays to show only traffic, incident, and road closure icons that match user-applied filters or search criteria.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-e4945181b2e6",
+    "source_nomination_id": "OPERATION-2b628bcf017a",
+    "origin": "operation",
+    "text": "The system shall persist user-created custom dashboards and allow retrieval for subsequent sessions.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-eb586c3c90b3",
+    "source_nomination_id": "OPERATION-08edb476b138",
+    "origin": "operation",
+    "text": "The system shall ensure that logs of administrative actions and errors include at least actor identity, timestamp, and action/error details.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-a64bd391fccd",
+    "source_nomination_id": "OPERATION-6dd09caf4b86",
+    "origin": "operation",
+    "text": "The system shall enforce role-based access control for every data access attempt (including read and write operations) and for all administrative operations, ensuring users can perform only actions permitted by their assigned role.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-9a6079d765fc",
+    "source_nomination_id": "ISOLATED-0e9bc1e8495e",
+    "origin": "isolated",
+    "text": "The system shall perform automated data quality checks on data used for pre-defined and ad-hoc reports, or reference an existing data quality component, to ensure report accuracy.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-3b2f4078ea23",
+    "source_nomination_id": "OPERATION-27233d2f8d29",
+    "origin": "operation",
+    "text": "The system shall allow authorized users to retrieve and view audit log entries.",
+    "status": "model_preliminarily_retained"
+  }
+]

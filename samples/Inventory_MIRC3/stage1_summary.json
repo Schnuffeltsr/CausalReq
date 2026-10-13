@@ -1,0 +1,17 @@
+{
+  "doc_id": "Inventory_MIRC3",
+  "source_path": "C:\\Users\\32851\\Desktop\\工作区\\测试数据\\Inventory\\Document\\filtered_Inventory_MIRC3_doc.docx",
+  "source_fr_count": 27,
+  "element_count": 155,
+  "elements_with_active_meaning": 140,
+  "evidence_relation_count": 276,
+  "evidence_nodes": 155,
+  "evidence_edges": 276,
+  "simulation_nodes": 140,
+  "simulation_edges": 103,
+  "exclusions": 51,
+  "fixed_pool_count": 20,
+  "model_version": "MODEL-396084324100",
+  "llm_calls": 80,
+  "minutes": 68.5
+}

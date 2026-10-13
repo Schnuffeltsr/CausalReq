@@ -1,0 +1,262 @@
+# RQ2 fixed pool — MDOT_MDOT_simple2 (20 candidates + reference shortlist)
+
+[ 1] DEP-018 ACE=+0.5292 reach=1
+   source: Detect and classify incidents
+   target: Incident reports
+   question: Does the system's obligation specify that when an incident is detected and classified, an incident report with time, location, type, and severity is generated?
+   draft: When the system detects and classifies an incident, the system shall generate an incident report with time, location, type, and severity.
+   evidence FRs: FRBLOCK-002
+   reference shortlist:
+      ref FR-013 (sim 0.32) Incident Detection and Classification
+         Incident Detection and Classification Input: Raw sensor data, probe vehicle data, normalized traffic metrics, weather context, and road condition context. Output: Incident reports with time, location, type, severity, and detection identifie…
+      ref FR-054 (sim 0.20) Search and Filtering
+         Search and Filtering Input: User role, search query, location, time, event type, and other filter criteria. Output: Filtered search results within the user’s authorization scope. Description: Users shall be able to filter and search data by…
+      ref FR-079 (sim 0.17) Incident Report Access During Transmission Failure
+         Incident Report Access During Transmission Failure Input: Encrypted transmission failure, access protection degraded condition, and last known access-allowed incident report state. Output: Incident report access result or restricted access …
+[ 2] DEP-003 ACE=+0.5084 reach=2
+   source: Accept real-time data inputs from external sources
+   target: Normalized data stored in central database
+   question: Is there a business obligation that the system shall normalize and store the accepted real-time data inputs from probe vehicles, traffic sensors, weather stations, and traveler information systems int…
+   draft: The system shall normalize and store all accepted real-time data inputs from probe vehicles, traffic sensors, weather stations, and traveler information systems in the central database.
+   evidence FRs: FRBLOCK-001
+   reference shortlist:
+      ref FR-001 (sim 0.67) Data Collection and Ingestion
+         Data Collection and Ingestion Input: GPS data, speed, location, road condition reports, temperature, precipitation, visibility, traveler information data, and source metadata. Output: Normalized data stored in the central database. Descript…
+      ref FR-042 (sim 0.20) API for External Applications
+         API for External Applications Input: External application request, requested data type, authorization context, and query parameters. Output: Real-time traffic, weather, incident, road condition, or traveler data. Description: The system sha…
+      ref FR-015 (sim 0.17) Road Surface Condition Calculation
+         Road Surface Condition Calculation Input: Weather data, road sensor inputs, probe vehicle data, and traffic data. Output: Road surface condition indicators. Description: The system shall calculate road surface conditions based on weather da…
+[ 3] DEP-005 ACE=+0.5084 reach=1
+   source: Automated data purging policies
+   target: Support automated data purging policies
+   question: Given the dependency from 'automated data purging policies' to 'support automated data purging policies', does the target requirement adequately specify the obligation to support the defined policies?
+   draft: The system shall support automated data purging policies when such policies are defined and active.
+   evidence FRs: FRBLOCK-003
+   reference shortlist:
+      ref FR-031 (sim 0.47) Automated Data Purging
+         Automated Data Purging Input: Purge policy rule, retention period, archived records, and dependency status. Output: Eligible purge dataset and purge outcome. Description: The system shall support automated data purging policies to manage st…
+      ref FR-016 (sim 0.14) Automated Data Quality Checks
+         Automated Data Quality Checks Input: Normalized data, processing results, predefined quality rules, and anomaly rules. Output: Quality flags, anomaly indicators, rejected data rationale, and processing continuity status. Description: The sy…
+      ref FR-039 (sim 0.10) External Data Export
+         External Data Export Input: Processed data, export request, target format, and authorization context. Output: Exported data in CSV, JSON, XML, KML, or other supported formats. Description: The system shall support exporting data in configur…
+[ 4] DEP-014 ACE=+0.5084 reach=2
+   source: Schedule Automatic Report Generation and Email Delivery
+   target: Email Delivery
+   question: Does the system guarantee that when users schedule automatic report generation and email delivery (as stated in FRBLOCK-007), the scheduled report email is actually delivered to the designated recipie…
+   draft: When automatic report generation and email delivery is scheduled, the system shall deliver the report email to the designated recipients.
+   evidence FRs: FRBLOCK-007
+   reference shortlist:
+      ref FR-066 (sim 0.68) Scheduled Report Generation
+         Scheduled Report Generation Input: Report definition, schedule, recipient list, and delivery preferences. Output: Scheduled report output and delivery status. Description: The system shall allow users to schedule automatic report generation…
+      ref FR-036 (sim 0.16) Restore Completion Notification
+         Restore Completion Notification Input: Restore request outcome, restore target details, backup version used, and affected data scope. Output: Restore status notification delivered to designated stakeholders. Description: The system shall no…
+      ref FR-070 (sim 0.15) Failed Ad-Hoc Report Job Cancellation
+         Failed Ad-Hoc Report Job Cancellation Input: Failed ad-hoc report generation job. Output: Canceled job record. Description: Operators shall be able to cancel and remove failed ad-hoc report generation jobs. The system shall release held res…
+[ 5] DEP-015 ACE=+0.5084 reach=1
+   source: High-volume data display
+   target: De-cluttering features
+   question: Is there an explicit requirement that high-volume data display triggers de-cluttering features?
+   draft: The system shall activate de-cluttering features when high-volume data display occurs.
+   evidence FRs: FRBLOCK-005
+   reference shortlist:
+      ref FR-053 (sim 0.65) Map De-Cluttering
+         Map De-Cluttering Input: High-volume map data, zoom level, layer density, and user preference. Output: De-cluttered map display. Description: The system shall support de-cluttering features to reduce visual complexity during high-volume dat…
+      ref FR-065 (sim 0.19) Predefined Reports
+         Predefined Reports Input: Traffic volume data, incident data, road condition data, weather data, and reporting period. Output: Predefined reports on traffic volume, incident frequency, and road condition trends. Description: The system shal…
+      ref FR-052 (sim 0.09) Map Display and Icon Layers
+         Map Display and Icon Layers Input: Traffic data, incident data, road closure data, weather data, road condition data, and layer configuration. Output: Map displays with icon layers. Description: The user interface shall include map displays…
+[ 6] DEP-019 ACE=+0.5084 reach=2
+   source: Maintain long-term archive of processed data
+   target: Allow users to query archived data via SQL-based tools
+   question: If the system is maintaining a long-term archive of processed data, must users always be able to query that archived data via SQL-based tools, or are there additional prerequisites that could prevent …
+   draft: The system shall allow users to query archived data via SQL-based tools whenever the long-term archive of processed data is maintained.
+   evidence FRs: FRBLOCK-003
+   reference shortlist:
+      ref FR-028 (sim 0.46) Archived Data Query
+         Archived Data Query Input: Archived data request, SQL query, user identity, requested data type, and requested time range. Output: Archived data query result or access denied response. Description: The system shall allow authorized users to…
+      ref FR-026 (sim 0.43) Long-Term Archive Storage
+         Long-Term Archive Storage Input: Processed data, traffic metrics, incident reports, weather observations, road condition outputs, and metadata. Output: Archived data stored using Oracle 10G. Description: The system shall maintain a long-ter…
+      ref FR-030 (sim 0.38) Archived Retrieval Fallback
+         Archived Retrieval Fallback Input: SQL-based query failure and archived data request. Output: Alternative retrieval outcome, query-safe archived result, or user-facing error explanation. Description: When SQL-based archive querying fails, t…
+[ 7] DEP-004 ACE=+0.4860 reach=2
+   source: Schedule Automatic Report Generation and Email Delivery
+   target: Generate Pre-defined Reports
+   question: Does the system need to generate the pre-defined reports on traffic volume, incident frequency, and road condition trends whenever a user schedules automatic report generation and email delivery?
+   draft: When a user schedules automatic report generation and email delivery, the system shall generate the pre-defined reports on traffic volume, incident frequency, and road condition trends.
+   evidence FRs: FRBLOCK-007
+   reference shortlist:
+      ref FR-065 (sim 0.64) Predefined Reports
+         Predefined Reports Input: Traffic volume data, incident data, road condition data, weather data, and reporting period. Output: Predefined reports on traffic volume, incident frequency, and road condition trends. Description: The system shal…
+      ref FR-025 (sim 0.34) Statistical Traffic Summaries
+         Statistical Traffic Summaries Input: Traffic metrics, incident data, road condition data, and reporting period. Output: Daily, weekly, and monthly statistical summaries. Description: The system shall generate statistical summaries of traffi…
+      ref FR-066 (sim 0.31) Scheduled Report Generation
+         Scheduled Report Generation Input: Report definition, schedule, recipient list, and delivery preferences. Output: Scheduled report output and delivery status. Description: The system shall allow users to schedule automatic report generation…
+[ 8] DEP-009 ACE=+0.4621 reach=3
+   source: Input data fields
+   target: Accept real-time data inputs from external sources
+   question: Is it required that the system accept the input data fields 'GPS data, speed, location, road condition reports, temperature, precipitation, visibility' as part of accepting real-time data inputs from …
+   draft: The system shall accept real-time data inputs from probe vehicles, traffic sensors, weather stations, and traveler information systems, including the input data fields: GPS data, speed, location, road condition reports, temperature, precipi…
+   evidence FRs: FRBLOCK-001
+   reference shortlist:
+      ref FR-001 (sim 0.76) Data Collection and Ingestion
+         Data Collection and Ingestion Input: GPS data, speed, location, road condition reports, temperature, precipitation, visibility, traveler information data, and source metadata. Output: Normalized data stored in the central database. Descript…
+      ref FR-015 (sim 0.24) Road Surface Condition Calculation
+         Road Surface Condition Calculation Input: Weather data, road sensor inputs, probe vehicle data, and traffic data. Output: Road surface condition indicators. Description: The system shall calculate road surface conditions based on weather da…
+      ref FR-013 (sim 0.24) Incident Detection and Classification
+         Incident Detection and Classification Input: Raw sensor data, probe vehicle data, normalized traffic metrics, weather context, and road condition context. Output: Incident reports with time, location, type, severity, and detection identifie…
+[ 9] DEP-012 ACE=+0.4621 reach=1
+   source: Configure Data Sources, Algorithms, and Output Formats
+   target: Log Administrative Actions and Errors
+   question: Does the requirement to allow administrators to configure data sources, algorithms, and output formats adequately trigger the logging of all administrative actions, including those configuration chang…
+   draft: The system shall log every administrative action involving the configuration of data sources, algorithms, and output formats as an administrative action, in accordance with the requirement to log all administrative actions and errors.
+   evidence FRs: FRBLOCK-006
+   reference shortlist:
+      ref FR-064 (sim 0.56) Administrative Action and Error Logging
+         Administrative Action and Error Logging Input: Administrative action, configuration change, system error, actor identity, and timestamp. Output: Administrative audit or error log. Description: The system shall log administrative actions and…
+      ref FR-057 (sim 0.33) System Configuration Management
+         System Configuration Management Input: Data source configuration, algorithm configuration, output format configuration, and administrator request. Output: Applied configuration, rejected configuration, or configuration status. Description: …
+      ref FR-037 (sim 0.20) Restore Audit Logging
+         Restore Audit Logging Input: Configuration restore result, restore trigger, restored backup identifier, operator or process identity, and timestamp. Output: Configuration restore audit record. Description: The system shall record the outcom…
+[10] DEP-011 ACE=+0.4394 reach=3
+   source: Use Oracle 10G for archiving
+   target: Maintain long-term archive of processed data
+   question: Does the requirement that the system 'maintain a long-term archive of all processed data' adequately handle scenarios where 'using Oracle 10G' for archiving is no longer feasible (e.g., unsupported, u…
+   draft: The system shall maintain the long-term archive of all processed data without being solely dependent on Oracle 10G, ensuring continuity of archival operations.
+   evidence FRs: FRBLOCK-003
+   reference shortlist:
+      ref FR-026 (sim 0.67) Long-Term Archive Storage
+         Long-Term Archive Storage Input: Processed data, traffic metrics, incident reports, weather observations, road condition outputs, and metadata. Output: Archived data stored using Oracle 10G. Description: The system shall maintain a long-ter…
+      ref 2.3 (sim 0.14) Data Storage, Archiving, Backup, and Retrieval
+         Data Storage, Archiving, Backup, and Retrieval
+      ref FR-019 (sim 0.10) Processing Continuity Status Recording
+         Processing Continuity Status Recording Input: Processing attempt, normalized output availability determination, failed source list, and processing status candidates. Output: Continuity status record, timestamp, failed-source summary referen…
+[11] DEP-002 ACE=+0.4368 reach=4
+   source: Support batch ingestion of historical data
+   target: Support machine learning models
+   question: Should the system include an explicit requirement to ensure that batch-ingested historical data is made available to the machine learning model training process, given the documented dependency?
+   draft: The system shall ensure that the batch-ingested historical data is available and accessible to the machine learning model training process to support predictive analysis of traffic trends and incident likelihood.
+   evidence FRs: FRBLOCK-001, FRBLOCK-002
+   reference shortlist:
+      ref FR-024 (sim 0.51) Predictive Analytics Support
+         Predictive Analytics Support Input: Historical data, traffic metrics, weather data, incident data, and model configuration. Output: Traffic trend predictions and incident likelihood predictions. Description: The system shall support predict…
+      ref FR-008 (sim 0.33) Batch Historical Data Ingestion
+         Batch Historical Data Ingestion Input: Batch ingestion request, historical data inputs, historical time range, and source identifiers. Output: Backfilled archived data, partial backfill status, or backfill failure report. Description: The s…
+      ref 2.2 (sim 0.16) Data Processing and Analysis
+         Data Processing and Analysis
+[12] DEP-013 ACE=+0.4102 reach=2
+   source: Accept real-time data inputs from external sources
+   target: Validate incoming data and reject invalid data
+   question: Is the dependency between FR-DCI-001 (Accept real-time data inputs from external sources) and FR-DCI-002 (Validate incoming data and reject invalid data) adequately specified such that every accepted …
+   draft: The system shall validate every real-time data input accepted from probe vehicles, traffic sensors, weather stations, and traveler information systems against predefined quality rules, and shall reject any input that is invalid or malformed…
+   evidence FRs: FRBLOCK-001
+   reference shortlist:
+      ref FR-002 (sim 0.51) Incoming Data Validation
+         Incoming Data Validation Input: Incoming real-time data, batch data, predefined quality rules, schema rules, and validation metadata. Output: Accepted normalized data, rejected data status, or quarantined input record. Description: The syst…
+      ref FR-001 (sim 0.43) Data Collection and Ingestion
+         Data Collection and Ingestion Input: GPS data, speed, location, road condition reports, temperature, precipitation, visibility, traveler information data, and source metadata. Output: Normalized data stored in the central database. Descript…
+      ref FR-003 (sim 0.31) Invalid Real-Time Input Quarantine
+         Invalid Real-Time Input Quarantine Input: Incoming real-time input and validation rejection reason. Output: Quarantined input record. Description: The system shall quarantine invalid or malformed real-time inputs rather than rejecting them …
+[13] DEP-010 ACE=+0.3679 reach=4
+   source: Support batch ingestion of historical data
+   target: Maintain long-term archive of processed data
+   question: Does the support for batch ingestion of historical data, as specified in the functional requirement ('The system shall support batch ingestion of historical data for backfilling archives and training …
+   draft: The system shall, upon completing batch ingestion of historical data, store the processed data into the long-term archive, thereby maintaining the archive's completeness and continuity.
+   evidence FRs: FRBLOCK-001
+   reference shortlist:
+      ref FR-008 (sim 0.52) Batch Historical Data Ingestion
+         Batch Historical Data Ingestion Input: Batch ingestion request, historical data inputs, historical time range, and source identifiers. Output: Backfilled archived data, partial backfill status, or backfill failure report. Description: The s…
+      ref FR-026 (sim 0.44) Long-Term Archive Storage
+         Long-Term Archive Storage Input: Processed data, traffic metrics, incident reports, weather observations, road condition outputs, and metadata. Output: Archived data stored using Oracle 10G. Description: The system shall maintain a long-ter…
+      ref FR-009 (sim 0.22) Batch Ingestion Impact Control
+         Batch Ingestion Impact Control Input: Batch ingestion request and ingestion concurrency condition. Output: Ingestion throttling or priority scheduling decision. Description: The system shall limit the resource consumption of batch ingestion…
+[14] DEP-016 ACE=+0.3535 reach=2
+   source: Maintain long-term archive of processed data
+   target: Publish processed data in standardized formats
+   question: Given the requirement to "maintain a long-term archive of all processed data" and the requirement to "publish processed data in standardized formats", does the system need to ensure that the published…
+   draft: The system shall publish processed data in standardized formats by retrieving the relevant processed data from the long-term archive of all processed data that the system maintains.
+   evidence FRs: FRBLOCK-003, FRBLOCK-004
+   reference shortlist:
+      ref FR-026 (sim 0.47) Long-Term Archive Storage
+         Long-Term Archive Storage Input: Processed data, traffic metrics, incident reports, weather observations, road condition outputs, and metadata. Output: Archived data stored using Oracle 10G. Description: The system shall maintain a long-ter…
+      ref FR-038 (sim 0.41) Standardized Data Publication
+         Standardized Data Publication Input: Processed and validated data. Output: Published data in SAE J2354, TMDD, and configured output formats. Description: The system shall publish processed data in standardized formats such as SAE J2354 and …
+      ref FR-039 (sim 0.19) External Data Export
+         External Data Export Input: Processed data, export request, target format, and authorization context. Output: Exported data in CSV, JSON, XML, KML, or other supported formats. Description: The system shall support exporting data in configur…
+[15] DEP-020 ACE=+0.2349 reach=3
+   source: Input data fields
+   target: Normalized data stored in central database
+   question: Does the system include an obligation to ensure that when the input data fields (GPS data, speed, location, road condition reports, temperature, precipitation, visibility) are present in real-time dat…
+   draft: When the system receives real-time data inputs that include GPS data, speed, location, road condition reports, temperature, precipitation, and visibility, it shall accept those inputs and store normalized data in a central database.
+   evidence FRs: FRBLOCK-001
+   reference shortlist:
+      ref FR-001 (sim 0.57) Data Collection and Ingestion
+         Data Collection and Ingestion Input: GPS data, speed, location, road condition reports, temperature, precipitation, visibility, traveler information data, and source metadata. Output: Normalized data stored in the central database. Descript…
+      ref FR-015 (sim 0.18) Road Surface Condition Calculation
+         Road Surface Condition Calculation Input: Weather data, road sensor inputs, probe vehicle data, and traffic data. Output: Road surface condition indicators. Description: The system shall calculate road surface conditions based on weather da…
+      ref FR-013 (sim 0.17) Incident Detection and Classification
+         Incident Detection and Classification Input: Raw sensor data, probe vehicle data, normalized traffic metrics, weather context, and road condition context. Output: Incident reports with time, location, type, severity, and detection identifie…
+[16] DEP-001 ACE=+0.2234 reach=3
+   source: Use Oracle 10G for archiving
+   target: Allow users to query archived data via SQL-based tools
+   question: Does the requirement block FRBLOCK-003 clearly obligate the system to allow users to query archived data via SQL-based tools given that the archive is maintained using Oracle 10G, or is an explicit ob…
+   draft: The system shall allow users to query archived data via SQL-based tools, where the archived data is the long-term archive of processed data maintained using Oracle 10G.
+   evidence FRs: FRBLOCK-003
+   reference shortlist:
+      ref FR-028 (sim 0.54) Archived Data Query
+         Archived Data Query Input: Archived data request, SQL query, user identity, requested data type, and requested time range. Output: Archived data query result or access denied response. Description: The system shall allow authorized users to…
+      ref FR-026 (sim 0.50) Long-Term Archive Storage
+         Long-Term Archive Storage Input: Processed data, traffic metrics, incident reports, weather observations, road condition outputs, and metadata. Output: Archived data stored using Oracle 10G. Description: The system shall maintain a long-ter…
+      ref FR-030 (sim 0.36) Archived Retrieval Fallback
+         Archived Retrieval Fallback Input: SQL-based query failure and archived data request. Output: Alternative retrieval outcome, query-safe archived result, or user-facing error explanation. Description: When SQL-based archive querying fails, t…
+[17] DEP-007 ACE=+0.1896 reach=3
+   source: Input data fields
+   target: Validate incoming data and reject invalid data
+   question: Does the validation requirement (FR-DCI-002) specify predefined quality rules for each of the input data fields listed in FR-DCI-001, including GPS data, speed, location, road condition reports, tempe…
+   draft: The system shall validate each accepted real-time data input field (GPS data, speed, location, road condition reports, temperature, precipitation, and visibility) against predefined quality rules and reject any record where a field is inval…
+   evidence FRs: FRBLOCK-001
+   reference shortlist:
+      ref FR-001 (sim 0.41) Data Collection and Ingestion
+         Data Collection and Ingestion Input: GPS data, speed, location, road condition reports, temperature, precipitation, visibility, traveler information data, and source metadata. Output: Normalized data stored in the central database. Descript…
+      ref FR-002 (sim 0.39) Incoming Data Validation
+         Incoming Data Validation Input: Incoming real-time data, batch data, predefined quality rules, schema rules, and validation metadata. Output: Accepted normalized data, rejected data status, or quarantined input record. Description: The syst…
+      ref FR-004 (sim 0.26) Weather Input Quality Quarantine
+         Weather Input Quality Quarantine Input: Invalid or malformed weather data, data quality rule failure, and last known valid weather data quality outcome. Output: Quarantined weather inputs and safe weather alert inputs. Description: The syst…
+[18] DEP-017 ACE=+0.1870 reach=4
+   source: Support batch ingestion of historical data
+   target: Allow users to query archived data via SQL-based tools
+   question: Does the system's support for batch ingestion of historical data (FRBLOCK-001: 'The system shall support batch ingestion of historical data for backfilling archives and training models.') explicitly r…
+   draft: The system shall ensure that batch ingestion of historical data, performed for backfilling archives, results in archived data that is queryable by users via SQL-based tools.
+   evidence FRs: FRBLOCK-001, FRBLOCK-003
+   reference shortlist:
+      ref FR-008 (sim 0.48) Batch Historical Data Ingestion
+         Batch Historical Data Ingestion Input: Batch ingestion request, historical data inputs, historical time range, and source identifiers. Output: Backfilled archived data, partial backfill status, or backfill failure report. Description: The s…
+      ref FR-028 (sim 0.44) Archived Data Query
+         Archived Data Query Input: Archived data request, SQL query, user identity, requested data type, and requested time range. Output: Archived data query result or access denied response. Description: The system shall allow authorized users to…
+      ref FR-030 (sim 0.31) Archived Retrieval Fallback
+         Archived Retrieval Fallback Input: SQL-based query failure and archived data request. Output: Alternative retrieval outcome, query-safe archived result, or user-facing error explanation. Description: When SQL-based archive querying fails, t…
+[19] DEP-006 ACE=+0.1554 reach=3
+   source: Use Oracle 10G for archiving
+   target: Publish processed data in standardized formats
+   question: Does the documented dependency from 'Use Oracle 10G for archiving' to 'Publish processed data in standardized formats' warrant an explicit obligation that processed data to be published is sourced fro…
+   draft: The system shall publish processed data in standardized formats from the long-term archive maintained using Oracle 10G.
+   evidence FRs: FRBLOCK-003, FRBLOCK-004
+   reference shortlist:
+      ref FR-026 (sim 0.60) Long-Term Archive Storage
+         Long-Term Archive Storage Input: Processed data, traffic metrics, incident reports, weather observations, road condition outputs, and metadata. Output: Archived data stored using Oracle 10G. Description: The system shall maintain a long-ter…
+      ref FR-038 (sim 0.36) Standardized Data Publication
+         Standardized Data Publication Input: Processed and validated data. Output: Published data in SAE J2354, TMDD, and configured output formats. Description: The system shall publish processed data in standardized formats such as SAE J2354 and …
+      ref FR-039 (sim 0.16) External Data Export
+         External Data Export Input: Processed data, export request, target format, and authorization context. Output: Exported data in CSV, JSON, XML, KML, or other supported formats. Description: The system shall support exporting data in configur…
+[20] DEP-008 ACE=+0.1301 reach=4
+   source: Support batch ingestion of historical data
+   target: Publish processed data in standardized formats
+   question: Is there a requirement that explicitly connects the source FR 'The system shall support batch ingestion of historical data for backfilling archives and training models' to the target FR 'publish proce…
+   draft: The system shall ensure that processed data originating from batch ingestion of historical data is stored in the long-term archive and is then made available for publication in the standardized formats (e.g., SAE J2354, TMDD).
+   evidence FRs: FRBLOCK-001, FRBLOCK-003, FRBLOCK-004
+   reference shortlist:
+      ref FR-038 (sim 0.60) Standardized Data Publication
+         Standardized Data Publication Input: Processed and validated data. Output: Published data in SAE J2354, TMDD, and configured output formats. Description: The system shall publish processed data in standardized formats such as SAE J2354 and …
+      ref FR-008 (sim 0.45) Batch Historical Data Ingestion
+         Batch Historical Data Ingestion Input: Batch ingestion request, historical data inputs, historical time range, and source identifiers. Output: Backfilled archived data, partial backfill status, or backfill failure report. Description: The s…
+      ref FR-026 (sim 0.32) Long-Term Archive Storage
+         Long-Term Archive Storage Input: Processed data, traffic metrics, incident reports, weather observations, road condition outputs, and metadata. Output: Archived data stored using Oracle 10G. Description: The system shall maintain a long-ter…

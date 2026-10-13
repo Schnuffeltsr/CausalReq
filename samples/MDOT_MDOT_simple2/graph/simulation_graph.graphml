@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d5" for="edge" attr.name="weight" attr.type="string"/>
+<key id="d4" for="edge" attr.name="direction" attr.type="string"/>
+<key id="d3" for="edge" attr.name="sign" attr.type="string"/>
+<key id="d2" for="node" attr.name="active_meaning" attr.type="string"/>
+<key id="d1" for="node" attr.name="confidence" attr.type="string"/>
+<key id="d0" for="node" attr.name="type" attr.type="string"/>
+<graph edgedefault="directed"><node id="Accept real-time data inputs from external sources">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.97</data>
+  <data key="d2">the system is actively accepting real-time data inputs from probe vehicles, traffic sensors, weather stations, and traveler information systems</data>
+</node>
+<node id="Input data fields">
+  <data key="d0">DATA</data>
+  <data key="d1">0.93</data>
+  <data key="d2">the listed data fields are present in the incoming real-time data stream and accepted by the system for processing</data>
+</node>
+<node id="Normalized data stored in central database">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">normalized data has been successfully stored in the central database and is available as output</data>
+</node>
+<node id="Validate incoming data and reject invalid data">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.96</data>
+  <data key="d2">the validation process is active: incoming data is being checked against predefined quality rules and invalid or malformed records are rejected</data>
+</node>
+<node id="Predefined quality rules">
+  <data key="d0">CONSTRAINT</data>
+  <data key="d1">0.92</data>
+  <data key="d2">the constraint that incoming data must conform to predefined quality rules is enforced; nonconforming data is rejected</data>
+</node>
+<node id="Configure new data source types without major software changes">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.94</data>
+  <data key="d2">the system's capability to configure new data source types without major software changes is active and available</data>
+</node>
+<node id="Support batch ingestion of historical data">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system is actively supporting batch ingestion of historical data for backfilling archives and training models</data>
+</node>
+<node id="Compute traffic metrics">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.98</data>
+  <data key="d2">The system has computed traffic metrics including congestion levels, travel times, queue lengths, and traffic flow patterns.</data>
+</node>
+<node id="Detect and classify incidents">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.98</data>
+  <data key="d2">The system has detected and classified at least one incident as a crash, debris, stalled vehicle, or work zone.</data>
+</node>
+<node id="Calculate road surface conditions">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.98</data>
+  <data key="d2">The system has calculated road surface conditions using weather data and sensor inputs.</data>
+</node>
+<node id="Perform automated data quality checks">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.98</data>
+  <data key="d2">The system has performed automated data quality checks and flagged anomalies and inconsistencies.</data>
+</node>
+<node id="Support machine learning models">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.98</data>
+  <data key="d2">The system is supporting machine learning models for predictive analysis of traffic trends and incident likelihood.</data>
+</node>
+<node id="Generate statistical summaries">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.98</data>
+  <data key="d2">The system has generated statistical summaries of daily, weekly, and monthly traffic patterns.</data>
+</node>
+<node id="Incident reports">
+  <data key="d0">DATA</data>
+  <data key="d1">0.95</data>
+  <data key="d2">Incident reports have been generated and are available with time, location, type, and severity.</data>
+</node>
+<node id="Maintain long-term archive of processed data">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has successfully established and is actively maintaining the long-term archive containing all processed data</data>
+</node>
+<node id="Use Oracle 10G for archiving">
+  <data key="d0">CONSTRAINT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system's archive is stored using Oracle 10G technology (constraint satisfied)</data>
+</node>
+<node id="Implement dynamic caching for frequently accessed data">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has implemented dynamic caching and it is active for frequently accessed data</data>
+</node>
+<node id="Allow users to query archived data via SQL-based tools">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">users are able to query archived data using SQL-based tools successfully</data>
+</node>
+<node id="Support automated data purging policies">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has active automated data purging policies to manage storage limits</data>
+</node>
+<node id="Automated data purging policies">
+  <data key="d0">CONSTRAINT</data>
+  <data key="d1">0.85</data>
+  <data key="d2">automated data purging policies are defined and active to manage storage limits</data>
+</node>
+<node id="Publish processed data in standardized formats">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has published processed data in standardized formats (SAE J2354, TMDD)</data>
+</node>
+<node id="Provide real-time data feeds to MI Drive">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system is providing real-time data feeds to MDOT’s MI Drive system</data>
+</node>
+<node id="Generate alerts">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has generated alerts for traffic incidents, severe weather events, and asset failures</data>
+</node>
+<node id="Support data export formats">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system supports exporting data in CSV, JSON, XML, and KML formats for third-party use</data>
+</node>
+<node id="Provide API for real-time consumption">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system provides an API for external applications to consume traffic and weather data in real time</data>
+</node>
+<node id="Web-based interface for viewing data">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the web-based interface is available to users for viewing traffic, incident, traveler, and weather data</data>
+</node>
+<node id="Map displays with icon layers">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the interface displays maps with icon layers for traffic, incidents, and road closures</data>
+</node>
+<node id="De-cluttering features">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">de-cluttering features are active to reduce visual complexity during high-volume data display</data>
+</node>
+<node id="High-volume data display">
+  <data key="d0">STATE</data>
+  <data key="d1">0.85</data>
+  <data key="d2">the system is currently displaying a high volume of data, causing visual complexity and triggering de-cluttering features</data>
+</node>
+<node id="Data filtering and search">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system provides filtering and search capabilities by location, time, event type, and other relevant criteria</data>
+</node>
+<node id="Multi-language UI support">
+  <data key="d0">CONSTRAINT</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system satisfies the constraint of supporting multi-language UI options, enabling diverse user groups to use the interface in their language</data>
+</node>
+<node id="Custom dashboards">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system allows users to create custom dashboards for viewing frequent data</data>
+</node>
+<node id="Configure Data Sources, Algorithms, and Output Formats">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has allowed administrators to configure data sources, algorithms, and output formats</data>
+</node>
+<node id="Log Administrative Actions and Errors">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.95</data>
+  <data key="d2">an administrative action or error has been logged by the system</data>
+</node>
+<node id="Role-Based Access Control">
+  <data key="d0">CONSTRAINT</data>
+  <data key="d1">0.95</data>
+  <data key="d2">role-based access control is enforced for user types field operator, analyst, and admin</data>
+</node>
+<node id="Backup and Restore Capabilities">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has performed a backup or restore of the database or configuration settings</data>
+</node>
+<node id="Generate Pre-defined Reports">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has generated the pre-defined reports on traffic volume, incident frequency, and road condition trends</data>
+</node>
+<node id="Schedule Automatic Report Generation and Email Delivery">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system allows users to schedule automatic report generation and email delivery</data>
+</node>
+<node id="Provide Ad-hoc Reporting Tools">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system provides ad-hoc reporting tools for querying and visualizing data</data>
+</node>
+<node id="Report Export Formats">
+  <data key="d0">CONSTRAINT</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the report is exportable in PDF, Excel, and HTML formats</data>
+</node>
+<node id="Email Delivery">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.85</data>
+  <data key="d2">the scheduled report email has been delivered to the designated recipients</data>
+</node>
+<node id="Enforce secure authentication and authorization">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system enforces secure authentication and authorization for all users</data>
+</node>
+<node id="TLS 1.2+ encryption for data transmissions">
+  <data key="d0">CONSTRAINT</data>
+  <data key="d1">0.95</data>
+  <data key="d2">all data transmissions are encrypted using TLS 1.2 or higher</data>
+</node>
+<node id="Compliance with MDIT and FIPS 140-2">
+  <data key="d0">CONSTRAINT</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system complies with MDIT security standards and FIPS 140-2 encryption requirements</data>
+</node>
+<node id="Audit logging of user activities and system events">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system supports audit logging of all user activities and system events</data>
+</node>
+<edge source="Accept real-time data inputs from external sources" target="Normalized data stored in central database">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Accept real-time data inputs from external sources" target="Validate incoming data and reject invalid data">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.7</data>
+</edge>
+<edge source="Input data fields" target="Accept real-time data inputs from external sources">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Support batch ingestion of historical data" target="Maintain long-term archive of processed data">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.75</data>
+</edge>
+<edge source="Support batch ingestion of historical data" target="Support machine learning models">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.75</data>
+</edge>
+<edge source="Detect and classify incidents" target="Incident reports">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Maintain long-term archive of processed data" target="Allow users to query archived data via SQL-based tools">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Maintain long-term archive of processed data" target="Publish processed data in standardized formats">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.6</data>
+</edge>
+<edge source="Use Oracle 10G for archiving" target="Maintain long-term archive of processed data">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Automated data purging policies" target="Support automated data purging policies">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="High-volume data display" target="De-cluttering features">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Configure Data Sources, Algorithms, and Output Formats" target="Log Administrative Actions and Errors">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Schedule Automatic Report Generation and Email Delivery" target="Email Delivery">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Schedule Automatic Report Generation and Email Delivery" target="Generate Pre-defined Reports">
+  <data key="d3">1</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+</graph></graphml>

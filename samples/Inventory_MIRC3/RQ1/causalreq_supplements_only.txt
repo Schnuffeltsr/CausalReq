@@ -1,0 +1,47 @@
+1. The system shall generate the export file only if the export request has been validated successfully.
+
+2. The system shall define and apply consistent matching semantics for asset search by name, type, and ID, including whether matching is exact, partial, or both, and whether multiple criteria can be combined in a single query.
+
+3. The system shall return detailed asset information with a complete and consistent output schema, including at minimum name, type, quantity, purchase date, and status, and shall explicitly define all additional fields represented by 'etc.' for every asset type.
+
+4. The system shall clearly indicate when an asset query returns no matching assets and shall not present an ambiguous empty success response.
+
+5. The system shall record the return request's approval outcome as an operation status that is distinct from the asset status Returned.
+
+6. The system shall validate deletion requests before staging them for approval, applying defined validation criteria and handling invalid requests with appropriate failure outcomes.
+
+7. The system shall define the 'Deleted' status as the terminal state of an asset record that has been removed by the approved deletion operation; the deletion operation upon approval shall set the asset record's status to 'Deleted'.
+
+8. The system shall specify the outcome and next action when an admin does not approve a deletion request.
+
+9. The system shall verify that the acting user has Administrator privileges before allowing the creation of a new user account.
+
+10. The system shall enforce required-field and format validation rules for the new-user form, covering username, password, email, phone, and department.
+
+11. The Query User Details operation shall return an empty result when no users match, a single user record when exactly one user matches, and a list of user records when multiple users match.
+
+12. The system shall define the Senior Admin approver role for user deletion requests, including how the approver is identified or resolved, and its authority to approve such requests, distinct from the Administrators who initiate deletion.
+
+13. The system shall create a pending approval item for a user deletion request and set the request status to Pending while it awaits senior-admin approval or rejection.
+
+14. The system shall maintain operation statuses for approval-driven operations, transitioning from pending review to approved or rejected, and then to completed after the approved operation is executed.
+
+15. The system shall set the operation status to Pending while an approval process is awaiting administrator review.
+
+16. The system shall specify the condition(s) under which an operation transitions into the In Progress state.
+
+17. The system shall define and document the conditions under which asset and user operations are rejected.
+
+18. The system shall reject invalid report parameters and return a clear error response.
+
+19. The system shall define and apply validation rules for uploaded CSV/Excel files and record each validation failure in the error report.
+
+20. The system shall persist the reason entered on the approval form and associate it with the updated request status so it remains available for audit or notification.
+
+21. The system shall notify the requestor (User) when an asset request decision is made.
+
+22. The system shall define and document a retry or fallback process for the email notification operation when email delivery fails.
+
+23. The system shall validate event details and recipient list before sending email notifications, including handling malformed event data and invalid recipient addresses.
+
+24. The system shall define and apply criteria for recognizing incoming user feedback emails, distinguishing them from ordinary email, before initiating feedback parsing and storage.

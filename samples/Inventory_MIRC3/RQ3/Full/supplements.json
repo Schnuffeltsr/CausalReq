@@ -1,0 +1,170 @@
+[
+  {
+    "output_id": "OUT-6aceca75d133",
+    "source_nomination_id": "DEP-017",
+    "origin": "dependency",
+    "text": "The system shall generate the export file only if the export request has been validated successfully.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-bb980e710de1",
+    "source_nomination_id": "OPERATION-0ed356b48243",
+    "origin": "operation",
+    "text": "The system shall define and apply consistent matching semantics for asset search by name, type, and ID, including whether matching is exact, partial, or both, and whether multiple criteria can be combined in a single query.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-de9abc73ab4f",
+    "source_nomination_id": "OPERATION-2d97fdd0a6fa",
+    "origin": "operation",
+    "text": "The system shall return detailed asset information with a complete and consistent output schema, including at minimum name, type, quantity, purchase date, and status, and shall explicitly define all additional fields represented by 'etc.' for every asset type.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-1f8fd551b5ba",
+    "source_nomination_id": "OPERATION-c843a38b171b",
+    "origin": "operation",
+    "text": "The system shall clearly indicate when an asset query returns no matching assets and shall not present an ambiguous empty success response.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-780466ceae96",
+    "source_nomination_id": "ISOLATED-859c44819ae0",
+    "origin": "isolated",
+    "text": "The system shall record the return request's approval outcome as an operation status that is distinct from the asset status Returned.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-f47fc435c68a",
+    "source_nomination_id": "OPERATION-d5ba3481d03e",
+    "origin": "operation",
+    "text": "The system shall validate deletion requests before staging them for approval, applying defined validation criteria and handling invalid requests with appropriate failure outcomes.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-3a4ca830f73a",
+    "source_nomination_id": "OPERATION-9a439ea4fd4a",
+    "origin": "operation",
+    "text": "The system shall define the 'Deleted' status as the terminal state of an asset record that has been removed by the approved deletion operation; the deletion operation upon approval shall set the asset record's status to 'Deleted'.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-75edaac73416",
+    "source_nomination_id": "ISOLATED-957727eced12",
+    "origin": "isolated",
+    "text": "The system shall specify the outcome and next action when an admin does not approve a deletion request.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-a6d6394cb927",
+    "source_nomination_id": "ISOLATED-b16c4e46d5b9",
+    "origin": "isolated",
+    "text": "The system shall verify that the acting user has Administrator privileges before allowing the creation of a new user account.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-2258193e99e8",
+    "source_nomination_id": "OPERATION-0248a93d5d86",
+    "origin": "operation",
+    "text": "The system shall enforce required-field and format validation rules for the new-user form, covering username, password, email, phone, and department.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-b6a62f0665cb",
+    "source_nomination_id": "OPERATION-221783513b36",
+    "origin": "operation",
+    "text": "The Query User Details operation shall return an empty result when no users match, a single user record when exactly one user matches, and a list of user records when multiple users match.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-69d16a149d6c",
+    "source_nomination_id": "ISOLATED-3e58f0e17748",
+    "origin": "isolated",
+    "text": "The system shall define the Senior Admin approver role for user deletion requests, including how the approver is identified or resolved, and its authority to approve such requests, distinct from the Administrators who initiate deletion.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-daa8ec3d0cc4",
+    "source_nomination_id": "OPERATION-b9d92b5b9e9c",
+    "origin": "operation",
+    "text": "The system shall create a pending approval item for a user deletion request and set the request status to Pending while it awaits senior-admin approval or rejection.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-b6d5618e3613",
+    "source_nomination_id": "OPERATION-a52fa15b6dfc",
+    "origin": "operation",
+    "text": "The system shall maintain operation statuses for approval-driven operations, transitioning from pending review to approved or rejected, and then to completed after the approved operation is executed.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-74d9f3bc6bfb",
+    "source_nomination_id": "ISOLATED-4a224f68464a",
+    "origin": "isolated",
+    "text": "The system shall set the operation status to Pending while an approval process is awaiting administrator review.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-7ecf3d99d7a8",
+    "source_nomination_id": "ISOLATED-e9103c4532c9",
+    "origin": "isolated",
+    "text": "The system shall specify the condition(s) under which an operation transitions into the In Progress state.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-96e033b18061",
+    "source_nomination_id": "ISOLATED-adb9b108359a",
+    "origin": "isolated",
+    "text": "The system shall define and document the conditions under which asset and user operations are rejected.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-e8672b8a6c18",
+    "source_nomination_id": "OPERATION-8de292cc0fc2",
+    "origin": "operation",
+    "text": "The system shall reject invalid report parameters and return a clear error response.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-83517840ef7a",
+    "source_nomination_id": "ISOLATED-a0386616efc8",
+    "origin": "isolated",
+    "text": "The system shall define and apply validation rules for uploaded CSV/Excel files and record each validation failure in the error report.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-2540e3517444",
+    "source_nomination_id": "OPERATION-440049b1120b",
+    "origin": "operation",
+    "text": "The system shall persist the reason entered on the approval form and associate it with the updated request status so it remains available for audit or notification.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-be461e7b210f",
+    "source_nomination_id": "ISOLATED-9ec0bc10d57e",
+    "origin": "isolated",
+    "text": "The system shall notify the requestor (User) when an asset request decision is made.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-3e273b0f6530",
+    "source_nomination_id": "OPERATION-379748a60e49",
+    "origin": "operation",
+    "text": "The system shall define and document a retry or fallback process for the email notification operation when email delivery fails.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-bb1864c90cbb",
+    "source_nomination_id": "ISOLATED-5c7e2cede559",
+    "origin": "isolated",
+    "text": "The system shall validate event details and recipient list before sending email notifications, including handling malformed event data and invalid recipient addresses.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-396612f614fe",
+    "source_nomination_id": "OPERATION-6b332b76a110",
+    "origin": "operation",
+    "text": "The system shall define and apply criteria for recognizing incoming user feedback emails, distinguishing them from ordinary email, before initiating feedback parsing and storage.",
+    "status": "model_preliminarily_retained"
+  }
+]

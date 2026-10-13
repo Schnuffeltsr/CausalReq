@@ -1,0 +1,1812 @@
+[
+  {
+    "nomination_id": "DEP-001",
+    "origin": "dependency",
+    "subject": "Use Oracle 10G for archiving → Allow users to query archived data via SQL-based tools",
+    "question": "Is there a requirement that the SQL-based query tools be compatible with the Oracle 10G archive to ensure users can query archived data?",
+    "scenario": "The system is required to use Oracle 10G for archiving and to allow users to query archived data via SQL-based tools. The current functional requirements state 'using Oracle 10G' and 'allow users to query archived data via SQL-based tools', but do not explicitly state whether the SQL-based query tools must be able to access the Oracle 10G archive directly.",
+    "draft_obligation": "The system shall provide SQL-based query tools that can directly query data stored in the Oracle 10G archive.",
+    "evidence_fr_ids": [
+      "FRBLOCK-003"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-6190c171cb81",
+        "source": "Use Oracle 10G for archiving",
+        "target": "Maintain long-term archive of processed data",
+        "relation_type": "DEPENDS_ON",
+        "propagation_sign": "positive",
+        "confidence": 0.9,
+        "source_fr_id": "FRBLOCK-003",
+        "source_quote": "using Oracle 10G",
+        "target_fr_id": "FRBLOCK-003",
+        "target_quote": "maintain a long-term archive of all processed data",
+        "reason": "The requirement states that the system shall maintain the archive using Oracle 10G, so the archiving function depends on Oracle 10G technology."
+      },
+      {
+        "relation_id": "REL-db70bbf82e97",
+        "source": "Maintain long-term archive of processed data",
+        "target": "Allow users to query archived data via SQL-based tools",
+        "relation_type": "ENABLES",
+        "propagation_sign": "positive",
+        "confidence": 0.85,
+        "source_fr_id": "FRBLOCK-003",
+        "source_quote": "maintain a long-term archive of all processed data",
+        "target_fr_id": "FRBLOCK-003",
+        "target_quote": "allow users to query archived data via SQL-based tools",
+        "reason": "Users can query archived data only if the system has maintained a long-term archive of processed data; the archive provides the data needed for querying."
+      },
+      {
+        "relation_id": "REL-0a5bd5895664",
+        "source": "Maintain long-term archive of processed data",
+        "target": "Allow users to query archived data via SQL-based tools",
+        "relation_type": "DEPENDS_ON",
+        "propagation_sign": "positive",
+        "confidence": 0.7,
+        "source_fr_id": "FRBLOCK-003",
+        "source_quote": "maintain a long-term archive of all processed data",
+        "target_fr_id": "FRBLOCK-003",
+        "target_quote": "query archived data via SQL-based tools",
+        "reason": "Querying archived data is dependent on the existence of the archive, which is maintained by the archive function."
+      },
+      {
+        "relation_id": "REL-1f7be4c293a1",
+        "source": "Maintain long-term archive of processed data",
+        "target": "Allow users to query archived data via SQL-based tools",
+        "relation_type": "DEPENDS_ON",
+        "propagation_sign": "positive",
+        "confidence": 0.9,
+        "source_fr_id": "FRBLOCK-003",
+        "source_quote": "maintain a long-term archive of all processed data",
+        "target_fr_id": "FRBLOCK-003",
+        "target_quote": "allow users to query archived data via SQL-based tools",
+        "reason": "Users can query archived data only if an archive of processed data is maintained, so the query capability depends on the archive function."
+      }
+    ],
+    "ace_visible_to_nomination": 0.22339672238835107,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall provide SQL-based query tools that can directly query data stored in the Oracle 10G archive.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "DEP-002",
+    "origin": "dependency",
+    "subject": "Support batch ingestion of historical data → Support machine learning models",
+    "question": "Does the system specification clearly require that batch-ingested historical data is available to train the machine learning models used for predictive analysis of traffic trends and incident likelihood?",
+    "scenario": "A traffic management system supports predictive analysis using machine learning models for traffic trends and incident likelihood. The system must support batch ingestion of historical data for backfilling archives and training models. This dependency indicates that the batch ingestion capability should enable the machine learning models to access historical data for training.",
+    "draft_obligation": "The system shall provide batch-ingested historical data to the machine learning models used for predictive analysis of traffic trends and incident likelihood, so that the models can be trained.",
+    "evidence_fr_ids": [
+      "FRBLOCK-001",
+      "FRBLOCK-002"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-8ae566ce91e0",
+        "source": "Support batch ingestion of historical data",
+        "target": "Support machine learning models",
+        "relation_type": "ENABLES",
+        "propagation_sign": "positive",
+        "confidence": 0.75,
+        "source_fr_id": "FRBLOCK-001",
+        "source_quote": "The system shall support batch ingestion of historical data for backfilling archives and training models.",
+        "target_fr_id": "FRBLOCK-001",
+        "target_quote": "training models",
+        "reason": "Batch ingestion is described as supporting training models, which enables machine learning model support."
+      },
+      {
+        "relation_id": "REL-a15ac39b926b",
+        "source": "Support batch ingestion of historical data",
+        "target": "Support machine learning models",
+        "relation_type": "ENABLES",
+        "propagation_sign": "positive",
+        "confidence": 0.7,
+        "source_fr_id": "FRBLOCK-001",
+        "source_quote": "The system shall support batch ingestion of historical data for backfilling archives and training models.",
+        "target_fr_id": "FRBLOCK-002",
+        "target_quote": "The system shall support machine learning models for predictive analysis of traffic trends and incident likelihood.",
+        "reason": "FR-DCI-004 explicitly states that batch ingestion of historical data supports training models, which enables the machine learning models described in FR-DPA-005."
+      }
+    ],
+    "ace_visible_to_nomination": 0.43684360646701614,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall provide batch-ingested historical data to the machine learning models used for predictive analysis of traffic trends and incident likelihood, so that the models can be trained.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "DEP-003",
+    "origin": "dependency",
+    "subject": "Accept real-time data inputs from external sources → Normalized data stored in central database",
+    "question": "Does FRBLOCK-001 require that every real-time data input accepted from external sources (probe vehicles, traffic sensors, weather stations, and traveler information systems) must result in normalized data stored in the central database, or are there conditions under which accepted data may not be stored?",
+    "scenario": "The system accepts a real-time data input from a traffic sensor. The functional requirement states: \"The system shall accept real-time data inputs from probe vehicles, traffic sensors, weather stations, and traveler information systems.\" Another requirement states: \"Normalized data stored in a central database.\" A reviewer needs to determine whether the accepted input must always be normalized and stored.",
+    "draft_obligation": "The system shall normalize and store in the central database all real-time data inputs it accepts from external sources.",
+    "evidence_fr_ids": [
+      "FRBLOCK-001"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-9fad708cf4b6",
+        "source": "Accept real-time data inputs from external sources",
+        "target": "Normalized data stored in central database",
+        "relation_type": "PRODUCES",
+        "propagation_sign": "positive",
+        "confidence": 0.9,
+        "source_fr_id": "FRBLOCK-001",
+        "source_quote": "The system shall accept real-time data inputs from probe vehicles, traffic sensors, weather stations, and traveler information systems.",
+        "target_fr_id": "FRBLOCK-001",
+        "target_quote": "Normalized data stored in a central database.",
+        "reason": "FR-DCI-001 explicitly lists normalized data stored in a central database as the output of the accept real-time data input function."
+      }
+    ],
+    "ace_visible_to_nomination": 0.508358439804696,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall normalize and store in the central database all real-time data inputs it accepts from external sources.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "DEP-004",
+    "origin": "dependency",
+    "subject": "Schedule Automatic Report Generation and Email Delivery → Generate Pre-defined Reports",
+    "question": "When a user schedules automatic report generation and email delivery, does the system generate the pre-defined reports on traffic volume, incident frequency, and road condition trends at the scheduled time?",
+    "scenario": "A user schedules automatic report generation and email delivery for a future time. The system is expected to trigger the generation of the pre-defined reports as part of the scheduled task.",
+    "draft_obligation": "The system shall generate the pre-defined reports when automatic report generation is scheduled.",
+    "evidence_fr_ids": [
+      "FRBLOCK-007"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-04cf8fbfe3f6",
+        "source": "Schedule Automatic Report Generation and Email Delivery",
+        "target": "Generate Pre-defined Reports",
+        "relation_type": "TRIGGERS",
+        "propagation_sign": "positive",
+        "confidence": 0.85,
+        "source_fr_id": "FRBLOCK-007",
+        "source_quote": "schedule automatic report generation and email delivery",
+        "target_fr_id": "FRBLOCK-007",
+        "target_quote": "generate pre-defined reports",
+        "reason": "Scheduling automatic report generation includes triggering the generation of pre-defined reports at scheduled times."
+      }
+    ],
+    "ace_visible_to_nomination": 0.48597356549763315,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall generate the pre-defined reports when automatic report generation is scheduled.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "DEP-005",
+    "origin": "dependency",
+    "subject": "Automated data purging policies → Support automated data purging policies",
+    "question": "Does the system have a requirement to support automated data purging policies, given that these policies are defined to manage storage limits?",
+    "scenario": "The source is 'automated data purging policies', meaning automated data purging policies are defined and active to manage storage limits. The target is 'support automated data purging policies', meaning the system has active automated data purging policies to manage storage limits. The documented dependency is that supporting automated data purging policies depends on the existence of those policies.",
+    "draft_obligation": "The system shall support the defined automated data purging policies for managing storage limits.",
+    "evidence_fr_ids": [
+      "FRBLOCK-003"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-6c5dc2723706",
+        "source": "Automated data purging policies",
+        "target": "Support automated data purging policies",
+        "relation_type": "DEPENDS_ON",
+        "propagation_sign": "positive",
+        "confidence": 0.9,
+        "source_fr_id": "FRBLOCK-003",
+        "source_quote": "automated data purging policies",
+        "target_fr_id": "FRBLOCK-003",
+        "target_quote": "support automated data purging policies",
+        "reason": "The system's function to support automated data purging policies depends on the existence of those policies; without defined policies, there is nothing to support."
+      }
+    ],
+    "ace_visible_to_nomination": 0.508358439804696,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall support the defined automated data purging policies for managing storage limits.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "DEP-006",
+    "origin": "dependency",
+    "subject": "Use Oracle 10G for archiving → Publish processed data in standardized formats",
+    "question": "Does the dependency from 'using Oracle 10G' for archiving to 'publish processed data in standardized formats' require an additional business obligation to ensure the Oracle 10G archive can supply data for publishing?",
+    "scenario": "The system is required to 'maintain a long-term archive of all processed data' using Oracle 10G and to 'publish processed data in standardized formats'. A reviewer must determine whether the existing requirements fully cover the dependency, or whether a new obligation is needed to bridge the Oracle 10G archive and the publishing function.",
+    "draft_obligation": "The system shall provide the capability to publish processed data from the Oracle 10G archive in the standardized formats.",
+    "evidence_fr_ids": [
+      "FRBLOCK-003",
+      "FRBLOCK-004"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-6190c171cb81",
+        "source": "Use Oracle 10G for archiving",
+        "target": "Maintain long-term archive of processed data",
+        "relation_type": "DEPENDS_ON",
+        "propagation_sign": "positive",
+        "confidence": 0.9,
+        "source_fr_id": "FRBLOCK-003",
+        "source_quote": "using Oracle 10G",
+        "target_fr_id": "FRBLOCK-003",
+        "target_quote": "maintain a long-term archive of all processed data",
+        "reason": "The requirement states that the system shall maintain the archive using Oracle 10G, so the archiving function depends on Oracle 10G technology."
+      },
+      {
+        "relation_id": "REL-8aa2d22606f6",
+        "source": "Maintain long-term archive of processed data",
+        "target": "Publish processed data in standardized formats",
+        "relation_type": "DEPENDS_ON",
+        "propagation_sign": "positive",
+        "confidence": 0.6,
+        "source_fr_id": "FRBLOCK-003",
+        "source_quote": "maintain a long-term archive of all processed data",
+        "target_fr_id": "FRBLOCK-004",
+        "target_quote": "publish processed data in standardized formats",
+        "reason": "Publishing processed data requires processed data to be available; the archive is the designated long-term store for all processed data, enabling this output function."
+      }
+    ],
+    "ace_visible_to_nomination": 0.15535247608431357,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall provide the capability to publish processed data from the Oracle 10G archive in the standardized formats.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "DEP-007",
+    "origin": "dependency",
+    "subject": "Input data fields → Validate incoming data and reject invalid data",
+    "question": "Does the system requirement specify that validation against predefined quality rules and rejection of invalid or malformed data apply to each of the accepted input data fields—GPS data, speed, location, road condition reports, temperature, precipitation, and visibility?",
+    "scenario": "The system accepts real-time data inputs from probe vehicles, traffic sensors, weather stations, and traveler information systems. The incoming data contains the listed input data fields. A requirements reviewer checks whether the validation requirement explicitly covers validation and rejection for each of these fields.",
+    "draft_obligation": "The system shall validate GPS data, speed, location, road condition reports, temperature, precipitation, and visibility against predefined quality rules and reject invalid or malformed values for each field.",
+    "evidence_fr_ids": [
+      "FRBLOCK-001"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-3d311c5522b6",
+        "source": "Input data fields",
+        "target": "Accept real-time data inputs from external sources",
+        "relation_type": "DEPENDS_ON",
+        "propagation_sign": "positive",
+        "confidence": 0.8,
+        "source_fr_id": "FRBLOCK-001",
+        "source_quote": "GPS data, speed, location, road condition reports, temperature, precipitation, visibility.",
+        "target_fr_id": "FRBLOCK-001",
+        "target_quote": "The system shall accept real-time data inputs from probe vehicles, traffic sensors, weather stations, and traveler information systems.",
+        "reason": "The FR lists these input data fields as required inputs for the accept real-time data function."
+      },
+      {
+        "relation_id": "REL-b55d5a4f5e25",
+        "source": "Accept real-time data inputs from external sources",
+        "target": "Validate incoming data and reject invalid data",
+        "relation_type": "ENABLES",
+        "propagation_sign": "positive",
+        "confidence": 0.7,
+        "source_fr_id": "FRBLOCK-001",
+        "source_quote": "The system shall accept real-time data inputs from probe vehicles, traffic sensors, weather stations, and traveler information systems.",
+        "target_fr_id": "FRBLOCK-001",
+        "target_quote": "The system shall validate incoming data against predefined quality rules and reject invalid or malformed data.",
+        "reason": "FR-DCI-002 validates incoming data, which refers to the real-time data inputs accepted by FR-DCI-001. Acceptance of data enables the validation process."
+      }
+    ],
+    "ace_visible_to_nomination": 0.18957768462151542,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall validate GPS data, speed, location, road condition reports, temperature, precipitation, and visibility against predefined quality rules and reject invalid or malformed values for each field.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "DEP-008",
+    "origin": "dependency",
+    "subject": "Support batch ingestion of historical data → Publish processed data in standardized formats",
+    "question": "Does the current set of requirements explicitly state that data ingested via batch historical ingestion must be published in standardized formats, or is this implied only through the long-term archive requirement, leaving a potential gap?",
+    "scenario": "The source requirement states: 'The system shall support batch ingestion of historical data for backfilling archives and training models.' The target requirement states: 'publish processed data in standardized formats.' The dependency between them is indirect: batch ingestion enables maintaining a long-term archive, and publishing processed data depends on that archive. The model-based priority score (ACE) is low (0.13), indicating that the current evidence does not strongly connect the source directly to the target, which may indicate a missing explicit obligation.",
+    "draft_obligation": "The system shall ensure that historical data ingested via batch processing is processed and published in the standardized formats required by the target requirement.",
+    "evidence_fr_ids": [
+      "FRBLOCK-001",
+      "FRBLOCK-003",
+      "FRBLOCK-004"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-06a193a39e75",
+        "source": "Support batch ingestion of historical data",
+        "target": "Maintain long-term archive of processed data",
+        "relation_type": "ENABLES",
+        "propagation_sign": "positive",
+        "confidence": 0.75,
+        "source_fr_id": "FRBLOCK-001",
+        "source_quote": "The system shall support batch ingestion of historical data for backfilling archives and training models.",
+        "target_fr_id": "FRBLOCK-001",
+        "target_quote": "backfilling archives",
+        "reason": "Batch ingestion is described as supporting backfilling archives, which enables maintaining a long-term archive."
+      },
+      {
+        "relation_id": "REL-8aa2d22606f6",
+        "source": "Maintain long-term archive of processed data",
+        "target": "Publish processed data in standardized formats",
+        "relation_type": "DEPENDS_ON",
+        "propagation_sign": "positive",
+        "confidence": 0.6,
+        "source_fr_id": "FRBLOCK-003",
+        "source_quote": "maintain a long-term archive of all processed data",
+        "target_fr_id": "FRBLOCK-004",
+        "target_quote": "publish processed data in standardized formats",
+        "reason": "Publishing processed data requires processed data to be available; the archive is the designated long-term store for all processed data, enabling this output function."
+      }
+    ],
+    "ace_visible_to_nomination": 0.13007070168080326,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall ensure that historical data ingested via batch processing is processed and published in the standardized formats required by the target requirement.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "DEP-009",
+    "origin": "dependency",
+    "subject": "Input data fields → Accept real-time data inputs from external sources",
+    "question": "Does the obligation to accept real-time data inputs from external sources adequately specify the handling of all listed input data fields, including GPS data, speed, location, road condition reports, temperature, precipitation, and visibility?",
+    "scenario": "A system is required to accept real-time data inputs from probe vehicles, traffic sensors, weather stations, and traveler information systems. The input data fields include GPS data, speed, location, road condition reports, temperature, precipitation, and visibility. The current obligation states only that the system shall accept these inputs, but does not explicitly address how each field is processed or made available for downstream functions.",
+    "draft_obligation": "The system shall ensure that all listed input data fields (GPS data, speed, location, road condition reports, temperature, precipitation, and visibility) are accepted and made available for processing by the system.",
+    "evidence_fr_ids": [
+      "FRBLOCK-001"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-3d311c5522b6",
+        "source": "Input data fields",
+        "target": "Accept real-time data inputs from external sources",
+        "relation_type": "DEPENDS_ON",
+        "propagation_sign": "positive",
+        "confidence": 0.8,
+        "source_fr_id": "FRBLOCK-001",
+        "source_quote": "GPS data, speed, location, road condition reports, temperature, precipitation, visibility.",
+        "target_fr_id": "FRBLOCK-001",
+        "target_quote": "The system shall accept real-time data inputs from probe vehicles, traffic sensors, weather stations, and traveler information systems.",
+        "reason": "The FR lists these input data fields as required inputs for the accept real-time data function."
+      }
+    ],
+    "ace_visible_to_nomination": 0.4621171572600098,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall ensure that all listed input data fields (GPS data, speed, location, road condition reports, temperature, precipitation, and visibility) are accepted and made available for processing by the system.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "DEP-010",
+    "origin": "dependency",
+    "subject": "Support batch ingestion of historical data → Maintain long-term archive of processed data",
+    "question": "Is there an explicit requirement that the system maintain a long-term archive of processed data, given that FRBLOCK-001 states the system shall support batch ingestion for 'backfilling archives'?",
+    "scenario": "The source requirement FRBLOCK-001 specifies batch ingestion for backfilling archives and training models. The phrase 'backfilling archives' implies that a long-term archive exists and needs to be populated, but the target obligation to maintain that archive may not be explicitly defined elsewhere. The positive dependency between batch ingestion and archive maintenance suggests that the archive maintenance requirement is critical and should be clearly specified.",
+    "draft_obligation": "The system shall maintain a long-term archive of all processed data, including data ingested via batch processes.",
+    "evidence_fr_ids": [
+      "FRBLOCK-001"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-06a193a39e75",
+        "source": "Support batch ingestion of historical data",
+        "target": "Maintain long-term archive of processed data",
+        "relation_type": "ENABLES",
+        "propagation_sign": "positive",
+        "confidence": 0.75,
+        "source_fr_id": "FRBLOCK-001",
+        "source_quote": "The system shall support batch ingestion of historical data for backfilling archives and training models.",
+        "target_fr_id": "FRBLOCK-001",
+        "target_quote": "backfilling archives",
+        "reason": "Batch ingestion is described as supporting backfilling archives, which enables maintaining a long-term archive."
+      }
+    ],
+    "ace_visible_to_nomination": 0.3679324245344957,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall maintain a long-term archive of all processed data, including data ingested via batch processes.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "DEP-011",
+    "origin": "dependency",
+    "subject": "Use Oracle 10G for archiving → Maintain long-term archive of processed data",
+    "question": "Given that the system's ability to maintain a long-term archive of processed data depends on using Oracle 10G, is there an explicit obligation in the requirements that the archiving function shall be implemented using Oracle 10G, and is this obligation sufficiently clear to guide implementation and verification?",
+    "scenario": "A requirements reviewer examines the dependency between 'using Oracle 10G for archiving' and 'maintaining a long-term archive of all processed data' to confirm that the obligation connecting these two requirements is explicitly stated and not left implicit.",
+    "draft_obligation": "The system shall use Oracle 10G for archiving processed data to maintain a long-term archive of all processed data.",
+    "evidence_fr_ids": [
+      "FRBLOCK-003"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-6190c171cb81",
+        "source": "Use Oracle 10G for archiving",
+        "target": "Maintain long-term archive of processed data",
+        "relation_type": "DEPENDS_ON",
+        "propagation_sign": "positive",
+        "confidence": 0.9,
+        "source_fr_id": "FRBLOCK-003",
+        "source_quote": "using Oracle 10G",
+        "target_fr_id": "FRBLOCK-003",
+        "target_quote": "maintain a long-term archive of all processed data",
+        "reason": "The requirement states that the system shall maintain the archive using Oracle 10G, so the archiving function depends on Oracle 10G technology."
+      }
+    ],
+    "ace_visible_to_nomination": 0.43944725787217553,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall use Oracle 10G for archiving processed data to maintain a long-term archive of all processed data.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "DEP-012",
+    "origin": "dependency",
+    "subject": "Configure Data Sources, Algorithms, and Output Formats → Log Administrative Actions and Errors",
+    "question": "Is the obligation to log configuration actions performed by administrators (as enabled by 'The system shall allow administrators to configure data sources, algorithms, and output formats.') adequately covered by the requirement to 'log all administrative actions and errors'? Does the current specification make clear that every change to data sources, algorithms, or output formats by an administrator must be logged?",
+    "scenario": "A system administrator modifies the output format configuration. The source requirement 'The system shall allow administrators to configure data sources, algorithms, and output formats.' enables this action. The target requirement states the system must 'log all administrative actions and errors.' As a review question, assess whether the dependency from the configuration capability to the logging requirement is correctly and completely specified so that such a configuration change triggers a mandatory log entry.",
+    "draft_obligation": "The system shall log every administrative action where an administrator configures data sources, algorithms, or output formats, in accordance with the requirement to log all administrative actions and errors.",
+    "evidence_fr_ids": [
+      "FRBLOCK-006"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-6432ff7c96c2",
+        "source": "Configure Data Sources, Algorithms, and Output Formats",
+        "target": "Log Administrative Actions and Errors",
+        "relation_type": "TRIGGERS",
+        "propagation_sign": "positive",
+        "confidence": 0.8,
+        "source_fr_id": "FRBLOCK-006",
+        "source_quote": "The system shall allow administrators to configure data sources, algorithms, and output formats.",
+        "target_fr_id": "FRBLOCK-006",
+        "target_quote": "log all administrative actions and errors",
+        "reason": "Configuration by administrators is an administrative action, and FR-SAC-002 requires logging all administrative actions, so this action triggers the logging event."
+      }
+    ],
+    "ace_visible_to_nomination": 0.4621171572600098,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall log every administrative action where an administrator configures data sources, algorithms, or output formats, in accordance with the requirement to log all administrative actions and errors.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "DEP-013",
+    "origin": "dependency",
+    "subject": "Accept real-time data inputs from external sources → Validate incoming data and reject invalid data",
+    "question": "Does the validation requirement for incoming data extend to all real-time data inputs accepted from external sources, and is rejection the only required action for invalid data?",
+    "scenario": "A traffic management system accepts real-time data inputs from probe vehicles, traffic sensors, weather stations, and traveler information systems. The system must validate each incoming data record against predefined quality rules and reject any invalid or malformed data.",
+    "draft_obligation": "The system shall validate all real-time data inputs from external sources against predefined quality rules and reject invalid or malformed data.",
+    "evidence_fr_ids": [
+      "FRBLOCK-001"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-b55d5a4f5e25",
+        "source": "Accept real-time data inputs from external sources",
+        "target": "Validate incoming data and reject invalid data",
+        "relation_type": "ENABLES",
+        "propagation_sign": "positive",
+        "confidence": 0.7,
+        "source_fr_id": "FRBLOCK-001",
+        "source_quote": "The system shall accept real-time data inputs from probe vehicles, traffic sensors, weather stations, and traveler information systems.",
+        "target_fr_id": "FRBLOCK-001",
+        "target_quote": "The system shall validate incoming data against predefined quality rules and reject invalid or malformed data.",
+        "reason": "FR-DCI-002 validates incoming data, which refers to the real-time data inputs accepted by FR-DCI-001. Acceptance of data enables the validation process."
+      }
+    ],
+    "ace_visible_to_nomination": 0.41023727780539787,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall validate all real-time data inputs from external sources against predefined quality rules and reject invalid or malformed data.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "DEP-014",
+    "origin": "dependency",
+    "subject": "Schedule Automatic Report Generation and Email Delivery → Email Delivery",
+    "question": "Given that the system allows users to schedule automatic report generation and email delivery, does it ensure that the scheduled report email is delivered to the designated recipients?",
+    "scenario": "A user schedules automatic report generation and email delivery. The system generates the report and triggers the email delivery process.",
+    "draft_obligation": "When a user schedules automatic report generation and email delivery, the system shall deliver the scheduled report email to the designated recipients.",
+    "evidence_fr_ids": [
+      "FRBLOCK-007"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-4080d496df95",
+        "source": "Schedule Automatic Report Generation and Email Delivery",
+        "target": "Email Delivery",
+        "relation_type": "TRIGGERS",
+        "propagation_sign": "positive",
+        "confidence": 0.9,
+        "source_fr_id": "FRBLOCK-007",
+        "source_quote": "schedule automatic report generation and email delivery",
+        "target_fr_id": "FRBLOCK-007",
+        "target_quote": "email delivery",
+        "reason": "The schedule function triggers email delivery of scheduled reports."
+      },
+      {
+        "relation_id": "REL-5418f35695a5",
+        "source": "Schedule Automatic Report Generation and Email Delivery",
+        "target": "Email Delivery",
+        "relation_type": "TRIGGERS",
+        "propagation_sign": "positive",
+        "confidence": 0.9,
+        "source_fr_id": "FRBLOCK-007",
+        "source_quote": "The system shall allow users to schedule automatic report generation and email delivery.",
+        "target_fr_id": "FRBLOCK-007",
+        "target_quote": "email delivery",
+        "reason": "The scheduled automatic report generation and email delivery function leads to the email delivery event."
+      }
+    ],
+    "ace_visible_to_nomination": 0.508358439804696,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "When a user schedules automatic report generation and email delivery, the system shall deliver the scheduled report email to the designated recipients.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "DEP-015",
+    "origin": "dependency",
+    "subject": "High-volume data display → De-cluttering features",
+    "question": "Does the system specification require that when the system is engaged in high-volume data display, it automatically activates de-cluttering features to reduce visual complexity?",
+    "scenario": "Consider a situation where the system is displaying a large amount of data, leading to visual complexity. The de-cluttering features are intended to reduce this complexity during high-volume data display.",
+    "draft_obligation": "When high-volume data display occurs, the system shall activate de-cluttering features.",
+    "evidence_fr_ids": [
+      "FRBLOCK-005"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-589a2a1be881",
+        "source": "High-volume data display",
+        "target": "De-cluttering features",
+        "relation_type": "TRIGGERS",
+        "propagation_sign": "positive",
+        "confidence": 0.9,
+        "source_fr_id": "FRBLOCK-005",
+        "source_quote": "high-volume data display",
+        "target_fr_id": "FRBLOCK-005",
+        "target_quote": "de-cluttering features",
+        "reason": "FR-UIP-003 states that de-cluttering features are to reduce visual complexity during high-volume data display, indicating that high-volume data display activates the de-cluttering features."
+      }
+    ],
+    "ace_visible_to_nomination": 0.508358439804696,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "When high-volume data display occurs, the system shall activate de-cluttering features.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "DEP-016",
+    "origin": "dependency",
+    "subject": "Maintain long-term archive of processed data → Publish processed data in standardized formats",
+    "question": "Does the system have an explicit obligation to use the maintained long-term archive of processed data as the source when publishing processed data in standardized formats?",
+    "scenario": "The system maintains a long-term archive of all processed data, but the publication process for standardized formats (SAE J2354, TMDD) could pull from a different data source, breaking the intended dependency between the archive and publication.",
+    "draft_obligation": "The system shall publish processed data in standardized formats using data retrieved from the maintained long-term archive.",
+    "evidence_fr_ids": [
+      "FRBLOCK-003",
+      "FRBLOCK-004"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-8aa2d22606f6",
+        "source": "Maintain long-term archive of processed data",
+        "target": "Publish processed data in standardized formats",
+        "relation_type": "DEPENDS_ON",
+        "propagation_sign": "positive",
+        "confidence": 0.6,
+        "source_fr_id": "FRBLOCK-003",
+        "source_quote": "maintain a long-term archive of all processed data",
+        "target_fr_id": "FRBLOCK-004",
+        "target_quote": "publish processed data in standardized formats",
+        "reason": "Publishing processed data requires processed data to be available; the archive is the designated long-term store for all processed data, enabling this output function."
+      }
+    ],
+    "ace_visible_to_nomination": 0.3535179098318595,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall publish processed data in standardized formats using data retrieved from the maintained long-term archive.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "DEP-017",
+    "origin": "dependency",
+    "subject": "Support batch ingestion of historical data → Allow users to query archived data via SQL-based tools",
+    "question": "Does the batch ingestion of historical data, which backfills archives, ensure that the resulting archived data can be queried by users using SQL-based tools?",
+    "scenario": "The system supports batch ingestion of historical data for backfilling archives and training models. The system also maintains a long-term archive of all processed data. Users need to query archived data via SQL-based tools.",
+    "draft_obligation": "The system shall ensure that historical data ingested in batch and stored in the long-term archive is accessible to users via SQL-based query tools.",
+    "evidence_fr_ids": [
+      "FRBLOCK-001",
+      "FRBLOCK-003"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-06a193a39e75",
+        "source": "Support batch ingestion of historical data",
+        "target": "Maintain long-term archive of processed data",
+        "relation_type": "ENABLES",
+        "propagation_sign": "positive",
+        "confidence": 0.75,
+        "source_fr_id": "FRBLOCK-001",
+        "source_quote": "The system shall support batch ingestion of historical data for backfilling archives and training models.",
+        "target_fr_id": "FRBLOCK-001",
+        "target_quote": "backfilling archives",
+        "reason": "Batch ingestion is described as supporting backfilling archives, which enables maintaining a long-term archive."
+      },
+      {
+        "relation_id": "REL-db70bbf82e97",
+        "source": "Maintain long-term archive of processed data",
+        "target": "Allow users to query archived data via SQL-based tools",
+        "relation_type": "ENABLES",
+        "propagation_sign": "positive",
+        "confidence": 0.85,
+        "source_fr_id": "FRBLOCK-003",
+        "source_quote": "maintain a long-term archive of all processed data",
+        "target_fr_id": "FRBLOCK-003",
+        "target_quote": "allow users to query archived data via SQL-based tools",
+        "reason": "Users can query archived data only if the system has maintained a long-term archive of processed data; the archive provides the data needed for querying."
+      },
+      {
+        "relation_id": "REL-0a5bd5895664",
+        "source": "Maintain long-term archive of processed data",
+        "target": "Allow users to query archived data via SQL-based tools",
+        "relation_type": "DEPENDS_ON",
+        "propagation_sign": "positive",
+        "confidence": 0.7,
+        "source_fr_id": "FRBLOCK-003",
+        "source_quote": "maintain a long-term archive of all processed data",
+        "target_fr_id": "FRBLOCK-003",
+        "target_quote": "query archived data via SQL-based tools",
+        "reason": "Querying archived data is dependent on the existence of the archive, which is maintained by the archive function."
+      },
+      {
+        "relation_id": "REL-1f7be4c293a1",
+        "source": "Maintain long-term archive of processed data",
+        "target": "Allow users to query archived data via SQL-based tools",
+        "relation_type": "DEPENDS_ON",
+        "propagation_sign": "positive",
+        "confidence": 0.9,
+        "source_fr_id": "FRBLOCK-003",
+        "source_quote": "maintain a long-term archive of all processed data",
+        "target_fr_id": "FRBLOCK-003",
+        "target_quote": "allow users to query archived data via SQL-based tools",
+        "reason": "Users can query archived data only if an archive of processed data is maintained, so the query capability depends on the archive function."
+      }
+    ],
+    "ace_visible_to_nomination": 0.18704155328991523,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall ensure that historical data ingested in batch and stored in the long-term archive is accessible to users via SQL-based query tools.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "DEP-018",
+    "origin": "dependency",
+    "subject": "Detect and classify incidents → Incident reports",
+    "question": "Does the system produce incident reports containing time, location, type, and severity for every incident it detects and classifies?",
+    "scenario": "An incident (e.g., crash, debris, stalled vehicle, work zone) is detected and classified. The system should generate an incident report with time, location, type, and severity.",
+    "draft_obligation": "The system shall generate an incident report with time, location, type, and severity for each detected and classified incident.",
+    "evidence_fr_ids": [
+      "FRBLOCK-002"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-c3c0b597e718",
+        "source": "Detect and classify incidents",
+        "target": "Incident reports",
+        "relation_type": "PRODUCES",
+        "propagation_sign": "positive",
+        "confidence": 0.95,
+        "source_fr_id": "FRBLOCK-002",
+        "source_quote": "The system shall detect and classify incidents such as crashes, debris, stalled vehicles, and work zones.",
+        "target_fr_id": "FRBLOCK-002",
+        "target_quote": "Outputs: Incident reports with time, location, type, and severity.",
+        "reason": "The FR explicitly lists Incident reports as the output of the incident detection and classification function."
+      },
+      {
+        "relation_id": "REL-738c7076896b",
+        "source": "Detect and classify incidents",
+        "target": "Incident reports",
+        "relation_type": "PRODUCES",
+        "propagation_sign": "positive",
+        "confidence": 0.9,
+        "source_fr_id": "FRBLOCK-002",
+        "source_quote": "The system shall detect and classify incidents such as crashes, debris, stalled vehicles, and work zones.",
+        "target_fr_id": "FRBLOCK-002",
+        "target_quote": "Incident reports with time, location, type, and severity.",
+        "reason": "FR-DPA-002 explicitly states that incident detection and classification produces incident reports with time, location, type, and severity."
+      },
+      {
+        "relation_id": "REL-3ede7c3fcd47",
+        "source": "Detect and classify incidents",
+        "target": "Incident reports",
+        "relation_type": "PRODUCES",
+        "propagation_sign": "positive",
+        "confidence": 0.9,
+        "source_fr_id": "FRBLOCK-002",
+        "source_quote": "detect and classify incidents",
+        "target_fr_id": "FRBLOCK-002",
+        "target_quote": "Incident reports",
+        "reason": "FR-DPA-002 explicitly lists incident reports as outputs of the incident detection and classification function."
+      }
+    ],
+    "ace_visible_to_nomination": 0.5292453563696261,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall generate an incident report with time, location, type, and severity for each detected and classified incident.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "DEP-019",
+    "origin": "dependency",
+    "subject": "Maintain long-term archive of processed data → Allow users to query archived data via SQL-based tools",
+    "question": "Is there an explicit functional requirement that the system maintain a long-term archive of all processed data to enable users to query archived data via SQL-based tools?",
+    "scenario": "A business user needs to retrieve historical processed data using SQL queries. The requirement source states: \"maintain a long-term archive of all processed data\" and \"allow users to query archived data via SQL-based tools.\" The review checks whether the specification clearly links archive maintenance to query availability.",
+    "draft_obligation": "The system shall maintain a long-term archive of processed data so that users can query archived data via SQL-based tools.",
+    "evidence_fr_ids": [
+      "FRBLOCK-003"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-db70bbf82e97",
+        "source": "Maintain long-term archive of processed data",
+        "target": "Allow users to query archived data via SQL-based tools",
+        "relation_type": "ENABLES",
+        "propagation_sign": "positive",
+        "confidence": 0.85,
+        "source_fr_id": "FRBLOCK-003",
+        "source_quote": "maintain a long-term archive of all processed data",
+        "target_fr_id": "FRBLOCK-003",
+        "target_quote": "allow users to query archived data via SQL-based tools",
+        "reason": "Users can query archived data only if the system has maintained a long-term archive of processed data; the archive provides the data needed for querying."
+      },
+      {
+        "relation_id": "REL-0a5bd5895664",
+        "source": "Maintain long-term archive of processed data",
+        "target": "Allow users to query archived data via SQL-based tools",
+        "relation_type": "DEPENDS_ON",
+        "propagation_sign": "positive",
+        "confidence": 0.7,
+        "source_fr_id": "FRBLOCK-003",
+        "source_quote": "maintain a long-term archive of all processed data",
+        "target_fr_id": "FRBLOCK-003",
+        "target_quote": "query archived data via SQL-based tools",
+        "reason": "Querying archived data is dependent on the existence of the archive, which is maintained by the archive function."
+      },
+      {
+        "relation_id": "REL-1f7be4c293a1",
+        "source": "Maintain long-term archive of processed data",
+        "target": "Allow users to query archived data via SQL-based tools",
+        "relation_type": "DEPENDS_ON",
+        "propagation_sign": "positive",
+        "confidence": 0.9,
+        "source_fr_id": "FRBLOCK-003",
+        "source_quote": "maintain a long-term archive of all processed data",
+        "target_fr_id": "FRBLOCK-003",
+        "target_quote": "allow users to query archived data via SQL-based tools",
+        "reason": "Users can query archived data only if an archive of processed data is maintained, so the query capability depends on the archive function."
+      }
+    ],
+    "ace_visible_to_nomination": 0.508358439804696,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall maintain a long-term archive of processed data so that users can query archived data via SQL-based tools.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "DEP-020",
+    "origin": "dependency",
+    "subject": "Input data fields → Normalized data stored in central database",
+    "question": "Does the specification require that the real-time data inputs identified as 'GPS data, speed, location, road condition reports, temperature, precipitation, visibility' be normalized and stored in the central database after acceptance?",
+    "scenario": "The system accepts real-time data inputs from probe vehicles, traffic sensors, weather stations, and traveler information systems. The accepted data includes GPS data, speed, location, road condition reports, temperature, precipitation, and visibility. The system is expected to process these inputs and produce normalized data stored in a central database.",
+    "draft_obligation": "The system shall normalize the accepted real-time data inputs and store the normalized data in the central database.",
+    "evidence_fr_ids": [
+      "FRBLOCK-001"
+    ],
+    "evidence": [
+      {
+        "relation_id": "REL-3d311c5522b6",
+        "source": "Input data fields",
+        "target": "Accept real-time data inputs from external sources",
+        "relation_type": "DEPENDS_ON",
+        "propagation_sign": "positive",
+        "confidence": 0.8,
+        "source_fr_id": "FRBLOCK-001",
+        "source_quote": "GPS data, speed, location, road condition reports, temperature, precipitation, visibility.",
+        "target_fr_id": "FRBLOCK-001",
+        "target_quote": "The system shall accept real-time data inputs from probe vehicles, traffic sensors, weather stations, and traveler information systems.",
+        "reason": "The FR lists these input data fields as required inputs for the accept real-time data function."
+      },
+      {
+        "relation_id": "REL-9fad708cf4b6",
+        "source": "Accept real-time data inputs from external sources",
+        "target": "Normalized data stored in central database",
+        "relation_type": "PRODUCES",
+        "propagation_sign": "positive",
+        "confidence": 0.9,
+        "source_fr_id": "FRBLOCK-001",
+        "source_quote": "The system shall accept real-time data inputs from probe vehicles, traffic sensors, weather stations, and traveler information systems.",
+        "target_fr_id": "FRBLOCK-001",
+        "target_quote": "Normalized data stored in a central database.",
+        "reason": "FR-DCI-001 explicitly lists normalized data stored in a central database as the output of the accept real-time data input function."
+      }
+    ],
+    "ace_visible_to_nomination": 0.23492115707167993,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall normalize the accepted real-time data inputs and store the normalized data in the central database.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "ISOLATED-08e7869ab193",
+    "origin": "isolated",
+    "subject": "Compute traffic metrics",
+    "question": "Does FRBLOCK-001 need to specify that the accepted real-time data inputs (GPS data, speed, location) are used to compute traffic metrics, and if so, what are the expected outputs and storage locations?",
+    "scenario": "A traffic management operator needs to know current traffic conditions; the FR only specifies normalization and storage of raw inputs but does not mention computation of traffic metrics.",
+    "draft_obligation": "The system shall compute traffic metrics (e.g., average speed, congestion level) from the accepted real-time data inputs and store them in the central database.",
+    "evidence_fr_ids": [
+      "FRBLOCK-001"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "GPS data, speed, location, road condition reports, temperature, precipitation, visibility"
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall compute traffic metrics (e.g., average speed, congestion level) from the accepted real-time data inputs and store them in the central database.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "ISOLATED-cf62f7eafd00",
+    "origin": "isolated",
+    "subject": "Configure new data source types without major software changes",
+    "question": "Does FRBLOCK-001 need to document how newly configured data source types are integrated into the existing validation and normalization pipeline?",
+    "scenario": "An administrator configures a new data source type; the FR states the system shall allow configuration without major software changes, but does not specify whether the new source's data will be validated and normalized automatically.",
+    "draft_obligation": "The system shall automatically apply the existing validation rules and normalization processes to data from newly configured data source types.",
+    "evidence_fr_ids": [
+      "FRBLOCK-001"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "The system shall allow for the configuration of new data source types without requiring major software changes."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall automatically apply the existing validation rules and normalization processes to data from newly configured data source types.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-b8927230c99b",
+    "origin": "operation",
+    "subject": "Perform automated data quality checks",
+    "question": "Does the FR's validation requirement (FR-DCI-002) imply automated data quality checks, and should it specify the frequency and scope of such checks?",
+    "scenario": "Data arrives in real time; the system validates against predefined quality rules, but the FR does not state whether these checks are automated or manual, leading to potential operational ambiguity.",
+    "draft_obligation": "The system shall perform automated data quality checks on all incoming data in real time, using the predefined quality rules, and log all rejected records.",
+    "evidence_fr_ids": [
+      "FRBLOCK-001"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "The system shall validate incoming data against predefined quality rules and reject invalid or malformed data."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall perform automated data quality checks on all incoming data in real time, using the predefined quality rules, and log all rejected records.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-5d50ce8aef71",
+    "origin": "operation",
+    "subject": "Support batch ingestion of historical data",
+    "question": "Does FRBLOCK-001 need to clarify how batch ingestion of historical data coexists with real-time ingestion, specifically regarding validation and storage consistency?",
+    "scenario": "An operator loads historical data in batch; the FR requires the system to support batch ingestion but does not specify whether the same validation rules apply or whether historical data is stored in the same central database.",
+    "draft_obligation": "The system shall apply the same data validation rules to batch-ingested historical data as to real-time data, and store the normalized results in the same central database.",
+    "evidence_fr_ids": [
+      "FRBLOCK-001"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "The system shall support batch ingestion of historical data for backfilling archives and training models."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall apply the same data validation rules to batch-ingested historical data as to real-time data, and store the normalized results in the same central database.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "ISOLATED-10080ec40edc",
+    "origin": "isolated",
+    "subject": "Compute traffic metrics",
+    "question": "Is the Compute traffic metrics function explicitly linked to the raw sensor and probe data inputs in the system architecture? If not, should such a connection be specified?",
+    "scenario": "The FR block states that raw sensor and probe data are inputs, but the isolated elements list includes Compute traffic metrics, suggesting the graph lacks a connection between the data inputs and this function.",
+    "draft_obligation": "The system shall document a data flow from raw sensor and probe data to the Compute traffic metrics function.",
+    "evidence_fr_ids": [
+      "FRBLOCK-002"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "The system shall compute traffic metrics including congestion levels, travel times, queue lengths, and traffic flow patterns."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall document a data flow from raw sensor and probe data to the Compute traffic metrics function.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-f1ab4f4db124",
+    "origin": "operation",
+    "subject": "Generate statistical summaries",
+    "question": "What specific operation allows users to retrieve or view the generated statistical summaries? Does the system provide a command or query interface for these summaries?",
+    "scenario": "The FR block states that the system shall generate statistical summaries of daily, weekly, and monthly traffic patterns, but does not specify how users access these summaries.",
+    "draft_obligation": "The system shall provide an operation to retrieve the generated statistical summaries for a specified time period.",
+    "evidence_fr_ids": [
+      "FRBLOCK-002"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "The system shall generate statistical summaries of daily, weekly, and monthly traffic patterns."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall provide an operation to retrieve the generated statistical summaries for a specified time period.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-14d1d5d79dac",
+    "origin": "operation",
+    "subject": "Detect and classify incidents",
+    "question": "What specific operation triggers the incident detection and classification process? Is it continuous, scheduled, or event-driven?",
+    "scenario": "The FR block requires incident detection and classification but does not define the operational trigger for this function.",
+    "draft_obligation": "The system shall define a trigger for the incident detection and classification operation, such as real-time sensor streaming or periodic batch processing.",
+    "evidence_fr_ids": [
+      "FRBLOCK-002"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "The system shall detect and classify incidents such as crashes, debris, stalled vehicles, and work zones."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall define a trigger for the incident detection and classification operation, such as real-time sensor streaming or periodic batch processing.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "ISOLATED-f6a0b89fce21",
+    "origin": "isolated",
+    "subject": "Perform automated data quality checks",
+    "question": "Is the Perform automated data quality checks function connected to the data sources it is supposed to validate? If not, what connection is needed?",
+    "scenario": "The isolated elements list includes Perform automated data quality checks, but the FR block does not specify which data sources are checked or how this function is connected to them.",
+    "draft_obligation": "The system shall document which data sources are checked and the connection between the data quality function and those sources.",
+    "evidence_fr_ids": [
+      "FRBLOCK-002"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "The system shall perform automated data quality checks to flag anomalies and inconsistencies."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall document which data sources are checked and the connection between the data quality function and those sources.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "ISOLATED-f836bf4bad01",
+    "origin": "isolated",
+    "subject": "Implement dynamic caching for frequently accessed data",
+    "question": "The element 'Implement dynamic caching for frequently accessed data' is isolated in the system model. Is there a documented connection between dynamic caching and the long-term archive (for example, cache invalidation or data consistency when archived data changes)?",
+    "scenario": "The FR block specifies both long-term archiving and dynamic caching, but the caching element has no relationships in the graph. Understanding this linkage affects performance and data consistency.",
+    "draft_obligation": "The system shall document the relationship between dynamic caching and archived data to ensure cache coherence with archival updates and purging.",
+    "evidence_fr_ids": [
+      "FRBLOCK-003"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-003",
+        "quote": "implement dynamic caching for frequently accessed data"
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall document the relationship between dynamic caching and archived data to ensure cache coherence with archival updates and purging.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-6ea32fb03ed6",
+    "origin": "operation",
+    "subject": "Support automated data purging policies",
+    "question": "The FR specifies that the system shall support automated data purging policies, but does not mention an operation for administrators to define, modify, or review these policies. Should the system provide an operation to configure purging policies?",
+    "scenario": "In the data storage workflow, administrators likely need to adjust retention periods or purge schedules. The current FR only states support for automated policies, leaving configuration unspecified.",
+    "draft_obligation": "The system shall allow authorized administrators to configure automated data purging policies, including defining retention periods and purge schedules.",
+    "evidence_fr_ids": [
+      "FRBLOCK-003"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-003",
+        "quote": "support automated data purging policies"
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall allow authorized administrators to configure automated data purging policies, including defining retention periods and purge schedules.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "ISOLATED-7dbcd685c067",
+    "origin": "isolated",
+    "subject": "Compute traffic metrics",
+    "question": "Should the FR block include computation of traffic metrics as part of the processed data that is published in standardized formats?",
+    "scenario": "A reviewer sees that 'Compute traffic metrics' is an isolated element not connected to this FR. The FR mentions publishing processed data, which may rely on computed traffic metrics. The reviewer should confirm whether this computation is within scope.",
+    "draft_obligation": "The system shall compute traffic metrics from raw traffic data before publishing processed data.",
+    "evidence_fr_ids": [
+      "FRBLOCK-004"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "The system shall publish processed data in standardized formats (SAE J2354, TMDD)."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall compute traffic metrics from raw traffic data before publishing processed data.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "ISOLATED-4657b6b143e1",
+    "origin": "isolated",
+    "subject": "Generate statistical summaries",
+    "question": "Should the FR block require generation of statistical summaries as part of the processed data provided to external applications?",
+    "scenario": "A reviewer notes that 'Generate statistical summaries' is isolated. The FR includes an API for external applications to consume traffic and weather data; statistical summaries might be required for those consumers. The reviewer should determine if this element belongs to the FR.",
+    "draft_obligation": "The system shall generate statistical summaries of traffic and weather data for consumption via the API.",
+    "evidence_fr_ids": [
+      "FRBLOCK-004"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "The system shall provide an API for external applications to consume traffic and weather data in real time."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall generate statistical summaries of traffic and weather data for consumption via the API.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "ISOLATED-751c7b7bc9cf",
+    "origin": "isolated",
+    "subject": "Perform automated data quality checks",
+    "question": "Should the FR block specify automated data quality checks before publishing processed data?",
+    "scenario": "A reviewer sees that 'Perform automated data quality checks' is isolated. The FR requires publishing processed data in standardized formats; data quality checks may be necessary to ensure reliability. The reviewer should confirm if this element should be linked.",
+    "draft_obligation": "The system shall perform automated data quality checks on all data before publication.",
+    "evidence_fr_ids": [
+      "FRBLOCK-004"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "The system shall publish processed data in standardized formats (SAE J2354, TMDD)."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall perform automated data quality checks on all data before publication.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "ISOLATED-16ff7a71c671",
+    "origin": "isolated",
+    "subject": "Provide Ad-hoc Reporting Tools",
+    "question": "Should the FR block include provision of ad-hoc reporting tools for users to create custom reports from available data?",
+    "scenario": "A reviewer notes that 'Provide Ad-hoc Reporting Tools' is isolated. The FR supports exporting data in multiple formats, which may be used for ad-hoc reporting, but the FR does not mention reporting tools. The reviewer should determine if reporting tools are in scope.",
+    "draft_obligation": "The system shall provide ad-hoc reporting tools that allow users to create custom reports using exported data.",
+    "evidence_fr_ids": [
+      "FRBLOCK-004"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "The system shall support exporting data in CSV, JSON, XML, and KML formats for third-party use."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall provide ad-hoc reporting tools that allow users to create custom reports using exported data.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-756d4068e4d4",
+    "origin": "operation",
+    "subject": "Generate alerts",
+    "question": "Should the system support updating the status of generated alerts (e.g., acknowledged, resolved)?",
+    "scenario": "The FR states that the system shall generate alerts. In typical operations, alerts need lifecycle management, including status updates. The reviewer should confirm if an update operation is required for alert handling.",
+    "draft_obligation": "The system shall allow authorized users to update the status of generated alerts.",
+    "evidence_fr_ids": [
+      "FRBLOCK-004"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "The system shall generate alerts for traffic incidents, severe weather events, and asset failures."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall allow authorized users to update the status of generated alerts.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-1ae312a0ea92",
+    "origin": "operation",
+    "subject": "Support data export formats",
+    "question": "Should the system allow authorized users to update the configuration of data exports (e.g., selecting fields, schedule)?",
+    "scenario": "The FR requires exporting data in multiple formats, but does not specify if export configurations can be updated. A reviewer should verify whether an update operation is needed for export management.",
+    "draft_obligation": "The system shall allow authorized users to update data export configurations.",
+    "evidence_fr_ids": [
+      "FRBLOCK-004"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "The system shall support exporting data in CSV, JSON, XML, and KML formats for third-party use."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall allow authorized users to update data export configurations.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "ISOLATED-ed55a19dbb49",
+    "origin": "isolated",
+    "subject": "Compute traffic metrics",
+    "question": "Is 'Compute traffic metrics' intended to have a documented connection to the user interface requirements, given that the web-based interface is for viewing traffic data that may include computed metrics?",
+    "scenario": "A user viewing traffic data may need to see computed metrics such as average speed or congestion level, but the current FR block does not explicitly reference computation of these metrics.",
+    "draft_obligation": "If business workflows require display of computed traffic metrics, the system shall connect the computation function to the UI viewing feature; otherwise, no connection is required.",
+    "evidence_fr_ids": [
+      "FRBLOCK-005"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "provide a web-based interface for viewing traffic, incident, traveler, and weather data"
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "If business workflows require display of computed traffic metrics, the system shall connect the computation function to the UI viewing feature; otherwise, no connection is required.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "ISOLATED-54d52a3f4eef",
+    "origin": "isolated",
+    "subject": "Generate statistical summaries",
+    "question": "Does the FR block require the user interface to display statistical summaries generated by the system, or is 'Generate statistical summaries' intentionally isolated from the UI requirements?",
+    "scenario": "Users may benefit from viewing statistical summaries (e.g., incident frequency by region) through the web-based interface, but no explicit requirement connects the summary generation to UI display.",
+    "draft_obligation": "If statistical summaries are to be presented to users, the system shall provide a documented connection between summary generation and the user interface.",
+    "evidence_fr_ids": [
+      "FRBLOCK-005"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "filter and search data by location, time, event type, and other relevant criteria"
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "If statistical summaries are to be presented to users, the system shall provide a documented connection between summary generation and the user interface.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "ISOLATED-58ea01f90d0a",
+    "origin": "isolated",
+    "subject": "Provide Ad-hoc Reporting Tools",
+    "question": "Is 'Provide Ad-hoc Reporting Tools' considered part of the user interface capabilities described in this FR block, or should it be connected to the custom dashboard and filtering features?",
+    "scenario": "Ad-hoc reporting tools may rely on the filtering/search and custom dashboard functionality, but the FR block does not mention ad-hoc reporting explicitly.",
+    "draft_obligation": "If ad-hoc reporting is a business requirement, the system shall integrate or connect the ad-hoc reporting tools with the existing user interface features (filtering, dashboards).",
+    "evidence_fr_ids": [
+      "FRBLOCK-005"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "allow users to create custom dashboards for frequent data views"
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "If ad-hoc reporting is a business requirement, the system shall integrate or connect the ad-hoc reporting tools with the existing user interface features (filtering, dashboards).",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-c3c92db3854a",
+    "origin": "operation",
+    "subject": "Web-based interface for viewing data",
+    "question": "Does the web-based interface support role-based access control, allowing different user types (e.g., public, operator, administrator) to view different subsets of traffic, incident, traveler, and weather data?",
+    "scenario": "An operator needs to view detailed incident data while a public user should only see high-level traffic information.",
+    "draft_obligation": "The system shall enforce role-based access control for data visibility in the web-based interface.",
+    "evidence_fr_ids": [
+      "FRBLOCK-005"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "provide a web-based interface for viewing traffic, incident, traveler, and weather data"
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall enforce role-based access control for data visibility in the web-based interface.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-44b2daf510ec",
+    "origin": "operation",
+    "subject": "Map displays with icon layers",
+    "question": "Does the map display allow users to selectively show or hide individual icon layers (traffic, incidents, road closures) independently?",
+    "scenario": "A user wants to view only road closures on the map to assess impact on a route.",
+    "draft_obligation": "The system shall provide controls to toggle visibility of each icon layer independently.",
+    "evidence_fr_ids": [
+      "FRBLOCK-005"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "include map displays with icon layers representing traffic, incidents, and road closures"
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall provide controls to toggle visibility of each icon layer independently.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-d4fd447042c3",
+    "origin": "operation",
+    "subject": "De-cluttering features",
+    "question": "Does the de-cluttering operation automatically trigger based on data volume thresholds, or is it user-controlled?",
+    "scenario": "High-volume data display occurs and visual complexity needs reduction.",
+    "draft_obligation": "Define the trigger mechanism for de-cluttering (automatic, user-controlled, or hybrid).",
+    "evidence_fr_ids": [
+      "FRBLOCK-005"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "support de-cluttering features to reduce visual complexity during high-volume data display"
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "Define the trigger mechanism for de-cluttering (automatic, user-controlled, or hybrid).",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-904a11a9521c",
+    "origin": "operation",
+    "subject": "Data filtering and search",
+    "question": "Can users combine multiple filter criteria (location, time, event type, and other relevant criteria) in a single search operation?",
+    "scenario": "A user wants to find all incidents of type 'accident' within a specific city and time window.",
+    "draft_obligation": "The system shall support simultaneous application of multiple filter criteria in search and filter operations.",
+    "evidence_fr_ids": [
+      "FRBLOCK-005"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "filter and search data by location, time, event type, and other relevant criteria"
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall support simultaneous application of multiple filter criteria in search and filter operations.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-7b3ebbc2d440",
+    "origin": "operation",
+    "subject": "Multi-language UI support",
+    "question": "Does the multi-language UI support include dynamic language switching without requiring re-authentication or session restart?",
+    "scenario": "A user wants to switch the interface language mid-session to another supported language.",
+    "draft_obligation": "The system shall allow users to change the UI language during an active session.",
+    "evidence_fr_ids": [
+      "FRBLOCK-005"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "support multi-language UI options to accommodate diverse user groups"
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall allow users to change the UI language during an active session.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-661be28d3ef4",
+    "origin": "operation",
+    "subject": "Custom dashboards",
+    "question": "Can users persist, retrieve, and modify custom dashboards they have created for frequent data views?",
+    "scenario": "A user creates a custom dashboard, logs out, and expects to access it in a future session.",
+    "draft_obligation": "The system shall provide persistence and retrieval capabilities for user-created custom dashboards.",
+    "evidence_fr_ids": [
+      "FRBLOCK-005"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "allow users to create custom dashboards for frequent data views"
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall provide persistence and retrieval capabilities for user-created custom dashboards.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-c8c070ad70d7",
+    "origin": "operation",
+    "subject": "Backup and Restore Capabilities",
+    "question": "Is there a documented operation for an administrator to initiate a backup or restore of the database or configuration settings?",
+    "scenario": "An administrator needs to restore the database after a failure, but the FR only states that backup and restore capabilities are provided; it does not specify how the operation is triggered or who can perform it.",
+    "draft_obligation": "The system shall allow authorized administrators to initiate backup and restore operations for the database and configuration settings.",
+    "evidence_fr_ids": [
+      "FRBLOCK-006"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "The system shall provide backup and restore capabilities for the database and configuration settings."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall allow authorized administrators to initiate backup and restore operations for the database and configuration settings.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-afbc5bdda727",
+    "origin": "operation",
+    "subject": "Role-Based Access Control",
+    "question": "Is there a specific operation to manage user roles or permissions?",
+    "scenario": "The FR states support for role-based access control for different user types, but does not define how roles are assigned, modified, or revoked, which is necessary for administration.",
+    "draft_obligation": "The system shall allow administrators to manage user roles and their associated permissions.",
+    "evidence_fr_ids": [
+      "FRBLOCK-006"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "The system shall support role-based access control for different user types (e.g., field operator, analyst, admin)."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall allow administrators to manage user roles and their associated permissions.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-9b55bad64875",
+    "origin": "operation",
+    "subject": "Configure Data Sources, Algorithms, and Output Formats",
+    "question": "Is there a documented workflow for an administrator to manage the configuration of data sources, algorithms, or output formats?",
+    "scenario": "The FR allows administrators to configure these items, but it does not specify the operations for managing configurations, which could lead to ambiguous implementation.",
+    "draft_obligation": "The system shall provide administrative operations to manage configurations for data sources, algorithms, and output formats.",
+    "evidence_fr_ids": [
+      "FRBLOCK-006"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "The system shall allow administrators to configure data sources, algorithms, and output formats."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall provide administrative operations to manage configurations for data sources, algorithms, and output formats.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-dd8253608df5",
+    "origin": "operation",
+    "subject": "Log Administrative Actions and Errors",
+    "question": "Is there a specific operation for viewing or exporting the administrative action and error logs?",
+    "scenario": "Logs are generated, but the FR does not specify how authorized users can access or analyze these logs for audit and troubleshooting.",
+    "draft_obligation": "The system shall provide authorized users with the ability to view, filter, and export administrative action and error logs.",
+    "evidence_fr_ids": [
+      "FRBLOCK-006"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "The system shall log all administrative actions and errors for audit and troubleshooting purposes."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall provide authorized users with the ability to view, filter, and export administrative action and error logs.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "ISOLATED-31a85cb7f56b",
+    "origin": "isolated",
+    "subject": "Configure new data source types without major software changes",
+    "question": "Should the system's configuration capability for data sources include adding new data source types without requiring major software changes?",
+    "scenario": "The element 'Configure new data source types without major software changes' is currently isolated, but FR-SAC-001 implies data source configuration; if extensibility is required, it should be connected to this FR.",
+    "draft_obligation": "The system shall allow administrators to configure new data source types without requiring major software changes.",
+    "evidence_fr_ids": [
+      "FRBLOCK-006"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "The system shall allow administrators to configure data sources, algorithms, and output formats."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall allow administrators to configure new data source types without requiring major software changes.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "ISOLATED-4aa6db0d1b97",
+    "origin": "isolated",
+    "subject": "Compute traffic metrics",
+    "question": "Does the FR need to explicitly require the computation of traffic metrics (e.g., totals, averages) to support the pre-defined reports, or is this already implied by the requirement to generate pre-defined reports on traffic volume?",
+    "scenario": "A stakeholder expects traffic volume metrics such as average daily traffic and peak hour volume to be available in pre-defined reports, but the FR only mentions reports on traffic volume without specifying that metrics are computed.",
+    "draft_obligation": "The system shall compute traffic metrics including total traffic volume, average daily traffic, and peak hour volume from collected traffic data to support pre-defined reports.",
+    "evidence_fr_ids": [
+      "FRBLOCK-007"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "generate pre-defined reports on traffic volume, incident frequency, and road condition trends"
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall compute traffic metrics including total traffic volume, average daily traffic, and peak hour volume from collected traffic data to support pre-defined reports.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "ISOLATED-d90489838037",
+    "origin": "isolated",
+    "subject": "Perform automated data quality checks",
+    "question": "Should the FR specify automated data quality checks for the data underlying reports to ensure reliability of traffic volume, incident frequency, and road condition reports?",
+    "scenario": "Report consumers may act on inaccurate data if quality issues are not detected before report generation.",
+    "draft_obligation": "The system shall perform automated data quality checks on traffic, incident, and road condition data prior to report generation, flagging missing, inconsistent, or outlier values.",
+    "evidence_fr_ids": [
+      "FRBLOCK-007"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "generate pre-defined reports on traffic volume, incident frequency, and road condition trends"
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall perform automated data quality checks on traffic, incident, and road condition data prior to report generation, flagging missing, inconsistent, or outlier values.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-70f1cd2d84f4",
+    "origin": "operation",
+    "subject": "Schedule Automatic Report Generation and Email Delivery",
+    "question": "Should the system also allow users to cancel or modify a scheduled report generation and email delivery, given that users can schedule them?",
+    "scenario": "A user schedules a weekly report but later needs to change the schedule or stop it; the current FR only mentions scheduling, not modification or cancellation.",
+    "draft_obligation": "The system shall allow users to cancel or modify a scheduled report generation and email delivery.",
+    "evidence_fr_ids": [
+      "FRBLOCK-007"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "allow users to schedule automatic report generation and email delivery"
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall allow users to cancel or modify a scheduled report generation and email delivery.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-474aea440227",
+    "origin": "operation",
+    "subject": "Generate Pre-defined Reports",
+    "question": "Should the system allow authorized users to manually trigger generation of a pre-defined report on demand, in addition to scheduled generation?",
+    "scenario": "A user needs an immediate traffic volume report outside the scheduled time, but the FR only specifies that the system shall generate pre-defined reports without specifying user-initiated generation.",
+    "draft_obligation": "The system shall allow authorized users to manually run a pre-defined report on demand.",
+    "evidence_fr_ids": [
+      "FRBLOCK-007"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "generate pre-defined reports on traffic volume, incident frequency, and road condition trends"
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall allow authorized users to manually run a pre-defined report on demand.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-23b92139c078",
+    "origin": "operation",
+    "subject": "Enforce secure authentication and authorization",
+    "question": "Does the system implement a specific operation to authenticate users (e.g., login) before granting access to protected resources?",
+    "scenario": "A user attempts to access a restricted feature; the system must verify identity and permissions.",
+    "draft_obligation": "The system shall include a user authentication operation that verifies credentials and an authorization operation that checks permissions before allowing access.",
+    "evidence_fr_ids": [
+      "FRBLOCK-008"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "The system shall enforce secure authentication and authorization for all users."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall include a user authentication operation that verifies credentials and an authorization operation that checks permissions before allowing access.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-5dca9d7b8c55",
+    "origin": "operation",
+    "subject": "TLS 1.2+ encryption for data transmissions",
+    "question": "Are all data transmissions, including internal service-to-service communication, covered by the TLS 1.2+ encryption requirement?",
+    "scenario": "The system exchanges data between modules; all paths must be encrypted.",
+    "draft_obligation": "The system shall apply TLS 1.2 or higher to every data transmission channel without exceptions.",
+    "evidence_fr_ids": [
+      "FRBLOCK-008"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "All data transmissions must be encrypted using TLS 1.2 or higher."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall apply TLS 1.2 or higher to every data transmission channel without exceptions.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-9d9e04802881",
+    "origin": "operation",
+    "subject": "Compliance with MDIT and FIPS 140-2",
+    "question": "What specific operations or configurations are necessary to demonstrate compliance with FIPS 140-2 encryption requirements (e.g., algorithm selection, key management)?",
+    "scenario": "The system uses cryptographic modules; they must be FIPS 140-2 validated.",
+    "draft_obligation": "The system shall use FIPS 140-2 validated cryptographic modules for all encryption and key management operations.",
+    "evidence_fr_ids": [
+      "FRBLOCK-008"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "The system shall comply with MDIT security standards and FIPS 140-2 encryption requirements."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall use FIPS 140-2 validated cryptographic modules for all encryption and key management operations.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "OPERATION-5fcb1f0efed4",
+    "origin": "operation",
+    "subject": "Audit logging of user activities and system events",
+    "question": "Does the audit logging functionality capture both successful and failed authentication attempts as part of user activities?",
+    "scenario": "A user attempts to log in; the event should be recorded regardless of outcome.",
+    "draft_obligation": "The system shall log all authentication attempts, including failures, with relevant metadata.",
+    "evidence_fr_ids": [
+      "FRBLOCK-008"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "The system shall support audit logging of all user activities and system events."
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall log all authentication attempts, including failures, with relevant metadata.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  },
+  {
+    "nomination_id": "ISOLATED-10cccc3cb98a",
+    "origin": "isolated",
+    "subject": "all users",
+    "question": "Is there a documented connection between 'all users' and the authentication mechanism that specifies user roles or attributes required for authorization?",
+    "scenario": "The system must distinguish between different user types for authorization; the definition of 'all users' may need clarity.",
+    "draft_obligation": "The system shall maintain a documented mapping of user roles and permissions for all users subject to authentication and authorization.",
+    "evidence_fr_ids": [
+      "FRBLOCK-008"
+    ],
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "all users"
+      }
+    ],
+    "ace_visible_to_nomination": null,
+    "preliminary_outcome": "not_checked",
+    "preliminary_reason": "Full-document validation disabled in this ablation.",
+    "supplement": "The system shall maintain a documented mapping of user roles and permissions for all users subject to authentication and authorization.",
+    "checked_fr_ids": [],
+    "fr_screenings": [],
+    "validation_status": "unchecked_draft"
+  }
+]

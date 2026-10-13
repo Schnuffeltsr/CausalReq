@@ -1,0 +1,191 @@
+[
+  {
+    "output_id": "OUT-91e440f9dc9c",
+    "source_nomination_id": "DEP-002",
+    "origin": "dependency",
+    "text": "The system shall provide batch-ingested historical data to the machine learning model training process to support predictive analysis of traffic trends and incident likelihood.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-81001b690f3d",
+    "source_nomination_id": "DEP-004",
+    "origin": "dependency",
+    "text": "The system shall generate the pre-defined reports (traffic volume, incident frequency, and road condition trends) when a scheduled automatic report generation and email delivery is triggered.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-d8f64d3be38d",
+    "source_nomination_id": "DEP-006",
+    "origin": "dependency",
+    "text": "The system shall ensure that the Oracle 10G archive supports retrieval of processed data for publication in SAE J2354 and TMDD standardized formats.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-6ae0f4e5e86f",
+    "source_nomination_id": "DEP-009",
+    "origin": "dependency",
+    "text": "The system shall specify for each real-time data input source (probe vehicles, traffic sensors, weather stations, traveler information systems) which of the listed data fields (GPS data, speed, location, road condition reports, temperature, precipitation, visibility) are mandatory and which are optional.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-cfd8aa14c3af",
+    "source_nomination_id": "DEP-016",
+    "origin": "dependency",
+    "text": "The system shall make archived processed data available in SAE J2354 and TMDD standardized formats to support publication.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-4626420eaa1f",
+    "source_nomination_id": "OPERATION-3a6a65f761ec",
+    "origin": "operation",
+    "text": "The system shall provide a read operation to retrieve normalized data from the central database for authorized consumers.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-114a61902f68",
+    "source_nomination_id": "OPERATION-f191aa09fba3",
+    "origin": "operation",
+    "text": "The system shall log all rejected data records and alert operators when incoming data fails quality validation rules.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-71c46576e515",
+    "source_nomination_id": "OPERATION-e9693c61143c",
+    "origin": "operation",
+    "text": "The system shall ensure batch ingestion is idempotent by detecting and preventing duplicate historical data records when the same data file is ingested more than once.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-44b99fee7344",
+    "source_nomination_id": "OPERATION-f07db0a5ce46",
+    "origin": "operation",
+    "text": "The system shall allow authorized users to retrieve incident reports including time, location, type, and severity.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-2b7015b5aecd",
+    "source_nomination_id": "OPERATION-7a345b34a79e",
+    "origin": "operation",
+    "text": "The system shall allow authorized users to update incident report fields (e.g., type, severity) after initial automatic generation.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-2e708884c038",
+    "source_nomination_id": "OPERATION-5e05cd5acf5a",
+    "origin": "operation",
+    "text": "The system shall provide an operation for authorized administrators to configure automated data purging policies to meet storage limit requirements.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-78d2a7616384",
+    "source_nomination_id": "OPERATION-bfbbd7881f7c",
+    "origin": "operation",
+    "text": "The system shall provide administrators with the ability to grant, modify, and revoke user permissions for querying archived data via SQL-based tools.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-11724d5c4bd6",
+    "source_nomination_id": "OPERATION-79872daa2888",
+    "origin": "operation",
+    "text": "The system shall provide an operation to invalidate or refresh cached data to ensure consistency with the underlying data source.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-7832a42f7e5f",
+    "source_nomination_id": "OPERATION-65af4a21ad85",
+    "origin": "operation",
+    "text": "The system shall provide a mechanism to update or retract previously published standardized data.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-fc118aaa7015",
+    "source_nomination_id": "OPERATION-675d025083e3",
+    "origin": "operation",
+    "text": "The system shall allow administrators to reconfigure the MI Drive data feed connection (including endpoint and authentication credentials) without requiring system downtime.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-5ebddf89997d",
+    "source_nomination_id": "OPERATION-33e18cbfdd8e",
+    "origin": "operation",
+    "text": "The system shall allow authorized operators to acknowledge and suppress generated alerts to manage duplicate or false alerts.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-439722f4f158",
+    "source_nomination_id": "OPERATION-d6c698611e89",
+    "origin": "operation",
+    "text": "The system shall support query parameters on the real-time traffic and weather API to filter data by geographic area, time range, and other relevant criteria.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-9f1e6df9b1d6",
+    "source_nomination_id": "OPERATION-5d7631505bcb",
+    "origin": "operation",
+    "text": "The system shall allow users to apply multiple filtering criteria concurrently across traffic, incident, traveler, and weather data.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-49bc062b3da2",
+    "source_nomination_id": "OPERATION-d9f8bece409d",
+    "origin": "operation",
+    "text": "The system shall allow users to save, edit, and share custom dashboards they have created, consisting of user-selected data views.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-0c283be39a1e",
+    "source_nomination_id": "OPERATION-f275b745a9c7",
+    "origin": "operation",
+    "text": "The system shall allow administrators to validate data source configurations before applying them.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-ea2fe51e2e9f",
+    "source_nomination_id": "OPERATION-83238edebfe6",
+    "origin": "operation",
+    "text": "The system shall provide administrators with the capability to search, filter, and export administrative action and error logs to support audit and troubleshooting activities.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-831dfea5606d",
+    "source_nomination_id": "OPERATION-1f39dc181680",
+    "origin": "operation",
+    "text": "The system shall allow administrators to assign and modify roles for user accounts.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-c7ba1689ce35",
+    "source_nomination_id": "OPERATION-2c434449735e",
+    "origin": "operation",
+    "text": "The system shall allow administrators to schedule automatic backups of the database and configuration settings.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-da2c2eae39e3",
+    "source_nomination_id": "OPERATION-c3937d33a986",
+    "origin": "operation",
+    "text": "The system shall allow users to execute pre-defined reports on demand.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-ebbeebcb8909",
+    "source_nomination_id": "OPERATION-f0d1798b7b36",
+    "origin": "operation",
+    "text": "The system shall allow users to specify recurrence, recipients, and report parameters when scheduling automatic report generation and email delivery.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-6e737920c8b6",
+    "source_nomination_id": "OPERATION-e485c9b3ad31",
+    "origin": "operation",
+    "text": "The system shall provide authorized users with the ability to view, filter, and export audit logs.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-9c6ecfc074ce",
+    "source_nomination_id": "OPERATION-99d49c1fc965",
+    "origin": "operation",
+    "text": "The system shall allow authorized administrators to upload, renew, and revoke TLS certificates used for data transmission encryption.",
+    "status": "model_preliminarily_retained"
+  }
+]

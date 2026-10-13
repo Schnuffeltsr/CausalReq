@@ -1,0 +1,602 @@
+[
+  {
+    "name": "Accept real-time data inputs from external sources",
+    "type": "FUNCTION",
+    "active_meaning": "the system is actively accepting real-time data inputs from probe vehicles, traffic sensors, weather stations, and traveler information systems",
+    "confidence": 0.97,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "The system shall accept real-time data inputs from probe vehicles, traffic sensors, weather stations, and traveler information systems."
+      }
+    ]
+  },
+  {
+    "name": "Probe vehicles, traffic sensors, weather stations, and traveler information systems",
+    "type": "ACTOR",
+    "active_meaning": "",
+    "confidence": 0.98,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "probe vehicles, traffic sensors, weather stations, and traveler information systems"
+      }
+    ]
+  },
+  {
+    "name": "Input data fields",
+    "type": "DATA",
+    "active_meaning": "the listed data fields are present in the incoming real-time data stream and accepted by the system for processing",
+    "confidence": 0.93,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "GPS data, speed, location, road condition reports, temperature, precipitation, visibility"
+      }
+    ]
+  },
+  {
+    "name": "Normalized data stored in central database",
+    "type": "STATE",
+    "active_meaning": "normalized data has been successfully stored in the central database and is available as output",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "Normalized data stored in a central database"
+      }
+    ]
+  },
+  {
+    "name": "Validate incoming data and reject invalid data",
+    "type": "FUNCTION",
+    "active_meaning": "the validation process is active: incoming data is being checked against predefined quality rules and invalid or malformed records are rejected",
+    "confidence": 0.96,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "The system shall validate incoming data against predefined quality rules and reject invalid or malformed data."
+      }
+    ]
+  },
+  {
+    "name": "Predefined quality rules",
+    "type": "CONSTRAINT",
+    "active_meaning": "the constraint that incoming data must conform to predefined quality rules is enforced; nonconforming data is rejected",
+    "confidence": 0.92,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "predefined quality rules"
+      }
+    ]
+  },
+  {
+    "name": "Configure new data source types without major software changes",
+    "type": "FUNCTION",
+    "active_meaning": "the system's capability to configure new data source types without major software changes is active and available",
+    "confidence": 0.94,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "The system shall allow for the configuration of new data source types without requiring major software changes."
+      }
+    ]
+  },
+  {
+    "name": "Support batch ingestion of historical data",
+    "type": "FUNCTION",
+    "active_meaning": "the system is actively supporting batch ingestion of historical data for backfilling archives and training models",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "The system shall support batch ingestion of historical data for backfilling archives and training models."
+      }
+    ]
+  },
+  {
+    "name": "Compute traffic metrics",
+    "type": "FUNCTION",
+    "active_meaning": "The system has computed traffic metrics including congestion levels, travel times, queue lengths, and traffic flow patterns.",
+    "confidence": 0.98,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "The system shall compute traffic metrics including congestion levels, travel times, queue lengths, and traffic flow patterns."
+      }
+    ]
+  },
+  {
+    "name": "Detect and classify incidents",
+    "type": "FUNCTION",
+    "active_meaning": "The system has detected and classified at least one incident as a crash, debris, stalled vehicle, or work zone.",
+    "confidence": 0.98,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "The system shall detect and classify incidents such as crashes, debris, stalled vehicles, and work zones."
+      }
+    ]
+  },
+  {
+    "name": "Calculate road surface conditions",
+    "type": "FUNCTION",
+    "active_meaning": "The system has calculated road surface conditions using weather data and sensor inputs.",
+    "confidence": 0.98,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "The system shall calculate road surface conditions based on weather data and sensor inputs."
+      }
+    ]
+  },
+  {
+    "name": "Perform automated data quality checks",
+    "type": "FUNCTION",
+    "active_meaning": "The system has performed automated data quality checks and flagged anomalies and inconsistencies.",
+    "confidence": 0.98,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "The system shall perform automated data quality checks to flag anomalies and inconsistencies."
+      }
+    ]
+  },
+  {
+    "name": "Support machine learning models",
+    "type": "FUNCTION",
+    "active_meaning": "The system is supporting machine learning models for predictive analysis of traffic trends and incident likelihood.",
+    "confidence": 0.98,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "The system shall support machine learning models for predictive analysis of traffic trends and incident likelihood."
+      }
+    ]
+  },
+  {
+    "name": "Generate statistical summaries",
+    "type": "FUNCTION",
+    "active_meaning": "The system has generated statistical summaries of daily, weekly, and monthly traffic patterns.",
+    "confidence": 0.98,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "The system shall generate statistical summaries of daily, weekly, and monthly traffic patterns."
+      }
+    ]
+  },
+  {
+    "name": "System",
+    "type": "ACTOR",
+    "active_meaning": "",
+    "confidence": 0.99,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "The system"
+      }
+    ]
+  },
+  {
+    "name": "Incident reports",
+    "type": "DATA",
+    "active_meaning": "Incident reports have been generated and are available with time, location, type, and severity.",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "Incident reports with time, location, type, and severity"
+      }
+    ]
+  },
+  {
+    "name": "Maintain long-term archive of processed data",
+    "type": "FUNCTION",
+    "active_meaning": "the system has successfully established and is actively maintaining the long-term archive containing all processed data",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-003",
+        "quote": "maintain a long-term archive of all processed data using Oracle 10G"
+      }
+    ]
+  },
+  {
+    "name": "Use Oracle 10G for archiving",
+    "type": "CONSTRAINT",
+    "active_meaning": "the system's archive is stored using Oracle 10G technology (constraint satisfied)",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-003",
+        "quote": "using Oracle 10G"
+      }
+    ]
+  },
+  {
+    "name": "Implement dynamic caching for frequently accessed data",
+    "type": "FUNCTION",
+    "active_meaning": "the system has implemented dynamic caching and it is active for frequently accessed data",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-003",
+        "quote": "implement dynamic caching for frequently accessed data"
+      }
+    ]
+  },
+  {
+    "name": "Allow users to query archived data via SQL-based tools",
+    "type": "FUNCTION",
+    "active_meaning": "users are able to query archived data using SQL-based tools successfully",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-003",
+        "quote": "allow users to query archived data via SQL-based tools"
+      }
+    ]
+  },
+  {
+    "name": "Users",
+    "type": "ACTOR",
+    "active_meaning": "",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-003",
+        "quote": "users"
+      }
+    ]
+  },
+  {
+    "name": "Support automated data purging policies",
+    "type": "FUNCTION",
+    "active_meaning": "the system has active automated data purging policies to manage storage limits",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-003",
+        "quote": "support automated data purging policies"
+      }
+    ]
+  },
+  {
+    "name": "Automated data purging policies",
+    "type": "CONSTRAINT",
+    "active_meaning": "automated data purging policies are defined and active to manage storage limits",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-003",
+        "quote": "automated data purging policies"
+      }
+    ]
+  },
+  {
+    "name": "Publish processed data in standardized formats",
+    "type": "FUNCTION",
+    "active_meaning": "the system has published processed data in standardized formats (SAE J2354, TMDD)",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "The system shall publish processed data in standardized formats (SAE J2354, TMDD)."
+      }
+    ]
+  },
+  {
+    "name": "Provide real-time data feeds to MI Drive",
+    "type": "FUNCTION",
+    "active_meaning": "the system is providing real-time data feeds to MDOT’s MI Drive system",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "The system shall provide real-time data feeds to MDOT’s MI Drive system."
+      }
+    ]
+  },
+  {
+    "name": "Generate alerts",
+    "type": "FUNCTION",
+    "active_meaning": "the system has generated alerts for traffic incidents, severe weather events, and asset failures",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "The system shall generate alerts for traffic incidents, severe weather events, and asset failures."
+      }
+    ]
+  },
+  {
+    "name": "Support data export formats",
+    "type": "FUNCTION",
+    "active_meaning": "the system supports exporting data in CSV, JSON, XML, and KML formats for third-party use",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "The system shall support exporting data in CSV, JSON, XML, and KML formats for third-party use."
+      }
+    ]
+  },
+  {
+    "name": "Provide API for real-time consumption",
+    "type": "FUNCTION",
+    "active_meaning": "the system provides an API for external applications to consume traffic and weather data in real time",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "The system shall provide an API for external applications to consume traffic and weather data in real time."
+      }
+    ]
+  },
+  {
+    "name": "Web-based interface for viewing data",
+    "type": "FUNCTION",
+    "active_meaning": "the web-based interface is available to users for viewing traffic, incident, traveler, and weather data",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "provide a web-based interface for viewing traffic, incident, traveler, and weather data"
+      }
+    ]
+  },
+  {
+    "name": "Map displays with icon layers",
+    "type": "FUNCTION",
+    "active_meaning": "the interface displays maps with icon layers for traffic, incidents, and road closures",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "include map displays with icon layers representing traffic, incidents, and road closures"
+      }
+    ]
+  },
+  {
+    "name": "De-cluttering features",
+    "type": "FUNCTION",
+    "active_meaning": "de-cluttering features are active to reduce visual complexity during high-volume data display",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "support de-cluttering features to reduce visual complexity during high-volume data display"
+      }
+    ]
+  },
+  {
+    "name": "High-volume data display",
+    "type": "STATE",
+    "active_meaning": "the system is currently displaying a high volume of data, causing visual complexity and triggering de-cluttering features",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "high-volume data display"
+      }
+    ]
+  },
+  {
+    "name": "Data filtering and search",
+    "type": "FUNCTION",
+    "active_meaning": "the system provides filtering and search capabilities by location, time, event type, and other relevant criteria",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "filter and search data by location, time, event type, and other relevant criteria"
+      }
+    ]
+  },
+  {
+    "name": "Multi-language UI support",
+    "type": "CONSTRAINT",
+    "active_meaning": "the system satisfies the constraint of supporting multi-language UI options, enabling diverse user groups to use the interface in their language",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "support multi-language UI options to accommodate diverse user groups"
+      }
+    ]
+  },
+  {
+    "name": "Custom dashboards",
+    "type": "FUNCTION",
+    "active_meaning": "the system allows users to create custom dashboards for viewing frequent data",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "allow users to create custom dashboards for frequent data views"
+      }
+    ]
+  },
+  {
+    "name": "Configure Data Sources, Algorithms, and Output Formats",
+    "type": "FUNCTION",
+    "active_meaning": "the system has allowed administrators to configure data sources, algorithms, and output formats",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "The system shall allow administrators to configure data sources, algorithms, and output formats."
+      }
+    ]
+  },
+  {
+    "name": "Log Administrative Actions and Errors",
+    "type": "EVENT",
+    "active_meaning": "an administrative action or error has been logged by the system",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "The system shall log all administrative actions and errors for audit and troubleshooting purposes."
+      }
+    ]
+  },
+  {
+    "name": "Role-Based Access Control",
+    "type": "CONSTRAINT",
+    "active_meaning": "role-based access control is enforced for user types field operator, analyst, and admin",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "The system shall support role-based access control for different user types (e.g., field operator, analyst, admin)."
+      }
+    ]
+  },
+  {
+    "name": "Backup and Restore Capabilities",
+    "type": "FUNCTION",
+    "active_meaning": "the system has performed a backup or restore of the database or configuration settings",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "The system shall provide backup and restore capabilities for the database and configuration settings."
+      }
+    ]
+  },
+  {
+    "name": "Generate Pre-defined Reports",
+    "type": "FUNCTION",
+    "active_meaning": "the system has generated the pre-defined reports on traffic volume, incident frequency, and road condition trends",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "generate pre-defined reports on traffic volume, incident frequency, and road condition trends"
+      }
+    ]
+  },
+  {
+    "name": "Schedule Automatic Report Generation and Email Delivery",
+    "type": "FUNCTION",
+    "active_meaning": "the system allows users to schedule automatic report generation and email delivery",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "allow users to schedule automatic report generation and email delivery"
+      }
+    ]
+  },
+  {
+    "name": "Provide Ad-hoc Reporting Tools",
+    "type": "FUNCTION",
+    "active_meaning": "the system provides ad-hoc reporting tools for querying and visualizing data",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "provide ad-hoc reporting tools for querying and visualizing data"
+      }
+    ]
+  },
+  {
+    "name": "Report Export Formats",
+    "type": "CONSTRAINT",
+    "active_meaning": "the report is exportable in PDF, Excel, and HTML formats",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "Reports must be exportable in PDF, Excel, and HTML formats"
+      }
+    ]
+  },
+  {
+    "name": "Email Delivery",
+    "type": "EVENT",
+    "active_meaning": "the scheduled report email has been delivered to the designated recipients",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "email delivery"
+      }
+    ]
+  },
+  {
+    "name": "User",
+    "type": "ACTOR",
+    "active_meaning": "",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "users"
+      }
+    ]
+  },
+  {
+    "name": "Enforce secure authentication and authorization",
+    "type": "FUNCTION",
+    "active_meaning": "the system enforces secure authentication and authorization for all users",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "The system shall enforce secure authentication and authorization for all users."
+      }
+    ]
+  },
+  {
+    "name": "TLS 1.2+ encryption for data transmissions",
+    "type": "CONSTRAINT",
+    "active_meaning": "all data transmissions are encrypted using TLS 1.2 or higher",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "All data transmissions must be encrypted using TLS 1.2 or higher."
+      }
+    ]
+  },
+  {
+    "name": "Compliance with MDIT and FIPS 140-2",
+    "type": "CONSTRAINT",
+    "active_meaning": "the system complies with MDIT security standards and FIPS 140-2 encryption requirements",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "The system shall comply with MDIT security standards and FIPS 140-2 encryption requirements."
+      }
+    ]
+  },
+  {
+    "name": "Audit logging of user activities and system events",
+    "type": "FUNCTION",
+    "active_meaning": "the system supports audit logging of all user activities and system events",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "The system shall support audit logging of all user activities and system events."
+      }
+    ]
+  },
+  {
+    "name": "all users",
+    "type": "ACTOR",
+    "active_meaning": "",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "all users"
+      }
+    ]
+  }
+]

@@ -1,0 +1,2033 @@
+[
+  {
+    "name": "Users",
+    "type": "ACTOR",
+    "active_meaning": "",
+    "confidence": 0.98,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "Users"
+      },
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "Users"
+      },
+      {
+        "fr_id": "FRBLOCK-003",
+        "quote": "Users"
+      },
+      {
+        "fr_id": "FRBLOCK-013",
+        "quote": "Users"
+      },
+      {
+        "fr_id": "FRBLOCK-016",
+        "quote": "Users"
+      },
+      {
+        "fr_id": "FRBLOCK-025",
+        "quote": "Users"
+      }
+    ]
+  },
+  {
+    "name": "Administrators",
+    "type": "ACTOR",
+    "active_meaning": "",
+    "confidence": 0.98,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-010",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-011",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-014",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-019",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-022",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-024",
+        "quote": "administrators"
+      }
+    ]
+  },
+  {
+    "name": "Register Asset",
+    "type": "FUNCTION",
+    "active_meaning": "the register asset operation is executed to process the submitted asset registration form",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "Register Asset"
+      }
+    ]
+  },
+  {
+    "name": "Asset Registered",
+    "type": "STATE",
+    "active_meaning": "the asset status is set to Registered",
+    "confidence": 0.92,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "Registered"
+      }
+    ]
+  },
+  {
+    "name": "Administrators Notified",
+    "type": "EVENT",
+    "active_meaning": "administrators have been notified for review after asset registration",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "Administrators are notified"
+      }
+    ]
+  },
+  {
+    "name": "Data Validation Passed",
+    "type": "CONSTRAINT",
+    "active_meaning": "the submitted asset data has passed the completeness and accuracy validation check",
+    "confidence": 0.88,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-001",
+        "quote": "validates the data for completeness and accuracy"
+      }
+    ]
+  },
+  {
+    "name": "Admin",
+    "type": "ACTOR",
+    "active_meaning": "",
+    "confidence": 0.98,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "admin"
+      },
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "admin"
+      },
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "admin"
+      },
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "admin"
+      }
+    ]
+  },
+  {
+    "name": "Edit and submit asset details",
+    "type": "FUNCTION",
+    "active_meaning": "the user has edited the registered asset details and submitted the change",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "Users edit registered asset details and submit the change."
+      }
+    ]
+  },
+  {
+    "name": "Validate modification data",
+    "type": "FUNCTION",
+    "active_meaning": "the system has validated the submitted modification data",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "validates the data"
+      }
+    ]
+  },
+  {
+    "name": "Stage change for admin approval",
+    "type": "FUNCTION",
+    "active_meaning": "the change has been staged and is pending admin approval",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "stages the change for admin approval"
+      }
+    ]
+  },
+  {
+    "name": "Update status to Modified",
+    "type": "FUNCTION",
+    "active_meaning": "the system has updated the asset record status to Modified",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "updates the status to “Modified”"
+      }
+    ]
+  },
+  {
+    "name": "Asset record status Modified",
+    "type": "STATE",
+    "active_meaning": "the asset record is in the Modified status after admin approval",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "Updated asset record with status “Modified.”"
+      }
+    ]
+  },
+  {
+    "name": "Admin approval",
+    "type": "EVENT",
+    "active_meaning": "admin approval has occurred and triggered the status update",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-002",
+        "quote": "upon approval"
+      }
+    ]
+  },
+  {
+    "name": "Query Asset Details",
+    "type": "FUNCTION",
+    "active_meaning": "the query asset details function is executed: the user searches for asset details using name, type, or ID and the system returns matching records",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-003",
+        "quote": "Query Asset Details"
+      }
+    ]
+  },
+  {
+    "name": "Search Criteria",
+    "type": "DATA",
+    "active_meaning": "",
+    "confidence": 0.93,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-003",
+        "quote": "Search criteria (name, type, ID)"
+      },
+      {
+        "fr_id": "FRBLOCK-009",
+        "quote": "Search criteria"
+      },
+      {
+        "fr_id": "FRBLOCK-013",
+        "quote": "Search criteria"
+      },
+      {
+        "fr_id": "FRBLOCK-025",
+        "quote": "Search criteria"
+      },
+      {
+        "fr_id": "FRBLOCK-026",
+        "quote": "Search criteria (category name, category ID)."
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Detailed Asset Information",
+    "type": "DATA",
+    "active_meaning": "detailed asset information for matching records has been returned as output by the system",
+    "confidence": 0.93,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-003",
+        "quote": "Detailed asset information (name, type, quantity, purchase date, status, etc.)"
+      }
+    ]
+  },
+  {
+    "name": "User",
+    "type": "ACTOR",
+    "active_meaning": "",
+    "confidence": 0.98,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "Users"
+      },
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "Users"
+      },
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "Users"
+      },
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "Users"
+      },
+      {
+        "fr_id": "FRBLOCK-009",
+        "quote": "Users"
+      },
+      {
+        "fr_id": "FRBLOCK-012",
+        "quote": "Users"
+      },
+      {
+        "fr_id": "FRBLOCK-015",
+        "quote": "Users"
+      },
+      {
+        "fr_id": "FRBLOCK-017",
+        "quote": "Users"
+      },
+      {
+        "fr_id": "FRBLOCK-018",
+        "quote": "Users"
+      },
+      {
+        "fr_id": "FRBLOCK-024",
+        "quote": "User"
+      },
+      {
+        "fr_id": "FRBLOCK-026",
+        "quote": "Users"
+      }
+    ]
+  },
+  {
+    "name": "Transfer Asset",
+    "type": "FUNCTION",
+    "active_meaning": "the transfer asset workflow is active and can be requested by users",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "Transfer Asset"
+      }
+    ]
+  },
+  {
+    "name": "Validate Transfer Request",
+    "type": "FUNCTION",
+    "active_meaning": "the system is actively validating the transfer request",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "validates the request"
+      }
+    ]
+  },
+  {
+    "name": "Stage for Admin Approval",
+    "type": "FUNCTION",
+    "active_meaning": "",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "stages it for admin approval"
+      },
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "stages them for admin approval"
+      },
+      {
+        "fr_id": "FRBLOCK-021",
+        "quote": "stages it for admin approval"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Update Ownership Upon Approval",
+    "type": "FUNCTION",
+    "active_meaning": "the system is updating asset ownership after admin approval",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "updates the ownership upon approval"
+      }
+    ]
+  },
+  {
+    "name": "Transfer form",
+    "type": "DATA",
+    "active_meaning": "the transfer form has been submitted with asset ID and new recipient",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "Transfer form"
+      }
+    ]
+  },
+  {
+    "name": "Transferred",
+    "type": "STATE",
+    "active_meaning": "the asset ownership transfer is complete and the asset status is Transferred",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-004",
+        "quote": "Transferred"
+      }
+    ]
+  },
+  {
+    "name": "Initiate Asset Return",
+    "type": "FUNCTION",
+    "active_meaning": "the user has initiated an asset return request",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "Users initiate asset returns"
+      }
+    ]
+  },
+  {
+    "name": "Validate Return Request",
+    "type": "FUNCTION",
+    "active_meaning": "the system has validated the asset return request",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "The system validates the request"
+      }
+    ]
+  },
+  {
+    "name": "Stage Return Request for Approval",
+    "type": "FUNCTION",
+    "active_meaning": "the asset return request has been staged for approval",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "stages it for approval"
+      }
+    ]
+  },
+  {
+    "name": "Update Asset Status to Returned",
+    "type": "FUNCTION",
+    "active_meaning": "the system has updated the asset status to Returned after approval",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "updates the status to “Returned” upon approval"
+      }
+    ]
+  },
+  {
+    "name": "Asset Status Returned",
+    "type": "STATE",
+    "active_meaning": "the asset status is 'Returned'",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "Updated asset status “Returned.”"
+      }
+    ]
+  },
+  {
+    "name": "Return Form",
+    "type": "DATA",
+    "active_meaning": "the return form containing asset ID and return date has been submitted",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "Return form (asset ID, return date)"
+      }
+    ]
+  },
+  {
+    "name": "Return Approval",
+    "type": "EVENT",
+    "active_meaning": "the asset return request has been approved",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-005",
+        "quote": "upon approval"
+      }
+    ]
+  },
+  {
+    "name": "Deletion Request",
+    "type": "DATA",
+    "active_meaning": "",
+    "confidence": 0.88,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "Deletion request (asset ID)"
+      },
+      {
+        "fr_id": "FRBLOCK-010",
+        "quote": "Deletion request (user ID)"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Obsolete Asset",
+    "type": "STATE",
+    "active_meaning": "the asset has been marked obsolete and is eligible for deletion",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "obsolete assets"
+      }
+    ]
+  },
+  {
+    "name": "Validates the Request",
+    "type": "FUNCTION",
+    "active_meaning": "the system is actively validating the deletion request",
+    "confidence": 0.92,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "validates the request"
+      }
+    ]
+  },
+  {
+    "name": "Staged for Admin Approval",
+    "type": "STATE",
+    "active_meaning": "the deletion request has been staged and is waiting for admin approval",
+    "confidence": 0.93,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "stages it for admin approval"
+      }
+    ]
+  },
+  {
+    "name": "Deletes the Record upon Approval",
+    "type": "FUNCTION",
+    "active_meaning": "the system deletes the asset record after admin approval is granted",
+    "confidence": 0.94,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "deletes the record upon approval"
+      }
+    ]
+  },
+  {
+    "name": "Deleted",
+    "type": "STATE",
+    "active_meaning": "the asset record has been removed and its status is 'Deleted'",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-006",
+        "quote": "status “Deleted.”"
+      }
+    ]
+  },
+  {
+    "name": "Administrator",
+    "type": "ACTOR",
+    "active_meaning": "",
+    "confidence": 0.98,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "Administrators"
+      },
+      {
+        "fr_id": "FRBLOCK-012",
+        "quote": "admin review"
+      },
+      {
+        "fr_id": "FRBLOCK-027",
+        "quote": "Administrators"
+      }
+    ]
+  },
+  {
+    "name": "Create New User Accounts",
+    "type": "FUNCTION",
+    "active_meaning": "The system performs the creation of new user accounts.",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "create new user accounts"
+      }
+    ]
+  },
+  {
+    "name": "Validate New-User Form",
+    "type": "FUNCTION",
+    "active_meaning": "The system validates the new-user form.",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "validates the form"
+      }
+    ]
+  },
+  {
+    "name": "Store User",
+    "type": "FUNCTION",
+    "active_meaning": "The system stores the new user record.",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "stores the user"
+      }
+    ]
+  },
+  {
+    "name": "Send Activation Email",
+    "type": "FUNCTION",
+    "active_meaning": "The system sends an activation email to the new user.",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "sends an activation email"
+      }
+    ]
+  },
+  {
+    "name": "New-User Form",
+    "type": "DATA",
+    "active_meaning": "The new-user form data is present as input.",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "New-user form (username, password, email, phone, department)"
+      }
+    ]
+  },
+  {
+    "name": "New User Record Activated",
+    "type": "STATE",
+    "active_meaning": "The new user record exists and has status Activated.",
+    "confidence": 0.98,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-007",
+        "quote": "New User record with status “Activated.”"
+      }
+    ]
+  },
+  {
+    "name": "Edit User Profile",
+    "type": "FUNCTION",
+    "active_meaning": "the edit profile workflow is invoked by a user to modify their own profile",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "Edit User Profile"
+      }
+    ]
+  },
+  {
+    "name": "Validate changes",
+    "type": "FUNCTION",
+    "active_meaning": "",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "validates changes"
+      },
+      {
+        "fr_id": "FRBLOCK-014",
+        "quote": "The system validates changes"
+      },
+      {
+        "fr_id": "FRBLOCK-027",
+        "quote": "validates changes"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Update record upon approval",
+    "type": "FUNCTION",
+    "active_meaning": "the system updates the user record after the admin approves the staged changes",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "updates the record upon approval"
+      }
+    ]
+  },
+  {
+    "name": "Status Modified",
+    "type": "STATE",
+    "active_meaning": "the updated user record has the status 'Modified'",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-008",
+        "quote": "status “Modified.”"
+      }
+    ]
+  },
+  {
+    "name": "Query User Details",
+    "type": "FUNCTION",
+    "active_meaning": "the user details query operation is invoked and returns results",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-009",
+        "quote": "Query User Details"
+      }
+    ]
+  },
+  {
+    "name": "Detailed User Information",
+    "type": "DATA",
+    "active_meaning": "detailed user information is returned as output",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-009",
+        "quote": "Detailed user information"
+      }
+    ]
+  },
+  {
+    "name": "Validate deletion request",
+    "type": "FUNCTION",
+    "active_meaning": "The system has validated the deletion request successfully.",
+    "confidence": 0.93,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-010",
+        "quote": "validates the request"
+      }
+    ]
+  },
+  {
+    "name": "Stage deletion request for senior-admin approval",
+    "type": "FUNCTION",
+    "active_meaning": "The deletion request has been staged for senior-admin approval.",
+    "confidence": 0.93,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-010",
+        "quote": "stages it for senior-admin approval"
+      }
+    ]
+  },
+  {
+    "name": "Delete user record upon approval",
+    "type": "FUNCTION",
+    "active_meaning": "The user record has been deleted after senior-admin approval.",
+    "confidence": 0.93,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-010",
+        "quote": "deletes the record upon approval"
+      }
+    ]
+  },
+  {
+    "name": "Senior-admin approval required",
+    "type": "CONSTRAINT",
+    "active_meaning": "The deletion request cannot proceed until senior-admin approval is granted.",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-010",
+        "quote": "senior-admin approval"
+      }
+    ]
+  },
+  {
+    "name": "User record deleted status",
+    "type": "STATE",
+    "active_meaning": "The user record is in Deleted status.",
+    "confidence": 0.92,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-010",
+        "quote": "status “Deleted.”"
+      }
+    ]
+  },
+  {
+    "name": "Senior-admin approval event",
+    "type": "EVENT",
+    "active_meaning": "The senior-admin approval event has occurred for the deletion request.",
+    "confidence": 0.89,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-010",
+        "quote": "upon approval"
+      }
+    ]
+  },
+  {
+    "name": "Senior Admin",
+    "type": "ACTOR",
+    "active_meaning": "",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-011",
+        "quote": "senior-admin"
+      },
+      {
+        "fr_id": "FRBLOCK-027",
+        "quote": "senior-admin"
+      }
+    ]
+  },
+  {
+    "name": "Define Workflows",
+    "type": "FUNCTION",
+    "active_meaning": "the workflow has been defined by an administrator",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-011",
+        "quote": "define workflows"
+      }
+    ]
+  },
+  {
+    "name": "Validate Configuration Details",
+    "type": "FUNCTION",
+    "active_meaning": "the system has successfully validated the configuration details",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-011",
+        "quote": "validates configuration details"
+      }
+    ]
+  },
+  {
+    "name": "Stage Setup for Approval",
+    "type": "FUNCTION",
+    "active_meaning": "the setup has been staged and is pending senior-admin approval",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-011",
+        "quote": "stages the setup for senior-admin approval"
+      }
+    ]
+  },
+  {
+    "name": "Activate Workflow",
+    "type": "FUNCTION",
+    "active_meaning": "the system has activated the workflow",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-011",
+        "quote": "activates the workflow"
+      }
+    ]
+  },
+  {
+    "name": "Workflow Configured",
+    "type": "STATE",
+    "active_meaning": "the workflow is in Configured status",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-011",
+        "quote": "Configured"
+      }
+    ]
+  },
+  {
+    "name": "Senior Admin Approval Event",
+    "type": "EVENT",
+    "active_meaning": "the event that a senior-admin has approved the workflow has occurred",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-011",
+        "quote": "senior-admin approval"
+      }
+    ]
+  },
+  {
+    "name": "Validate approval-start request",
+    "type": "FUNCTION",
+    "active_meaning": "the system has validated the approval-start request and it is ready for staging",
+    "confidence": 0.92,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-012",
+        "quote": "validates the request"
+      }
+    ]
+  },
+  {
+    "name": "Request staged for admin review",
+    "type": "STATE",
+    "active_meaning": "the approval request is in the staged state and awaiting administrator review",
+    "confidence": 0.93,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-012",
+        "quote": "stages it for admin review"
+      }
+    ]
+  },
+  {
+    "name": "Operation executed upon approval",
+    "type": "EVENT",
+    "active_meaning": "the requested registration, usage, transfer, or return operation has been executed after approval",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-012",
+        "quote": "executes the operation upon approval"
+      }
+    ]
+  },
+  {
+    "name": "Approval-start request",
+    "type": "DATA",
+    "active_meaning": "an approval-start request has been submitted containing an asset ID and operation type",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-012",
+        "quote": "Approval-start request"
+      }
+    ]
+  },
+  {
+    "name": "Approval-process record",
+    "type": "DATA",
+    "active_meaning": "an approval-process record has been created for tracking the approval process",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-012",
+        "quote": "Approval-process record"
+      }
+    ]
+  },
+  {
+    "name": "Updated operation status",
+    "type": "DATA",
+    "active_meaning": "the operation status has been updated to reflect the current state of the operation",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-012",
+        "quote": "updated operation status"
+      }
+    ]
+  },
+  {
+    "name": "Query Approval Status",
+    "type": "FUNCTION",
+    "active_meaning": "the user checks the status of asset or user operations",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-013",
+        "quote": "Query Approval Status"
+      }
+    ]
+  },
+  {
+    "name": "Approval Status Details",
+    "type": "DATA",
+    "active_meaning": "the approval status details are returned as output",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-013",
+        "quote": "Approval status details"
+      }
+    ]
+  },
+  {
+    "name": "Pending Operation Status",
+    "type": "STATE",
+    "active_meaning": "the asset or user operation has status pending",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-013",
+        "quote": "pending"
+      }
+    ]
+  },
+  {
+    "name": "In Progress Operation Status",
+    "type": "STATE",
+    "active_meaning": "the asset or user operation has status in progress",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-013",
+        "quote": "in progress"
+      }
+    ]
+  },
+  {
+    "name": "Approved Operation Status",
+    "type": "STATE",
+    "active_meaning": "the asset or user operation has status approved",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-013",
+        "quote": "approved"
+      }
+    ]
+  },
+  {
+    "name": "Rejected Operation Status",
+    "type": "STATE",
+    "active_meaning": "the asset or user operation has status rejected",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-013",
+        "quote": "rejected"
+      }
+    ]
+  },
+  {
+    "name": "Senior-admin",
+    "type": "ACTOR",
+    "active_meaning": "",
+    "confidence": 0.97,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-014",
+        "quote": "senior-admin"
+      },
+      {
+        "fr_id": "FRBLOCK-019",
+        "quote": "senior-admin"
+      }
+    ]
+  },
+  {
+    "name": "Modify existing workflows",
+    "type": "FUNCTION",
+    "active_meaning": "the administrator has submitted a modification to an existing workflow",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-014",
+        "quote": "modify existing workflows"
+      }
+    ]
+  },
+  {
+    "name": "Stage for senior-admin approval",
+    "type": "FUNCTION",
+    "active_meaning": "",
+    "confidence": 0.96,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-014",
+        "quote": "stages them for senior-admin approval"
+      },
+      {
+        "fr_id": "FRBLOCK-019",
+        "quote": "stages it for senior-admin approval"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Update workflow upon approval",
+    "type": "FUNCTION",
+    "active_meaning": "the system has applied the approved changes to the workflow",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-014",
+        "quote": "updates the workflow upon approval"
+      }
+    ]
+  },
+  {
+    "name": "Senior-admin approval",
+    "type": "EVENT",
+    "active_meaning": "",
+    "confidence": 0.94,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-014",
+        "quote": "senior-admin approval"
+      },
+      {
+        "fr_id": "FRBLOCK-019",
+        "quote": "senior-admin approval"
+      },
+      {
+        "fr_id": "FRBLOCK-027",
+        "quote": "senior-admin approval"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Modified workflow status",
+    "type": "STATE",
+    "active_meaning": "the workflow has been updated and its status is Modified",
+    "confidence": 0.93,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-014",
+        "quote": "status “Modified.”"
+      }
+    ]
+  },
+  {
+    "name": "Generate Report",
+    "type": "FUNCTION",
+    "active_meaning": "the system has generated the report successfully",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-015",
+        "quote": "generates the report"
+      }
+    ]
+  },
+  {
+    "name": "Validate Parameters",
+    "type": "FUNCTION",
+    "active_meaning": "the system has validated the report parameters successfully",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-015",
+        "quote": "validates parameters"
+      }
+    ]
+  },
+  {
+    "name": "Store Report Data",
+    "type": "FUNCTION",
+    "active_meaning": "the system has stored the report data successfully",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-015",
+        "quote": "stores the data"
+      }
+    ]
+  },
+  {
+    "name": "Report Parameters",
+    "type": "DATA",
+    "active_meaning": "the report parameters have been provided by the user",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-015",
+        "quote": "Report parameters (date range, filters)"
+      }
+    ]
+  },
+  {
+    "name": "Stored Report Data and Generated File",
+    "type": "DATA",
+    "active_meaning": "the report data and generated file have been produced and stored",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-015",
+        "quote": "Stored report data and generated file (Excel, PDF)"
+      }
+    ]
+  },
+  {
+    "name": "Export Report",
+    "type": "FUNCTION",
+    "active_meaning": "the user is exporting an existing report",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-016",
+        "quote": "Users export existing reports"
+      }
+    ]
+  },
+  {
+    "name": "Validate Request",
+    "type": "FUNCTION",
+    "active_meaning": "the system is validating the export request",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-016",
+        "quote": "The system validates the request"
+      }
+    ]
+  },
+  {
+    "name": "Prepare File",
+    "type": "FUNCTION",
+    "active_meaning": "the system is preparing the export file",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-016",
+        "quote": "prepares the file"
+      }
+    ]
+  },
+  {
+    "name": "Provide Download Link",
+    "type": "FUNCTION",
+    "active_meaning": "",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-016",
+        "quote": "provides a download link"
+      },
+      {
+        "fr_id": "FRBLOCK-018",
+        "quote": "provides a download link"
+      }
+    ],
+    "activation_conflict": true
+  },
+  {
+    "name": "Report Selected",
+    "type": "STATE",
+    "active_meaning": "a report has been selected for export",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-016",
+        "quote": "Selected report"
+      }
+    ]
+  },
+  {
+    "name": "Report File Downloadable",
+    "type": "STATE",
+    "active_meaning": "the report file is available for download",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-016",
+        "quote": "Downloadable report file"
+      }
+    ]
+  },
+  {
+    "name": "Export Log Available",
+    "type": "STATE",
+    "active_meaning": "the export log has been generated and is available",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-016",
+        "quote": "export log"
+      }
+    ]
+  },
+  {
+    "name": "Import Asset Data",
+    "type": "FUNCTION",
+    "active_meaning": "the import asset data function is executed",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-017",
+        "quote": "Import Asset Data"
+      }
+    ]
+  },
+  {
+    "name": "Validate Format and Data",
+    "type": "FUNCTION",
+    "active_meaning": "the system performs validation of file format and data",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-017",
+        "quote": "validates format and data"
+      }
+    ]
+  },
+  {
+    "name": "Parse Rows",
+    "type": "FUNCTION",
+    "active_meaning": "the system parses rows from the uploaded file",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-017",
+        "quote": "parses rows"
+      }
+    ]
+  },
+  {
+    "name": "Store Valid Records",
+    "type": "FUNCTION",
+    "active_meaning": "the system stores valid records in the system",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-017",
+        "quote": "stores valid records"
+      }
+    ]
+  },
+  {
+    "name": "Valid Record",
+    "type": "STATE",
+    "active_meaning": "a record has passed validation and is considered valid for storage",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-017",
+        "quote": "valid records"
+      }
+    ]
+  },
+  {
+    "name": "Uploaded Data File",
+    "type": "DATA",
+    "active_meaning": "the uploaded CSV/Excel file is provided as input",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-017",
+        "quote": "Uploaded data file (CSV/Excel)"
+      }
+    ]
+  },
+  {
+    "name": "Imported Asset Records",
+    "type": "DATA",
+    "active_meaning": "the imported asset records are produced after successful import",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-017",
+        "quote": "Imported asset records"
+      }
+    ]
+  },
+  {
+    "name": "Export Asset Data",
+    "type": "FUNCTION",
+    "active_meaning": "the user has successfully exported the selected asset data",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-018",
+        "quote": "Export Asset Data"
+      }
+    ]
+  },
+  {
+    "name": "Validate Export Request",
+    "type": "FUNCTION",
+    "active_meaning": "the system has validated the export request successfully",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-018",
+        "quote": "validates the request"
+      }
+    ]
+  },
+  {
+    "name": "Generate Export File",
+    "type": "FUNCTION",
+    "active_meaning": "the system has generated the export file successfully",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-018",
+        "quote": "generates the file"
+      }
+    ]
+  },
+  {
+    "name": "Downloadable Data File",
+    "type": "DATA",
+    "active_meaning": "the data file has been generated and is available for download",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-018",
+        "quote": "Downloadable data file"
+      }
+    ]
+  },
+  {
+    "name": "Export Log",
+    "type": "DATA",
+    "active_meaning": "the export log entry has been created",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-018",
+        "quote": "export log"
+      }
+    ]
+  },
+  {
+    "name": "Selected Assets",
+    "type": "DATA",
+    "active_meaning": "the selected assets have been specified for export",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-018",
+        "quote": "Selected assets"
+      }
+    ]
+  },
+  {
+    "name": "Assign management permissions",
+    "type": "FUNCTION",
+    "active_meaning": "an administrator executes the assignment of management permissions to a user",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-019",
+        "quote": "Administrators assign management permissions"
+      }
+    ]
+  },
+  {
+    "name": "Validate permission request",
+    "type": "FUNCTION",
+    "active_meaning": "the system has validated the permission request successfully",
+    "confidence": 0.96,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-019",
+        "quote": "The system validates the request"
+      }
+    ]
+  },
+  {
+    "name": "Update permissions upon approval",
+    "type": "FUNCTION",
+    "active_meaning": "the system applies the permission update after senior-admin approval",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-019",
+        "quote": "updates permissions upon approval"
+      }
+    ]
+  },
+  {
+    "name": "Permissions Set",
+    "type": "STATE",
+    "active_meaning": "the permission update has been approved and applied, resulting in status Permissions Set",
+    "confidence": 0.97,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-019",
+        "quote": "Permissions Set"
+      }
+    ]
+  },
+  {
+    "name": "Senior administrators",
+    "type": "ACTOR",
+    "active_meaning": "",
+    "confidence": 0.98,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-020",
+        "quote": "Senior administrators"
+      }
+    ]
+  },
+  {
+    "name": "Validate replacement request",
+    "type": "FUNCTION",
+    "active_meaning": "the system has validated the replacement request",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-020",
+        "quote": "validates the request"
+      }
+    ]
+  },
+  {
+    "name": "Stage replacement request for approval",
+    "type": "FUNCTION",
+    "active_meaning": "the replacement request has been staged for top-level approval",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-020",
+        "quote": "stages it for top-level approval"
+      }
+    ]
+  },
+  {
+    "name": "Update admin records",
+    "type": "FUNCTION",
+    "active_meaning": "the system has updated admin records after top-level approval",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-020",
+        "quote": "updates admin records upon approval"
+      }
+    ]
+  },
+  {
+    "name": "Top-level approval",
+    "type": "EVENT",
+    "active_meaning": "top-level approval has occurred for the replacement request",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-020",
+        "quote": "upon approval"
+      }
+    ]
+  },
+  {
+    "name": "Admin record status replaced",
+    "type": "STATE",
+    "active_meaning": "the admin record has been updated and its status is 'Replaced'",
+    "confidence": 0.93,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-020",
+        "quote": "Updated admin record with status “Replaced.”"
+      }
+    ]
+  },
+  {
+    "name": "Submit Asset Request",
+    "type": "FUNCTION",
+    "active_meaning": "the system executes the asset request submission process",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-021",
+        "quote": "Submit Asset Request"
+      }
+    ]
+  },
+  {
+    "name": "Validate Asset Request",
+    "type": "FUNCTION",
+    "active_meaning": "the system has performed validation on the asset request and determined it satisfies requirements",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-021",
+        "quote": "validates the request"
+      }
+    ]
+  },
+  {
+    "name": "Update Status on Approval",
+    "type": "FUNCTION",
+    "active_meaning": "the system changes the request status to reflect the admin's approval decision",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-021",
+        "quote": "updates status upon approval"
+      }
+    ]
+  },
+  {
+    "name": "Asset Request Form",
+    "type": "DATA",
+    "active_meaning": "the asset request form has been submitted with name, type, quantity, and purpose populated",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-021",
+        "quote": "Asset-request form"
+      }
+    ]
+  },
+  {
+    "name": "Stored Request",
+    "type": "DATA",
+    "active_meaning": "the asset request record exists in the system and can be retrieved",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-021",
+        "quote": "Stored request"
+      }
+    ]
+  },
+  {
+    "name": "Approved",
+    "type": "STATE",
+    "active_meaning": "the asset request has been approved by the admin",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-021",
+        "quote": "Approved"
+      }
+    ]
+  },
+  {
+    "name": "Rejected",
+    "type": "STATE",
+    "active_meaning": "the asset request has been rejected by the admin",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-021",
+        "quote": "Rejected"
+      }
+    ]
+  },
+  {
+    "name": "Approve Asset Request",
+    "type": "FUNCTION",
+    "active_meaning": "the asset request has been reviewed and a decision (approve or reject) has been made by an administrator",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-022",
+        "quote": "Approve Asset Request"
+      }
+    ]
+  },
+  {
+    "name": "Update Request Status",
+    "type": "FUNCTION",
+    "active_meaning": "the system has updated the request status according to the administrator's decision",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-022",
+        "quote": "updates the request status"
+      }
+    ]
+  },
+  {
+    "name": "Notify Users",
+    "type": "FUNCTION",
+    "active_meaning": "the system has sent a notification to the users about the request decision",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-022",
+        "quote": "notifies users"
+      }
+    ]
+  },
+  {
+    "name": "Updated Request Status",
+    "type": "STATE",
+    "active_meaning": "the request status has been updated in the system to reflect the administrator's decision",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-022",
+        "quote": "Updated request status"
+      }
+    ]
+  },
+  {
+    "name": "User Notification",
+    "type": "EVENT",
+    "active_meaning": "a notification has been sent to the user about the request decision",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-022",
+        "quote": "user notification"
+      }
+    ]
+  },
+  {
+    "name": "Send Email Notification",
+    "type": "FUNCTION",
+    "active_meaning": "the email notification has been sent successfully for the event",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-023",
+        "quote": "Send Email Notification"
+      }
+    ]
+  },
+  {
+    "name": "Registration Event",
+    "type": "EVENT",
+    "active_meaning": "a registration event has occurred and triggered the email notification",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-023",
+        "quote": "registration"
+      }
+    ]
+  },
+  {
+    "name": "Profile Update Event",
+    "type": "EVENT",
+    "active_meaning": "a profile update event has occurred and triggered the email notification",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-023",
+        "quote": "profile updates"
+      }
+    ]
+  },
+  {
+    "name": "Event Details",
+    "type": "DATA",
+    "active_meaning": "event details are available as input for the notification process",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-023",
+        "quote": "Event details"
+      }
+    ]
+  },
+  {
+    "name": "Recipient List",
+    "type": "DATA",
+    "active_meaning": "the recipient list is available as input for the notification process",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-023",
+        "quote": "recipient list"
+      }
+    ]
+  },
+  {
+    "name": "Sent Email",
+    "type": "DATA",
+    "active_meaning": "an email has been sent and is present as an output record",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-023",
+        "quote": "Sent email"
+      }
+    ]
+  },
+  {
+    "name": "Send Log",
+    "type": "DATA",
+    "active_meaning": "a send log record exists and is available",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-023",
+        "quote": "send log"
+      }
+    ]
+  },
+  {
+    "name": "User feedback email received",
+    "type": "EVENT",
+    "active_meaning": "a user feedback email has been received by the system",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-024",
+        "quote": "receives user email feedback"
+      }
+    ]
+  },
+  {
+    "name": "Parse feedback content",
+    "type": "FUNCTION",
+    "active_meaning": "the content of the user feedback email has been parsed by the system",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-024",
+        "quote": "parses the content"
+      }
+    ]
+  },
+  {
+    "name": "Store feedback",
+    "type": "FUNCTION",
+    "active_meaning": "the parsed feedback content has been stored by the system",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-024",
+        "quote": "stores it"
+      }
+    ]
+  },
+  {
+    "name": "Notify administrators",
+    "type": "FUNCTION",
+    "active_meaning": "administrators have been notified to handle the feedback",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-024",
+        "quote": "notifies administrators for handling"
+      }
+    ]
+  },
+  {
+    "name": "User feedback email",
+    "type": "DATA",
+    "active_meaning": "a user feedback email exists and is available as input to the system",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-024",
+        "quote": "User feedback email"
+      }
+    ]
+  },
+  {
+    "name": "Stored feedback",
+    "type": "DATA",
+    "active_meaning": "the feedback has been stored in the system",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-024",
+        "quote": "Stored feedback"
+      }
+    ]
+  },
+  {
+    "name": "View Asset Change History",
+    "type": "FUNCTION",
+    "active_meaning": "the system is actively executing the asset change history query and returning matching change history to the user",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-025",
+        "quote": "View Asset Change History"
+      }
+    ]
+  },
+  {
+    "name": "Change history",
+    "type": "DATA",
+    "active_meaning": "the system has returned the requested asset change history items matching the user's query",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-025",
+        "quote": "Change history"
+      }
+    ]
+  },
+  {
+    "name": "Asset ID",
+    "type": "DATA",
+    "active_meaning": "an asset ID is specified as a search criterion to filter change logs for a particular asset",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-025",
+        "quote": "asset ID"
+      }
+    ]
+  },
+  {
+    "name": "Change type",
+    "type": "DATA",
+    "active_meaning": "a change type is specified as a search criterion to filter change logs by the nature of the change",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-025",
+        "quote": "change type"
+      }
+    ]
+  },
+  {
+    "name": "Change date",
+    "type": "DATA",
+    "active_meaning": "a change date is specified as a search criterion to filter change logs by date",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-025",
+        "quote": "change date"
+      }
+    ]
+  },
+  {
+    "name": "Asset change",
+    "type": "EVENT",
+    "active_meaning": "an asset change has occurred and been recorded in the change log with time, operation, user, and before/after values",
+    "confidence": 0.75,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-025",
+        "quote": "asset change"
+      }
+    ]
+  },
+  {
+    "name": "Query Asset Category",
+    "type": "FUNCTION",
+    "active_meaning": "the user has executed a query for asset categories by name or ID and retrieved category details",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-026",
+        "quote": "Users query asset categories by name or ID."
+      }
+    ]
+  },
+  {
+    "name": "Category Name",
+    "type": "DATA",
+    "active_meaning": "the category name criterion is included in the search criteria",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-026",
+        "quote": "category name"
+      }
+    ]
+  },
+  {
+    "name": "Category ID",
+    "type": "DATA",
+    "active_meaning": "the category ID criterion is included in the search criteria",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-026",
+        "quote": "category ID"
+      }
+    ]
+  },
+  {
+    "name": "Category Details",
+    "type": "DATA",
+    "active_meaning": "the category details including name, description, and asset count are returned as output",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-026",
+        "quote": "Category details (name, description, asset count)."
+      }
+    ]
+  },
+  {
+    "name": "Asset Count",
+    "type": "DATA",
+    "active_meaning": "the number of assets in the category is included in the returned category details",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-026",
+        "quote": "asset count"
+      }
+    ]
+  },
+  {
+    "name": "Edit Asset Category",
+    "type": "FUNCTION",
+    "active_meaning": "the edit asset category function is available for administrators to modify category information",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-027",
+        "quote": "Edit Asset Category"
+      }
+    ]
+  },
+  {
+    "name": "Staged for Approval",
+    "type": "STATE",
+    "active_meaning": "the category changes are staged and awaiting senior-admin approval",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-027",
+        "quote": "stages them for senior-admin approval"
+      }
+    ]
+  },
+  {
+    "name": "Update Category Upon Approval",
+    "type": "FUNCTION",
+    "active_meaning": "the system is executing the category update after approval",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-027",
+        "quote": "updates the category upon approval"
+      }
+    ]
+  },
+  {
+    "name": "Category Status Modified",
+    "type": "STATE",
+    "active_meaning": "the category has been updated and its status is Modified",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "fr_id": "FRBLOCK-027",
+        "quote": "Modified"
+      }
+    ]
+  }
+]

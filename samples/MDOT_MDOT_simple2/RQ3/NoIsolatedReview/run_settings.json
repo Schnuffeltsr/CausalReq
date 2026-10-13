@@ -1,0 +1,10 @@
+{
+  "doc_id": "MDOT_MDOT_simple2",
+  "variant": "NoIsolatedReview",
+  "signed_propagation": true,
+  "isolated_review": false,
+  "operation_review": true,
+  "full_document_validation": true,
+  "model_version": "MODEL-a988258ceab9",
+  "source_document_fixed": true
+}

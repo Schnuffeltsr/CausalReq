@@ -1,0 +1,42 @@
+[
+  {
+    "fr_id": "FRBLOCK-001",
+    "heading": "2.1 Data Collection and Ingestion",
+    "text": "2.1 Data Collection and Ingestion\nFR-DCI-001: The system shall accept real-time data inputs from probe vehicles, traffic sensors, weather stations, and traveler information systems.\n\nInputs: GPS data, speed, location, road condition reports, temperature, precipitation, visibility.\nOutputs: Normalized data stored in a central database.\nFR-DCI-002: The system shall validate incoming data against predefined quality rules and reject invalid or malformed data.\n\nFR-DCI-003: The system shall allow for the configuration of new data source types without requiring major software changes.\n\nFR-DCI-004: The system shall support batch ingestion of historical data for backfilling archives and training models."
+  },
+  {
+    "fr_id": "FRBLOCK-002",
+    "heading": "2.2 Data Processing and Analysis",
+    "text": "2.2 Data Processing and Analysis\nFR-DPA-001: The system shall compute traffic metrics including congestion levels, travel times, queue lengths, and traffic flow patterns.\n\nFR-DPA-002: The system shall detect and classify incidents such as crashes, debris, stalled vehicles, and work zones.\n\nInputs: Raw sensor and probe data.\nOutputs: Incident reports with time, location, type, and severity.\nFR-DPA-003: The system shall calculate road surface conditions based on weather data and sensor inputs.\n\nFR-DPA-004: The system shall perform automated data quality checks to flag anomalies and inconsistencies.\n\nFR-DPA-005: The system shall support machine learning models for predictive analysis of traffic trends and incident likelihood.\n\nFR-DPA-006: The system shall generate statistical summaries of daily, weekly, and monthly traffic patterns."
+  },
+  {
+    "fr_id": "FRBLOCK-003",
+    "heading": "2.3 Data Storage and Archiving",
+    "text": "2.3 Data Storage and Archiving\nFR-DSA-001: The system shall maintain a long-term archive of all processed data using Oracle 10G.\n\nFR-DSA-002: The system shall implement dynamic caching for frequently accessed data to improve performance.\n\nFR-DSA-003: The system shall allow users to query archived data via SQL-based tools.\n\nFR-DSA-004: The system shall support automated data purging policies to manage storage limits."
+  },
+  {
+    "fr_id": "FRBLOCK-004",
+    "heading": "2.4 Data Publication and Output",
+    "text": "2.4 Data Publication and Output\nFR-DPO-001: The system shall publish processed data in standardized formats (SAE J2354, TMDD).\n\nFR-DPO-002: The system shall provide real-time data feeds to MDOT’s MI Drive system.\n\nFR-DPO-003: The system shall generate alerts for traffic incidents, severe weather events, and asset failures.\n\nFR-DPO-004: The system shall support exporting data in CSV, JSON, XML, and KML formats for third-party use.\n\nFR-DPO-005: The system shall provide an API for external applications to consume traffic and weather data in real time."
+  },
+  {
+    "fr_id": "FRBLOCK-005",
+    "heading": "2.5 User Interface and Presentation",
+    "text": "2.5 User Interface and Presentation\nFR-UIP-001: The system shall provide a web-based interface for viewing traffic, incident, traveler, and weather data.\n\nFR-UIP-002: The interface shall include map displays with icon layers representing traffic, incidents, and road closures.\n\nFR-UIP-003: The system shall support de-cluttering features to reduce visual complexity during high-volume data display.\n\nFR-UIP-004: Users shall be able to filter and search data by location, time, event type, and other relevant criteria.\n\nFR-UIP-005: The system shall support multi-language UI options to accommodate diverse user groups.\n\nFR-UIP-006: The system shall allow users to create custom dashboards for frequent data views."
+  },
+  {
+    "fr_id": "FRBLOCK-006",
+    "heading": "2.6 System Administration and Configuration",
+    "text": "2.6 System Administration and Configuration\nFR-SAC-001: The system shall allow administrators to configure data sources, algorithms, and output formats.\n\nFR-SAC-002: The system shall log all administrative actions and errors for audit and troubleshooting purposes.\n\nFR-SAC-003: The system shall support role-based access control for different user types (e.g., field operator, analyst, admin).\n\nFR-SAC-004: The system shall provide backup and restore capabilities for the database and configuration settings."
+  },
+  {
+    "fr_id": "FRBLOCK-007",
+    "heading": "2.7 Reporting and Analytics",
+    "text": "2.7 Reporting and Analytics\nFR-REP-001: The system shall generate pre-defined reports on traffic volume, incident frequency, and road condition trends.\n\nFR-REP-002: The system shall allow users to schedule automatic report generation and email delivery.\n\nFR-REP-003: The system shall provide ad-hoc reporting tools for querying and visualizing data.\n\nFR-REP-004: Reports must be exportable in PDF, Excel, and HTML formats."
+  },
+  {
+    "fr_id": "FRBLOCK-008",
+    "heading": "2.8 Security and Compliance",
+    "text": "2.8 Security and Compliance\nFR-SEC-001: The system shall enforce secure authentication and authorization for all users.\n\nFR-SEC-002: All data transmissions must be encrypted using TLS 1.2 or higher.\n\nFR-SEC-003: The system shall comply with MDIT security standards and FIPS 140-2 encryption requirements.\n\nFR-SEC-004: The system shall support audit logging of all user activities and system events."
+  }
+]

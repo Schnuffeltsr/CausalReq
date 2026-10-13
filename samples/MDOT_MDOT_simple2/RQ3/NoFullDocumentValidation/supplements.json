@@ -1,0 +1,415 @@
+[
+  {
+    "output_id": "OUT-01be3115d02f",
+    "source_nomination_id": "DEP-001",
+    "origin": "dependency",
+    "text": "The system shall provide SQL-based query tools that can directly query data stored in the Oracle 10G archive.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-2948153fd471",
+    "source_nomination_id": "DEP-002",
+    "origin": "dependency",
+    "text": "The system shall provide batch-ingested historical data to the machine learning models used for predictive analysis of traffic trends and incident likelihood, so that the models can be trained.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-33f9b4324a64",
+    "source_nomination_id": "DEP-003",
+    "origin": "dependency",
+    "text": "The system shall normalize and store in the central database all real-time data inputs it accepts from external sources.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-7e9a452e3445",
+    "source_nomination_id": "DEP-004",
+    "origin": "dependency",
+    "text": "The system shall generate the pre-defined reports when automatic report generation is scheduled.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-cb5cb3de7141",
+    "source_nomination_id": "DEP-005",
+    "origin": "dependency",
+    "text": "The system shall support the defined automated data purging policies for managing storage limits.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-94ea0d586fe7",
+    "source_nomination_id": "DEP-006",
+    "origin": "dependency",
+    "text": "The system shall provide the capability to publish processed data from the Oracle 10G archive in the standardized formats.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-56ac76b89f0d",
+    "source_nomination_id": "DEP-007",
+    "origin": "dependency",
+    "text": "The system shall validate GPS data, speed, location, road condition reports, temperature, precipitation, and visibility against predefined quality rules and reject invalid or malformed values for each field.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-681d2738e7b9",
+    "source_nomination_id": "DEP-008",
+    "origin": "dependency",
+    "text": "The system shall ensure that historical data ingested via batch processing is processed and published in the standardized formats required by the target requirement.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-39b4b9564063",
+    "source_nomination_id": "DEP-009",
+    "origin": "dependency",
+    "text": "The system shall ensure that all listed input data fields (GPS data, speed, location, road condition reports, temperature, precipitation, and visibility) are accepted and made available for processing by the system.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-04dd76eaf1d0",
+    "source_nomination_id": "DEP-010",
+    "origin": "dependency",
+    "text": "The system shall maintain a long-term archive of all processed data, including data ingested via batch processes.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-3ec2c1855f57",
+    "source_nomination_id": "DEP-011",
+    "origin": "dependency",
+    "text": "The system shall use Oracle 10G for archiving processed data to maintain a long-term archive of all processed data.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-f0d9a984da80",
+    "source_nomination_id": "DEP-012",
+    "origin": "dependency",
+    "text": "The system shall log every administrative action where an administrator configures data sources, algorithms, or output formats, in accordance with the requirement to log all administrative actions and errors.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-76d9c312a141",
+    "source_nomination_id": "DEP-013",
+    "origin": "dependency",
+    "text": "The system shall validate all real-time data inputs from external sources against predefined quality rules and reject invalid or malformed data.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-2f86d917dd74",
+    "source_nomination_id": "DEP-014",
+    "origin": "dependency",
+    "text": "When a user schedules automatic report generation and email delivery, the system shall deliver the scheduled report email to the designated recipients.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-ae3429f9a618",
+    "source_nomination_id": "DEP-015",
+    "origin": "dependency",
+    "text": "When high-volume data display occurs, the system shall activate de-cluttering features.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-bd84f5ce74b4",
+    "source_nomination_id": "DEP-016",
+    "origin": "dependency",
+    "text": "The system shall publish processed data in standardized formats using data retrieved from the maintained long-term archive.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-3de8981bd702",
+    "source_nomination_id": "DEP-017",
+    "origin": "dependency",
+    "text": "The system shall ensure that historical data ingested in batch and stored in the long-term archive is accessible to users via SQL-based query tools.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-8de9e03c6f0d",
+    "source_nomination_id": "DEP-018",
+    "origin": "dependency",
+    "text": "The system shall generate an incident report with time, location, type, and severity for each detected and classified incident.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-1ecb2ee81699",
+    "source_nomination_id": "DEP-019",
+    "origin": "dependency",
+    "text": "The system shall maintain a long-term archive of processed data so that users can query archived data via SQL-based tools.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-47b09ccbe2ce",
+    "source_nomination_id": "DEP-020",
+    "origin": "dependency",
+    "text": "The system shall normalize the accepted real-time data inputs and store the normalized data in the central database.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-62421eacfb2b",
+    "source_nomination_id": "ISOLATED-08e7869ab193",
+    "origin": "isolated",
+    "text": "The system shall compute traffic metrics (e.g., average speed, congestion level) from the accepted real-time data inputs and store them in the central database.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-6badfd9c74b0",
+    "source_nomination_id": "ISOLATED-cf62f7eafd00",
+    "origin": "isolated",
+    "text": "The system shall automatically apply the existing validation rules and normalization processes to data from newly configured data source types.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-1007dd8a696b",
+    "source_nomination_id": "OPERATION-b8927230c99b",
+    "origin": "operation",
+    "text": "The system shall perform automated data quality checks on all incoming data in real time, using the predefined quality rules, and log all rejected records.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-df7a2a1877e1",
+    "source_nomination_id": "OPERATION-5d50ce8aef71",
+    "origin": "operation",
+    "text": "The system shall apply the same data validation rules to batch-ingested historical data as to real-time data, and store the normalized results in the same central database.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-7bc1499e7701",
+    "source_nomination_id": "ISOLATED-10080ec40edc",
+    "origin": "isolated",
+    "text": "The system shall document a data flow from raw sensor and probe data to the Compute traffic metrics function.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-cdc73c455dd9",
+    "source_nomination_id": "OPERATION-f1ab4f4db124",
+    "origin": "operation",
+    "text": "The system shall provide an operation to retrieve the generated statistical summaries for a specified time period.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-068adf533478",
+    "source_nomination_id": "OPERATION-14d1d5d79dac",
+    "origin": "operation",
+    "text": "The system shall define a trigger for the incident detection and classification operation, such as real-time sensor streaming or periodic batch processing.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-a6e26f0d89f7",
+    "source_nomination_id": "ISOLATED-f6a0b89fce21",
+    "origin": "isolated",
+    "text": "The system shall document which data sources are checked and the connection between the data quality function and those sources.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-e98ca1472f70",
+    "source_nomination_id": "ISOLATED-f836bf4bad01",
+    "origin": "isolated",
+    "text": "The system shall document the relationship between dynamic caching and archived data to ensure cache coherence with archival updates and purging.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-7d7a4c5e0dd8",
+    "source_nomination_id": "OPERATION-6ea32fb03ed6",
+    "origin": "operation",
+    "text": "The system shall allow authorized administrators to configure automated data purging policies, including defining retention periods and purge schedules.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-03aea68d496f",
+    "source_nomination_id": "ISOLATED-7dbcd685c067",
+    "origin": "isolated",
+    "text": "The system shall compute traffic metrics from raw traffic data before publishing processed data.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-b54173321607",
+    "source_nomination_id": "ISOLATED-4657b6b143e1",
+    "origin": "isolated",
+    "text": "The system shall generate statistical summaries of traffic and weather data for consumption via the API.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-3708e02cb3e2",
+    "source_nomination_id": "ISOLATED-751c7b7bc9cf",
+    "origin": "isolated",
+    "text": "The system shall perform automated data quality checks on all data before publication.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-0895166d71e4",
+    "source_nomination_id": "ISOLATED-16ff7a71c671",
+    "origin": "isolated",
+    "text": "The system shall provide ad-hoc reporting tools that allow users to create custom reports using exported data.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-fcc13ca6edef",
+    "source_nomination_id": "OPERATION-756d4068e4d4",
+    "origin": "operation",
+    "text": "The system shall allow authorized users to update the status of generated alerts.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-e6dda0037586",
+    "source_nomination_id": "OPERATION-1ae312a0ea92",
+    "origin": "operation",
+    "text": "The system shall allow authorized users to update data export configurations.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-14614f4b0331",
+    "source_nomination_id": "ISOLATED-ed55a19dbb49",
+    "origin": "isolated",
+    "text": "If business workflows require display of computed traffic metrics, the system shall connect the computation function to the UI viewing feature; otherwise, no connection is required.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-626c2046b261",
+    "source_nomination_id": "ISOLATED-54d52a3f4eef",
+    "origin": "isolated",
+    "text": "If statistical summaries are to be presented to users, the system shall provide a documented connection between summary generation and the user interface.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-14585e5243c1",
+    "source_nomination_id": "ISOLATED-58ea01f90d0a",
+    "origin": "isolated",
+    "text": "If ad-hoc reporting is a business requirement, the system shall integrate or connect the ad-hoc reporting tools with the existing user interface features (filtering, dashboards).",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-8349ef5eeaba",
+    "source_nomination_id": "OPERATION-c3c92db3854a",
+    "origin": "operation",
+    "text": "The system shall enforce role-based access control for data visibility in the web-based interface.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-77b75cadfb79",
+    "source_nomination_id": "OPERATION-44b2daf510ec",
+    "origin": "operation",
+    "text": "The system shall provide controls to toggle visibility of each icon layer independently.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-64600786b9c5",
+    "source_nomination_id": "OPERATION-d4fd447042c3",
+    "origin": "operation",
+    "text": "Define the trigger mechanism for de-cluttering (automatic, user-controlled, or hybrid).",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-8351c97d6e81",
+    "source_nomination_id": "OPERATION-904a11a9521c",
+    "origin": "operation",
+    "text": "The system shall support simultaneous application of multiple filter criteria in search and filter operations.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-ebf20f5e28ad",
+    "source_nomination_id": "OPERATION-7b3ebbc2d440",
+    "origin": "operation",
+    "text": "The system shall allow users to change the UI language during an active session.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-71cd367f12d8",
+    "source_nomination_id": "OPERATION-661be28d3ef4",
+    "origin": "operation",
+    "text": "The system shall provide persistence and retrieval capabilities for user-created custom dashboards.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-9d85f2ce21af",
+    "source_nomination_id": "OPERATION-c8c070ad70d7",
+    "origin": "operation",
+    "text": "The system shall allow authorized administrators to initiate backup and restore operations for the database and configuration settings.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-aece6061a672",
+    "source_nomination_id": "OPERATION-afbc5bdda727",
+    "origin": "operation",
+    "text": "The system shall allow administrators to manage user roles and their associated permissions.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-b16ca068c157",
+    "source_nomination_id": "OPERATION-9b55bad64875",
+    "origin": "operation",
+    "text": "The system shall provide administrative operations to manage configurations for data sources, algorithms, and output formats.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-29a3b6fe778e",
+    "source_nomination_id": "OPERATION-dd8253608df5",
+    "origin": "operation",
+    "text": "The system shall provide authorized users with the ability to view, filter, and export administrative action and error logs.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-377debb2f207",
+    "source_nomination_id": "ISOLATED-31a85cb7f56b",
+    "origin": "isolated",
+    "text": "The system shall allow administrators to configure new data source types without requiring major software changes.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-aed61e174b74",
+    "source_nomination_id": "ISOLATED-4aa6db0d1b97",
+    "origin": "isolated",
+    "text": "The system shall compute traffic metrics including total traffic volume, average daily traffic, and peak hour volume from collected traffic data to support pre-defined reports.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-aa13d93c716c",
+    "source_nomination_id": "ISOLATED-d90489838037",
+    "origin": "isolated",
+    "text": "The system shall perform automated data quality checks on traffic, incident, and road condition data prior to report generation, flagging missing, inconsistent, or outlier values.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-af1b5bb1803c",
+    "source_nomination_id": "OPERATION-70f1cd2d84f4",
+    "origin": "operation",
+    "text": "The system shall allow users to cancel or modify a scheduled report generation and email delivery.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-8d79cc1f1ac6",
+    "source_nomination_id": "OPERATION-474aea440227",
+    "origin": "operation",
+    "text": "The system shall allow authorized users to manually run a pre-defined report on demand.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-48449e3f7276",
+    "source_nomination_id": "OPERATION-23b92139c078",
+    "origin": "operation",
+    "text": "The system shall include a user authentication operation that verifies credentials and an authorization operation that checks permissions before allowing access.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-e68394da3626",
+    "source_nomination_id": "OPERATION-5dca9d7b8c55",
+    "origin": "operation",
+    "text": "The system shall apply TLS 1.2 or higher to every data transmission channel without exceptions.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-0ecc2109767d",
+    "source_nomination_id": "OPERATION-9d9e04802881",
+    "origin": "operation",
+    "text": "The system shall use FIPS 140-2 validated cryptographic modules for all encryption and key management operations.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-a52be8593636",
+    "source_nomination_id": "OPERATION-5fcb1f0efed4",
+    "origin": "operation",
+    "text": "The system shall log all authentication attempts, including failures, with relevant metadata.",
+    "status": "unchecked_draft"
+  },
+  {
+    "output_id": "OUT-fa208e1d7f24",
+    "source_nomination_id": "ISOLATED-10cccc3cb98a",
+    "origin": "isolated",
+    "text": "The system shall maintain a documented mapping of user roles and permissions for all users subject to authentication and authorization.",
+    "status": "unchecked_draft"
+  }
+]

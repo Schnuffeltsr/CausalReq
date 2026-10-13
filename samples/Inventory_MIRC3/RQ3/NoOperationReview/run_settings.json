@@ -1,0 +1,10 @@
+{
+  "doc_id": "Inventory_MIRC3",
+  "variant": "NoOperationReview",
+  "signed_propagation": true,
+  "isolated_review": true,
+  "operation_review": false,
+  "full_document_validation": true,
+  "model_version": "MODEL-396084324100",
+  "source_document_fixed": true
+}

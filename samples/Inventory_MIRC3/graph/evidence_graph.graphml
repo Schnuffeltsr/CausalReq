@@ -1,0 +1,2163 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d5" for="edge" attr.name="confidence" attr.type="string"/>
+<key id="d4" for="edge" attr.name="sign" attr.type="string"/>
+<key id="d3" for="edge" attr.name="relation_type" attr.type="string"/>
+<key id="d2" for="node" attr.name="active_meaning" attr.type="string"/>
+<key id="d1" for="node" attr.name="confidence" attr.type="string"/>
+<key id="d0" for="node" attr.name="type" attr.type="string"/>
+<graph edgedefault="directed"><node id="Users">
+  <data key="d0">ACTOR</data>
+  <data key="d1">0.98</data>
+  <data key="d2"></data>
+</node>
+<node id="Administrators">
+  <data key="d0">ACTOR</data>
+  <data key="d1">0.98</data>
+  <data key="d2"></data>
+</node>
+<node id="Register Asset">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the register asset operation is executed to process the submitted asset registration form</data>
+</node>
+<node id="Asset Registered">
+  <data key="d0">STATE</data>
+  <data key="d1">0.92</data>
+  <data key="d2">the asset status is set to Registered</data>
+</node>
+<node id="Administrators Notified">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">administrators have been notified for review after asset registration</data>
+</node>
+<node id="Data Validation Passed">
+  <data key="d0">CONSTRAINT</data>
+  <data key="d1">0.88</data>
+  <data key="d2">the submitted asset data has passed the completeness and accuracy validation check</data>
+</node>
+<node id="Admin">
+  <data key="d0">ACTOR</data>
+  <data key="d1">0.98</data>
+  <data key="d2"></data>
+</node>
+<node id="Edit and submit asset details">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the user has edited the registered asset details and submitted the change</data>
+</node>
+<node id="Validate modification data">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has validated the submitted modification data</data>
+</node>
+<node id="Stage change for admin approval">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the change has been staged and is pending admin approval</data>
+</node>
+<node id="Update status to Modified">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has updated the asset record status to Modified</data>
+</node>
+<node id="Asset record status Modified">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the asset record is in the Modified status after admin approval</data>
+</node>
+<node id="Admin approval">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">admin approval has occurred and triggered the status update</data>
+</node>
+<node id="Query Asset Details">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the query asset details function is executed: the user searches for asset details using name, type, or ID and the system returns matching records</data>
+</node>
+<node id="Search Criteria">
+  <data key="d0">DATA</data>
+  <data key="d1">0.93</data>
+  <data key="d2"></data>
+</node>
+<node id="Detailed Asset Information">
+  <data key="d0">DATA</data>
+  <data key="d1">0.93</data>
+  <data key="d2">detailed asset information for matching records has been returned as output by the system</data>
+</node>
+<node id="User">
+  <data key="d0">ACTOR</data>
+  <data key="d1">0.98</data>
+  <data key="d2"></data>
+</node>
+<node id="Transfer Asset">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the transfer asset workflow is active and can be requested by users</data>
+</node>
+<node id="Validate Transfer Request">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system is actively validating the transfer request</data>
+</node>
+<node id="Stage for Admin Approval">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2"></data>
+</node>
+<node id="Update Ownership Upon Approval">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system is updating asset ownership after admin approval</data>
+</node>
+<node id="Transfer form">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the transfer form has been submitted with asset ID and new recipient</data>
+</node>
+<node id="Transferred">
+  <data key="d0">STATE</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the asset ownership transfer is complete and the asset status is Transferred</data>
+</node>
+<node id="Initiate Asset Return">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the user has initiated an asset return request</data>
+</node>
+<node id="Validate Return Request">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has validated the asset return request</data>
+</node>
+<node id="Stage Return Request for Approval">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the asset return request has been staged for approval</data>
+</node>
+<node id="Update Asset Status to Returned">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has updated the asset status to Returned after approval</data>
+</node>
+<node id="Asset Status Returned">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the asset status is 'Returned'</data>
+</node>
+<node id="Return Form">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the return form containing asset ID and return date has been submitted</data>
+</node>
+<node id="Return Approval">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the asset return request has been approved</data>
+</node>
+<node id="Deletion Request">
+  <data key="d0">DATA</data>
+  <data key="d1">0.88</data>
+  <data key="d2"></data>
+</node>
+<node id="Obsolete Asset">
+  <data key="d0">STATE</data>
+  <data key="d1">0.85</data>
+  <data key="d2">the asset has been marked obsolete and is eligible for deletion</data>
+</node>
+<node id="Validates the Request">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.92</data>
+  <data key="d2">the system is actively validating the deletion request</data>
+</node>
+<node id="Staged for Admin Approval">
+  <data key="d0">STATE</data>
+  <data key="d1">0.93</data>
+  <data key="d2">the deletion request has been staged and is waiting for admin approval</data>
+</node>
+<node id="Deletes the Record upon Approval">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.94</data>
+  <data key="d2">the system deletes the asset record after admin approval is granted</data>
+</node>
+<node id="Deleted">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the asset record has been removed and its status is 'Deleted'</data>
+</node>
+<node id="Administrator">
+  <data key="d0">ACTOR</data>
+  <data key="d1">0.98</data>
+  <data key="d2"></data>
+</node>
+<node id="Create New User Accounts">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">The system performs the creation of new user accounts.</data>
+</node>
+<node id="Validate New-User Form">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">The system validates the new-user form.</data>
+</node>
+<node id="Store User">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">The system stores the new user record.</data>
+</node>
+<node id="Send Activation Email">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">The system sends an activation email to the new user.</data>
+</node>
+<node id="New-User Form">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">The new-user form data is present as input.</data>
+</node>
+<node id="New User Record Activated">
+  <data key="d0">STATE</data>
+  <data key="d1">0.98</data>
+  <data key="d2">The new user record exists and has status Activated.</data>
+</node>
+<node id="Edit User Profile">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the edit profile workflow is invoked by a user to modify their own profile</data>
+</node>
+<node id="Validate changes">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2"></data>
+</node>
+<node id="Update record upon approval">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system updates the user record after the admin approves the staged changes</data>
+</node>
+<node id="Status Modified">
+  <data key="d0">STATE</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the updated user record has the status 'Modified'</data>
+</node>
+<node id="Query User Details">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the user details query operation is invoked and returns results</data>
+</node>
+<node id="Detailed User Information">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">detailed user information is returned as output</data>
+</node>
+<node id="Validate deletion request">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.93</data>
+  <data key="d2">The system has validated the deletion request successfully.</data>
+</node>
+<node id="Stage deletion request for senior-admin approval">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.93</data>
+  <data key="d2">The deletion request has been staged for senior-admin approval.</data>
+</node>
+<node id="Delete user record upon approval">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.93</data>
+  <data key="d2">The user record has been deleted after senior-admin approval.</data>
+</node>
+<node id="Senior-admin approval required">
+  <data key="d0">CONSTRAINT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">The deletion request cannot proceed until senior-admin approval is granted.</data>
+</node>
+<node id="User record deleted status">
+  <data key="d0">STATE</data>
+  <data key="d1">0.92</data>
+  <data key="d2">The user record is in Deleted status.</data>
+</node>
+<node id="Senior-admin approval event">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.89</data>
+  <data key="d2">The senior-admin approval event has occurred for the deletion request.</data>
+</node>
+<node id="Senior Admin">
+  <data key="d0">ACTOR</data>
+  <data key="d1">0.95</data>
+  <data key="d2"></data>
+</node>
+<node id="Define Workflows">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the workflow has been defined by an administrator</data>
+</node>
+<node id="Validate Configuration Details">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system has successfully validated the configuration details</data>
+</node>
+<node id="Stage Setup for Approval">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the setup has been staged and is pending senior-admin approval</data>
+</node>
+<node id="Activate Workflow">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system has activated the workflow</data>
+</node>
+<node id="Workflow Configured">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the workflow is in Configured status</data>
+</node>
+<node id="Senior Admin Approval Event">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.85</data>
+  <data key="d2">the event that a senior-admin has approved the workflow has occurred</data>
+</node>
+<node id="Validate approval-start request">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.92</data>
+  <data key="d2">the system has validated the approval-start request and it is ready for staging</data>
+</node>
+<node id="Request staged for admin review">
+  <data key="d0">STATE</data>
+  <data key="d1">0.93</data>
+  <data key="d2">the approval request is in the staged state and awaiting administrator review</data>
+</node>
+<node id="Operation executed upon approval">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the requested registration, usage, transfer, or return operation has been executed after approval</data>
+</node>
+<node id="Approval-start request">
+  <data key="d0">DATA</data>
+  <data key="d1">0.95</data>
+  <data key="d2">an approval-start request has been submitted containing an asset ID and operation type</data>
+</node>
+<node id="Approval-process record">
+  <data key="d0">DATA</data>
+  <data key="d1">0.95</data>
+  <data key="d2">an approval-process record has been created for tracking the approval process</data>
+</node>
+<node id="Updated operation status">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the operation status has been updated to reflect the current state of the operation</data>
+</node>
+<node id="Query Approval Status">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the user checks the status of asset or user operations</data>
+</node>
+<node id="Approval Status Details">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the approval status details are returned as output</data>
+</node>
+<node id="Pending Operation Status">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the asset or user operation has status pending</data>
+</node>
+<node id="In Progress Operation Status">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the asset or user operation has status in progress</data>
+</node>
+<node id="Approved Operation Status">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the asset or user operation has status approved</data>
+</node>
+<node id="Rejected Operation Status">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the asset or user operation has status rejected</data>
+</node>
+<node id="Senior-admin">
+  <data key="d0">ACTOR</data>
+  <data key="d1">0.97</data>
+  <data key="d2"></data>
+</node>
+<node id="Modify existing workflows">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the administrator has submitted a modification to an existing workflow</data>
+</node>
+<node id="Stage for senior-admin approval">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.96</data>
+  <data key="d2"></data>
+</node>
+<node id="Update workflow upon approval">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system has applied the approved changes to the workflow</data>
+</node>
+<node id="Senior-admin approval">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.94</data>
+  <data key="d2"></data>
+</node>
+<node id="Modified workflow status">
+  <data key="d0">STATE</data>
+  <data key="d1">0.93</data>
+  <data key="d2">the workflow has been updated and its status is Modified</data>
+</node>
+<node id="Generate Report">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has generated the report successfully</data>
+</node>
+<node id="Validate Parameters">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system has validated the report parameters successfully</data>
+</node>
+<node id="Store Report Data">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system has stored the report data successfully</data>
+</node>
+<node id="Report Parameters">
+  <data key="d0">DATA</data>
+  <data key="d1">0.85</data>
+  <data key="d2">the report parameters have been provided by the user</data>
+</node>
+<node id="Stored Report Data and Generated File">
+  <data key="d0">DATA</data>
+  <data key="d1">0.85</data>
+  <data key="d2">the report data and generated file have been produced and stored</data>
+</node>
+<node id="Export Report">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the user is exporting an existing report</data>
+</node>
+<node id="Validate Request">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system is validating the export request</data>
+</node>
+<node id="Prepare File">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system is preparing the export file</data>
+</node>
+<node id="Provide Download Link">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2"></data>
+</node>
+<node id="Report Selected">
+  <data key="d0">STATE</data>
+  <data key="d1">0.9</data>
+  <data key="d2">a report has been selected for export</data>
+</node>
+<node id="Report File Downloadable">
+  <data key="d0">STATE</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the report file is available for download</data>
+</node>
+<node id="Export Log Available">
+  <data key="d0">STATE</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the export log has been generated and is available</data>
+</node>
+<node id="Import Asset Data">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the import asset data function is executed</data>
+</node>
+<node id="Validate Format and Data">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system performs validation of file format and data</data>
+</node>
+<node id="Parse Rows">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system parses rows from the uploaded file</data>
+</node>
+<node id="Store Valid Records">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system stores valid records in the system</data>
+</node>
+<node id="Valid Record">
+  <data key="d0">STATE</data>
+  <data key="d1">0.85</data>
+  <data key="d2">a record has passed validation and is considered valid for storage</data>
+</node>
+<node id="Uploaded Data File">
+  <data key="d0">DATA</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the uploaded CSV/Excel file is provided as input</data>
+</node>
+<node id="Imported Asset Records">
+  <data key="d0">DATA</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the imported asset records are produced after successful import</data>
+</node>
+<node id="Export Asset Data">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the user has successfully exported the selected asset data</data>
+</node>
+<node id="Validate Export Request">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has validated the export request successfully</data>
+</node>
+<node id="Generate Export File">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has generated the export file successfully</data>
+</node>
+<node id="Downloadable Data File">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the data file has been generated and is available for download</data>
+</node>
+<node id="Export Log">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the export log entry has been created</data>
+</node>
+<node id="Selected Assets">
+  <data key="d0">DATA</data>
+  <data key="d1">0.85</data>
+  <data key="d2">the selected assets have been specified for export</data>
+</node>
+<node id="Assign management permissions">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">an administrator executes the assignment of management permissions to a user</data>
+</node>
+<node id="Validate permission request">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.96</data>
+  <data key="d2">the system has validated the permission request successfully</data>
+</node>
+<node id="Update permissions upon approval">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system applies the permission update after senior-admin approval</data>
+</node>
+<node id="Permissions Set">
+  <data key="d0">STATE</data>
+  <data key="d1">0.97</data>
+  <data key="d2">the permission update has been approved and applied, resulting in status Permissions Set</data>
+</node>
+<node id="Senior administrators">
+  <data key="d0">ACTOR</data>
+  <data key="d1">0.98</data>
+  <data key="d2"></data>
+</node>
+<node id="Validate replacement request">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has validated the replacement request</data>
+</node>
+<node id="Stage replacement request for approval">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the replacement request has been staged for top-level approval</data>
+</node>
+<node id="Update admin records">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has updated admin records after top-level approval</data>
+</node>
+<node id="Top-level approval">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">top-level approval has occurred for the replacement request</data>
+</node>
+<node id="Admin record status replaced">
+  <data key="d0">STATE</data>
+  <data key="d1">0.93</data>
+  <data key="d2">the admin record has been updated and its status is 'Replaced'</data>
+</node>
+<node id="Submit Asset Request">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system executes the asset request submission process</data>
+</node>
+<node id="Validate Asset Request">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has performed validation on the asset request and determined it satisfies requirements</data>
+</node>
+<node id="Update Status on Approval">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system changes the request status to reflect the admin's approval decision</data>
+</node>
+<node id="Asset Request Form">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the asset request form has been submitted with name, type, quantity, and purpose populated</data>
+</node>
+<node id="Stored Request">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the asset request record exists in the system and can be retrieved</data>
+</node>
+<node id="Approved">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the asset request has been approved by the admin</data>
+</node>
+<node id="Rejected">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the asset request has been rejected by the admin</data>
+</node>
+<node id="Approve Asset Request">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the asset request has been reviewed and a decision (approve or reject) has been made by an administrator</data>
+</node>
+<node id="Update Request Status">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system has updated the request status according to the administrator's decision</data>
+</node>
+<node id="Notify Users">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system has sent a notification to the users about the request decision</data>
+</node>
+<node id="Updated Request Status">
+  <data key="d0">STATE</data>
+  <data key="d1">0.85</data>
+  <data key="d2">the request status has been updated in the system to reflect the administrator's decision</data>
+</node>
+<node id="User Notification">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.85</data>
+  <data key="d2">a notification has been sent to the user about the request decision</data>
+</node>
+<node id="Send Email Notification">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the email notification has been sent successfully for the event</data>
+</node>
+<node id="Registration Event">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">a registration event has occurred and triggered the email notification</data>
+</node>
+<node id="Profile Update Event">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.9</data>
+  <data key="d2">a profile update event has occurred and triggered the email notification</data>
+</node>
+<node id="Event Details">
+  <data key="d0">DATA</data>
+  <data key="d1">0.85</data>
+  <data key="d2">event details are available as input for the notification process</data>
+</node>
+<node id="Recipient List">
+  <data key="d0">DATA</data>
+  <data key="d1">0.85</data>
+  <data key="d2">the recipient list is available as input for the notification process</data>
+</node>
+<node id="Sent Email">
+  <data key="d0">DATA</data>
+  <data key="d1">0.85</data>
+  <data key="d2">an email has been sent and is present as an output record</data>
+</node>
+<node id="Send Log">
+  <data key="d0">DATA</data>
+  <data key="d1">0.85</data>
+  <data key="d2">a send log record exists and is available</data>
+</node>
+<node id="User feedback email received">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.95</data>
+  <data key="d2">a user feedback email has been received by the system</data>
+</node>
+<node id="Parse feedback content">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the content of the user feedback email has been parsed by the system</data>
+</node>
+<node id="Store feedback">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the parsed feedback content has been stored by the system</data>
+</node>
+<node id="Notify administrators">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">administrators have been notified to handle the feedback</data>
+</node>
+<node id="User feedback email">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">a user feedback email exists and is available as input to the system</data>
+</node>
+<node id="Stored feedback">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the feedback has been stored in the system</data>
+</node>
+<node id="View Asset Change History">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system is actively executing the asset change history query and returning matching change history to the user</data>
+</node>
+<node id="Change history">
+  <data key="d0">DATA</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the system has returned the requested asset change history items matching the user's query</data>
+</node>
+<node id="Asset ID">
+  <data key="d0">DATA</data>
+  <data key="d1">0.85</data>
+  <data key="d2">an asset ID is specified as a search criterion to filter change logs for a particular asset</data>
+</node>
+<node id="Change type">
+  <data key="d0">DATA</data>
+  <data key="d1">0.85</data>
+  <data key="d2">a change type is specified as a search criterion to filter change logs by the nature of the change</data>
+</node>
+<node id="Change date">
+  <data key="d0">DATA</data>
+  <data key="d1">0.85</data>
+  <data key="d2">a change date is specified as a search criterion to filter change logs by date</data>
+</node>
+<node id="Asset change">
+  <data key="d0">EVENT</data>
+  <data key="d1">0.75</data>
+  <data key="d2">an asset change has occurred and been recorded in the change log with time, operation, user, and before/after values</data>
+</node>
+<node id="Query Asset Category">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the user has executed a query for asset categories by name or ID and retrieved category details</data>
+</node>
+<node id="Category Name">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the category name criterion is included in the search criteria</data>
+</node>
+<node id="Category ID">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the category ID criterion is included in the search criteria</data>
+</node>
+<node id="Category Details">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the category details including name, description, and asset count are returned as output</data>
+</node>
+<node id="Asset Count">
+  <data key="d0">DATA</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the number of assets in the category is included in the returned category details</data>
+</node>
+<node id="Edit Asset Category">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the edit asset category function is available for administrators to modify category information</data>
+</node>
+<node id="Staged for Approval">
+  <data key="d0">STATE</data>
+  <data key="d1">0.85</data>
+  <data key="d2">the category changes are staged and awaiting senior-admin approval</data>
+</node>
+<node id="Update Category Upon Approval">
+  <data key="d0">FUNCTION</data>
+  <data key="d1">0.9</data>
+  <data key="d2">the system is executing the category update after approval</data>
+</node>
+<node id="Category Status Modified">
+  <data key="d0">STATE</data>
+  <data key="d1">0.95</data>
+  <data key="d2">the category has been updated and its status is Modified</data>
+</node>
+<edge source="Users" target="Register Asset" id="REL-7d912ffefdbc">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Register Asset" id="REL-cd24f82ba533">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Edit and submit asset details" id="REL-2a153768087d">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Edit and submit asset details" id="REL-c0680755eea0">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Edit and submit asset details" id="REL-bbde80e3fe51">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Query Asset Details" id="REL-a958057f26d3">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">unknown</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Users" target="Query Asset Details" id="REL-b75e6a9aa014">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Query Asset Details" id="REL-13f2047c133b">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Transfer Asset" id="REL-5e909fcea81f">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Transfer Asset" id="REL-ec5f01ff47e3">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Transfer Asset" id="REL-681f2b81564c">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Users" target="Initiate Asset Return" id="REL-6e65ca020805">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Initiate Asset Return" id="REL-9f02d7e816f4">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Users" target="Initiate Asset Return" id="REL-36b2c8619c8a">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Deletion Request" id="REL-d5aec69b08c4">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.75</data>
+</edge>
+<edge source="Users" target="Edit User Profile" id="REL-c388600465d4">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Edit User Profile" id="REL-0bea2cc7f217">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Edit User Profile" id="REL-7b41dbc50fa9">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Query User Details" id="REL-4cc144b42cbe">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Query User Details" id="REL-d3980d0217a9">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Validate approval-start request" id="REL-f70eddcd580e">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">unknown</data>
+  <data key="d5">0.75</data>
+</edge>
+<edge source="Users" target="Query Approval Status" id="REL-ffcf3194a67f">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Query Approval Status" id="REL-7902a968235e">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Users" target="Generate Report" id="REL-c02a37511369">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Generate Report" id="REL-59fb67791d70">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Users" target="Export Report" id="REL-452df30e2c37">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Uploaded Data File" id="REL-715aab4dcaa7">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Users" target="Export Asset Data" id="REL-2345b6aa355e">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Users" target="Export Asset Data" id="REL-6f04d2edbbe7">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Users" target="Submit Asset Request" id="REL-86da541895dd">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Users" target="Query Asset Category" id="REL-2bbf6afb698d">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Users" target="Import Asset Data" id="REL-bd7ac7f55cf2">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Administrators" target="Create New User Accounts" id="REL-8c260b7f554e">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Administrators" target="Create New User Accounts" id="REL-da43e7fb2d06">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Administrators" target="Create New User Accounts" id="REL-44106502e1eb">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Administrators" target="Define Workflows" id="REL-b6335cec8121">
+  <data key="d3">CONTROLS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Administrators" target="Define Workflows" id="REL-507b7212c3a6">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Administrators" target="Assign management permissions" id="REL-e3807709576b">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Administrators" target="Assign management permissions" id="REL-25a6f8991f02">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Administrators" target="Assign management permissions" id="REL-a1aca236008a">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Administrators" target="Approve Asset Request" id="REL-5cfe1b24df91">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Administrators" target="Approve Asset Request" id="REL-affbfb4d951d">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Administrators" target="Edit Asset Category" id="REL-24d46c831547">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Administrators" target="Update Ownership Upon Approval" id="REL-5139eda56ee4">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Administrators" target="Validate deletion request" id="REL-0cc3906b01dd">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Administrators" target="Modify existing workflows" id="REL-d96864a8e0f7">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Register Asset" target="Asset Registered" id="REL-db7a02f0e0f7">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Register Asset" target="Administrators Notified" id="REL-17043f8fcfef">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Asset Registered" target="Administrators Notified" id="REL-39bff124ef10">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Data Validation Passed" target="Asset Registered" id="REL-c88b8e70a870">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Edit and submit asset details" target="Validate modification data" id="REL-20bd3b38a19a">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Edit and submit asset details" target="Validate modification data" id="REL-3880333d675a">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Edit and submit asset details" target="Validate modification data" id="REL-155953955e1d">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Validate modification data" target="Stage change for admin approval" id="REL-ad8a7926badb">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Validate modification data" target="Stage change for admin approval" id="REL-c673c3bae0cd">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Stage change for admin approval" target="Admin approval" id="REL-e5e99158a1e7">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Stage change for admin approval" target="Admin approval" id="REL-1a37a0ef341a">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Stage change for admin approval" target="Admin approval" id="REL-d2c981557d83">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Update status to Modified" target="Asset record status Modified" id="REL-db3a74402319">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Update status to Modified" target="Asset record status Modified" id="REL-a1971d91c547">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Admin approval" target="Update status to Modified" id="REL-b50893cf6595">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Admin approval" target="Update Ownership Upon Approval" id="REL-ea4304294a1a">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Admin approval" target="Update Ownership Upon Approval" id="REL-9f7075dbb3fc">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Admin approval" target="Update record upon approval" id="REL-90c696b4a765">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Admin approval" target="Update record upon approval" id="REL-ede9f1a83450">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Admin approval" target="Deletes the Record upon Approval" id="REL-9d8a936a057c">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Admin approval" target="Operation executed upon approval" id="REL-b89be7c00337">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Admin approval" target="Update Status on Approval" id="REL-88f2cea41f91">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Query Asset Details" target="Detailed Asset Information" id="REL-f7fc78a3a54f">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Query Asset Details" target="Detailed Asset Information" id="REL-4a7130448f72">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Query Asset Details" target="Detailed Asset Information" id="REL-dd216dd68c22">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Search Criteria" target="Query Asset Details" id="REL-13b0ba2ce851">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">unknown</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Search Criteria" target="Query Asset Details" id="REL-6ccafb192f24">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Search Criteria" target="Query Asset Details" id="REL-9edb5cd33d1d">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Search Criteria" target="Query Approval Status" id="REL-0bd63a0c38e8">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">unknown</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Search Criteria" target="Query Approval Status" id="REL-5417b2311f79">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Search Criteria" target="Query Approval Status" id="REL-e643318c24ec">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.7</data>
+</edge>
+<edge source="Search Criteria" target="Query User Details" id="REL-b9a1f1e76a51">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Transfer Asset" target="Validate Transfer Request" id="REL-1e1910c15cd6">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Transfer Asset" target="Validate Transfer Request" id="REL-b6d1ac2d1d83">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Transfer Asset" target="Validate Transfer Request" id="REL-f350b88ce53d">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Validate Transfer Request" target="Stage for Admin Approval" id="REL-dc5abc21d1c9">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Validate Transfer Request" target="Stage for Admin Approval" id="REL-f6d024ed9216">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Stage for Admin Approval" target="Admin approval" id="REL-f9c4b2de91f3">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Stage for Admin Approval" target="Admin approval" id="REL-f6f6363d7a88">
+  <data key="d3">ENABLES</data>
+  <data key="d4">unknown</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Stage for Admin Approval" target="Update Ownership Upon Approval" id="REL-c2218ced34c5">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Update Ownership Upon Approval" target="Transferred" id="REL-f9132433fea2">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Update Ownership Upon Approval" target="Transferred" id="REL-3c6cf20b57b4">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Update Ownership Upon Approval" target="Transferred" id="REL-3f0f39db9fa5">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Transfer form" target="Transfer Asset" id="REL-dc74c90f5bbe">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Transfer form" target="Transfer Asset" id="REL-04ef05c48f36">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Transfer form" target="Transfer Asset" id="REL-c82b67ab1b68">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Initiate Asset Return" target="Validate Return Request" id="REL-f8dc0927117e">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.75</data>
+</edge>
+<edge source="Initiate Asset Return" target="Validate Return Request" id="REL-eed16b31fffa">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Initiate Asset Return" target="Validate Return Request" id="REL-4877d640787e">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Validate Return Request" target="Stage Return Request for Approval" id="REL-54223caed895">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Validate Return Request" target="Stage Return Request for Approval" id="REL-ca28c89e23dc">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Stage Return Request for Approval" target="Update Asset Status to Returned" id="REL-77f3ed5eb6b9">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Update Asset Status to Returned" target="Asset Status Returned" id="REL-a6542b3eca62">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Update Asset Status to Returned" target="Asset Status Returned" id="REL-4e161f2a080f">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Update Asset Status to Returned" target="Asset Status Returned" id="REL-996ba26a9ce5">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Return Form" target="Initiate Asset Return" id="REL-ac3881f0931a">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Return Form" target="Initiate Asset Return" id="REL-31b435470f22">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Return Form" target="Initiate Asset Return" id="REL-6dc7ceeee4d5">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Return Approval" target="Update Asset Status to Returned" id="REL-41fe6e52c7cc">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Return Approval" target="Update Asset Status to Returned" id="REL-c1623dfcc86b">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Return Approval" target="Update Asset Status to Returned" id="REL-13678efeef41">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Deletion Request" target="Validates the Request" id="REL-d5a340f66d92">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Deletion Request" target="Validates the Request" id="REL-2263a167b9ea">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Deletion Request" target="Validate deletion request" id="REL-8692ea579d7b">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Obsolete Asset" target="Deletion Request" id="REL-dae3a7ce2920">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Validates the Request" target="Staged for Admin Approval" id="REL-9878fd7dbd36">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Validates the Request" target="Staged for Admin Approval" id="REL-7a00eaef866c">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Staged for Admin Approval" target="Deletes the Record upon Approval" id="REL-39db4efc6c68">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Staged for Admin Approval" target="Deletes the Record upon Approval" id="REL-57b9686de233">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Staged for Admin Approval" target="Admin approval" id="REL-33b34e65531a">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Deletes the Record upon Approval" target="Deleted" id="REL-5da8913725bf">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Deletes the Record upon Approval" target="Deleted" id="REL-bce1e7632085">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Deletes the Record upon Approval" target="Deleted" id="REL-1e4344cdb18c">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Validate New-User Form" target="Store User" id="REL-536b297b3d7d">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Validate New-User Form" target="Store User" id="REL-618e416298d5">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Store User" target="New User Record Activated" id="REL-b4bff1d28bdb">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="New-User Form" target="Validate New-User Form" id="REL-c4ecd2567e96">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="New-User Form" target="Validate New-User Form" id="REL-289c37ee9913">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Edit User Profile" target="Validate changes" id="REL-a4d2088ddfee">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Edit User Profile" target="Validate changes" id="REL-9c0d86384413">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Validate changes" target="Stage change for admin approval" id="REL-1e29a226ae16">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Update record upon approval" target="Status Modified" id="REL-9e7838c35dc3">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Update record upon approval" target="Status Modified" id="REL-97c5d69ea18c">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Query User Details" target="Detailed User Information" id="REL-c72c93f6f161">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Validate deletion request" target="Stage deletion request for senior-admin approval" id="REL-bf8957af22da">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Stage deletion request for senior-admin approval" target="Senior-admin approval event" id="REL-152254fd9668">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Delete user record upon approval" target="User record deleted status" id="REL-f4dd9eb5b5a1">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Delete user record upon approval" target="User record deleted status" id="REL-c8cf47be4d1c">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Senior-admin approval event" target="Delete user record upon approval" id="REL-82ba261b9b48">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Senior-admin approval event" target="Delete user record upon approval" id="REL-fe8433db8013">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Define Workflows" target="Validate Configuration Details" id="REL-062f5b5f555e">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Validate Configuration Details" target="Stage Setup for Approval" id="REL-60ab8d51f871">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.75</data>
+</edge>
+<edge source="Validate Configuration Details" target="Stage Setup for Approval" id="REL-2d87854eef0d">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Validate Configuration Details" target="Stage for senior-admin approval" id="REL-ab024746b337">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Stage Setup for Approval" target="Senior Admin Approval Event" id="REL-efac043ddb9f">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Stage Setup for Approval" target="Senior Admin Approval Event" id="REL-69f49d5b471b">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Activate Workflow" target="Workflow Configured" id="REL-2327c0465672">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Activate Workflow" target="Workflow Configured" id="REL-b22f14b3d8b0">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Senior Admin Approval Event" target="Activate Workflow" id="REL-9ab98d0169e3">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Senior Admin Approval Event" target="Activate Workflow" id="REL-b29cf59f8354">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Validate approval-start request" target="Request staged for admin review" id="REL-3132148ad1aa">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Validate approval-start request" target="Request staged for admin review" id="REL-9a43567efdee">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Request staged for admin review" target="Admin approval" id="REL-fcf1d60d388e">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Request staged for admin review" target="Operation executed upon approval" id="REL-127f95c47bc5">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Operation executed upon approval" target="Updated operation status" id="REL-ba2ec43841ea">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Operation executed upon approval" target="Approval-process record" id="REL-0ed4ceade586">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Approval-start request" target="Validate approval-start request" id="REL-c8d45b4039db">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Query Approval Status" target="Approval Status Details" id="REL-2119771a8fab">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Query Approval Status" target="Approval Status Details" id="REL-04cdd8b09319">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Query Approval Status" target="Approval Status Details" id="REL-0749889307be">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Modify existing workflows" target="Stage for senior-admin approval" id="REL-06c9b67bbb1f">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Modify existing workflows" target="Stage for senior-admin approval" id="REL-5ba2299c0cc5">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Modify existing workflows" target="Validate Configuration Details" id="REL-e33019a7665f">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Stage for senior-admin approval" target="Senior-admin approval" id="REL-d3f5c8c4b524">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Stage for senior-admin approval" target="Senior-admin approval" id="REL-5fbb0f20c285">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.75</data>
+</edge>
+<edge source="Stage for senior-admin approval" target="Senior-admin approval" id="REL-9d3d74896106">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Stage for senior-admin approval" target="Senior-admin approval" id="REL-c7fb9eb25944">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Update workflow upon approval" target="Modified workflow status" id="REL-ba81f28fe9a3">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Senior-admin approval" target="Update workflow upon approval" id="REL-6ef3840a9251">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Senior-admin approval" target="Update workflow upon approval" id="REL-5c19ffe62654">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Senior-admin approval" target="Update workflow upon approval" id="REL-1af404a7c79c">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Senior-admin approval" target="Update permissions upon approval" id="REL-770434722db8">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Senior-admin approval" target="Update Category Upon Approval" id="REL-39f4db35e8ab">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Generate Report" target="Store Report Data" id="REL-330450f5cb53">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Generate Report" target="Store Report Data" id="REL-264c3ae7102b">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Generate Report" target="Stored Report Data and Generated File" id="REL-10d1c53865ee">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Generate Report" target="Stored Report Data and Generated File" id="REL-54d1002b0f63">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Validate Parameters" target="Generate Report" id="REL-2cfea3410353">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Validate Parameters" target="Generate Report" id="REL-be64316a4bcb">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Store Report Data" target="Stored Report Data and Generated File" id="REL-7bd2dafbf2d1">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Report Parameters" target="Validate Parameters" id="REL-e58cdd36e69e">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Report Parameters" target="Validate Parameters" id="REL-459146d502f3">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Report Parameters" target="Validate Parameters" id="REL-87edc3618ff7">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Report Parameters" target="Generate Report" id="REL-ee9ce632146a">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Export Report" target="Report File Downloadable" id="REL-fee8d5be93d2">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Export Report" target="Report File Downloadable" id="REL-5bc5c115d6e2">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Export Report" target="Export Log Available" id="REL-1aba219e2a78">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Export Report" target="Export Log Available" id="REL-55068c4ac434">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Export Report" target="Downloadable Data File" id="REL-da87e5cd6403">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Export Report" target="Export Log" id="REL-885ad46c6b0d">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Report Selected" target="Export Report" id="REL-67f35e95e248">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Report Selected" target="Export Report" id="REL-1ab6de3b2b16">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Import Asset Data" target="Imported Asset Records" id="REL-fceb46dcf286">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Import Asset Data" target="Imported Asset Records" id="REL-b647706efdee">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Valid Record" target="Store Valid Records" id="REL-c4f0d5794e6b">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Uploaded Data File" target="Import Asset Data" id="REL-f85863eac96e">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Uploaded Data File" target="Import Asset Data" id="REL-ae3ca208856f">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Export Asset Data" target="Validate Export Request" id="REL-2072565cbe4b">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Export Asset Data" target="Downloadable Data File" id="REL-837d320dda38">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Export Asset Data" target="Export Log" id="REL-10c6b021f2f5">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Validate Export Request" target="Generate Export File" id="REL-834400128f04">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Generate Export File" target="Downloadable Data File" id="REL-934800f0010f">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Generate Export File" target="Export Log" id="REL-0dd13918cbf7">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Selected Assets" target="Export Asset Data" id="REL-a0aaa3508789">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Assign management permissions" target="Validate permission request" id="REL-2bcdaf74401c">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">unknown</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Validate permission request" target="Stage for senior-admin approval" id="REL-a87a2d01f732">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Update permissions upon approval" target="Permissions Set" id="REL-91cffd6d468f">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Update permissions upon approval" target="Permissions Set" id="REL-1b78d890e6ed">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Senior administrators" target="Validate replacement request" id="REL-b7704e784695">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Validate replacement request" target="Stage replacement request for approval" id="REL-9ea663ad4ec7">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Validate replacement request" target="Stage replacement request for approval" id="REL-0b8c0d0fb6b2">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Stage replacement request for approval" target="Top-level approval" id="REL-093eb54cd029">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Update admin records" target="Admin record status replaced" id="REL-e72f2e32e51e">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Update admin records" target="Admin record status replaced" id="REL-1fd2c6ec35de">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Update admin records" target="Admin record status replaced" id="REL-aae70269c28e">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Top-level approval" target="Update admin records" id="REL-f51e5ce6e17e">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Submit Asset Request" target="Validate Asset Request" id="REL-4658c97e4688">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Submit Asset Request" target="Validate Asset Request" id="REL-2615a46e74c8">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Submit Asset Request" target="Validate Asset Request" id="REL-f124c7bd327a">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Submit Asset Request" target="Stored Request" id="REL-78d07ddd54e5">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Submit Asset Request" target="Stored Request" id="REL-3c1b57daceb3">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Validate Asset Request" target="Stage for Admin Approval" id="REL-a5de0e09a0ca">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Asset Request Form" target="Submit Asset Request" id="REL-bb6899275ac1">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Asset Request Form" target="Submit Asset Request" id="REL-40945ae0ad73">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Stored Request" target="Approve Asset Request" id="REL-60988d89ebdf">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Approve Asset Request" target="Update Request Status" id="REL-155a39ac8191">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Approve Asset Request" target="Update Request Status" id="REL-f1fe4e38f1bf">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Approve Asset Request" target="Notify Users" id="REL-9369b12b0e5c">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Approve Asset Request" target="Notify Users" id="REL-b85106a07288">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Approve Asset Request" target="Update Status on Approval" id="REL-8fd393049ee5">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Update Request Status" target="Updated Request Status" id="REL-8981d5f874ec">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Update Request Status" target="Updated Request Status" id="REL-06bfc6774ad8">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Notify Users" target="User Notification" id="REL-4475239bbdf7">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Send Email Notification" target="Sent Email" id="REL-ba40c3541eb4">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Send Email Notification" target="Sent Email" id="REL-76d70be7c637">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Send Email Notification" target="Sent Email" id="REL-7d2348d741de">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Send Email Notification" target="Send Log" id="REL-3b9b9a185b68">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Send Email Notification" target="Send Log" id="REL-9fd96884e888">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Send Email Notification" target="Send Log" id="REL-da901931884c">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Registration Event" target="Send Email Notification" id="REL-0e5db7d3fa4d">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Registration Event" target="Send Email Notification" id="REL-f468e3eb2382">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Registration Event" target="Send Email Notification" id="REL-6c58cb33f6b6">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Profile Update Event" target="Send Email Notification" id="REL-dc83abd27f4f">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Profile Update Event" target="Send Email Notification" id="REL-6704ea15774e">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Profile Update Event" target="Send Email Notification" id="REL-73fae1a7d8e6">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Event Details" target="Send Email Notification" id="REL-695f76d63f54">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Event Details" target="Send Email Notification" id="REL-3c7eb37cc2dd">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Event Details" target="Send Email Notification" id="REL-38c73412289e">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Recipient List" target="Send Email Notification" id="REL-39aa56f04416">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Recipient List" target="Send Email Notification" id="REL-d56daa86f240">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Recipient List" target="Send Email Notification" id="REL-1a7cfaeaf05a">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="User feedback email received" target="Parse feedback content" id="REL-43bca5a775f8">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Parse feedback content" target="Store feedback" id="REL-cae1169cf63c">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Parse feedback content" target="Store feedback" id="REL-22f4d44dd94e">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.75</data>
+</edge>
+<edge source="Store feedback" target="Stored feedback" id="REL-dc1fed9eaf25">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Store feedback" target="Notify administrators" id="REL-dfa514d9cd6e">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="User feedback email" target="Parse feedback content" id="REL-f2ebdb9958fb">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="User feedback email" target="User feedback email received" id="REL-f5d41c742d6d">
+  <data key="d3">ENABLES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="View Asset Change History" target="Change history" id="REL-395cec9387d2">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="View Asset Change History" target="Change history" id="REL-a1fef37e8ac8">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="View Asset Change History" target="Change history" id="REL-2131d43f7d47">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Asset ID" target="View Asset Change History" id="REL-b6533bc5469e">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">unknown</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Asset ID" target="View Asset Change History" id="REL-c5fe1fc82c18">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Change type" target="View Asset Change History" id="REL-9df2a65140dc">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">unknown</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Change type" target="View Asset Change History" id="REL-94f8158adb0e">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Change date" target="View Asset Change History" id="REL-c05d4ee7726a">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">unknown</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Change date" target="View Asset Change History" id="REL-10efe71e4768">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Query Asset Category" target="Category Details" id="REL-4b3617333df9">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Query Asset Category" target="Category Details" id="REL-da12c539e6d2">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.95</data>
+</edge>
+<edge source="Query Asset Category" target="Category Details" id="REL-0b230e997841">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Category Name" target="Query Asset Category" id="REL-9dd71c11711b">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Category Name" target="Query Asset Category" id="REL-71cded7f551c">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">unknown</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Category Name" target="Query Asset Category" id="REL-64995561a406">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">unknown</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Category ID" target="Query Asset Category" id="REL-886af038c4c2">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Category ID" target="Query Asset Category" id="REL-f09e444004d1">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">unknown</data>
+  <data key="d5">0.9</data>
+</edge>
+<edge source="Category ID" target="Query Asset Category" id="REL-31c56eaa3746">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">unknown</data>
+  <data key="d5">0.8</data>
+</edge>
+<edge source="Edit Asset Category" target="Staged for Approval" id="REL-c899020c3a59">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Edit Asset Category" target="Staged for Approval" id="REL-30ce1a4d0426">
+  <data key="d3">TRIGGERS</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Staged for Approval" target="Update Category Upon Approval" id="REL-07b6b329f4ec">
+  <data key="d3">DEPENDS_ON</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.85</data>
+</edge>
+<edge source="Update Category Upon Approval" target="Category Status Modified" id="REL-0bd8e33418e1">
+  <data key="d3">PRODUCES</data>
+  <data key="d4">positive</data>
+  <data key="d5">0.9</data>
+</edge>
+</graph></graphml>

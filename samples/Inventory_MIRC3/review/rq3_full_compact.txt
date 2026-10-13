@@ -1,0 +1,1166 @@
+# RQ3 compact worksheet — Inventory_MIRC3
+
+Full: 166 nominations. 每行格式：
+ID | route | model | subject | question | draft | evidence FRs | reference(top2)
+
+DEP-001 | dependency | unsupported
+  subj: Stage change for admin approval → Deletes the Record upon Approval
+  q:    When admin approval is granted for a staged change, does the system delete the asset record associated with that staged change, and is this deletion i…
+  draft:When an admin approves a change that has been staged for admin approval, the system shall delete the asset record associated with that approved staged change.
+  ev:   FRBLOCK-002, FRBLOCK-006, FRBLOCK-008
+  ref:  FR-67 (0.38) Delete User :: Delete User Description: Administrators remove user accounts. The system validates the request, stages it for senior-admin approval, and deletes the record upon approval.… || FR-21 (0.37) Delete Obsolete Asset :: Delete Obsolete Asset Description: Users request removal of obsolete assets. The system validates the request, stages it for admin approval, and deletes the record upon a…
+
+DEP-002 | dependency | covered
+  subj: Validate Configuration Details → Activate Workflow
+  q:    Does the documented requirement ensure that Activate Workflow is gated by Validate Configuration Details through the staged senior-admin approval path…
+  draft:Workflow activation shall occur only after configuration details have been validated and the staged setup has received senior-admin approval.
+  ev:   FRBLOCK-011
+  ref:  FR-44 (0.37) Configure Approval Workflow :: Configure Approval Workflow Description: Administrators define workflows. The system validates configuration details, stages the setup for senior-admin approval, and acti… || FR-45 (0.33) Approval Workflow Activation Fallback :: Approval Workflow Activation Fallback Description: The system prevents workflow configuration activation failure from disrupting existing approval operations. Input: Work…
+
+DEP-003 | dependency | covered
+  subj: Approval-start request → Deletes the Record upon Approval
+  q:    For an approval-start request that has been validated and staged for admin review, does the requirement explicitly state that admin approval triggers …
+  draft:Upon admin approval of the approval-start request, the system shall delete the record associated with the approved request.
+  ev:   FRBLOCK-006, FRBLOCK-012
+  ref:  FR-67 (0.43) Delete User :: Delete User Description: Administrators remove user accounts. The system validates the request, stages it for senior-admin approval, and deletes the record upon approval.… || FR-27 (0.41) Start Approval Process :: Start Approval Process Description: Users initiate approval processes for registration, usage, transfer, return, modification, deletion, or related operations. The system…
+
+DEP-004 | dependency | covered
+  subj: Validates the Request → Update status to Modified
+  q:    Does the requirement clearly establish that the status update to “Modified” is gated by admin approval after validation and staging, rather than occur…
+  draft:When the system validates a deletion request, it must stage the request for admin approval, and only upon admin approval must the system update the asset record status to “Modified.”
+  ev:   FRBLOCK-002, FRBLOCK-006
+  ref:  FR-05 (0.33) Modify Asset :: Modify Asset Description: Users edit registered asset details and submit the change. The system validates the data, stages the change for admin approval, and updates the … || FR-21 (0.31) Delete Obsolete Asset :: Delete Obsolete Asset Description: Users request removal of obsolete assets. The system validates the request, stages it for admin approval, and deletes the record upon a…
+
+DEP-005 | dependency | covered
+  subj: Senior Admin Approval Event → Workflow Configured
+  q:    Does the requirement set explicitly tie the occurrence of a senior-admin approval event to the workflow being stored with status "Configured" via acti…
+  draft:Upon senior-admin approval, the workflow shall be activated and stored with status "Configured."
+  ev:   FRBLOCK-011
+  ref:  FR-44 (0.38) Configure Approval Workflow :: Configure Approval Workflow Description: Administrators define workflows. The system validates configuration details, stages the setup for senior-admin approval, and acti… || FR-45 (0.28) Approval Workflow Activation Fallback :: Approval Workflow Activation Fallback Description: The system prevents workflow configuration activation failure from disrupting existing approval operations. Input: Work…
+
+DEP-006 | dependency | covered
+  subj: Asset Request Form → User Notification
+  q:    Does the requirements specification define the user notification obligation that follows an asset request submitted through the Asset Request Form whe…
+  draft:When an asset request submitted through the Asset Request Form is approved or rejected, the system shall notify the affected user(s) of the decision.
+  ev:   FRBLOCK-021, FRBLOCK-022
+  ref:  FR-76 (0.45) Approve Asset Request :: Approve Asset Request Description: Administrators review and approve or reject asset requests. The system updates the request status and notifies users. Input: Approval f… || FR-48 (0.29) Notify Requesters of Approval Outcomes :: Notify Requesters of Approval Outcomes Description: The system informs requesters when their submitted operations are approved, rejected, or failed. Input: Approval outco…
+
+DEP-007 | dependency | covered
+  subj: Activate Workflow → Workflow Configured
+  q:    Does FRBLOCK-011 explicitly require that activating the workflow results in the stored workflow having status “Configured,” rather than merely describ…
+  draft:When the workflow is activated, the system shall set the stored workflow status to “Configured.”
+  ev:   FRBLOCK-011
+  ref:  FR-44 (0.36) Configure Approval Workflow :: Configure Approval Workflow Description: Administrators define workflows. The system validates configuration details, stages the setup for senior-admin approval, and acti… || FR-45 (0.32) Approval Workflow Activation Fallback :: Approval Workflow Activation Fallback Description: The system prevents workflow configuration activation failure from disrupting existing approval operations. Input: Work…
+
+DEP-008 | dependency | covered
+  subj: Validates the Request → Update Status on Approval
+  q:    Does the requirement specify that 'updates status upon approval' applies only after a request has been validated and staged for admin approval, rather…
+  draft:The system shall update the request status upon admin approval only when that request has been validated and staged for admin approval.
+  ev:   FRBLOCK-006, FRBLOCK-021
+  ref:  FR-71 (0.29) Admin Permission Change Authorization :: Admin Permission Change Authorization Description: The system permits admin permission changes only when the acting user has sufficient authority. Input: Permission chang… || FR-75 (0.29) Submit Asset Request :: Submit Asset Request Description: Users request assets. The system validates the request, stages it for admin approval, and updates status upon approval. Input: Asset-req…
+
+DEP-009 | dependency | covered
+  subj: Query Approval Status → Approval Status Details
+  q:    When users query approval status for asset or user operations, does the requirement define what approval status details must be provided, including th…
+  draft:The system shall provide approval status details for asset or user operations, showing the current approval status as pending, in progress, approved, or rejected when a user queries approval status.
+  ev:   FRBLOCK-013
+  ref:  FR-39 (0.60) Query Approval Status :: Query Approval Status Description: Users check the status of asset or user operations such as pending, in progress, approved, rejected, or failed. Input: Search criteria … || FR-07 (0.25) Asset Modification Approval Workflow Orchestration :: Asset Modification Approval Workflow Orchestration Description: The system ensures asset edit requests progress through the approval workflow to a clear final decision. I…
+
+DEP-010 | dependency | covered
+  subj: Approve Asset Request → Notify Users
+  q:    Does the requirement for 'Approve Asset Request' explicitly define the notification obligation to 'Notify Users' after an administrator approves or re…
+  draft:When an administrator approves or rejects an asset request, the system shall notify users of the request decision.
+  ev:   FRBLOCK-022
+  ref:  FR-76 (0.39) Approve Asset Request :: Approve Asset Request Description: Administrators review and approve or reject asset requests. The system updates the request status and notifies users. Input: Approval f… || FR-49 (0.17) Notify Stakeholders of Approval Outcomes :: Notify Stakeholders of Approval Outcomes Description: The system notifies relevant stakeholders when approval processes are completed or when an approval decision changes…
+
+DEP-011 | dependency | covered
+  subj: Validate approval-start request → Updated operation status
+  q:    Does FRBLOCK-012 explicitly define that the updated operation status is produced only after an approval-start request is validated, staged for admin r…
+  draft:When an approval-start request is validated and staged for admin review, the operation must be executed upon approval and the operation status must be updated to reflect the executed operation.
+  ev:   FRBLOCK-012
+  ref:  FR-27 (0.44) Start Approval Process :: Start Approval Process Description: Users initiate approval processes for registration, usage, transfer, return, modification, deletion, or related operations. The system… || FR-28 (0.23) Approval Process Record Failure Handling :: Approval Process Record Failure Handling Description: The system prevents inconsistent operation outcomes when an approval-process record cannot be created or established…
+
+DEP-012 | dependency | covered
+  subj: Transfer form → Transfer Asset
+  q:    For the dependency where Transfer Asset relies on Transfer form as input, how do the requirements ensure that a submitted Transfer form with asset ID …
+  draft:The system shall require a submitted Transfer form containing asset ID and new recipient as the input condition for the Transfer Asset workflow.
+  ev:   FRBLOCK-004
+  ref:  FR-13 (0.45) Transfer Asset :: Transfer Asset Description: Users request to transfer assets to a new user or department. The system validates the request, stages it for admin approval, and updates the … || FR-14 (0.32) Authorize Asset Transfer Initiation :: Authorize Asset Transfer Initiation Description: The system permits asset transfer requests only from authorized actors. Input: Transfer form, requester identity. Output:…
+
+DEP-013 | dependency | covered
+  subj: Admin approval → Operation executed upon approval
+  q:    Does FRBLOCK-012 state that admin approval triggers execution of the operation, or does it leave the execution timing and the specific operation undef…
+  draft:Upon admin approval, the system shall execute the operation.
+  ev:   FRBLOCK-012
+  ref:  FR-27 (0.25) Start Approval Process :: Start Approval Process Description: Users initiate approval processes for registration, usage, transfer, return, modification, deletion, or related operations. The system… || FR-40 (0.25) Approval Status Retrieval :: Approval Status Retrieval Description: The system allows stakeholders to retrieve the current approval decision state for a specific request. Input: Approval status reque…
+
+DEP-014 | dependency | covered
+  subj: Update record upon approval → Status Modified
+  q:    Does the requirement need to explicitly state that the user record update performed upon approval results in the updated user record having status 'Mo…
+  draft:Upon approval of staged changes, the system shall update the user record, and the updated user record shall have the status 'Modified'.
+  ev:   FRBLOCK-008
+  ref:  FR-61 (0.33) Edit User Profile :: Edit User Profile Description: Users edit their own profiles. The system validates changes, stages them for admin approval, and updates the record upon approval. Input: P… || FR-05 (0.32) Modify Asset :: Modify Asset Description: Users edit registered asset details and submit the change. The system validates the data, stages the change for admin approval, and updates the …
+
+DEP-015 | dependency | covered
+  subj: Return Form → Update Asset Status to Returned
+  q:    Does the requirement define how a submitted Return Form (asset ID, return date) leads to updating the asset status to “Returned,” including the valida…
+  draft:When a return form containing the asset ID and return date is submitted, the system shall process the return request through validation and approval staging, and shall update the asset status to “Retu…
+  ev:   FRBLOCK-005
+  ref:  FR-18 (0.56) Return Asset :: Return Asset Description: Users initiate asset returns. The system validates the request, stages it for approval, and updates the status to “Returned” upon approval. Inpu… || FR-20 (0.34) Return Outcome Finalization :: Return Outcome Finalization Description: The system ensures every return action results in a final and unambiguous operational state. Input: Returned state, approval-proc…
+
+DEP-016 | dependency | covered
+  subj: Approval-start request → Admin approval
+  q:    Does the requirement explicitly state that admin approval depends on the approval-start request being validated and staged for admin review?
+  draft:Admin approval shall occur only after the approval-start request has been validated and staged for admin review.
+  ev:   FRBLOCK-012
+  ref:  FR-27 (0.33) Start Approval Process :: Start Approval Process Description: Users initiate approval processes for registration, usage, transfer, return, modification, deletion, or related operations. The system… || FR-03 (0.22) Asset Registration Review Notification Failure Recovery :: Asset Registration Review Notification Failure Recovery Description: If administrator review notification fails after asset registration artifacts are created, the system…
+
+DEP-017 | dependency | retained
+  subj: Validate Export Request → Generate Export File
+  q:    Does FRBLOCK-018 explicitly require that the system generate the export file only after the export request has been successfully validated, as suggest…
+  draft:The system shall generate the export file only if the export request has been validated successfully.
+  ev:   FRBLOCK-018
+  ref:  FR-87 (0.41) Export Asset Data :: Export Asset Data Description: Users export selected asset data. The system validates the request, generates the file, and provides a download link. Input: Selected asset… || FR-84 (0.37) Export Report :: Export Report Description: Users export existing reports. The system validates the request, prepares the file, and provides a download link. Input: Selected report and ex…
+
+DEP-018 | dependency | covered
+  subj: Export Asset Data → Downloadable Data File
+  q:    Does the requirement explicitly state that a successful Export Asset Data operation must produce a downloadable data file that is available for downlo…
+  draft:Upon successful export of selected asset data, the system shall generate a downloadable data file that is available for download.
+  ev:   FRBLOCK-018
+  ref:  FR-87 (0.66) Export Asset Data :: Export Asset Data Description: Users export selected asset data. The system validates the request, generates the file, and provides a download link. Input: Selected asset… || FR-84 (0.48) Export Report :: Export Report Description: Users export existing reports. The system validates the request, prepares the file, and provides a download link. Input: Selected report and ex…
+
+DEP-019 | dependency | covered
+  subj: Validate modification data → Operation executed upon approval
+  q:    Do the requirements explicitly state that the requested operation is executed only after both successful validation of the modification data and admin…
+  draft:The system shall not execute the requested operation unless the submitted modification data has been validated and the staged change has received admin approval.
+  ev:   FRBLOCK-002, FRBLOCK-008, FRBLOCK-012
+  ref:  FR-06 (0.30) Asset Modification Validation Failure Handling :: Asset Modification Validation Failure Handling Description: The system provides a clear failure outcome when asset modification validation fails and prevents invalid modi… || FR-05 (0.24) Modify Asset :: Modify Asset Description: Users edit registered asset details and submit the change. The system validates the data, stages the change for admin approval, and updates the …
+
+DEP-020 | dependency | covered
+  subj: Approval-start request → Transferred
+  q:    For the documented dependency from an Approval-start request to Transferred, does the requirements set specify the complete end-to-end obligation that…
+  draft:When an approval-start request is approved, the system shall update the ownership and produce updated owner information with status “Transferred.”
+  ev:   FRBLOCK-004, FRBLOCK-012
+  ref:  FR-13 (0.40) Transfer Asset :: Transfer Asset Description: Users request to transfer assets to a new user or department. The system validates the request, stages it for admin approval, and updates the … || FR-51 (0.24) Notify Request Owner When Approval Notification Recipie… :: Notify Request Owner When Approval Notification Recipients Cannot Be Resolved Description: The system informs the request owner when approval notification recipients cann…
+
+ISOLATED-d1066142271d | isolated | unsupported
+  subj: Admin
+  q:    Should 'Admin' have a documented connection to the 'Administrators' actor in FR-01, or is it intentionally a separate administrative role?
+  draft:The asset registration workflow shall clarify whether 'Admin' is an alias for the administrator role notified during asset registration.
+  ev:   FRBLOCK-001
+  ref:  FR-01 (0.23) Register Asset :: Register Asset Description: Users fill in the asset registration form and submit it. The system validates the data for completeness and accuracy, stores the asset in the … || FR-03 (0.22) Asset Registration Review Notification Failure Recovery :: Asset Registration Review Notification Failure Recovery Description: If administrator review notification fails after asset registration artifacts are created, the system…
+
+ISOLATED-044802effbcc | isolated | unsupported
+  subj: Administrator
+  q:    Does 'Administrator' refer to the same actor as 'Administrators' in FR-01, or is it a distinct role requiring its own documented connection?
+  draft:The asset registration workflow shall clarify whether 'Administrator' is the same role as 'Administrators' responsible for reviewing registered assets.
+  ev:   FRBLOCK-001
+  ref:  FR-01 (0.21) Register Asset :: Register Asset Description: Users fill in the asset registration form and submit it. The system validates the data for completeness and accuracy, stores the asset in the … || FR-03 (0.19) Asset Registration Review Notification Failure Recovery :: Asset Registration Review Notification Failure Recovery Description: If administrator review notification fails after asset registration artifacts are created, the system…
+
+ISOLATED-9149814de7ba | isolated | unsupported
+  subj: Approved
+  q:    Does 'Approved' represent a state that follows 'Registered' after administrator review, or is it unrelated to this FR?
+  draft:The asset registration workflow shall define whether a Registered asset can transition to Approved after administrator review.
+  ev:   FRBLOCK-001
+  ref:  FR-03 (0.35) Asset Registration Review Notification Failure Recovery :: Asset Registration Review Notification Failure Recovery Description: If administrator review notification fails after asset registration artifacts are created, the system… || FR-01 (0.27) Register Asset :: Register Asset Description: Users fill in the asset registration form and submit it. The system validates the data for completeness and accuracy, stores the asset in the …
+
+ISOLATED-daaeb9300bbd | isolated | covered
+  subj: Rejected
+  q:    Should 'Rejected' be a possible outcome of administrator review in this workflow, and if so, how is it reached from Registered?
+  draft:The asset registration workflow shall define whether administrator review can result in a Rejected status and the required transition.
+  ev:   FRBLOCK-001
+  ref:  FR-03 (0.30) Asset Registration Review Notification Failure Recovery :: Asset Registration Review Notification Failure Recovery Description: If administrator review notification fails after asset registration artifacts are created, the system… || FR-01 (0.24) Register Asset :: Register Asset Description: Users fill in the asset registration form and submit it. The system validates the data for completeness and accuracy, stores the asset in the …
+
+ISOLATED-f5224f8482e4 | isolated | unsupported
+  subj: Pending Operation Status
+  q:    Does 'Pending Operation Status' apply to the administrator review prompted by FR-01, or is it unrelated to asset registration?
+  draft:The asset registration workflow shall define whether administrator review creates a pending status for the asset or operation.
+  ev:   FRBLOCK-001
+  ref:  FR-03 (0.36) Asset Registration Review Notification Failure Recovery :: Asset Registration Review Notification Failure Recovery Description: If administrator review notification fails after asset registration artifacts are created, the system… || FR-39 (0.24) Query Approval Status :: Query Approval Status Description: Users check the status of asset or user operations such as pending, in progress, approved, rejected, or failed. Input: Search criteria …
+
+ISOLATED-ba6a57af5568 | isolated | unsupported
+  subj: Senior-admin approval required
+  q:    Does 'Senior-admin approval required' apply to the administrator review prompted by FR-01, or is senior approval out of scope?
+  draft:The asset registration workflow shall clarify whether senior administrator approval is required before an asset is registered.
+  ev:   FRBLOCK-001
+  ref:  FR-72 (0.27) Replace System Administrator :: Replace System Administrator Description: Senior administrators replace the current system admin. The system validates the request, stages it for top-level approval, and … || FR-03 (0.25) Asset Registration Review Notification Failure Recovery :: Asset Registration Review Notification Failure Recovery Description: If administrator review notification fails after asset registration artifacts are created, the system…
+
+OPERATION-b807960581b0 | operation | covered
+  subj: Validate Format and Data
+  q:    Should 'Validate Format and Data' be treated as an applicable operation in this FR because the system validates submitted data for completeness and ac…
+  draft:Asset registration shall perform validation of submitted asset data for completeness and accuracy before storing the record.
+  ev:   FRBLOCK-001
+  ref:  FR-01 (0.31) Register Asset :: Register Asset Description: Users fill in the asset registration form and submit it. The system validates the data for completeness and accuracy, stores the asset in the … || FR-87 (0.23) Export Asset Data :: Export Asset Data Description: Users export selected asset data. The system validates the request, generates the file, and provides a download link. Input: Selected asset…
+
+OPERATION-98825bf8189d | operation | unsupported
+  subj: Validate Request
+  q:    Is 'Validate Request' the operation that performs the completeness and accuracy check described in FR-01, or is it a separate validation step?
+  draft:The registration workflow shall identify whether a Validate Request operation is required before asset data is stored.
+  ev:   FRBLOCK-001
+  ref:  FR-01 (0.24) Register Asset :: Register Asset Description: Users fill in the asset registration form and submit it. The system validates the data for completeness and accuracy, stores the asset in the … || FR-02 (0.22) Asset Registration Validation Failure Handling :: Asset Registration Validation Failure Handling Description: The system rejects asset registration submissions that fail required validation checks and prevents invalid as…
+
+OPERATION-2ea44500eb25 | operation | covered
+  subj: Register Asset
+  q:    Does the 'Register Asset' operation include validation, storage, status setting, and administrator notification, or are these separate operations in t…
+  draft:The Register Asset operation shall encompass validation, storage, status assignment, and administrator notification as documented.
+  ev:   FRBLOCK-001
+  ref:  FR-12 (0.23) Asset Identifier Validation for Operations :: Asset Identifier Validation for Operations Description: The system validates asset identifiers before asset-related operations and prevents downstream actions from using … || FR-03 (0.19) Asset Registration Review Notification Failure Recovery :: Asset Registration Review Notification Failure Recovery Description: If administrator review notification fails after asset registration artifacts are created, the system…
+
+ISOLATED-d358ae02cf93 | isolated | covered
+  subj: Asset change
+  q:    Should the staged asset change be represented as a distinct business entity with its own lifecycle, rather than only as a transient step in the modifi…
+  draft:The system shall create an asset change record when a user submits a modification and track its approval status.
+  ev:   FRBLOCK-002
+  ref:  FR-07 (0.33) Asset Modification Approval Workflow Orchestration :: Asset Modification Approval Workflow Orchestration Description: The system ensures asset edit requests progress through the approval workflow to a clear final decision. I… || FR-06 (0.30) Asset Modification Validation Failure Handling :: Asset Modification Validation Failure Handling Description: The system provides a clear failure outcome when asset modification validation fails and prevents invalid modi…
+
+ISOLATED-459a1ecfc528 | isolated | unsupported
+  subj: Pending Operation Status
+  q:    Should a staged asset modification be assigned a pending status while awaiting admin approval?
+  draft:The system shall mark a staged asset modification as Pending until an Admin approves or rejects it.
+  ev:   FRBLOCK-002
+  ref:  FR-64 (0.38) Notify Profile Change Failure :: Notify Profile Change Failure Description: The system informs users when their profile change cannot be staged for approval and removes invalid pending requests. Input: P… || FR-06 (0.31) Asset Modification Validation Failure Handling :: Asset Modification Validation Failure Handling Description: The system provides a clear failure outcome when asset modification validation fails and prevents invalid modi…
+
+ISOLATED-f67005874d69 | isolated | unsupported
+  subj: Rejected
+  q:    How should the system handle an admin rejection of a staged asset modification?
+  draft:The system shall allow an Admin to reject a staged asset modification and record the rejection outcome.
+  ev:   FRBLOCK-002
+  ref:  FR-06 (0.36) Asset Modification Validation Failure Handling :: Asset Modification Validation Failure Handling Description: The system provides a clear failure outcome when asset modification validation fails and prevents invalid modi… || FR-38 (0.33) Provide Rejection Finalization for Requests :: Provide Rejection Finalization for Requests Description: The system ensures every rejected request results in a clear and final operational outcome. Input: Rejected appro…
+
+OPERATION-ea6286e46001 | operation | covered
+  subj: Admin approval
+  q:    Is there a documented approval operation that allows an Admin to approve a staged asset modification?
+  draft:The system shall provide an approval operation for Admin to approve a staged asset modification.
+  ev:   FRBLOCK-002
+  ref:  FR-76 (0.34) Approve Asset Request :: Approve Asset Request Description: Administrators review and approve or reject asset requests. The system updates the request status and notifies users. Input: Approval f… || FR-06 (0.30) Asset Modification Validation Failure Handling :: Asset Modification Validation Failure Handling Description: The system provides a clear failure outcome when asset modification validation fails and prevents invalid modi…
+
+OPERATION-ff6b3834715d | operation | unsupported
+  subj: Validate modification data
+  q:    Should the validation operation check both format and data correctness before staging the modification?
+  draft:The system shall validate modification form fields for format and data correctness before staging the change.
+  ev:   FRBLOCK-002
+  ref:  FR-08 (0.29) Compensate Asset Modification on User Profile Update Fa… :: Compensate Asset Modification on User Profile Update Failure Description: If a user profile update required by an asset modification workflow cannot be finalized, the sys… || FR-06 (0.23) Asset Modification Validation Failure Handling :: Asset Modification Validation Failure Handling Description: The system provides a clear failure outcome when asset modification validation fails and prevents invalid modi…
+
+OPERATION-0ed356b48243 | operation | retained
+  subj: Search Criteria
+  q:    Should asset search by name, type, or ID use exact matching, partial matching, or both, and can multiple criteria be combined in a single query?
+  draft:Define the matching semantics and combinability rules for asset search criteria.
+  ev:   FRBLOCK-003
+  ref:  FR-09 (0.51) Query Asset Details :: Query Asset Details Description: Users search for asset details using name, type, or ID. The system returns matching records. Input: Search criteria (name, type, ID). Out… || FR-10 (0.38) Asset Details Search Failure Handling :: Asset Details Search Failure Handling Description: The system provides deterministic outcomes for asset searches when criteria are invalid, unusable, or produce no matchi…
+
+OPERATION-2d97fdd0a6fa | operation | retained
+  subj: Detailed Asset Information
+  q:    Which fields must be returned for detailed asset information, and what does 'etc.' include or exclude?
+  draft:Specify the complete output schema for detailed asset information.
+  ev:   FRBLOCK-003
+  ref:  FR-09 (0.37) Query Asset Details :: Query Asset Details Description: Users search for asset details using name, type, or ID. The system returns matching records. Input: Search criteria (name, type, ID). Out… || FR-66 (0.29) Query User Details :: Query User Details Description: Users search for user information by username, email, or department. Input: Search criteria (username, email, department). Output: Detaile…
+
+OPERATION-c843a38b171b | operation | retained
+  subj: Query Asset Details
+  q:    How should the system respond when no asset matches the search criteria?
+  draft:Define the empty-result behavior and user feedback for the asset query operation.
+  ev:   FRBLOCK-003
+  ref:  FR-10 (0.38) Asset Details Search Failure Handling :: Asset Details Search Failure Handling Description: The system provides deterministic outcomes for asset searches when criteria are invalid, unusable, or produce no matchi… || FR-39 (0.33) Query Approval Status :: Query Approval Status Description: Users check the status of asset or user operations such as pending, in progress, approved, rejected, or failed. Input: Search criteria …
+
+ISOLATED-20384ad562a3 | isolated | unsupported
+  subj: User
+  q:    Is the isolated 'User' role the same actor as the 'Users' referenced in FR-03, and if so what query permissions does it have for asset details?
+  draft:Clarify the mapping and query permissions of the isolated 'User' role relative to the FR-03 'Users' actor.
+  ev:   FRBLOCK-003
+  ref:  FR-70 (0.32) Set Admin Permissions :: Set Admin Permissions Description: Administrators assign management permissions. The system validates the request, stages it for senior-admin approval, and updates permis… || FR-10 (0.22) Asset Details Search Failure Handling :: Asset Details Search Failure Handling Description: The system provides deterministic outcomes for asset searches when criteria are invalid, unusable, or produce no matchi…
+
+ISOLATED-e007997cbd37 | isolated | unresolved
+  subj: Admin
+  q:    Should the isolated 'Admin' role also be able to query asset details, or is FR-03 intentionally limited to non-admin users?
+  draft:Clarify whether Admin/Administrator roles are included in the asset query actor scope.
+  ev:   FRBLOCK-003
+  ref:  FR-71 (0.21) Admin Permission Change Authorization :: Admin Permission Change Authorization Description: The system permits admin permission changes only when the acting user has sufficient authority. Input: Permission chang… || FR-88 (0.20) Authorized Scope Enforcement for Asset Exports :: Authorized Scope Enforcement for Asset Exports Description: The system limits asset exports to the data scope allowed for the requesting actor. Input: Actor identity, exp…
+
+ISOLATED-825837f19fdf | isolated | unsupported
+  subj: Admin
+  q:    Is the Admin's role in the transfer approval workflow documented beyond the phrase 'admin approval'?
+  draft:Document the Admin action(s) that can be taken on a staged transfer request.
+  ev:   FRBLOCK-004
+  ref:  FR-13 (0.32) Transfer Asset :: Transfer Asset Description: Users request to transfer assets to a new user or department. The system validates the request, stages it for admin approval, and updates the … || FR-72 (0.25) Replace System Administrator :: Replace System Administrator Description: Senior administrators replace the current system admin. The system validates the request, stages it for top-level approval, and …
+
+ISOLATED-7a23cce0e16e | isolated | unsupported
+  subj: User
+  q:    Are any constraints on which User may request an asset transfer documented?
+  draft:Define which users may request transfers and any ownership or department constraints.
+  ev:   FRBLOCK-004
+  ref:  FR-13 (0.34) Transfer Asset :: Transfer Asset Description: Users request to transfer assets to a new user or department. The system validates the request, stages it for admin approval, and updates the … || FR-104 (0.20) Cascade Ownership and Reference Updates :: Cascade Ownership and Reference Updates Description: The system ensures approved transfer or return ownership and status changes are reflected across dependent views and …
+
+OPERATION-adfb4fa116e9 | operation | covered
+  subj: Stage for Admin Approval
+  q:    Does the 'Stage for Admin Approval' operation require a corresponding admin decision operation (approve/reject) to complete the workflow?
+  draft:Define the admin approval/rejection operation that transitions a staged transfer request to approved or rejected.
+  ev:   FRBLOCK-004
+  ref:  FR-76 (0.34) Approve Asset Request :: Approve Asset Request Description: Administrators review and approve or reject asset requests. The system updates the request status and notifies users. Input: Approval f… || FR-75 (0.25) Submit Asset Request :: Submit Asset Request Description: Users request assets. The system validates the request, stages it for admin approval, and updates status upon approval. Input: Asset-req…
+
+OPERATION-68d62426114c | operation | unsupported
+  subj: Validate Transfer Request
+  q:    What validation rules apply during 'Validate Transfer Request'?
+  draft:Specify validation rules for transfer requests (e.g., asset ID exists, recipient is valid).
+  ev:   FRBLOCK-004
+  ref:  FR-14 (0.27) Authorize Asset Transfer Initiation :: Authorize Asset Transfer Initiation Description: The system permits asset transfer requests only from authorized actors. Input: Transfer form, requester identity. Output:… || FR-13 (0.24) Transfer Asset :: Transfer Asset Description: Users request to transfer assets to a new user or department. The system validates the request, stages it for admin approval, and updates the …
+
+OPERATION-4195d119d49c | operation | covered
+  subj: Validate Return Request
+  q:    Does the documented return workflow require a distinct validation operation for the return request, or is validation embedded in submission?
+  draft:The system must validate the asset ID and return date of a return request before staging it for approval.
+  ev:   FRBLOCK-005
+  ref:  FR-19 (0.34) Authorize Asset Return Initiation :: Authorize Asset Return Initiation Description: The system permits asset return requests only from authorized actors. Input: Return form, requester identity. Output: Autho… || FR-18 (0.33) Return Asset :: Return Asset Description: Users initiate asset returns. The system validates the request, stages it for approval, and updates the status to “Returned” upon approval. Inpu…
+
+OPERATION-83347e845ab7 | operation | covered
+  subj: Stage Return Request for Approval
+  q:    What approval operation is applicable after a return request is staged, and who is authorized to perform it?
+  draft:The system must support an approval operation for staged asset return requests before updating asset status to Returned.
+  ev:   FRBLOCK-005
+  ref:  FR-18 (0.47) Return Asset :: Return Asset Description: Users initiate asset returns. The system validates the request, stages it for approval, and updates the status to “Returned” upon approval. Inpu… || FR-19 (0.42) Authorize Asset Return Initiation :: Authorize Asset Return Initiation Description: The system permits asset return requests only from authorized actors. Input: Return form, requester identity. Output: Autho…
+
+ISOLATED-c388417a50b6 | isolated | unsupported
+  subj: Admin
+  q:    Is the isolated Admin element the intended actor for the approval mentioned in FR-05, and should that connection be documented?
+  draft:The system must define the authorized approver role (e.g., Admin) for asset return requests.
+  ev:   FRBLOCK-005
+  ref:  FR-19 (0.31) Authorize Asset Return Initiation :: Authorize Asset Return Initiation Description: The system permits asset return requests only from authorized actors. Input: Return form, requester identity. Output: Autho… || FR-22 (0.20) Authorize Obsolete Asset Deletion Requests :: Authorize Obsolete Asset Deletion Requests Description: The system permits obsolete asset deletion requests only from authorized actors. Input: Deletion request, requeste…
+
+ISOLATED-859c44819ae0 | isolated | retained
+  subj: Approved Operation Status
+  q:    Should the isolated Approved Operation Status be connected to the return request's approval state, distinct from the asset status Returned?
+  draft:The system must represent the return request's approval outcome as an operation status before or alongside updating the asset status to Returned.
+  ev:   FRBLOCK-005
+  ref:  FR-18 (0.56) Return Asset :: Return Asset Description: Users initiate asset returns. The system validates the request, stages it for approval, and updates the status to “Returned” upon approval. Inpu… || FR-20 (0.44) Return Outcome Finalization :: Return Outcome Finalization Description: The system ensures every return action results in a final and unambiguous operational state. Input: Returned state, approval-proc…
+
+ISOLATED-33bad7fff5d4 | isolated | unsupported
+  subj: Admin
+  q:    What documented connection should exist between the Admin actor and the deletion approval step in FR-06?
+  draft:The solution must identify which admin role is authorized to approve deletion requests for obsolete assets.
+  ev:   FRBLOCK-006
+  ref:  FR-22 (0.45) Authorize Obsolete Asset Deletion Requests :: Authorize Obsolete Asset Deletion Requests Description: The system permits obsolete asset deletion requests only from authorized actors. Input: Deletion request, requeste… || FR-21 (0.35) Delete Obsolete Asset :: Delete Obsolete Asset Description: Users request removal of obsolete assets. The system validates the request, stages it for admin approval, and deletes the record upon a…
+
+ISOLATED-ede671a617dc | isolated | covered
+  subj: User
+  q:    Is the User actor intended to submit deletion requests, and what connection to the Deletion Request input must be documented?
+  draft:The solution must define the user role permitted to submit deletion requests for obsolete assets.
+  ev:   FRBLOCK-006
+  ref:  FR-22 (0.45) Authorize Obsolete Asset Deletion Requests :: Authorize Obsolete Asset Deletion Requests Description: The system permits obsolete asset deletion requests only from authorized actors. Input: Deletion request, requeste… || FR-21 (0.29) Delete Obsolete Asset :: Delete Obsolete Asset Description: Users request removal of obsolete assets. The system validates the request, stages it for admin approval, and deletes the record upon a…
+
+OPERATION-d5ba3481d03e | operation | retained
+  subj: Validates the Request
+  q:    What validation rules and failure outcomes apply when the system validates a deletion request?
+  draft:The solution must define validation rules and failure handling for deletion requests before they are staged.
+  ev:   FRBLOCK-006
+  ref:  FR-06 (0.34) Asset Modification Validation Failure Handling :: Asset Modification Validation Failure Handling Description: The system provides a clear failure outcome when asset modification validation fails and prevents invalid modi… || FR-02 (0.33) Asset Registration Validation Failure Handling :: Asset Registration Validation Failure Handling Description: The system rejects asset registration submissions that fail required validation checks and prevents invalid as…
+
+OPERATION-708054f5e4c9 | operation | covered
+  subj: Staged for Admin Approval
+  q:    What operation transitions a validated deletion request into the staged-for-admin-approval state?
+  draft:The solution must define the staging operation and pending approval state for validated deletion requests.
+  ev:   FRBLOCK-006
+  ref:  FR-36 (0.28) Define Valid Approval Process State Transitions :: Define Valid Approval Process State Transitions Description: The system restricts approval processes to valid state transitions only. Input: Approval process identifier, … || FR-22 (0.24) Authorize Obsolete Asset Deletion Requests :: Authorize Obsolete Asset Deletion Requests Description: The system permits obsolete asset deletion requests only from authorized actors. Input: Deletion request, requeste…
+
+OPERATION-d36187c6c802 | operation | covered
+  subj: Deletes the Record upon Approval
+  q:    What operation is triggered after admin approval, and does it hard-delete or mark the asset record as deleted?
+  draft:The solution must define the approved deletion operation and its effect on the asset record.
+  ev:   FRBLOCK-006
+  ref:  FR-21 (0.49) Delete Obsolete Asset :: Delete Obsolete Asset Description: Users request removal of obsolete assets. The system validates the request, stages it for admin approval, and deletes the record upon a… || FR-67 (0.49) Delete User :: Delete User Description: Administrators remove user accounts. The system validates the request, stages it for senior-admin approval, and deletes the record upon approval.…
+
+OPERATION-9a439ea4fd4a | operation | retained
+  subj: Deleted
+  q:    What does the 'Deleted' status mean for the removed asset record, and which operation sets it?
+  draft:The solution must define the business meaning and lifecycle of the 'Deleted' status.
+  ev:   FRBLOCK-006
+  ref:  FR-21 (0.31) Delete Obsolete Asset :: Delete Obsolete Asset Description: Users request removal of obsolete assets. The system validates the request, stages it for admin approval, and deletes the record upon a… || FR-67 (0.31) Delete User :: Delete User Description: Administrators remove user accounts. The system validates the request, stages it for senior-admin approval, and deletes the record upon approval.…
+
+ISOLATED-957727eced12 | isolated | retained
+  subj: Rejected
+  q:    Should the deletion workflow document a rejected outcome when admin approval is not granted?
+  draft:The solution must specify the outcome and next action when an admin does not approve a deletion request.
+  ev:   FRBLOCK-006
+  ref:  FR-23 (0.31) Obsolete Asset Deletion Block Resolution :: Obsolete Asset Deletion Block Resolution Description: The system provides a clear blocked reason and next allowed action when an obsolete asset cannot be deleted. Input: … || FR-76 (0.24) Approve Asset Request :: Approve Asset Request Description: Administrators review and approve or reject asset requests. The system updates the request status and notifies users. Input: Approval f…
+
+ISOLATED-c8b4649552bc | isolated | covered
+  subj: Senior Admin
+  q:    Does FR-06 require senior-admin approval for deletion requests, or is any admin sufficient?
+  draft:The solution must clarify whether deletion approval requires a senior admin role or any admin role.
+  ev:   FRBLOCK-006
+  ref:  FR-67 (0.30) Delete User :: Delete User Description: Administrators remove user accounts. The system validates the request, stages it for senior-admin approval, and deletes the record upon approval.… || FR-72 (0.26) Replace System Administrator :: Replace System Administrator Description: Senior administrators replace the current system admin. The system validates the request, stages it for top-level approval, and …
+
+ISOLATED-b16c4e46d5b9 | isolated | retained
+  subj: Administrator
+  q:    Does the FR need to document the Administrator's authorization or permission check before creating new user accounts?
+  draft:The system may need to verify that the acting user has Administrator privileges before allowing new-user creation.
+  ev:   FRBLOCK-007
+  ref:  FR-71 (0.25) Admin Permission Change Authorization :: Admin Permission Change Authorization Description: The system permits admin permission changes only when the acting user has sufficient authority. Input: Permission chang… || FR-78 (0.25) Identity Verification Before Authorization Enforcement :: Identity Verification Before Authorization Enforcement Description: The system verifies user identity before applying permission checks to any action. Input: User identit…
+
+OPERATION-6dad9e4442d3 | operation | covered
+  subj: Create New User Accounts
+  q:    Does the create operation need a documented update or deactivation operation to manage user lifecycle after activation?
+  draft:The system may need a documented operation to update or deactivate user accounts, but this is not mandatory.
+  ev:   FRBLOCK-007
+  ref:  FR-58 (0.34) Add User :: Add User Description: Administrators create new user accounts. The system validates the form, stores the user, and sends an activation email. Input: New-user form (userna… || FR-35 (0.17) Roll Back Approved Asset Updates on Failure :: Roll Back Approved Asset Updates on Failure Description: The system marks an approved asset operation as failed and prevents inconsistent final asset state when the final…
+
+ISOLATED-c5dde45e21d1 | isolated | unsupported
+  subj: Send Activation Email
+  q:    Does the Send Activation Email function need a documented connection to an email template or delivery service in this FR?
+  draft:The system may need to document the activation email's sender, template, and delivery channel.
+  ev:   FRBLOCK-007
+  ref:  FR-55 (0.53) Email Delivery Auditing for Account Activation :: Email Delivery Auditing for Account Activation Description: The system records activation email delivery attempts and outcomes for account activation traceability. Input:… || FR-52 (0.39) Send Email Notification :: Send Email Notification Description: The system automatically sends email notifications for events such as registration, profile updates, approval outcomes, status change…
+
+OPERATION-0248a93d5d86 | operation | retained
+  subj: Validate New-User Form
+  q:    Should the validation operation specify which fields are mandatory and what format rules apply to the new-user form?
+  draft:The system may need to document required-field and format validation rules for the new-user form.
+  ev:   FRBLOCK-007
+  ref:  FR-02 (0.28) Asset Registration Validation Failure Handling :: Asset Registration Validation Failure Handling Description: The system rejects asset registration submissions that fail required validation checks and prevents invalid as… || FR-58 (0.27) Add User :: Add User Description: Administrators create new user accounts. The system validates the form, stores the user, and sends an activation email. Input: New-user form (userna…
+
+ISOLATED-724f07c00d89 | isolated | covered
+  subj: Admin
+  q:    Should the Admin actor be explicitly connected to the profile-edit approval step, or is the phrase 'admin approval' sufficient?
+  draft:The system must route staged profile edits to an Admin for approval before the user record is updated.
+  ev:   FRBLOCK-008
+  ref:  FR-61 (0.38) Edit User Profile :: Edit User Profile Description: Users edit their own profiles. The system validates changes, stages them for admin approval, and updates the record upon approval. Input: P… || FR-62 (0.36) Authorize User Profile Edits to Self :: Authorize User Profile Edits to Self Description: The system ensures users can submit profile edits only for their own accounts unless explicitly authorized otherwise. In…
+
+ISOLATED-e9e8dfe097d3 | isolated | covered
+  subj: User
+  q:    Should the User actor be documented as the initiator of the profile-edit workflow, or is the plural 'Users' sufficient?
+  draft:Users must be able to initiate editing of their own profile.
+  ev:   FRBLOCK-008
+  ref:  FR-61 (0.41) Edit User Profile :: Edit User Profile Description: Users edit their own profiles. The system validates changes, stages them for admin approval, and updates the record upon approval. Input: P… || FR-62 (0.39) Authorize User Profile Edits to Self :: Authorize User Profile Edits to Self Description: The system ensures users can submit profile edits only for their own accounts unless explicitly authorized otherwise. In…
+
+OPERATION-341281d8626e | operation | covered
+  subj: Edit User Profile
+  q:    Does the Edit User Profile operation require an authorization rule that the authenticated user may edit only their own profile?
+  draft:The system must authorize profile-edit requests only for the authenticated user's own profile.
+  ev:   FRBLOCK-008
+  ref:  FR-62 (0.53) Authorize User Profile Edits to Self :: Authorize User Profile Edits to Self Description: The system ensures users can submit profile edits only for their own accounts unless explicitly authorized otherwise. In… || FR-61 (0.48) Edit User Profile :: Edit User Profile Description: Users edit their own profiles. The system validates changes, stages them for admin approval, and updates the record upon approval. Input: P…
+
+OPERATION-8f9b6d7a98f0 | operation | covered
+  subj: Validate changes
+  q:    Which validation rules must be applied to the profile-edit form fields, and what is the required system response when validation fails?
+  draft:The system must validate name, username, email, and phone before staging profile changes for approval.
+  ev:   FRBLOCK-008
+  ref:  FR-61 (0.41) Edit User Profile :: Edit User Profile Description: Users edit their own profiles. The system validates changes, stages them for admin approval, and updates the record upon approval. Input: P… || FR-66 (0.24) Query User Details :: Query User Details Description: Users search for user information by username, email, or department. Input: Search criteria (username, email, department). Output: Detaile…
+
+OPERATION-fc9d11336064 | operation | covered
+  subj: Stage for Admin Approval
+  q:    What pending state and admin-approval path must be documented for staged profile changes?
+  draft:The system must hold validated profile changes in a pending-approval state until an Admin approves them.
+  ev:   FRBLOCK-008
+  ref:  FR-61 (0.34) Edit User Profile :: Edit User Profile Description: Users edit their own profiles. The system validates changes, stages them for admin approval, and updates the record upon approval. Input: P… || FR-64 (0.34) Notify Profile Change Failure :: Notify Profile Change Failure Description: The system informs users when their profile change cannot be staged for approval and removes invalid pending requests. Input: P…
+
+OPERATION-c0abc85e62f9 | operation | covered
+  subj: Update record upon approval
+  q:    When an admin approves staged changes, what record fields must be updated and what status transition must occur?
+  draft:The system must apply the approved staged profile changes to the user record and set the record status to 'Modified'.
+  ev:   FRBLOCK-008
+  ref:  FR-61 (0.36) Edit User Profile :: Edit User Profile Description: Users edit their own profiles. The system validates changes, stages them for admin approval, and updates the record upon approval. Input: P… || FR-05 (0.31) Modify Asset :: Modify Asset Description: Users edit registered asset details and submit the change. The system validates the data, stages the change for admin approval, and updates the …
+
+OPERATION-221783513b36 | operation | retained
+  subj: Query User Details
+  q:    What result should the Query User Details operation return when the search criteria match zero users or more than one user?
+  draft:The Query User Details operation should define its return behavior for zero, one, and multiple matching users.
+  ev:   FRBLOCK-009
+  ref:  FR-09 (0.34) Query Asset Details :: Query Asset Details Description: Users search for asset details using name, type, or ID. The system returns matching records. Input: Search criteria (name, type, ID). Out… || FR-10 (0.34) Asset Details Search Failure Handling :: Asset Details Search Failure Handling Description: The system provides deterministic outcomes for asset searches when criteria are invalid, unusable, or produce no matchi…
+
+OPERATION-8b23751e0fd5 | operation | unresolved
+  subj: Search Criteria
+  q:    Are username, email, and department all optional, or are certain combinations required to execute a user-details query?
+  draft:The system should accept username, email, and/or department as search criteria and document any mandatory combination.
+  ev:   FRBLOCK-009
+  ref:  FR-66 (0.78) Query User Details :: Query User Details Description: Users search for user information by username, email, or department. Input: Search criteria (username, email, department). Output: Detaile… || FR-58 (0.33) Add User :: Add User Description: Administrators create new user accounts. The system validates the form, stores the user, and sends an activation email. Input: New-user form (userna…
+
+OPERATION-24e3fbca4beb | operation | unsupported
+  subj: Detailed User Information
+  q:    Which fields in Detailed User Information are mandatory in the query output, and are sensitive fields such as phone and permission level restricted by…
+  draft:The query should return the specified detailed user information fields, with sensitive fields subject to the requester's authorization.
+  ev:   FRBLOCK-009
+  ref:  FR-66 (0.40) Query User Details :: Query User Details Description: Users search for user information by username, email, or department. Input: Search criteria (username, email, department). Output: Detaile… || FR-09 (0.23) Query Asset Details :: Query Asset Details Description: Users search for asset details using name, type, or ID. The system returns matching records. Input: Search criteria (name, type, ID). Out…
+
+ISOLATED-3e58f0e17748 | isolated | retained
+  subj: Senior Admin
+  q:    Does the FR need to document how the 'Senior Admin' approval role is identified and distinguished from the 'Administrators' who initiate deletion?
+  draft:Define the senior-admin approver role, how it is resolved, and its authority to approve user deletion requests.
+  ev:   FRBLOCK-010
+  ref:  FR-67 (0.29) Delete User :: Delete User Description: Administrators remove user accounts. The system validates the request, stages it for senior-admin approval, and deletes the record upon approval.… || FR-72 (0.24) Replace System Administrator :: Replace System Administrator Description: Senior administrators replace the current system admin. The system validates the request, stages it for top-level approval, and …
+
+ISOLATED-5e5d6c90b522 | isolated | covered
+  subj: Senior-admin approval required
+  q:    Should the FR document whether senior-admin approval is a mandatory precondition that must be recorded before the delete operation can run?
+  draft:Require a recorded senior-admin approval as a precondition to executing user record deletion.
+  ev:   FRBLOCK-010
+  ref:  FR-67 (0.39) Delete User :: Delete User Description: Administrators remove user accounts. The system validates the request, stages it for senior-admin approval, and deletes the record upon approval.… || FR-72 (0.27) Replace System Administrator :: Replace System Administrator Description: Senior administrators replace the current system admin. The system validates the request, stages it for top-level approval, and …
+
+OPERATION-32a2091203d4 | operation | unsupported
+  subj: Validate deletion request
+  q:    What validation rules and failure outcomes must apply when the system validates a user deletion request before staging it for approval?
+  draft:Specify validation criteria and rejection behavior for user deletion requests before they are staged for approval.
+  ev:   FRBLOCK-010
+  ref:  FR-22 (0.27) Authorize Obsolete Asset Deletion Requests :: Authorize Obsolete Asset Deletion Requests Description: The system permits obsolete asset deletion requests only from authorized actors. Input: Deletion request, requeste… || FR-06 (0.25) Asset Modification Validation Failure Handling :: Asset Modification Validation Failure Handling Description: The system provides a clear failure outcome when asset modification validation fails and prevents invalid modi…
+
+OPERATION-b9d92b5b9e9c | operation | retained
+  subj: Stage deletion request for senior-admin approval
+  q:    Does staging a deletion request require creating a pending approval item, and what status should the request have while awaiting senior-admin approval…
+  draft:Define the pending-approval state and staging behavior for user deletion requests awaiting senior-admin action.
+  ev:   FRBLOCK-010
+  ref:  FR-67 (0.32) Delete User :: Delete User Description: Administrators remove user accounts. The system validates the request, stages it for senior-admin approval, and deletes the record upon approval.… || FR-68 (0.27) User Deletion Eligibility Constraints :: User Deletion Eligibility Constraints Description: The system prevents user deletion when the target user has activation, pending approval, transfer, return, or dependenc…
+
+OPERATION-cb8d7532ff04 | operation | unresolved
+  subj: Delete user record upon approval
+  q:    What deletion semantics are required after approval: hard delete, soft delete, or status change to 'Deleted'?
+  draft:Clarify whether approved deletion removes the user record, marks it Deleted, or both, and define resulting data retention.
+  ev:   FRBLOCK-010
+  ref:  FR-67 (0.42) Delete User :: Delete User Description: Administrators remove user accounts. The system validates the request, stages it for senior-admin approval, and deletes the record upon approval.… || FR-21 (0.38) Delete Obsolete Asset :: Delete Obsolete Asset Description: Users request removal of obsolete assets. The system validates the request, stages it for admin approval, and deletes the record upon a…
+
+ISOLATED-14a701f1d88e | isolated | unsupported
+  subj: Senior Admin
+  q:    How does the Senior Admin actor receive or access a staged workflow configuration to provide approval, and what documented connection exists between t…
+  draft:The system must provide a documented mechanism for Senior Admin to review and approve or reject a staged workflow configuration.
+  ev:   FRBLOCK-011
+  ref:  FR-44 (0.32) Configure Approval Workflow :: Configure Approval Workflow Description: Administrators define workflows. The system validates configuration details, stages the setup for senior-admin approval, and acti… || FR-76 (0.25) Approve Asset Request :: Approve Asset Request Description: Administrators review and approve or reject asset requests. The system updates the request status and notifies users. Input: Approval f…
+
+OPERATION-56bc2510007a | operation | unsupported
+  subj: Stage Setup for Approval
+  q:    What specific operation does the system perform when staging the setup for approval—does it create a pending approval record, update the workflow stat…
+  draft:The system must create a pending approval record and set the workflow configuration to a pending state when staging for senior-admin approval.
+  ev:   FRBLOCK-011
+  ref:  FR-44 (0.33) Configure Approval Workflow :: Configure Approval Workflow Description: Administrators define workflows. The system validates configuration details, stages the setup for senior-admin approval, and acti… || FR-47 (0.21) Edit Approval Workflow :: Edit Approval Workflow Description: Administrators modify existing workflows. The system validates changes, stages them for senior-admin approval, and updates the workflo…
+
+OPERATION-3708a8a4d2ac | operation | unsupported
+  subj: Activate Workflow
+  q:    Upon senior-admin approval, what operation activates the workflow—is it updating the workflow status to active, enabling it for use, or publishing the…
+  draft:The system must update the workflow status to active and enable the workflow for use upon senior-admin approval.
+  ev:   FRBLOCK-011
+  ref:  FR-44 (0.49) Configure Approval Workflow :: Configure Approval Workflow Description: Administrators define workflows. The system validates configuration details, stages the setup for senior-admin approval, and acti… || FR-29 (0.38) Approval Initiation Workflow Configuration Validation :: Approval Initiation Workflow Configuration Validation Description: The system prevents approval initiation when the required active workflow configuration is unavailable …
+
+ISOLATED-83757b27b91c | isolated | covered
+  subj: Senior-admin approval required
+  q:    Is 'Senior-admin approval required' a distinct state or condition that the workflow configuration enters after validation and before activation, and h…
+  draft:The system must represent a pending-approval state for workflow configurations that are staged and awaiting senior-admin approval.
+  ev:   FRBLOCK-011
+  ref:  FR-44 (0.33) Configure Approval Workflow :: Configure Approval Workflow Description: Administrators define workflows. The system validates configuration details, stages the setup for senior-admin approval, and acti… || FR-45 (0.32) Approval Workflow Activation Fallback :: Approval Workflow Activation Fallback Description: The system prevents workflow configuration activation failure from disrupting existing approval operations. Input: Work…
+
+OPERATION-d1e4bd1519a0 | operation | unsupported
+  subj: Validate Configuration Details
+  q:    What validation operation is performed on the configuration details—e.g., checking node order, approvers, and conditions—and what happens if validatio…
+  draft:The system must validate the workflow configuration details and reject invalid configurations before staging for approval.
+  ev:   FRBLOCK-011
+  ref:  FR-44 (0.46) Configure Approval Workflow :: Configure Approval Workflow Description: Administrators define workflows. The system validates configuration details, stages the setup for senior-admin approval, and acti… || FR-29 (0.26) Approval Initiation Workflow Configuration Validation :: Approval Initiation Workflow Configuration Validation Description: The system prevents approval initiation when the required active workflow configuration is unavailable …
+
+OPERATION-d28b19313156 | operation | unsupported
+  subj: Validate approval-start request
+  q:    What validation criteria and failure handling must the system apply when validating an approval-start request?
+  draft:The system shall validate the approval-start request against required asset ID, operation type, and user authorization before staging it for admin review.
+  ev:   FRBLOCK-012
+  ref:  FR-27 (0.35) Start Approval Process :: Start Approval Process Description: Users initiate approval processes for registration, usage, transfer, return, modification, deletion, or related operations. The system… || FR-96 (0.32) Validate Asset Change Type Against Allowed Types :: Validate Asset Change Type Against Allowed Types Description: The system validates each asset change type against the configured allowed set before recording or processin…
+
+OPERATION-b5b29818d27f | operation | unsupported
+  subj: Request staged for admin review
+  q:    How is a validated approval-start request staged for admin review, and what information must be available to the reviewer?
+  draft:The system shall stage validated approval-start requests for admin review and make the asset ID, operation type, and requester information available to the reviewer.
+  ev:   FRBLOCK-012
+  ref:  FR-27 (0.37) Start Approval Process :: Start Approval Process Description: Users initiate approval processes for registration, usage, transfer, return, modification, deletion, or related operations. The system… || FR-76 (0.22) Approve Asset Request :: Approve Asset Request Description: Administrators review and approve or reject asset requests. The system updates the request status and notifies users. Input: Approval f…
+
+OPERATION-93b036c2ad5b | operation | unsupported
+  subj: Operation executed upon approval
+  q:    What events or status changes trigger execution of the requested operation after approval, and how are execution failures handled?
+  draft:The system shall execute the approved registration, usage, transfer, or return operation upon approval and shall not execute it upon rejection or cancellation.
+  ev:   FRBLOCK-012
+  ref:  FR-27 (0.36) Start Approval Process :: Start Approval Process Description: Users initiate approval processes for registration, usage, transfer, return, modification, deletion, or related operations. The system… || FR-32 (0.29) Recover From Approval Execution Failures :: Recover From Approval Execution Failures Description: The system resolves failed approval executions without leaving inconsistent operation or approval states. Input: App…
+
+OPERATION-2b96ddcf61b1 | operation | unsupported
+  subj: Approval-process record
+  q:    What fields and lifecycle states must the approval-process record contain?
+  draft:The system shall create an approval-process record for each approval-start request containing the asset ID, operation type, requester, current status, and review outcome.
+  ev:   FRBLOCK-012
+  ref:  FR-27 (0.43) Start Approval Process :: Start Approval Process Description: Users initiate approval processes for registration, usage, transfer, return, modification, deletion, or related operations. The system… || FR-28 (0.41) Approval Process Record Failure Handling :: Approval Process Record Failure Handling Description: The system prevents inconsistent operation outcomes when an approval-process record cannot be created or established…
+
+OPERATION-a52fa15b6dfc | operation | retained
+  subj: Updated operation status
+  q:    Which operation statuses must be supported and how do they transition as an approval process progresses?
+  draft:The system shall update the operation status to reflect pending review, approval, rejection, or completion of the requested operation.
+  ev:   FRBLOCK-012
+  ref:  FR-27 (0.32) Start Approval Process :: Start Approval Process Description: Users initiate approval processes for registration, usage, transfer, return, modification, deletion, or related operations. The system… || FR-24 (0.27) Operation Eligibility by Current Asset Status :: Operation Eligibility by Current Asset Status Description: The system validates whether an asset is eligible for a requested operation based on current asset status befor…
+
+ISOLATED-db8ac57b8543 | isolated | covered
+  subj: Administrator
+  q:    Does the FR need to document the Administrator actor as the reviewer of staged approval requests?
+  draft:The system shall make staged approval requests available to Administrators for review.
+  ev:   FRBLOCK-012
+  ref:  FR-76 (0.22) Approve Asset Request :: Approve Asset Request Description: Administrators review and approve or reject asset requests. The system updates the request status and notifies users. Input: Approval f… || FR-03 (0.20) Asset Registration Review Notification Failure Recovery :: Asset Registration Review Notification Failure Recovery Description: If administrator review notification fails after asset registration artifacts are created, the system…
+
+ISOLATED-4a224f68464a | isolated | retained
+  subj: Pending Operation Status
+  q:    Should the FR define when an operation is in Pending status while an approval process is awaiting review?
+  draft:The system shall set the operation status to Pending while the approval process is awaiting administrator review.
+  ev:   FRBLOCK-012
+  ref:  FR-27 (0.28) Start Approval Process :: Start Approval Process Description: Users initiate approval processes for registration, usage, transfer, return, modification, deletion, or related operations. The system… || FR-39 (0.26) Query Approval Status :: Query Approval Status Description: Users check the status of asset or user operations such as pending, in progress, approved, rejected, or failed. Input: Search criteria …
+
+ISOLATED-911630959b5e | isolated | covered
+  subj: Approved Operation Status
+  q:    Should the FR define the Approved operation status after an administrator approves the request?
+  draft:The system shall mark the operation status as Approved when the administrator approves the request and the operation is executed.
+  ev:   FRBLOCK-012
+  ref:  FR-34 (0.33) Compensating Recovery When Approved Actions Cannot Be C… :: Compensating Recovery When Approved Actions Cannot Be Completed Description: When an approved operation cannot be completed, the system reverts the operation state and co… || FR-35 (0.25) Roll Back Approved Asset Updates on Failure :: Roll Back Approved Asset Updates on Failure Description: The system marks an approved asset operation as failed and prevents inconsistent final asset state when the final…
+
+ISOLATED-42f3bcbd7ee5 | isolated | covered
+  subj: Pending Operation Status
+  q:    Does the pending status apply to all asset and user operations, or only certain operation types, and should the FR document which operations can be pe…
+  draft:The system shall identify which asset or user operation types can have a pending approval status.
+  ev:   FRBLOCK-013
+  ref:  FR-39 (0.38) Query Approval Status :: Query Approval Status Description: Users check the status of asset or user operations such as pending, in progress, approved, rejected, or failed. Input: Search criteria … || FR-12 (0.23) Asset Identifier Validation for Operations :: Asset Identifier Validation for Operations Description: The system validates asset identifiers before asset-related operations and prevents downstream actions from using …
+
+ISOLATED-e9103c4532c9 | isolated | retained
+  subj: In Progress Operation Status
+  q:    Should the FR specify what causes an operation to enter the in progress state and whether that state is available for both asset and user operations?
+  draft:The system shall define the entry condition for an operation to be in progress.
+  ev:   FRBLOCK-013
+  ref:  FR-39 (0.35) Query Approval Status :: Query Approval Status Description: Users check the status of asset or user operations such as pending, in progress, approved, rejected, or failed. Input: Search criteria … || FR-16 (0.22) Transfer Status Lifecycle :: Transfer Status Lifecycle Description: The system ensures transfer operations progress through a defined status lifecycle visible to authorized users. Input: Transfer req…
+
+ISOLATED-a4f24f32cb8c | isolated | covered
+  subj: Approved Operation Status
+  q:    Does approved status require a documented approval action or rule, and should the FR state which roles can query or rely on it?
+  draft:The system shall define the approval action or rule that sets an operation to approved.
+  ev:   FRBLOCK-013
+  ref:  FR-34 (0.31) Compensating Recovery When Approved Actions Cannot Be C… :: Compensating Recovery When Approved Actions Cannot Be Completed Description: When an approved operation cannot be completed, the system reverts the operation state and co… || FR-35 (0.30) Roll Back Approved Asset Updates on Failure :: Roll Back Approved Asset Updates on Failure Description: The system marks an approved asset operation as failed and prevents inconsistent final asset state when the final…
+
+ISOLATED-adb9b108359a | isolated | retained
+  subj: Rejected Operation Status
+  q:    Should the FR document why an operation may be rejected and whether rejected status is queryable for both asset and user operations?
+  draft:The system shall define the conditions under which an operation is rejected.
+  ev:   FRBLOCK-013
+  ref:  FR-39 (0.32) Query Approval Status :: Query Approval Status Description: Users check the status of asset or user operations such as pending, in progress, approved, rejected, or failed. Input: Search criteria … || FR-38 (0.28) Provide Rejection Finalization for Requests :: Provide Rejection Finalization for Requests Description: The system ensures every rejected request results in a clear and final operational outcome. Input: Rejected appro…
+
+OPERATION-bc3c4ea6b068 | operation | covered
+  subj: Query Approval Status
+  q:    Should the Query Approval Status operation support filtering by operation type in addition to asset ID and user ID, so users can retrieve only asset o…
+  draft:The system shall allow users to filter approval status queries by asset ID, operation type, and user ID.
+  ev:   FRBLOCK-013
+  ref:  FR-39 (0.43) Query Approval Status :: Query Approval Status Description: Users check the status of asset or user operations such as pending, in progress, approved, rejected, or failed. Input: Search criteria … || FR-40 (0.35) Approval Status Retrieval :: Approval Status Retrieval Description: The system allows stakeholders to retrieve the current approval decision state for a specific request. Input: Approval status reque…
+
+ISOLATED-e3ada15f48b2 | isolated | covered
+  subj: Administrator
+  q:    Is the isolated actor 'Administrator' the same role as the 'Administrators' who modify existing workflows in FR-14, and should the FR document that th…
+  draft:The workflow-edit form should be available to the Administrator actor who performs workflow modifications.
+  ev:   FRBLOCK-014
+  ref:  FR-47 (0.46) Edit Approval Workflow :: Edit Approval Workflow Description: Administrators modify existing workflows. The system validates changes, stages them for senior-admin approval, and updates the workflo… || FR-45 (0.26) Approval Workflow Activation Fallback :: Approval Workflow Activation Fallback Description: The system prevents workflow configuration activation failure from disrupting existing approval operations. Input: Work…
+
+ISOLATED-fb4d19aab360 | isolated | covered
+  subj: Senior Admin
+  q:    Is the isolated actor 'Senior Admin' the same role as the 'senior-admin' referenced in FR-14, and should FR-14 document that this actor performs the a…
+  draft:The senior-admin actor who approves staged workflow edits should be explicitly identified.
+  ev:   FRBLOCK-014
+  ref:  FR-47 (0.26) Edit Approval Workflow :: Edit Approval Workflow Description: Administrators modify existing workflows. The system validates changes, stages them for senior-admin approval, and updates the workflo… || FR-44 (0.25) Configure Approval Workflow :: Configure Approval Workflow Description: Administrators define workflows. The system validates configuration details, stages the setup for senior-admin approval, and acti…
+
+OPERATION-6f552f59b619 | operation | unsupported
+  subj: Validate changes
+  q:    Should the 'Validate changes' operation define what validation failures prevent staging, and how those failures are reported before the workflow is se…
+  draft:Invalid workflow modifications should not be staged for senior-admin approval, and validation failure should be documented.
+  ev:   FRBLOCK-014
+  ref:  FR-47 (0.27) Edit Approval Workflow :: Edit Approval Workflow Description: Administrators modify existing workflows. The system validates changes, stages them for senior-admin approval, and updates the workflo… || FR-44 (0.25) Configure Approval Workflow :: Configure Approval Workflow Description: Administrators define workflows. The system validates configuration details, stages the setup for senior-admin approval, and acti…
+
+OPERATION-bc681d787c40 | operation | unsupported
+  subj: Stage for senior-admin approval
+  q:    Does staging create a persistent pending-approval record for the modified workflow, or is it only a transient step before the senior-admin acts?
+  draft:Staged workflow edits should be retained with a pending-approval status until senior-admin approval or rejection.
+  ev:   FRBLOCK-014
+  ref:  FR-47 (0.33) Edit Approval Workflow :: Edit Approval Workflow Description: Administrators modify existing workflows. The system validates changes, stages them for senior-admin approval, and updates the workflo… || FR-44 (0.26) Configure Approval Workflow :: Configure Approval Workflow Description: Administrators define workflows. The system validates configuration details, stages the setup for senior-admin approval, and acti…
+
+OPERATION-99ef3818d8be | operation | unsupported
+  subj: Update workflow upon approval
+  q:    Is the workflow update operation triggered exclusively by senior-admin approval, and how should staged changes be handled if approval is not granted?
+  draft:The system should apply staged workflow changes only after senior-admin approval and define non-approval handling.
+  ev:   FRBLOCK-014
+  ref:  FR-47 (0.34) Edit Approval Workflow :: Edit Approval Workflow Description: Administrators modify existing workflows. The system validates changes, stages them for senior-admin approval, and updates the workflo… || FR-44 (0.32) Configure Approval Workflow :: Configure Approval Workflow Description: Administrators define workflows. The system validates configuration details, stages the setup for senior-admin approval, and acti…
+
+OPERATION-cbfa2784d062 | operation | covered
+  subj: Generate Report
+  q:    Does the Generate Report operation need a documented step for delivering the generated file to the user?
+  draft:The system should deliver the generated report file to the requesting user.
+  ev:   FRBLOCK-015
+  ref:  FR-82 (0.48) Generate Report :: Generate Report Description: Users create reports on assets, users, or management data. The system validates parameters, generates the report, and stores the data. Input:… || FR-84 (0.32) Export Report :: Export Report Description: Users export existing reports. The system validates the request, prepares the file, and provides a download link. Input: Selected report and ex…
+
+OPERATION-8de292cc0fc2 | operation | retained
+  subj: Validate Parameters
+  q:    Does the Validate Parameters operation need a documented failure response?
+  draft:The system should reject invalid report parameters with a clear error.
+  ev:   FRBLOCK-015
+  ref:  FR-83 (0.46) Report Parameter Failure Handling :: Report Parameter Failure Handling Description: The system records a clear fallback outcome when report generation inputs are missing or invalid. Input: Report parameters,… || FR-82 (0.29) Generate Report :: Generate Report Description: Users create reports on assets, users, or management data. The system validates parameters, generates the report, and stores the data. Input:…
+
+OPERATION-a11d4f07827f | operation | covered
+  subj: Store Report Data
+  q:    Does the Store Report Data operation need a documented retrieval or retention rule?
+  draft:The system should retain stored report data for later retrieval.
+  ev:   FRBLOCK-015
+  ref:  FR-82 (0.43) Generate Report :: Generate Report Description: Users create reports on assets, users, or management data. The system validates parameters, generates the report, and stores the data. Input:… || FR-83 (0.41) Report Parameter Failure Handling :: Report Parameter Failure Handling Description: The system records a clear fallback outcome when report generation inputs are missing or invalid. Input: Report parameters,…
+
+ISOLATED-f37902da5a23 | isolated | unsupported
+  subj: User
+  q:    Does the User actor require a documented permission check before report creation?
+  draft:The system should verify the user's authorization before generating reports.
+  ev:   FRBLOCK-015
+  ref:  FR-78 (0.34) Identity Verification Before Authorization Enforcement :: Identity Verification Before Authorization Enforcement Description: The system verifies user identity before applying permission checks to any action. Input: User identit… || FR-71 (0.22) Admin Permission Change Authorization :: Admin Permission Change Authorization Description: The system permits admin permission changes only when the acting user has sufficient authority. Input: Permission chang…
+
+OPERATION-5667d580877a | operation | unsupported
+  subj: Export Report
+  q:    Does the export operation apply only to existing reports, or can users also export reports in draft or otherwise unavailable states?
+  draft:System shall limit report export to reports that exist and are available to the user.
+  ev:   FRBLOCK-016
+  ref:  FR-84 (0.51) Export Report :: Export Report Description: Users export existing reports. The system validates the request, prepares the file, and provides a download link. Input: Selected report and ex… || FR-85 (0.34) Generate Exportable Reports for Assets and Users :: Generate Exportable Reports for Assets and Users Description: The system provides exportable report outputs based on selected data criteria and operation types. Input: Re…
+
+OPERATION-7d40820a4dfe | operation | covered
+  subj: Validate Request
+  q:    What validation rules must the export request satisfy before the system prepares the file?
+  draft:System shall validate the selected report and requested export format before preparing the export file.
+  ev:   FRBLOCK-016
+  ref:  FR-84 (0.57) Export Report :: Export Report Description: Users export existing reports. The system validates the request, prepares the file, and provides a download link. Input: Selected report and ex… || FR-87 (0.46) Export Asset Data :: Export Asset Data Description: Users export selected asset data. The system validates the request, generates the file, and provides a download link. Input: Selected asset…
+
+OPERATION-f85309d51fe8 | operation | covered
+  subj: Prepare File
+  q:    What format-specific preparation is required for CSV versus Excel exports?
+  draft:System shall prepare the export file according to the selected export format.
+  ev:   FRBLOCK-016
+  ref:  FR-87 (0.61) Export Asset Data :: Export Asset Data Description: Users export selected asset data. The system validates the request, generates the file, and provides a download link. Input: Selected asset… || FR-84 (0.57) Export Report :: Export Report Description: Users export existing reports. The system validates the request, prepares the file, and provides a download link. Input: Selected report and ex…
+
+OPERATION-d37190e3c728 | operation | unsupported
+  subj: Provide Download Link
+  q:    What access, expiration, and reuse rules apply to the download link?
+  draft:System shall provide a secure download link for the prepared export file.
+  ev:   FRBLOCK-016
+  ref:  FR-87 (0.40) Export Asset Data :: Export Asset Data Description: Users export selected asset data. The system validates the request, generates the file, and provides a download link. Input: Selected asset… || FR-84 (0.39) Export Report :: Export Report Description: Users export existing reports. The system validates the request, prepares the file, and provides a download link. Input: Selected report and ex…
+
+ISOLATED-1622a28977c8 | isolated | unsupported
+  subj: Validate Format and Data
+  q:    Should validation of format and data be part of the export request validation described in FR-16?
+  draft:System shall validate both the requested export format and the report data before preparing the file.
+  ev:   FRBLOCK-016
+  ref:  FR-87 (0.48) Export Asset Data :: Export Asset Data Description: Users export selected asset data. The system validates the request, generates the file, and provides a download link. Input: Selected asset… || FR-84 (0.43) Export Report :: Export Report Description: Users export existing reports. The system validates the request, prepares the file, and provides a download link. Input: Selected report and ex…
+
+ISOLATED-6c6c597c46ef | isolated | unresolved
+  subj: Admin
+  q:    Are Admin users included among the Users who can export existing reports?
+  draft:System shall define whether Admin users may export reports and under what conditions.
+  ev:   FRBLOCK-016
+  ref:  FR-84 (0.34) Export Report :: Export Report Description: Users export existing reports. The system validates the request, prepares the file, and provides a download link. Input: Selected report and ex… || FR-85 (0.22) Generate Exportable Reports for Assets and Users :: Generate Exportable Reports for Assets and Users Description: The system provides exportable report outputs based on selected data criteria and operation types. Input: Re…
+
+ISOLATED-34923dc6563b | isolated | unsupported
+  subj: User
+  q:    Does the 'User' actor need a documented connection to the FR-17 import workflow, such as which user role can upload asset data files?
+  draft:Document which User role(s) are authorized to upload asset data files and how that permission is granted for FR-17.
+  ev:   FRBLOCK-017
+  ref:  FR-86 (0.36) Import Asset Data :: Import Asset Data Description: Users upload CSV or Excel files. The system validates format and data, parses rows, and stores valid records with an error report. Input: U… || FR-88 (0.22) Authorized Scope Enforcement for Asset Exports :: Authorized Scope Enforcement for Asset Exports Description: The system limits asset exports to the data scope allowed for the requesting actor. Input: Actor identity, exp…
+
+ISOLATED-a0386616efc8 | isolated | retained
+  subj: Validate Format and Data
+  q:    Is the 'Validate Format and Data' function sufficiently connected to defined validation rules and the error report output?
+  draft:Define validation rules for uploaded CSV/Excel files and specify how validation failures are recorded in the error report.
+  ev:   FRBLOCK-017
+  ref:  FR-86 (0.53) Import Asset Data :: Import Asset Data Description: Users upload CSV or Excel files. The system validates format and data, parses rows, and stores valid records with an error report. Input: U… || FR-02 (0.29) Asset Registration Validation Failure Handling :: Asset Registration Validation Failure Handling Description: The system rejects asset registration submissions that fail required validation checks and prevents invalid as…
+
+ISOLATED-edf318343ab2 | isolated | covered
+  subj: Parse Rows
+  q:    Does the 'Parse Rows' function have a documented connection to handling malformed or partially valid rows?
+  draft:Specify row parsing behavior for malformed rows and clarify how partial imports are handled.
+  ev:   FRBLOCK-017
+  ref:  FR-86 (0.20) Import Asset Data :: Import Asset Data Description: Users upload CSV or Excel files. The system validates format and data, parses rows, and stores valid records with an error report. Input: U… || FR-33 (0.14) Roll Back Partial Effects of Approval Execution Failure :: Roll Back Partial Effects of Approval Execution Failure Description: If approval execution fails after partial effects are applied, the system rolls back the affected ope…
+
+OPERATION-5aed8aeb7583 | operation | covered
+  subj: Store Valid Records
+  q:    Is a 'Store Valid Records' operation applicable for persisting valid imported asset records after validation and parsing?
+  draft:Document the operation that persists valid imported asset records, including validation gating and error handling.
+  ev:   FRBLOCK-017
+  ref:  FR-86 (0.36) Import Asset Data :: Import Asset Data Description: Users upload CSV or Excel files. The system validates format and data, parses rows, and stores valid records with an error report. Input: U… || FR-02 (0.31) Asset Registration Validation Failure Handling :: Asset Registration Validation Failure Handling Description: The system rejects asset registration submissions that fail required validation checks and prevents invalid as…
+
+OPERATION-5687cabe9346 | operation | covered
+  subj: Import Asset Data
+  q:    Does the 'Import Asset Data' function require a documented operation for initiating an import?
+  draft:Define the import initiation operation, including accepted file formats and user permissions.
+  ev:   FRBLOCK-017
+  ref:  FR-86 (0.30) Import Asset Data :: Import Asset Data Description: Users upload CSV or Excel files. The system validates format and data, parses rows, and stores valid records with an error report. Input: U… || FR-87 (0.21) Export Asset Data :: Export Asset Data Description: Users export selected asset data. The system validates the request, generates the file, and provides a download link. Input: Selected asset…
+
+ISOLATED-8fd3b0b29f60 | isolated | unsupported
+  subj: User
+  q:    What documented role or authorization level must a 'User' have to export selected asset data in FR-18, and does this align with the isolated 'User' el…
+  draft:Only authorized users may export asset data; the FR should document the permitted role(s) or authorization condition.
+  ev:   FRBLOCK-018
+  ref:  FR-87 (0.39) Export Asset Data :: Export Asset Data Description: Users export selected asset data. The system validates the request, generates the file, and provides a download link. Input: Selected asset… || FR-88 (0.34) Authorized Scope Enforcement for Asset Exports :: Authorized Scope Enforcement for Asset Exports Description: The system limits asset exports to the data scope allowed for the requesting actor. Input: Actor identity, exp…
+
+ISOLATED-56af8b264615 | isolated | unsupported
+  subj: Provide Download Link
+  q:    What is the documented trigger and active meaning for 'Provide Download Link' in FR-18, and how should its activation conflict be resolved?
+  draft:The system must provide a download link only after the export file is successfully generated, with the exact trigger documented.
+  ev:   FRBLOCK-018
+  ref:  FR-87 (0.34) Export Asset Data :: Export Asset Data Description: Users export selected asset data. The system validates the request, generates the file, and provides a download link. Input: Selected asset… || FR-84 (0.34) Export Report :: Export Report Description: Users export existing reports. The system validates the request, prepares the file, and provides a download link. Input: Selected report and ex…
+
+OPERATION-c659aea78e2b | operation | covered
+  subj: Validate Export Request
+  q:    What specific validation rules apply to 'Validate Export Request' before generating an export file (e.g., selected assets non-empty, supported format …
+  draft:The system must validate the export request against documented rules before generating the file.
+  ev:   FRBLOCK-018
+  ref:  FR-87 (0.48) Export Asset Data :: Export Asset Data Description: Users export selected asset data. The system validates the request, generates the file, and provides a download link. Input: Selected asset… || FR-84 (0.43) Export Report :: Export Report Description: Users export existing reports. The system validates the request, prepares the file, and provides a download link. Input: Selected report and ex…
+
+OPERATION-631356f984fd | operation | unsupported
+  subj: Generate Export File
+  q:    What should happen if 'Generate Export File' fails or is interrupted, and should the user be able to retry the export operation?
+  draft:If export file generation fails, the system must report an error and must not provide a download link; retry behavior is documented.
+  ev:   FRBLOCK-018
+  ref:  FR-84 (0.49) Export Report :: Export Report Description: Users export existing reports. The system validates the request, prepares the file, and provides a download link. Input: Selected report and ex… || FR-87 (0.42) Export Asset Data :: Export Asset Data Description: Users export selected asset data. The system validates the request, generates the file, and provides a download link. Input: Selected asset…
+
+OPERATION-5971ac5c5791 | operation | unsupported
+  subj: Export Log
+  q:    What operations, if any, should be supported on the 'Export Log' beyond creation (e.g., view, retrieve, or export the log)?
+  draft:The system must create an export log entry for each export; any read/retrieval operation must be explicitly documented if required.
+  ev:   FRBLOCK-018
+  ref:  FR-87 (0.33) Export Asset Data :: Export Asset Data Description: Users export selected asset data. The system validates the request, generates the file, and provides a download link. Input: Selected asset… || FR-84 (0.33) Export Report :: Export Report Description: Users export existing reports. The system validates the request, prepares the file, and provides a download link. Input: Selected report and ex…
+
+ISOLATED-491af8fdbe13 | isolated | covered
+  subj: Senior-admin
+  q:    What documented connection should relate the isolated Senior-admin element to the staged permission-approval workflow in FR-19?
+  draft:Document the Senior-admin approval role, including what must be reviewed before a staged permission update can be applied.
+  ev:   FRBLOCK-019
+  ref:  FR-70 (0.30) Set Admin Permissions :: Set Admin Permissions Description: Administrators assign management permissions. The system validates the request, stages it for senior-admin approval, and updates permis… || FR-47 (0.25) Edit Approval Workflow :: Edit Approval Workflow Description: Administrators modify existing workflows. The system validates changes, stages them for senior-admin approval, and updates the workflo…
+
+ISOLATED-ebbea5ee7893 | isolated | unsupported
+  subj: Validate Request
+  q:    What documented connection should exist between the isolated Validate Request element and the permission form inputs in FR-19?
+  draft:Document the validation scope and any documented relationship between Validate Request and the permission form fields.
+  ev:   FRBLOCK-019
+  ref:  FR-71 (0.21) Admin Permission Change Authorization :: Admin Permission Change Authorization Description: The system permits admin permission changes only when the acting user has sufficient authority. Input: Permission chang… || FR-88 (0.16) Authorized Scope Enforcement for Asset Exports :: Authorized Scope Enforcement for Asset Exports Description: The system limits asset exports to the data scope allowed for the requesting actor. Input: Actor identity, exp…
+
+OPERATION-2fe03193e418 | operation | covered
+  subj: Stage for senior-admin approval
+  q:    What operation-level behavior should be documented for Stage for senior-admin approval between validation and the senior-admin decision?
+  draft:Define the staging operation's pending state and the conditions under which the staged request proceeds to approval.
+  ev:   FRBLOCK-019
+  ref:  FR-72 (0.28) Replace System Administrator :: Replace System Administrator Description: Senior administrators replace the current system admin. The system validates the request, stages it for top-level approval, and … || FR-44 (0.25) Configure Approval Workflow :: Configure Approval Workflow Description: Administrators define workflows. The system validates configuration details, stages the setup for senior-admin approval, and acti…
+
+OPERATION-3db9604ac109 | operation | unsupported
+  subj: Update permissions upon approval
+  q:    What operation-level preconditions and effects should be documented for Update permissions upon approval?
+  draft:Document the post-approval permission-update operation's preconditions, applied changes, and resulting Permissions Set state.
+  ev:   FRBLOCK-019
+  ref:  FR-70 (0.58) Set Admin Permissions :: Set Admin Permissions Description: Administrators assign management permissions. The system validates the request, stages it for senior-admin approval, and updates permis… || FR-35 (0.25) Roll Back Approved Asset Updates on Failure :: Roll Back Approved Asset Updates on Failure Description: The system marks an approved asset operation as failed and prevents inconsistent final asset state when the final…
+
+OPERATION-81a9c2e5c7e3 | operation | covered
+  subj: Validate replacement request
+  q:    What specific validation rules or checks must the system apply when validating a replacement request (e.g., current admin ID existence, completeness o…
+  draft:The system must validate the replacement request against defined rules before staging it for top-level approval.
+  ev:   FRBLOCK-020
+  ref:  FR-72 (0.44) Replace System Administrator :: Replace System Administrator Description: Senior administrators replace the current system admin. The system validates the request, stages it for top-level approval, and … || FR-73 (0.33) Administrator Replacement Outcome Recording :: Administrator Replacement Outcome Recording Description: The system records the correct replacement outcome status for each administrator or replacement request so downst…
+
+OPERATION-1bd9143950bf | operation | covered
+  subj: Stage replacement request for approval
+  q:    How should the system stage a validated replacement request for top-level approval—what data is persisted, what status is assigned, and how is the top…
+  draft:The system must stage a validated replacement request for top-level approval and make it available to the approver.
+  ev:   FRBLOCK-020
+  ref:  FR-72 (0.33) Replace System Administrator :: Replace System Administrator Description: Senior administrators replace the current system admin. The system validates the request, stages it for top-level approval, and … || FR-73 (0.30) Administrator Replacement Outcome Recording :: Administrator Replacement Outcome Recording Description: The system records the correct replacement outcome status for each administrator or replacement request so downst…
+
+OPERATION-05728143a641 | operation | covered
+  subj: Update admin records
+  q:    Which admin record fields must be updated upon top-level approval, and should the update and status change to 'Replaced' be performed atomically to av…
+  draft:Upon top-level approval, the system must update the admin record with the new admin information and set its status to 'Replaced'.
+  ev:   FRBLOCK-020
+  ref:  FR-72 (0.53) Replace System Administrator :: Replace System Administrator Description: Senior administrators replace the current system admin. The system validates the request, stages it for top-level approval, and … || FR-70 (0.27) Set Admin Permissions :: Set Admin Permissions Description: Administrators assign management permissions. The system validates the request, stages it for senior-admin approval, and updates permis…
+
+ISOLATED-1c338daa0efb | isolated | covered
+  subj: Validate Request
+  q:    Does the isolated element 'Validate Request' correspond to the 'Validate replacement request' function in FR-20, or does it represent a separate valid…
+  draft:The system should validate replacement requests using the applicable validation operation.
+  ev:   FRBLOCK-020
+  ref:  FR-73 (0.27) Administrator Replacement Outcome Recording :: Administrator Replacement Outcome Recording Description: The system records the correct replacement outcome status for each administrator or replacement request so downst… || FR-74 (0.16) Recover User Account Activation When Administrator Repl… :: Recover User Account Activation When Administrator Replacement Fails Description: The system prevents user activation and permission updates from proceeding when administ…
+
+ISOLATED-2d882721a3d3 | isolated | covered
+  subj: Senior Admin
+  q:    Is the isolated element 'Senior Admin' a distinct actor from the 'Senior administrators' actor in FR-20, and if so, what connection or role mapping sh…
+  draft:Senior administrators are authorized to initiate the replacement of the current system admin.
+  ev:   FRBLOCK-020
+  ref:  FR-72 (0.39) Replace System Administrator :: Replace System Administrator Description: Senior administrators replace the current system admin. The system validates the request, stages it for top-level approval, and … || FR-67 (0.26) Delete User :: Delete User Description: Administrators remove user accounts. The system validates the request, stages it for senior-admin approval, and deletes the record upon approval.…
+
+ISOLATED-70d8c1e78f80 | isolated | covered
+  subj: Admin
+  q:    Should the 'Admin' element be explicitly documented as the approving actor in the asset-request workflow?
+  draft:Document that asset requests are staged for approval by an Admin role.
+  ev:   FRBLOCK-021
+  ref:  FR-07 (0.26) Asset Modification Approval Workflow Orchestration :: Asset Modification Approval Workflow Orchestration Description: The system ensures asset edit requests progress through the approval workflow to a clear final decision. I… || FR-75 (0.22) Submit Asset Request :: Submit Asset Request Description: Users request assets. The system validates the request, stages it for admin approval, and updates status upon approval. Input: Asset-req…
+
+ISOLATED-e2f6b0c7c3fb | isolated | covered
+  subj: Approved
+  q:    Should the 'Approved' state be explicitly linked to the stored asset request in FR-21?
+  draft:Document that an approved asset request is stored with the Approved status.
+  ev:   FRBLOCK-021
+  ref:  FR-75 (0.41) Submit Asset Request :: Submit Asset Request Description: Users request assets. The system validates the request, stages it for admin approval, and updates status upon approval. Input: Asset-req… || FR-35 (0.32) Roll Back Approved Asset Updates on Failure :: Roll Back Approved Asset Updates on Failure Description: The system marks an approved asset operation as failed and prevents inconsistent final asset state when the final…
+
+ISOLATED-3e8a39ec0a22 | isolated | covered
+  subj: Rejected
+  q:    Should the 'Rejected' state be explicitly linked to the stored asset request in FR-21?
+  draft:Document that a rejected asset request is stored with the Rejected status.
+  ev:   FRBLOCK-021
+  ref:  FR-75 (0.42) Submit Asset Request :: Submit Asset Request Description: Users request assets. The system validates the request, stages it for admin approval, and updates status upon approval. Input: Asset-req… || FR-38 (0.29) Provide Rejection Finalization for Requests :: Provide Rejection Finalization for Requests Description: The system ensures every rejected request results in a clear and final operational outcome. Input: Rejected appro…
+
+ISOLATED-32fea840faa7 | isolated | covered
+  subj: User
+  q:    Should the 'User' element be documented as the actor who submits the asset request in FR-21?
+  draft:Document that a User submits the asset request form.
+  ev:   FRBLOCK-021
+  ref:  FR-75 (0.30) Submit Asset Request :: Submit Asset Request Description: Users request assets. The system validates the request, stages it for admin approval, and updates status upon approval. Input: Asset-req… || FR-88 (0.28) Authorized Scope Enforcement for Asset Exports :: Authorized Scope Enforcement for Asset Exports Description: The system limits asset exports to the data scope allowed for the requesting actor. Input: Actor identity, exp…
+
+ISOLATED-0ba7c4b2ad70 | isolated | covered
+  subj: Validate Request
+  q:    Should the isolated 'Validate Request' element be documented as the validation function invoked when an asset request is submitted?
+  draft:Document that asset request submission invokes Validate Request before staging for approval.
+  ev:   FRBLOCK-021
+  ref:  FR-96 (0.26) Validate Asset Change Type Against Allowed Types :: Validate Asset Change Type Against Allowed Types Description: The system validates each asset change type against the configured allowed set before recording or processin… || FR-02 (0.21) Asset Registration Validation Failure Handling :: Asset Registration Validation Failure Handling Description: The system rejects asset registration submissions that fail required validation checks and prevents invalid as…
+
+OPERATION-75d55acc1863 | operation | covered
+  subj: Stage for Admin Approval
+  q:    Is the 'Stage for Admin Approval' operation applicable as the handoff step from request submission to admin decision, or should separate approval/reje…
+  draft:Define whether staging for admin approval is the only required operation or whether explicit approve/reject operations are also needed.
+  ev:   FRBLOCK-021
+  ref:  FR-76 (0.29) Approve Asset Request :: Approve Asset Request Description: Administrators review and approve or reject asset requests. The system updates the request status and notifies users. Input: Approval f… || FR-27 (0.22) Start Approval Process :: Start Approval Process Description: Users initiate approval processes for registration, usage, transfer, return, modification, deletion, or related operations. The system…
+
+OPERATION-75e2194992f5 | operation | covered
+  subj: Update Status on Approval
+  q:    Should 'Update Status on Approval' be treated as a distinct operation triggered by an admin's decision?
+  draft:Clarify whether status update is a separate operation or included in the approval operation.
+  ev:   FRBLOCK-021
+  ref:  FR-54 (0.28) Notification Triggered by Final Approval Status :: Notification Triggered by Final Approval Status Description: The system ensures notifications reflect the final approval status used to determine the operational outcome.… || FR-35 (0.27) Roll Back Approved Asset Updates on Failure :: Roll Back Approved Asset Updates on Failure Description: The system marks an approved asset operation as failed and prevents inconsistent final asset state when the final…
+
+OPERATION-77973b511a41 | operation | covered
+  subj: Validate Asset Request
+  q:    Is 'Validate Asset Request' an applicable operation before the request is staged for admin approval?
+  draft:Confirm that Validate Asset Request is an operation performed before staging for approval.
+  ev:   FRBLOCK-021
+  ref:  FR-96 (0.29) Validate Asset Change Type Against Allowed Types :: Validate Asset Change Type Against Allowed Types Description: The system validates each asset change type against the configured allowed set before recording or processin… || FR-75 (0.20) Submit Asset Request :: Submit Asset Request Description: Users request assets. The system validates the request, stages it for admin approval, and updates status upon approval. Input: Asset-req…
+
+OPERATION-6316cf9ef179 | operation | covered
+  subj: Approve Asset Request
+  q:    Does the 'Approve Asset Request' operation need to explicitly cover a rejection decision, or is rejection a separate operation?
+  draft:The system shall support a reject decision for an asset request, capturing the reason and updating the request status accordingly.
+  ev:   FRBLOCK-022
+  ref:  FR-76 (0.57) Approve Asset Request :: Approve Asset Request Description: Administrators review and approve or reject asset requests. The system updates the request status and notifies users. Input: Approval f… || FR-38 (0.25) Provide Rejection Finalization for Requests :: Provide Rejection Finalization for Requests Description: The system ensures every rejected request results in a clear and final operational outcome. Input: Rejected appro…
+
+OPERATION-440049b1120b | operation | retained
+  subj: Update Request Status
+  q:    Should the approval form's reason be stored and associated with the request status update?
+  draft:The system shall persist the reason from the approval form with the updated request status.
+  ev:   FRBLOCK-022
+  ref:  FR-76 (0.36) Approve Asset Request :: Approve Asset Request Description: Administrators review and approve or reject asset requests. The system updates the request status and notifies users. Input: Approval f… || FR-75 (0.34) Submit Asset Request :: Submit Asset Request Description: Users request assets. The system validates the request, stages it for admin approval, and updates status upon approval. Input: Asset-req…
+
+OPERATION-d3de97a97598 | operation | unsupported
+  subj: Notify Users
+  q:    Does the notification operation apply to both approval and rejection outcomes, and should it include the decision reason?
+  draft:The system shall send a user notification for both approval and rejection decisions, including the decision reason when provided.
+  ev:   FRBLOCK-022
+  ref:  FR-49 (0.25) Notify Stakeholders of Approval Outcomes :: Notify Stakeholders of Approval Outcomes Description: The system notifies relevant stakeholders when approval processes are completed or when an approval decision changes… || FR-52 (0.22) Send Email Notification :: Send Email Notification Description: The system automatically sends email notifications for events such as registration, profile updates, approval outcomes, status change…
+
+ISOLATED-67108fa4ecd4 | isolated | covered
+  subj: Approved
+  q:    Should the 'Approved' status be documented as the resulting status when an administrator approves an asset request?
+  draft:The system shall set the request status to 'Approved' when an administrator approves an asset request.
+  ev:   FRBLOCK-022
+  ref:  FR-75 (0.30) Submit Asset Request :: Submit Asset Request Description: Users request assets. The system validates the request, stages it for admin approval, and updates status upon approval. Input: Asset-req… || FR-74 (0.27) Recover User Account Activation When Administrator Repl… :: Recover User Account Activation When Administrator Replacement Fails Description: The system prevents user activation and permission updates from proceeding when administ…
+
+ISOLATED-911872c414fc | isolated | covered
+  subj: Rejected
+  q:    Should the 'Rejected' status be documented as the resulting status when an administrator rejects an asset request?
+  draft:The system shall set the request status to 'Rejected' when an administrator rejects an asset request.
+  ev:   FRBLOCK-022
+  ref:  FR-75 (0.27) Submit Asset Request :: Submit Asset Request Description: Users request assets. The system validates the request, stages it for admin approval, and updates status upon approval. Input: Asset-req… || FR-02 (0.25) Asset Registration Validation Failure Handling :: Asset Registration Validation Failure Handling Description: The system rejects asset registration submissions that fail required validation checks and prevents invalid as…
+
+ISOLATED-9ec0bc10d57e | isolated | retained
+  subj: User
+  q:    Is the 'User' element the recipient of the user notification, and does it refer to the requestor?
+  draft:The system shall notify the requestor (User) when an asset request decision is made.
+  ev:   FRBLOCK-022
+  ref:  FR-51 (0.27) Notify Request Owner When Approval Notification Recipie… :: Notify Request Owner When Approval Notification Recipients Cannot Be Resolved Description: The system informs the request owner when approval notification recipients cann… || FR-49 (0.24) Notify Stakeholders of Approval Outcomes :: Notify Stakeholders of Approval Outcomes Description: The system notifies relevant stakeholders when approval processes are completed or when an approval decision changes…
+
+OPERATION-379748a60e49 | operation | retained
+  subj: Send Email Notification
+  q:    Should the 'Send Email Notification' operation include a documented retry or fallback process when email delivery fails?
+  draft:Define failure handling for the email notification operation.
+  ev:   FRBLOCK-023
+  ref:  FR-52 (0.42) Send Email Notification :: Send Email Notification Description: The system automatically sends email notifications for events such as registration, profile updates, approval outcomes, status change… || FR-56 (0.28) Receive Email Feedback :: Receive Email Feedback Description: The system receives user email feedback, parses the content, stores it, and notifies administrators for handling. Input: User feedback…
+
+OPERATION-870acc45a56e | operation | unsupported
+  subj: Send Log
+  q:    Does the 'Send Log' need to record failed attempts as well as successful sends?
+  draft:Specify that the send log captures both successful and failed email notifications.
+  ev:   FRBLOCK-023
+  ref:  FR-52 (0.49) Send Email Notification :: Send Email Notification Description: The system automatically sends email notifications for events such as registration, profile updates, approval outcomes, status change… || FR-53 (0.24) Log Notification Delivery Attempts :: Log Notification Delivery Attempts Description: The system records notification delivery attempts for traceability of communication events. Input: Notification event, rec…
+
+ISOLATED-2e022473533a | isolated | covered
+  subj: Send Activation Email
+  q:    Is 'Send Activation Email' a separate requirement from FR-23, or is it an example of a registration-triggered notification within FR-23?
+  draft:Clarify whether activation emails are covered by FR-23 or another requirement.
+  ev:   FRBLOCK-023
+  ref:  FR-52 (0.36) Send Email Notification :: Send Email Notification Description: The system automatically sends email notifications for events such as registration, profile updates, approval outcomes, status change… || FR-55 (0.31) Email Delivery Auditing for Account Activation :: Email Delivery Auditing for Account Activation Description: The system records activation email delivery attempts and outcomes for account activation traceability. Input:…
+
+ISOLATED-5c7e2cede559 | isolated | retained
+  subj: Validate Request
+  q:    Should FR-23 include a validation step for event details and recipient list before sending notifications?
+  draft:Define validation requirements for email notification inputs.
+  ev:   FRBLOCK-023
+  ref:  FR-52 (0.36) Send Email Notification :: Send Email Notification Description: The system automatically sends email notifications for events such as registration, profile updates, approval outcomes, status change… || FR-96 (0.21) Validate Asset Change Type Against Allowed Types :: Validate Asset Change Type Against Allowed Types Description: The system validates each asset change type against the configured allowed set before recording or processin…
+
+OPERATION-9e191a5ec509 | operation | covered
+  subj: Registration Event
+  q:    Should the list of triggering events be exhaustive, or can additional events trigger email notifications?
+  draft:Specify whether the event list is illustrative or exhaustive.
+  ev:   FRBLOCK-023
+  ref:  FR-52 (0.56) Send Email Notification :: Send Email Notification Description: The system automatically sends email notifications for events such as registration, profile updates, approval outcomes, status change… || FR-53 (0.21) Log Notification Delivery Attempts :: Log Notification Delivery Attempts Description: The system records notification delivery attempts for traceability of communication events. Input: Notification event, rec…
+
+ISOLATED-872365a48ac4 | isolated | covered
+  subj: User
+  q:    Should the graph-isolated actor 'User' have a documented connection to FR-24's feedback submission flow, or is the existing 'User feedback email' inpu…
+  draft:The system must accept feedback emails from users as the initiating input for the feedback handling workflow.
+  ev:   FRBLOCK-024
+  ref:  FR-56 (0.52) Receive Email Feedback :: Receive Email Feedback Description: The system receives user email feedback, parses the content, stores it, and notifies administrators for handling. Input: User feedback… || FR-57 (0.35) Feedback Receipt Fallback :: Feedback Receipt Fallback Description: The system accounts for user feedback when email delivery or receipt fails by recording the feedback capture status and using an al…
+
+ISOLATED-df354a020ab0 | isolated | covered
+  subj: Admin
+  q:    Should the graph-isolated element 'Admin' have a documented connection to the output 'admin notification' in FR-24, or is it a duplicate/alias of the …
+  draft:The system must direct feedback notifications to the administrator role for handling.
+  ev:   FRBLOCK-024
+  ref:  FR-56 (0.38) Receive Email Feedback :: Receive Email Feedback Description: The system receives user email feedback, parses the content, stores it, and notifies administrators for handling. Input: User feedback… || FR-72 (0.26) Replace System Administrator :: Replace System Administrator Description: Senior administrators replace the current system admin. The system validates the request, stages it for top-level approval, and …
+
+OPERATION-c3bd71e959c6 | operation | unsupported
+  subj: Parse feedback content
+  q:    Should the parsing operation be reviewed to define what feedback content is extracted and how parse failures are handled?
+  draft:The system must parse feedback email content into defined feedback fields and handle unparseable content according to a specified rule.
+  ev:   FRBLOCK-024
+  ref:  FR-56 (0.56) Receive Email Feedback :: Receive Email Feedback Description: The system receives user email feedback, parses the content, stores it, and notifies administrators for handling. Input: User feedback… || FR-57 (0.30) Feedback Receipt Fallback :: Feedback Receipt Fallback Description: The system accounts for user feedback when email delivery or receipt fails by recording the feedback capture status and using an al…
+
+OPERATION-630126661d60 | operation | unsupported
+  subj: Store feedback
+  q:    Should the storage operation be reviewed to define which feedback attributes and metadata are persisted?
+  draft:The system must persist parsed feedback and sufficient associated metadata to support administrator handling.
+  ev:   FRBLOCK-024
+  ref:  FR-56 (0.43) Receive Email Feedback :: Receive Email Feedback Description: The system receives user email feedback, parses the content, stores it, and notifies administrators for handling. Input: User feedback… || FR-57 (0.32) Feedback Receipt Fallback :: Feedback Receipt Fallback Description: The system accounts for user feedback when email delivery or receipt fails by recording the feedback capture status and using an al…
+
+OPERATION-bfe98507bbf7 | operation | unsupported
+  subj: Notify administrators
+  q:    Should the administrator notification operation be reviewed to define channel, timing, and notification content?
+  draft:The system must notify administrators of newly stored feedback through a defined channel with enough context to handle it.
+  ev:   FRBLOCK-024
+  ref:  FR-56 (0.39) Receive Email Feedback :: Receive Email Feedback Description: The system receives user email feedback, parses the content, stores it, and notifies administrators for handling. Input: User feedback… || FR-57 (0.19) Feedback Receipt Fallback :: Feedback Receipt Fallback Description: The system accounts for user feedback when email delivery or receipt fails by recording the feedback capture status and using an al…
+
+OPERATION-6b332b76a110 | operation | retained
+  subj: User feedback email received
+  q:    Should the receipt event be reviewed to define how incoming feedback emails are recognized as feedback rather than ordinary email?
+  draft:The system must detect incoming user feedback emails and use that event to initiate feedback parsing and storage.
+  ev:   FRBLOCK-024
+  ref:  FR-56 (0.49) Receive Email Feedback :: Receive Email Feedback Description: The system receives user email feedback, parses the content, stores it, and notifies administrators for handling. Input: User feedback… || FR-57 (0.49) Feedback Receipt Fallback :: Feedback Receipt Fallback Description: The system accounts for user feedback when email delivery or receipt fails by recording the feedback capture status and using an al…
+
+OPERATION-8e17c4a9b1c8 | operation | covered
+  subj: View Asset Change History
+  q:    Does the View Asset Change History operation need to support filtering by user or operation in addition to asset ID, change type, and change date, or …
+  draft:The View Asset Change History operation should allow users to query asset change logs by the documented search criteria and return matching change history.
+  ev:   FRBLOCK-025
+  ref:  FR-89 (0.74) View Asset Change History :: View Asset Change History Description: Users query asset change logs by asset ID, change type, or change date. Input: Search criteria (asset ID, type, date). Output: Chan… || FR-90 (0.40) Asset Change History Logging for All Asset Operations :: Asset Change History Logging for All Asset Operations Description: The system records change history entries for all asset operations that modify asset state. Input: Asse…
+
+ISOLATED-f936d48eb19f | isolated | covered
+  subj: Asset change
+  q:    How is the Asset change event connected to the View Asset Change History function, and what ensures each asset change is recorded with time, operation…
+  draft:The system should record each asset change event with time, operation, user, and before/after values so it can be retrieved via View Asset Change History.
+  ev:   FRBLOCK-025
+  ref:  FR-89 (0.72) View Asset Change History :: View Asset Change History Description: Users query asset change logs by asset ID, change type, or change date. Input: Search criteria (asset ID, type, date). Output: Chan… || FR-94 (0.34) Asset Change Date Traceability :: Asset Change Date Traceability Description: The system associates every recorded asset change event with an accurate change date for traceability. Input: Asset change eve…
+
+ISOLATED-966b14fa047d | isolated | covered
+  subj: Admin
+  q:    Should the change history user field identify the acting user or role (e.g., Admin) for each asset change operation?
+  draft:The change history should include the user who performed the operation for each asset change.
+  ev:   FRBLOCK-025
+  ref:  FR-89 (0.44) View Asset Change History :: View Asset Change History Description: Users query asset change logs by asset ID, change type, or change date. Input: Search criteria (asset ID, type, date). Output: Chan… || FR-90 (0.41) Asset Change History Logging for All Asset Operations :: Asset Change History Logging for All Asset Operations Description: The system records change history entries for all asset operations that modify asset state. Input: Asse…
+
+ISOLATED-8f17339ab982 | isolated | unsupported
+  subj: Approved
+  q:    Should approval status changes (e.g., Approved) be captured as a change type that can be queried in asset change history?
+  draft:The system should allow filtering asset change history by change type, including approval-related status changes when applicable.
+  ev:   FRBLOCK-025
+  ref:  FR-92 (0.53) Change History Integrity Across Approval Outcomes :: Change History Integrity Across Approval Outcomes Description: The system records immutable change history reflecting the final approved outcome of asset operations. Inpu… || FR-89 (0.43) View Asset Change History :: View Asset Change History Description: Users query asset change logs by asset ID, change type, or change date. Input: Search criteria (asset ID, type, date). Output: Chan…
+
+ISOLATED-26e934f42fb0 | isolated | covered
+  subj: Asset Count
+  q:    How is Asset Count produced and included when a user views an asset category?
+  draft:The View Asset Category feature should document Asset Count as a derived output representing the number of assets associated with the retrieved category.
+  ev:   FRBLOCK-026
+  ref:  FR-98 (0.59) View Asset Category :: View Asset Category Description: Users query asset categories by name or ID. Input: Search criteria (category name, category ID). Output: Category details (name, descript… || FR-100 (0.36) Asset Category Retrieval No-Match Handling :: Asset Category Retrieval No-Match Handling Description: The system returns a clear outcome when an asset category cannot be found. Input: Category ID, view asset category…
+
+ISOLATED-6deda0548adc | isolated | covered
+  subj: User
+  q:    How should the User actor be documented in relation to the Query Asset Category operation?
+  draft:The View Asset Category feature should document the User actor as the initiator of the Query Asset Category operation.
+  ev:   FRBLOCK-026
+  ref:  FR-98 (0.56) View Asset Category :: View Asset Category Description: Users query asset categories by name or ID. Input: Search criteria (category name, category ID). Output: Category details (name, descript… || FR-100 (0.41) Asset Category Retrieval No-Match Handling :: Asset Category Retrieval No-Match Handling Description: The system returns a clear outcome when an asset category cannot be found. Input: Category ID, view asset category…
+
+OPERATION-dab987d864c0 | operation | covered
+  subj: Query Asset Category
+  q:    Is the Query Asset Category operation intended to be a read-only retrieval operation, consistent with the View Asset Category title?
+  draft:The View Asset Category feature should document Query Asset Category as a read-only retrieval operation.
+  ev:   FRBLOCK-026
+  ref:  FR-98 (0.52) View Asset Category :: View Asset Category Description: Users query asset categories by name or ID. Input: Search criteria (category name, category ID). Output: Category details (name, descript… || FR-100 (0.47) Asset Category Retrieval No-Match Handling :: Asset Category Retrieval No-Match Handling Description: The system returns a clear outcome when an asset category cannot be found. Input: Category ID, view asset category…
+
+OPERATION-31fd992bafac | operation | covered
+  subj: Query Asset Category
+  q:    Does the Query Asset Category operation treat category name and category ID as alternative or conjunctive search criteria?
+  draft:The View Asset Category feature should document whether category name and category ID are alternative or conjunctive inputs for the Query Asset Category operation.
+  ev:   FRBLOCK-026
+  ref:  FR-98 (0.73) View Asset Category :: View Asset Category Description: Users query asset categories by name or ID. Input: Search criteria (category name, category ID). Output: Category details (name, descript… || FR-101 (0.42) Edit Asset Category :: Edit Asset Category Description: Administrators modify category information. The system validates changes, stages them for senior-admin approval, and updates the category…
+
+ISOLATED-fd0f340f94bd | isolated | covered
+  subj: Administrator
+  q:    Should the isolated element Administrator have a documented connection to the Edit Asset Category workflow, or does the FR text's mention of Administr…
+  draft:The system must authorize an Administrator to initiate edits to existing asset categories.
+  ev:   FRBLOCK-027
+  ref:  FR-98 (0.26) View Asset Category :: View Asset Category Description: Users query asset categories by name or ID. Input: Search criteria (category name, category ID). Output: Category details (name, descript… || FR-101 (0.25) Edit Asset Category :: Edit Asset Category Description: Administrators modify category information. The system validates changes, stages them for senior-admin approval, and updates the category…
+
+ISOLATED-11e12d4a820b | isolated | unsupported
+  subj: Admin
+  q:    Is the isolated term Admin intended as a synonym for Administrator in FR-27, and should the FR use a single role name?
+  draft:The system documentation must use a consistent name for the actor authorized to edit asset categories.
+  ev:   FRBLOCK-027
+  ref:  FR-98 (0.31) View Asset Category :: View Asset Category Description: Users query asset categories by name or ID. Input: Search criteria (category name, category ID). Output: Category details (name, descript… || FR-61 (0.22) Edit User Profile :: Edit User Profile Description: Users edit their own profiles. The system validates changes, stages them for admin approval, and updates the record upon approval. Input: P…
+
+ISOLATED-a1679bb4f05e | isolated | covered
+  subj: Senior Admin
+  q:    Does the isolated actor Senior Admin need a documented connection to the senior-admin approval step, or is the approval phrase in FR-27 sufficient?
+  draft:The system must route staged category modifications to a Senior Admin for approval before applying them.
+  ev:   FRBLOCK-027
+  ref:  FR-101 (0.39) Edit Asset Category :: Edit Asset Category Description: Administrators modify category information. The system validates changes, stages them for senior-admin approval, and updates the category… || FR-72 (0.27) Replace System Administrator :: Replace System Administrator Description: Senior administrators replace the current system admin. The system validates the request, stages it for top-level approval, and …
+
+ISOLATED-928137178aed | isolated | covered
+  subj: Senior-admin
+  q:    Does the isolated term Senior-admin need a documented connection to the approval workflow, or is it just an adjective in senior-admin approval?
+  draft:The system must require senior-admin approval before applying staged category changes.
+  ev:   FRBLOCK-027
+  ref:  FR-101 (0.39) Edit Asset Category :: Edit Asset Category Description: Administrators modify category information. The system validates changes, stages them for senior-admin approval, and updates the category… || FR-47 (0.32) Edit Approval Workflow :: Edit Approval Workflow Description: Administrators modify existing workflows. The system validates changes, stages them for senior-admin approval, and updates the workflo…
+
+ISOLATED-e35ce530cb8c | isolated | covered
+  subj: Approved
+  q:    Does the isolated state Approved need to be connected to the post-approval update in FR-27, or is upon approval enough to define the trigger?
+  draft:The system must apply staged category updates only after the changes reach an approved state.
+  ev:   FRBLOCK-027
+  ref:  FR-103 (0.32) Update Dependent Asset Records on State Changes :: Update Dependent Asset Records on State Changes Description: The system keeps dependent records consistent when asset state changes are approved. Input: Asset ID, state t… || FR-35 (0.32) Roll Back Approved Asset Updates on Failure :: Roll Back Approved Asset Updates on Failure Description: The system marks an approved asset operation as failed and prevents inconsistent final asset state when the final…
+
+OPERATION-261c34d149c8 | operation | covered
+  subj: Validate changes
+  q:    Should the Validate changes operation define what validation rules apply to the category-edit form, such as name and description constraints?
+  draft:The system must validate submitted category changes before staging them for senior-admin approval.
+  ev:   FRBLOCK-027
+  ref:  FR-101 (0.45) Edit Asset Category :: Edit Asset Category Description: Administrators modify category information. The system validates changes, stages them for senior-admin approval, and updates the category… || FR-98 (0.26) View Asset Category :: View Asset Category Description: Users query asset categories by name or ID. Input: Search criteria (category name, category ID). Output: Category details (name, descript…
+
+OPERATION-ff88523ca27e | operation | covered
+  subj: Edit Asset Category
+  q:    Does the Edit Asset Category operation need documented preconditions and postconditions, such as authorized actor and resulting status?
+  draft:The system must provide an Edit Asset Category operation that allows administrators to modify existing category information.
+  ev:   FRBLOCK-027
+  ref:  FR-101 (0.54) Edit Asset Category :: Edit Asset Category Description: Administrators modify category information. The system validates changes, stages them for senior-admin approval, and updates the category… || FR-102 (0.33) Category Edit Propagation to Related Assets :: Category Edit Propagation to Related Assets Description: The system propagates approved category edits to all related assets to keep displayed asset information consisten…
+
+OPERATION-ef10e457aa3d | operation | covered
+  subj: Update Category Upon Approval
+  q:    Should the Update Category Upon Approval operation be documented as applying only staged changes after senior-admin approval?
+  draft:Upon senior-admin approval, the system must apply the staged category changes and set the category status to Modified.
+  ev:   FRBLOCK-027
+  ref:  FR-101 (0.53) Edit Asset Category :: Edit Asset Category Description: Administrators modify category information. The system validates changes, stages them for senior-admin approval, and updates the category… || FR-47 (0.27) Edit Approval Workflow :: Edit Approval Workflow Description: Administrators modify existing workflows. The system validates changes, stages them for senior-admin approval, and updates the workflo…

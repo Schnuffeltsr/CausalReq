@@ -1,0 +1,191 @@
+[
+  {
+    "output_id": "OUT-be43cfb34d7d",
+    "source_nomination_id": "DEP-002",
+    "origin": "dependency",
+    "text": "The system shall ensure that batch-ingested historical data is available and accessible to the machine learning model training process to support predictive analysis of traffic trends and incident likelihood.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-7daadf262317",
+    "source_nomination_id": "DEP-004",
+    "origin": "dependency",
+    "text": "The system shall generate the pre-defined reports on traffic volume, incident frequency, and road condition trends whenever a user schedules automatic report generation and email delivery.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-40ec071e785c",
+    "source_nomination_id": "DEP-008",
+    "origin": "dependency",
+    "text": "The system shall ensure that processed data originating from batch ingestion of historical data is stored in the long-term archive and is subsequently published in the standardized formats (e.g., SAE J2354, TMDD).",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-fe9b0a0dec72",
+    "source_nomination_id": "DEP-011",
+    "origin": "dependency",
+    "text": "The system shall maintain the long-term archive of all processed data without being solely dependent on Oracle 10G, ensuring continuity of archival operations.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-fd7a63610a74",
+    "source_nomination_id": "DEP-014",
+    "origin": "dependency",
+    "text": "The system shall deliver the scheduled report email to the designated recipients when the scheduled automatic report generation and email delivery is triggered.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-7e62d953dea7",
+    "source_nomination_id": "DEP-017",
+    "origin": "dependency",
+    "text": "The system shall ensure that historical data ingested in batch for archive backfill is stored in the long-term archive and made available for user queries through SQL-based tools.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-8996c1e49689",
+    "source_nomination_id": "ISOLATED-b4880b6a372e",
+    "origin": "isolated",
+    "text": "The system shall perform automated data quality checks on stored normalized data in addition to ingestion-time validation to detect anomalies or inconsistencies not identified during ingestion.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-16d4eb68c44f",
+    "source_nomination_id": "ISOLATED-bf0abba87494",
+    "origin": "isolated",
+    "text": "The system shall have access to historical traffic data sufficient to generate the required statistical summaries.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-0e668986e503",
+    "source_nomination_id": "OPERATION-ff3e64c096de",
+    "origin": "operation",
+    "text": "The system shall allow authorized users to update or reclassify a detected incident under defined conditions, including the roles and permissions required for such updates.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-680f553368ee",
+    "source_nomination_id": "OPERATION-f939eb67b240",
+    "origin": "operation",
+    "text": "The system shall provide mechanisms to retrain and update machine learning models when performance degrades or new data becomes available.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-c569940a80a4",
+    "source_nomination_id": "OPERATION-6971fcf37cfd",
+    "origin": "operation",
+    "text": "The system shall execute automated data purging only after the applicable retention period has elapsed, according to configurable retention policies, and shall record audit logs identifying the data purged, the policy applied, and the timestamp of deletion.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-4e1d199637fd",
+    "source_nomination_id": "ISOLATED-0cb7c283f9de",
+    "origin": "isolated",
+    "text": "The system shall invalidate cached data entries when corresponding archived data is purged.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-3c8747856858",
+    "source_nomination_id": "ISOLATED-b552a384e9e8",
+    "origin": "isolated",
+    "text": "The system shall compute traffic metrics to support the detection of traffic incidents and the generation of traffic incident alerts.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-96b00f77f3af",
+    "source_nomination_id": "ISOLATED-da5bb9debf38",
+    "origin": "isolated",
+    "text": "The system shall export generated statistical summaries in CSV, JSON, XML, and KML formats for third-party use.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-cb80a3eaa69c",
+    "source_nomination_id": "ISOLATED-56687cada6f5",
+    "origin": "isolated",
+    "text": "The system shall perform automated data quality checks on processed data prior to publication in standardized formats.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-21f965c24a49",
+    "source_nomination_id": "ISOLATED-7b8c6e9fdf70",
+    "origin": "isolated",
+    "text": "The system shall provide ad-hoc reporting tools that allow third-party users to create custom reports using exported data.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-0aefe74dce31",
+    "source_nomination_id": "ISOLATED-17a876312556",
+    "origin": "isolated",
+    "text": "The system shall define user roles and access permissions for data publication, real-time feeds, alerts, and export capabilities to ensure that authorized users, including third-party users and external applications, have appropriate access while preventing unauthorized access.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-9ce817a55dfb",
+    "source_nomination_id": "OPERATION-535534b72c5c",
+    "origin": "operation",
+    "text": "The system shall define and implement a delivery mechanism for real-time data feeds to MI Drive, specifying whether it is push-based or pull-based.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-5753826d427f",
+    "source_nomination_id": "ISOLATED-c951653cb78a",
+    "origin": "isolated",
+    "text": "The system shall support role-based access control for all user categories, including a default 'all users' role if such a role is defined, ensuring that permissions for that role are specified and enforced.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-2ab2be64713d",
+    "source_nomination_id": "OPERATION-a3455eb84139",
+    "origin": "operation",
+    "text": "The system shall allow administrators to view, filter, and export audit log entries (including administrative actions and errors) for audit and troubleshooting purposes.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-849d5d5d62c5",
+    "source_nomination_id": "OPERATION-047c524af82b",
+    "origin": "operation",
+    "text": "The system shall provide administrative operations to create, modify, and assign user roles and permissions.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-29a9e6a900eb",
+    "source_nomination_id": "OPERATION-66497b27ce21",
+    "origin": "operation",
+    "text": "The system shall allow administrators to schedule automatic backups and perform partial restores of database and configuration settings (e.g., restore only configuration settings without affecting the database).",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-88ef2f1868a3",
+    "source_nomination_id": "OPERATION-bfe2c70a5486",
+    "origin": "operation",
+    "text": "The system shall allow users to specify and update the email recipients for scheduled automatic report delivery.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-2db7c5ce2076",
+    "source_nomination_id": "OPERATION-e2933756876e",
+    "origin": "operation",
+    "text": "The system shall provide an operation to revoke a user's authentication and authorization.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-3e4db9b52db6",
+    "source_nomination_id": "OPERATION-5d69238cf751",
+    "origin": "operation",
+    "text": "The system shall provide authorized users with the ability to view and search audit logs.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-66ff535a380d",
+    "source_nomination_id": "OPERATION-4362eb6f486f",
+    "origin": "operation",
+    "text": "The system shall provide authorized users with the ability to generate compliance reports demonstrating adherence to MDIT security standards and FIPS 140-2 encryption requirements.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-1a4cce35184f",
+    "source_nomination_id": "ISOLATED-dc05a306f651",
+    "origin": "isolated",
+    "text": "The system shall specify the user roles (e.g., field operator, analyst, administrator) that constitute 'all users' for security requirements to ensure consistent application.",
+    "status": "model_preliminarily_retained"
+  }
+]

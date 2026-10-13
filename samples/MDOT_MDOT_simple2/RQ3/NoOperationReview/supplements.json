@@ -1,0 +1,100 @@
+[
+  {
+    "output_id": "OUT-d965a2dc7518",
+    "source_nomination_id": "DEP-008",
+    "origin": "dependency",
+    "text": "The system shall publish processed data resulting from batch ingestion of historical data in standardized formats (SAE J2354, TMDD).",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-29b92b253f09",
+    "source_nomination_id": "DEP-011",
+    "origin": "dependency",
+    "text": "The system shall maintain a long-term archive of all processed data, ensuring that this obligation remains in effect regardless of the specific archiving technology used, including Oracle 10G.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-14038686ac28",
+    "source_nomination_id": "DEP-014",
+    "origin": "dependency",
+    "text": "The system shall deliver the generated report via email to the designated recipients when the scheduled time occurs.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-eadd4374858f",
+    "source_nomination_id": "DEP-016",
+    "origin": "dependency",
+    "text": "The system shall publish processed data in standardized formats using the processed data maintained in the long-term archive as the authoritative source.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-7fef0ae48907",
+    "source_nomination_id": "ISOLATED-9b45c5726850",
+    "origin": "isolated",
+    "text": "The system shall generate statistical summaries from the normalized data stored in the central database.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-fe58ff4c1d62",
+    "source_nomination_id": "ISOLATED-4f70a023572c",
+    "origin": "isolated",
+    "text": "The system shall provide ad-hoc reporting tools that allow users to query the normalized data stored in the central database.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-b12d0971dbd1",
+    "source_nomination_id": "ISOLATED-145532500ef6",
+    "origin": "isolated",
+    "text": "The system shall provide access to relevant data and functions for all users as appropriate.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-8c7515fa4885",
+    "source_nomination_id": "ISOLATED-6d3c31b4fc90",
+    "origin": "isolated",
+    "text": "The system shall provide ad-hoc reporting tools for authorized users to query and visualize traffic metrics and incident data, with user access controlled by the existing role-based access control policy.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-257ea5bf3746",
+    "source_nomination_id": "ISOLATED-a6213748a89d",
+    "origin": "isolated",
+    "text": "The system shall define the user roles included in 'all users' and document the authorization model for querying archived data.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-2d677f6ae063",
+    "source_nomination_id": "ISOLATED-e706bcc1f073",
+    "origin": "isolated",
+    "text": "The system shall allow configuration of new data source types without major software changes to support ongoing real-time data feed operations.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-f9b598d9cb8f",
+    "source_nomination_id": "ISOLATED-d6d425e041af",
+    "origin": "isolated",
+    "text": "The system shall perform automated data quality checks on data prior to publication in standardized formats.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-7e6b258742f9",
+    "source_nomination_id": "ISOLATED-d35160fe9658",
+    "origin": "isolated",
+    "text": "The system shall provide ad-hoc reporting tools that allow users to define and generate reports using the supported data export formats (CSV, JSON, XML, KML).",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-9cc4821dfb36",
+    "source_nomination_id": "ISOLATED-b409cef95a59",
+    "origin": "isolated",
+    "text": "The system shall provide all users with access to the web-based interface and its features, subject to authentication and authorization controls as specified in the security requirements.",
+    "status": "model_preliminarily_retained"
+  },
+  {
+    "output_id": "OUT-db43d61fbe93",
+    "source_nomination_id": "ISOLATED-392a7ee52668",
+    "origin": "isolated",
+    "text": "The system shall allow administrators to configure dynamic caching options for frequently accessed data as part of data source configuration.",
+    "status": "model_preliminarily_retained"
+  }
+]

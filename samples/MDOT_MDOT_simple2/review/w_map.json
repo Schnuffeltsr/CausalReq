@@ -1,0 +1,1460 @@
+{
+ "NoSignedPropagation|DEP-001": {
+  "matched_full": "DEP-001",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|DEP-002": {
+  "matched_full": "DEP-002",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|DEP-003": {
+  "matched_full": "DEP-003",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|DEP-004": {
+  "matched_full": "DEP-004",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|DEP-005": {
+  "matched_full": "DEP-005",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "unsupported"
+ },
+ "NoSignedPropagation|DEP-006": {
+  "matched_full": "DEP-006",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "unsupported"
+ },
+ "NoSignedPropagation|DEP-007": {
+  "matched_full": "DEP-007",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|DEP-008": {
+  "matched_full": "DEP-008",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|DEP-009": {
+  "matched_full": "DEP-009",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|DEP-010": {
+  "matched_full": "DEP-010",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|DEP-011": {
+  "matched_full": "DEP-011",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|DEP-012": {
+  "matched_full": "DEP-012",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|DEP-013": {
+  "matched_full": "DEP-013",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|DEP-014": {
+  "matched_full": "DEP-014",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|DEP-015": {
+  "matched_full": "DEP-015",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|DEP-016": {
+  "matched_full": "DEP-016",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "unsupported"
+ },
+ "NoSignedPropagation|DEP-017": {
+  "matched_full": "DEP-017",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|DEP-018": {
+  "matched_full": "DEP-018",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|DEP-019": {
+  "matched_full": "DEP-019",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|DEP-020": {
+  "matched_full": "DEP-020",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|ISOLATED-a64e96c907e8": {
+  "matched_full": "ISOLATED-0e1b0192d0c8",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoSignedPropagation|ISOLATED-aa322bcb7fa9": {
+  "matched_full": "ISOLATED-48cf41c3f600",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoSignedPropagation|ISOLATED-aca033bbe5bb": {
+  "matched_full": "ISOLATED-b4880b6a372e",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|ISOLATED-f12d49b4de50": {
+  "matched_full": "ISOLATED-7b8c6e9fdf70",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|ISOLATED-6a13da768f75": {
+  "matched_full": "ISOLATED-4ae8b88ad69f",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|OPERATION-75492aa33387": {
+  "matched_full": "OPERATION-9c33eb1c3f74",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "unsupported"
+ },
+ "NoSignedPropagation|ISOLATED-2c8d1e438169": {
+  "matched_full": "ISOLATED-0e1b0192d0c8",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|ISOLATED-1f828497c34d": {
+  "matched_full": "ISOLATED-b4880b6a372e",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|OPERATION-b56de95a86b8": {
+  "matched_full": null,
+  "score": 0.697,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|ISOLATED-2c34e50b08b4": {
+  "matched_full": "ISOLATED-0cb7c283f9de",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|OPERATION-132dfb9a7aa5": {
+  "matched_full": "OPERATION-0a251e0a66f5",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|ISOLATED-684d54da7081": {
+  "matched_full": "ISOLATED-0e1b0192d0c8",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|ISOLATED-68d7b391d6b4": {
+  "matched_full": "ISOLATED-4ae8b88ad69f",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unresolved"
+ },
+ "NoSignedPropagation|ISOLATED-89c9910771ae": {
+  "matched_full": "ISOLATED-48cf41c3f600",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoSignedPropagation|ISOLATED-9c8708bfe5ce": {
+  "matched_full": "ISOLATED-0cb7c283f9de",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|ISOLATED-b62cc7c2f226": {
+  "matched_full": "ISOLATED-b4880b6a372e",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|ISOLATED-293ab7d60063": {
+  "matched_full": "ISOLATED-7b8c6e9fdf70",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoSignedPropagation|ISOLATED-6fb7f6f99cac": {
+  "matched_full": "ISOLATED-17a876312556",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|OPERATION-d358a34c43d7": {
+  "matched_full": null,
+  "score": 0.673,
+  "origin": "operation",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|OPERATION-2eb987670a70": {
+  "matched_full": null,
+  "score": 0.52,
+  "origin": "operation",
+  "model_outcome": "unsupported"
+ },
+ "NoSignedPropagation|OPERATION-10dce4e98af3": {
+  "matched_full": null,
+  "score": 0.556,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|ISOLATED-15cc4318b445": {
+  "matched_full": "ISOLATED-0e1b0192d0c8",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|ISOLATED-652707b10793": {
+  "matched_full": "ISOLATED-48cf41c3f600",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|OPERATION-fbce9be4ba4f": {
+  "matched_full": null,
+  "score": 0.568,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|OPERATION-2b628bcf017a": {
+  "matched_full": "OPERATION-53a2c099bc55",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|ISOLATED-e0857b0c8d8a": {
+  "matched_full": "ISOLATED-0e1b0192d0c8",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|ISOLATED-9b947e6a5c20": {
+  "matched_full": "ISOLATED-4ae8b88ad69f",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|ISOLATED-cbad83f27a15": {
+  "matched_full": "ISOLATED-48cf41c3f600",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|ISOLATED-8646d08e9682": {
+  "matched_full": "ISOLATED-0cb7c283f9de",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoSignedPropagation|ISOLATED-cd3fa01b0729": {
+  "matched_full": "ISOLATED-b4880b6a372e",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|ISOLATED-319ad96264cf": {
+  "matched_full": "ISOLATED-7b8c6e9fdf70",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|ISOLATED-b531e3a0c975": {
+  "matched_full": "ISOLATED-17a876312556",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoSignedPropagation|OPERATION-39fd617ec54f": {
+  "matched_full": null,
+  "score": 0.657,
+  "origin": "operation",
+  "model_outcome": "unsupported"
+ },
+ "NoSignedPropagation|OPERATION-08edb476b138": {
+  "matched_full": "OPERATION-a3455eb84139",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|OPERATION-6dd09caf4b86": {
+  "matched_full": "OPERATION-047c524af82b",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|OPERATION-a7cc2d67a656": {
+  "matched_full": "OPERATION-66497b27ce21",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "unsupported"
+ },
+ "NoSignedPropagation|ISOLATED-ee3611451f72": {
+  "matched_full": "ISOLATED-0e1b0192d0c8",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoSignedPropagation|ISOLATED-9a4e8857357a": {
+  "matched_full": "ISOLATED-48cf41c3f600",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoSignedPropagation|ISOLATED-6905a39f98e2": {
+  "matched_full": "ISOLATED-4ae8b88ad69f",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoSignedPropagation|ISOLATED-0e9bc1e8495e": {
+  "matched_full": "ISOLATED-b4880b6a372e",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoSignedPropagation|OPERATION-143bf1ad8ab7": {
+  "matched_full": "OPERATION-bfe2c70a5486",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "unsupported"
+ },
+ "NoSignedPropagation|OPERATION-3d53f6da17fe": {
+  "matched_full": "ISOLATED-7b8c6e9fdf70",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "unsupported"
+ },
+ "NoSignedPropagation|ISOLATED-098f391f7eb5": {
+  "matched_full": "ISOLATED-0e1b0192d0c8",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|ISOLATED-9f59340cfd2a": {
+  "matched_full": "ISOLATED-b4880b6a372e",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoSignedPropagation|OPERATION-27233d2f8d29": {
+  "matched_full": "OPERATION-5d69238cf751",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|DEP-001": {
+  "matched_full": "DEP-001",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoIsolatedReview|DEP-002": {
+  "matched_full": "DEP-002",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|DEP-003": {
+  "matched_full": "DEP-003",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoIsolatedReview|DEP-004": {
+  "matched_full": "DEP-004",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|DEP-005": {
+  "matched_full": "DEP-005",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "unsupported"
+ },
+ "NoIsolatedReview|DEP-006": {
+  "matched_full": "DEP-006",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|DEP-007": {
+  "matched_full": "DEP-007",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoIsolatedReview|DEP-008": {
+  "matched_full": "DEP-008",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoIsolatedReview|DEP-009": {
+  "matched_full": "DEP-009",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|DEP-010": {
+  "matched_full": "DEP-010",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoIsolatedReview|DEP-011": {
+  "matched_full": "DEP-011",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoIsolatedReview|DEP-012": {
+  "matched_full": "DEP-012",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoIsolatedReview|DEP-013": {
+  "matched_full": "DEP-013",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoIsolatedReview|DEP-014": {
+  "matched_full": "DEP-014",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoIsolatedReview|DEP-015": {
+  "matched_full": "DEP-015",
+  "score": 0.944,
+  "origin": "dependency",
+  "model_outcome": "unsupported"
+ },
+ "NoIsolatedReview|DEP-016": {
+  "matched_full": "DEP-016",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|DEP-017": {
+  "matched_full": "DEP-017",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoIsolatedReview|DEP-018": {
+  "matched_full": "DEP-018",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoIsolatedReview|DEP-019": {
+  "matched_full": "DEP-019",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoIsolatedReview|DEP-020": {
+  "matched_full": "DEP-020",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoIsolatedReview|OPERATION-3a6a65f761ec": {
+  "matched_full": "OPERATION-9c33eb1c3f74",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-c92c66dc0c44": {
+  "matched_full": "DEP-009",
+  "score": 0.75,
+  "origin": "operation",
+  "model_outcome": "unsupported"
+ },
+ "NoIsolatedReview|OPERATION-f191aa09fba3": {
+  "matched_full": "DEP-007",
+  "score": 0.739,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-eecf0fc2c63b": {
+  "matched_full": "ISOLATED-4ae8b88ad69f",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "covered"
+ },
+ "NoIsolatedReview|OPERATION-e9693c61143c": {
+  "matched_full": null,
+  "score": 0.641,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-f07db0a5ce46": {
+  "matched_full": "OPERATION-4362eb6f486f",
+  "score": 0.704,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-7a345b34a79e": {
+  "matched_full": "OPERATION-ff3e64c096de",
+  "score": 0.705,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-5e05cd5acf5a": {
+  "matched_full": "OPERATION-6971fcf37cfd",
+  "score": 0.797,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-bfbbd7881f7c": {
+  "matched_full": "OPERATION-0a251e0a66f5",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-79872daa2888": {
+  "matched_full": "ISOLATED-0cb7c283f9de",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-fbf116a306df": {
+  "matched_full": null,
+  "score": 0.666,
+  "origin": "operation",
+  "model_outcome": "covered"
+ },
+ "NoIsolatedReview|OPERATION-65af4a21ad85": {
+  "matched_full": null,
+  "score": 0.673,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-675d025083e3": {
+  "matched_full": "OPERATION-535534b72c5c",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-33e18cbfdd8e": {
+  "matched_full": null,
+  "score": 0.557,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-77bd5217633e": {
+  "matched_full": null,
+  "score": 0.552,
+  "origin": "operation",
+  "model_outcome": "unsupported"
+ },
+ "NoIsolatedReview|OPERATION-d6c698611e89": {
+  "matched_full": "OPERATION-635a8c4ea312",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-5d7631505bcb": {
+  "matched_full": null,
+  "score": 0.505,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-d9f8bece409d": {
+  "matched_full": "OPERATION-53a2c099bc55",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-5ae87a65a40e": {
+  "matched_full": null,
+  "score": 0.538,
+  "origin": "operation",
+  "model_outcome": "unsupported"
+ },
+ "NoIsolatedReview|OPERATION-f275b745a9c7": {
+  "matched_full": null,
+  "score": 0.657,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-83238edebfe6": {
+  "matched_full": "OPERATION-a3455eb84139",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-1f39dc181680": {
+  "matched_full": "OPERATION-047c524af82b",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-2c434449735e": {
+  "matched_full": "OPERATION-66497b27ce21",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-c3937d33a986": {
+  "matched_full": null,
+  "score": 0.648,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-f0d1798b7b36": {
+  "matched_full": "OPERATION-bfe2c70a5486",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-d470fe6a4e8d": {
+  "matched_full": "ISOLATED-7b8c6e9fdf70",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "covered"
+ },
+ "NoIsolatedReview|OPERATION-b5c6162af7a8": {
+  "matched_full": null,
+  "score": 0.601,
+  "origin": "operation",
+  "model_outcome": "covered"
+ },
+ "NoIsolatedReview|OPERATION-3a0f0db65dda": {
+  "matched_full": null,
+  "score": 0.489,
+  "origin": "operation",
+  "model_outcome": "unsupported"
+ },
+ "NoIsolatedReview|OPERATION-81b67364a515": {
+  "matched_full": "OPERATION-e2933756876e",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "unsupported"
+ },
+ "NoIsolatedReview|OPERATION-e485c9b3ad31": {
+  "matched_full": "OPERATION-5d69238cf751",
+  "score": 0.909,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-99d49c1fc965": {
+  "matched_full": null,
+  "score": 0.554,
+  "origin": "operation",
+  "model_outcome": "retained"
+ },
+ "NoIsolatedReview|OPERATION-857089bfdef6": {
+  "matched_full": "OPERATION-4362eb6f486f",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "unsupported"
+ },
+ "NoOperationReview|DEP-001": {
+  "matched_full": "DEP-001",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|DEP-002": {
+  "matched_full": "DEP-002",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|DEP-003": {
+  "matched_full": "DEP-003",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|DEP-004": {
+  "matched_full": "DEP-004",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|DEP-005": {
+  "matched_full": "DEP-005",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|DEP-006": {
+  "matched_full": "DEP-006",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "unsupported"
+ },
+ "NoOperationReview|DEP-007": {
+  "matched_full": "DEP-007",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|DEP-008": {
+  "matched_full": "DEP-008",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "retained"
+ },
+ "NoOperationReview|DEP-009": {
+  "matched_full": "DEP-009",
+  "score": 0.921,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|DEP-010": {
+  "matched_full": "DEP-010",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "unresolved"
+ },
+ "NoOperationReview|DEP-011": {
+  "matched_full": "DEP-011",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "retained"
+ },
+ "NoOperationReview|DEP-012": {
+  "matched_full": "DEP-012",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|DEP-013": {
+  "matched_full": "DEP-013",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|DEP-014": {
+  "matched_full": "DEP-014",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "retained"
+ },
+ "NoOperationReview|DEP-015": {
+  "matched_full": "DEP-015",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "unsupported"
+ },
+ "NoOperationReview|DEP-016": {
+  "matched_full": "DEP-016",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "retained"
+ },
+ "NoOperationReview|DEP-017": {
+  "matched_full": "DEP-017",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|DEP-018": {
+  "matched_full": "DEP-018",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|DEP-019": {
+  "matched_full": "DEP-019",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|DEP-020": {
+  "matched_full": "DEP-020",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-6a9ad138716f": {
+  "matched_full": "ISOLATED-0e1b0192d0c8",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoOperationReview|ISOLATED-e4e5cef90e12": {
+  "matched_full": "ISOLATED-4ae8b88ad69f",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoOperationReview|ISOLATED-9b45c5726850": {
+  "matched_full": "ISOLATED-48cf41c3f600",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoOperationReview|ISOLATED-d3803c5f2b08": {
+  "matched_full": "ISOLATED-0cb7c283f9de",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-d5a4ce73cbfc": {
+  "matched_full": "ISOLATED-b4880b6a372e",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoOperationReview|ISOLATED-4f70a023572c": {
+  "matched_full": "ISOLATED-7b8c6e9fdf70",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoOperationReview|ISOLATED-145532500ef6": {
+  "matched_full": "ISOLATED-17a876312556",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoOperationReview|ISOLATED-528dc0f35b45": {
+  "matched_full": "ISOLATED-0e1b0192d0c8",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-c6bea276c753": {
+  "matched_full": "ISOLATED-48cf41c3f600",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoOperationReview|ISOLATED-13a3c520fecd": {
+  "matched_full": "ISOLATED-b4880b6a372e",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoOperationReview|ISOLATED-3c72313ad041": {
+  "matched_full": "ISOLATED-4ae8b88ad69f",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-5e1c88cfabfb": {
+  "matched_full": "ISOLATED-0cb7c283f9de",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unresolved"
+ },
+ "NoOperationReview|ISOLATED-6d3c31b4fc90": {
+  "matched_full": "ISOLATED-7b8c6e9fdf70",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoOperationReview|ISOLATED-423784cd3d3d": {
+  "matched_full": "ISOLATED-17a876312556",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoOperationReview|ISOLATED-552841eb97af": {
+  "matched_full": "ISOLATED-0cb7c283f9de",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoOperationReview|ISOLATED-a6213748a89d": {
+  "matched_full": "ISOLATED-17a876312556",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoOperationReview|ISOLATED-a3b21d3568fe": {
+  "matched_full": "ISOLATED-0e1b0192d0c8",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-e706bcc1f073": {
+  "matched_full": "ISOLATED-4ae8b88ad69f",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoOperationReview|ISOLATED-f862d2ee57a6": {
+  "matched_full": "ISOLATED-48cf41c3f600",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-70ec85628d1c": {
+  "matched_full": "ISOLATED-0cb7c283f9de",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unresolved"
+ },
+ "NoOperationReview|ISOLATED-d6d425e041af": {
+  "matched_full": "ISOLATED-56687cada6f5",
+  "score": 0.956,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoOperationReview|ISOLATED-d35160fe9658": {
+  "matched_full": "ISOLATED-7b8c6e9fdf70",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoOperationReview|ISOLATED-92597f20b89b": {
+  "matched_full": "ISOLATED-17a876312556",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoOperationReview|ISOLATED-1aeec962678a": {
+  "matched_full": "ISOLATED-0e1b0192d0c8",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unresolved"
+ },
+ "NoOperationReview|ISOLATED-3dbe5b081f31": {
+  "matched_full": "ISOLATED-4ae8b88ad69f",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-5fcdc00840d6": {
+  "matched_full": "ISOLATED-48cf41c3f600",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-815639d82b2b": {
+  "matched_full": "ISOLATED-0cb7c283f9de",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-1579422d4802": {
+  "matched_full": "ISOLATED-b4880b6a372e",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-ebe26af2b768": {
+  "matched_full": "ISOLATED-7b8c6e9fdf70",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-b409cef95a59": {
+  "matched_full": "ISOLATED-17a876312556",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoOperationReview|ISOLATED-36d9a384cced": {
+  "matched_full": "ISOLATED-0e1b0192d0c8",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoOperationReview|ISOLATED-cd50d96f97f8": {
+  "matched_full": "ISOLATED-4ae8b88ad69f",
+  "score": 0.966,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-9e3131c6d8e5": {
+  "matched_full": "ISOLATED-48cf41c3f600",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoOperationReview|ISOLATED-392a7ee52668": {
+  "matched_full": "ISOLATED-0cb7c283f9de",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "retained"
+ },
+ "NoOperationReview|ISOLATED-434ca1eb9c89": {
+  "matched_full": "ISOLATED-b4880b6a372e",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-1d8301ce8c66": {
+  "matched_full": "ISOLATED-7b8c6e9fdf70",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoOperationReview|ISOLATED-f4f4ee6557c3": {
+  "matched_full": "ISOLATED-17a876312556",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unresolved"
+ },
+ "NoOperationReview|ISOLATED-34294aa28f36": {
+  "matched_full": "ISOLATED-0e1b0192d0c8",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-a9aa65bd95b9": {
+  "matched_full": "ISOLATED-0b742696e428",
+  "score": 0.942,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-3e877819037b": {
+  "matched_full": "ISOLATED-48cf41c3f600",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoOperationReview|ISOLATED-d6410fda79c5": {
+  "matched_full": "ISOLATED-0cb7c283f9de",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-03d13ef9b6b1": {
+  "matched_full": "ISOLATED-b4880b6a372e",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-893aa04d89fe": {
+  "matched_full": "ISOLATED-7b8c6e9fdf70",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-7eac1a48ea6a": {
+  "matched_full": "ISOLATED-17a876312556",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "unsupported"
+ },
+ "NoOperationReview|ISOLATED-ef3dd992ef67": {
+  "matched_full": "ISOLATED-0e1b0192d0c8",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-e5bae3bfcaa2": {
+  "matched_full": "ISOLATED-4ae8b88ad69f",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoOperationReview|ISOLATED-bd4bdfaff7d5": {
+  "matched_full": "ISOLATED-7b8c6e9fdf70",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "covered"
+ },
+ "NoFullDocumentValidation|DEP-001": {
+  "matched_full": "DEP-001",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|DEP-002": {
+  "matched_full": "DEP-002",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|DEP-003": {
+  "matched_full": "DEP-003",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|DEP-004": {
+  "matched_full": "DEP-004",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|DEP-005": {
+  "matched_full": "DEP-005",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|DEP-006": {
+  "matched_full": "DEP-006",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|DEP-007": {
+  "matched_full": "DEP-007",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|DEP-008": {
+  "matched_full": "DEP-008",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|DEP-009": {
+  "matched_full": "DEP-009",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|DEP-010": {
+  "matched_full": "DEP-010",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|DEP-011": {
+  "matched_full": "DEP-011",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|DEP-012": {
+  "matched_full": "DEP-012",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|DEP-013": {
+  "matched_full": "DEP-013",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|DEP-014": {
+  "matched_full": "DEP-014",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|DEP-015": {
+  "matched_full": "DEP-015",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|DEP-016": {
+  "matched_full": "DEP-016",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|DEP-017": {
+  "matched_full": "DEP-017",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|DEP-018": {
+  "matched_full": "DEP-018",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|DEP-019": {
+  "matched_full": "DEP-019",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|DEP-020": {
+  "matched_full": "DEP-020",
+  "score": 0.9,
+  "origin": "dependency",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|ISOLATED-08e7869ab193": {
+  "matched_full": "ISOLATED-0e1b0192d0c8",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|ISOLATED-cf62f7eafd00": {
+  "matched_full": "ISOLATED-4ae8b88ad69f",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-b8927230c99b": {
+  "matched_full": "ISOLATED-b4880b6a372e",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-5d50ce8aef71": {
+  "matched_full": null,
+  "score": 0.641,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|ISOLATED-10080ec40edc": {
+  "matched_full": "ISOLATED-0e1b0192d0c8",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-f1ab4f4db124": {
+  "matched_full": "ISOLATED-48cf41c3f600",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-14d1d5d79dac": {
+  "matched_full": "OPERATION-ff3e64c096de",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|ISOLATED-f6a0b89fce21": {
+  "matched_full": "ISOLATED-b4880b6a372e",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|ISOLATED-f836bf4bad01": {
+  "matched_full": "ISOLATED-0cb7c283f9de",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-6ea32fb03ed6": {
+  "matched_full": "OPERATION-6971fcf37cfd",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|ISOLATED-7dbcd685c067": {
+  "matched_full": "ISOLATED-0e1b0192d0c8",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|ISOLATED-4657b6b143e1": {
+  "matched_full": "ISOLATED-48cf41c3f600",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|ISOLATED-751c7b7bc9cf": {
+  "matched_full": "ISOLATED-b4880b6a372e",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|ISOLATED-16ff7a71c671": {
+  "matched_full": "ISOLATED-7b8c6e9fdf70",
+  "score": 0.948,
+  "origin": "isolated",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-756d4068e4d4": {
+  "matched_full": "OPERATION-ff3e64c096de",
+  "score": 0.727,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-1ae312a0ea92": {
+  "matched_full": null,
+  "score": 0.691,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|ISOLATED-ed55a19dbb49": {
+  "matched_full": "ISOLATED-0e1b0192d0c8",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|ISOLATED-54d52a3f4eef": {
+  "matched_full": "ISOLATED-48cf41c3f600",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|ISOLATED-58ea01f90d0a": {
+  "matched_full": "ISOLATED-7b8c6e9fdf70",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-c3c92db3854a": {
+  "matched_full": null,
+  "score": 0.526,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-44b2daf510ec": {
+  "matched_full": null,
+  "score": 0.618,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-d4fd447042c3": {
+  "matched_full": null,
+  "score": 0.558,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-904a11a9521c": {
+  "matched_full": null,
+  "score": 0.495,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-7b3ebbc2d440": {
+  "matched_full": null,
+  "score": 0.55,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-661be28d3ef4": {
+  "matched_full": "OPERATION-53a2c099bc55",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-c8c070ad70d7": {
+  "matched_full": "OPERATION-66497b27ce21",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-afbc5bdda727": {
+  "matched_full": "OPERATION-047c524af82b",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-9b55bad64875": {
+  "matched_full": null,
+  "score": 0.657,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-dd8253608df5": {
+  "matched_full": "OPERATION-a3455eb84139",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|ISOLATED-31a85cb7f56b": {
+  "matched_full": "ISOLATED-4ae8b88ad69f",
+  "score": 0.966,
+  "origin": "isolated",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|ISOLATED-4aa6db0d1b97": {
+  "matched_full": "ISOLATED-0e1b0192d0c8",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|ISOLATED-d90489838037": {
+  "matched_full": "ISOLATED-b4880b6a372e",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-70f1cd2d84f4": {
+  "matched_full": "OPERATION-bfe2c70a5486",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-474aea440227": {
+  "matched_full": null,
+  "score": 0.608,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-23b92139c078": {
+  "matched_full": "OPERATION-e2933756876e",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-5dca9d7b8c55": {
+  "matched_full": null,
+  "score": 0.53,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-9d9e04802881": {
+  "matched_full": "OPERATION-4362eb6f486f",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|OPERATION-5fcb1f0efed4": {
+  "matched_full": "OPERATION-5d69238cf751",
+  "score": 0.9,
+  "origin": "operation",
+  "model_outcome": "not_checked"
+ },
+ "NoFullDocumentValidation|ISOLATED-10cccc3cb98a": {
+  "matched_full": "ISOLATED-17a876312556",
+  "score": 0.9,
+  "origin": "isolated",
+  "model_outcome": "not_checked"
+ }
+}

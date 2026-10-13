@@ -1,0 +1,53 @@
+1. The system shall ensure that batch-ingested historical data is available and accessible to the machine learning model training process to support predictive analysis of traffic trends and incident likelihood.
+
+2. The system shall generate the pre-defined reports on traffic volume, incident frequency, and road condition trends whenever a user schedules automatic report generation and email delivery.
+
+3. The system shall ensure that processed data originating from batch ingestion of historical data is stored in the long-term archive and is subsequently published in the standardized formats (e.g., SAE J2354, TMDD).
+
+4. The system shall maintain the long-term archive of all processed data without being solely dependent on Oracle 10G, ensuring continuity of archival operations.
+
+5. The system shall deliver the scheduled report email to the designated recipients when the scheduled automatic report generation and email delivery is triggered.
+
+6. The system shall ensure that historical data ingested in batch for archive backfill is stored in the long-term archive and made available for user queries through SQL-based tools.
+
+7. The system shall perform automated data quality checks on stored normalized data in addition to ingestion-time validation to detect anomalies or inconsistencies not identified during ingestion.
+
+8. The system shall have access to historical traffic data sufficient to generate the required statistical summaries.
+
+9. The system shall allow authorized users to update or reclassify a detected incident under defined conditions, including the roles and permissions required for such updates.
+
+10. The system shall provide mechanisms to retrain and update machine learning models when performance degrades or new data becomes available.
+
+11. The system shall execute automated data purging only after the applicable retention period has elapsed, according to configurable retention policies, and shall record audit logs identifying the data purged, the policy applied, and the timestamp of deletion.
+
+12. The system shall invalidate cached data entries when corresponding archived data is purged.
+
+13. The system shall compute traffic metrics to support the detection of traffic incidents and the generation of traffic incident alerts.
+
+14. The system shall export generated statistical summaries in CSV, JSON, XML, and KML formats for third-party use.
+
+15. The system shall perform automated data quality checks on processed data prior to publication in standardized formats.
+
+16. The system shall provide ad-hoc reporting tools that allow third-party users to create custom reports using exported data.
+
+17. The system shall define user roles and access permissions for data publication, real-time feeds, alerts, and export capabilities to ensure that authorized users, including third-party users and external applications, have appropriate access while preventing unauthorized access.
+
+18. The system shall define and implement a delivery mechanism for real-time data feeds to MI Drive, specifying whether it is push-based or pull-based.
+
+19. The system shall support role-based access control for all user categories, including a default 'all users' role if such a role is defined, ensuring that permissions for that role are specified and enforced.
+
+20. The system shall allow administrators to view, filter, and export audit log entries (including administrative actions and errors) for audit and troubleshooting purposes.
+
+21. The system shall provide administrative operations to create, modify, and assign user roles and permissions.
+
+22. The system shall allow administrators to schedule automatic backups and perform partial restores of database and configuration settings (e.g., restore only configuration settings without affecting the database).
+
+23. The system shall allow users to specify and update the email recipients for scheduled automatic report delivery.
+
+24. The system shall provide an operation to revoke a user's authentication and authorization.
+
+25. The system shall provide authorized users with the ability to view and search audit logs.
+
+26. The system shall provide authorized users with the ability to generate compliance reports demonstrating adherence to MDIT security standards and FIPS 140-2 encryption requirements.
+
+27. The system shall specify the user roles (e.g., field operator, analyst, administrator) that constitute 'all users' for security requirements to ensure consistent application.

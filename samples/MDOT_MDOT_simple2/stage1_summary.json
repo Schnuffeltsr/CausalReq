@@ -1,0 +1,16 @@
+{
+  "doc_id": "MDOT_MDOT_simple2",
+  "source_fr_count": 8,
+  "element_count": 50,
+  "elements_with_active_meaning": 45,
+  "evidence_relation_count": 56,
+  "evidence_nodes": 50,
+  "evidence_edges": 56,
+  "simulation_nodes": 45,
+  "simulation_edges": 14,
+  "exclusions": 30,
+  "fixed_pool_count": 20,
+  "model_version": "MODEL-a988258ceab9",
+  "llm_calls": 23,
+  "minutes": 33.7
+}

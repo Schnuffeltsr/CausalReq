@@ -1,0 +1,248 @@
+[
+  {
+    "source": "System",
+    "target": "De-cluttering features",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-8c1f067bcda7"
+    ]
+  },
+  {
+    "source": "System",
+    "target": "Web-based interface for viewing data",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-afa5a21718ec",
+      "REL-27d10a0879ce"
+    ]
+  },
+  {
+    "source": "System",
+    "target": "Audit logging of user activities and system events",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-cb4cb0e2283d"
+    ]
+  },
+  {
+    "source": "System",
+    "target": "Backup and Restore Capabilities",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-a365dada27ad"
+    ]
+  },
+  {
+    "source": "System",
+    "target": "Compliance with MDIT and FIPS 140-2",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-5e23c6d870a1"
+    ]
+  },
+  {
+    "source": "System",
+    "target": "Configure Data Sources, Algorithms, and Output Formats",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-63b0bd4349d9"
+    ]
+  },
+  {
+    "source": "System",
+    "target": "Custom dashboards",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-1f4b3eda57af",
+      "REL-96100c9ebb0c"
+    ]
+  },
+  {
+    "source": "System",
+    "target": "Enforce secure authentication and authorization",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-a28446ec1001"
+    ]
+  },
+  {
+    "source": "System",
+    "target": "Generate alerts",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-acfb45289b11"
+    ]
+  },
+  {
+    "source": "System",
+    "target": "Log Administrative Actions and Errors",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-3e2bf4f946bf"
+    ]
+  },
+  {
+    "source": "System",
+    "target": "Multi-language UI support",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-6173511c56f5",
+      "REL-09821ab2c029"
+    ]
+  },
+  {
+    "source": "System",
+    "target": "Provide API for real-time consumption",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-187a1567ae4c"
+    ]
+  },
+  {
+    "source": "System",
+    "target": "Provide real-time data feeds to MI Drive",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-f7b323aef8e4"
+    ]
+  },
+  {
+    "source": "System",
+    "target": "Publish processed data in standardized formats",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-d6c70c16c927"
+    ]
+  },
+  {
+    "source": "System",
+    "target": "Role-Based Access Control",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-d4335eccbe50"
+    ]
+  },
+  {
+    "source": "System",
+    "target": "Support data export formats",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-50d50b81a6fa"
+    ]
+  },
+  {
+    "source": "System",
+    "target": "TLS 1.2+ encryption for data transmissions",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-d12da6271134"
+    ]
+  },
+  {
+    "source": "User",
+    "target": "Schedule Automatic Report Generation and Email Delivery",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-9f4048b65b72"
+    ]
+  },
+  {
+    "source": "Users",
+    "target": "Schedule Automatic Report Generation and Email Delivery",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-a29cd94e04f7"
+    ]
+  },
+  {
+    "source": "Web-based interface for viewing data",
+    "target": "Map displays with icon layers",
+    "reason": "unspecified_sign",
+    "relation_ids": [
+      "REL-e0c79940a375",
+      "REL-77649e7e9008",
+      "REL-17b746be129a"
+    ]
+  },
+  {
+    "source": "Predefined quality rules",
+    "target": "Validate incoming data and reject invalid data",
+    "reason": "unspecified_sign",
+    "relation_ids": [
+      "REL-ce90a4b48718"
+    ]
+  },
+  {
+    "source": "Probe vehicles, traffic sensors, weather stations, and traveler information systems",
+    "target": "Accept real-time data inputs from external sources",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-27383ff7a083"
+    ]
+  },
+  {
+    "source": "Probe vehicles, traffic sensors, weather stations, and traveler information systems",
+    "target": "Input data fields",
+    "reason": "undefined_activation_state",
+    "relation_ids": [
+      "REL-393496a60715"
+    ]
+  },
+  {
+    "source": "Report Export Formats",
+    "target": "Generate Pre-defined Reports",
+    "reason": "unspecified_sign",
+    "relation_ids": [
+      "REL-de491288ed56"
+    ]
+  },
+  {
+    "source": "Role-Based Access Control",
+    "target": "Configure Data Sources, Algorithms, and Output Formats",
+    "reason": "unspecified_sign",
+    "relation_ids": [
+      "REL-979b3ff81931",
+      "REL-f604b1dfa2ac"
+    ]
+  },
+  {
+    "source": "Web-based interface for viewing data",
+    "target": "Custom dashboards",
+    "reason": "unspecified_sign",
+    "relation_ids": [
+      "REL-015933568be4"
+    ]
+  },
+  {
+    "source": "Web-based interface for viewing data",
+    "target": "Data filtering and search",
+    "reason": "unspecified_sign",
+    "relation_ids": [
+      "REL-7b96e65a3233"
+    ]
+  },
+  {
+    "source": "Web-based interface for viewing data",
+    "target": "Multi-language UI support",
+    "reason": "unspecified_sign",
+    "relation_ids": [
+      "REL-56b66e77e95c"
+    ]
+  },
+  {
+    "source": "Accept real-time data inputs from external sources",
+    "target": "Detect and classify incidents",
+    "reason": "unspecified_sign",
+    "relation_ids": [
+      "REL-d7641b2cd28b"
+    ]
+  },
+  {
+    "source": "Accept real-time data inputs from external sources",
+    "target": "Calculate road surface conditions",
+    "reason": "unspecified_sign",
+    "relation_ids": [
+      "REL-80af8900a314"
+    ]
+  }
+]
