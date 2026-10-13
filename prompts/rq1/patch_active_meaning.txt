@@ -1,0 +1,6 @@
+
+IMPORTANT: for every element you MUST fill active_meaning with a concrete
+scenario-level statement of what "active = 1" means for THIS document,
+e.g. "the snapshot has been published successfully". Only leave it empty
+if the element is an ACTOR. Prefer elements whose active state the
+document actually determines (STATE, EVENT, CONSTRAINT, FUNCTION).

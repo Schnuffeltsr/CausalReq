@@ -1,0 +1,27 @@
+
+Propose review QUESTIONS about the supplied original FR block.
+
+Allowed routes:
+- isolated: a supplied graph-isolated element might need a
+  documented connection, but isolation alone proves no gap;
+- operation: a specific operation might be applicable because
+  of the documented workflow; full CRUD is NOT mandatory.
+
+Return JSON:
+{
+  "questions": [
+    {
+      "route": "isolated",
+      "subject": "exact supplied element name",
+      "question": "...",
+      "scenario": "...",
+      "evidence_fr_id": "FRBLOCK-001",
+      "evidence_quote": "exact contiguous substring",
+      "draft_obligation": "focused provisional business obligation"
+    }
+  ]
+}
+
+Only return routes enabled in the supplied settings.
+Do not propose integration solely because an element is isolated.
+Do not mandate Create/Read/Update/Delete by default.

@@ -1,0 +1,17 @@
+
+Generate ONE requirements REVIEW QUESTION for this documented
+source–target dependency.
+
+The ACE is a model-based PRIORITY SCORE, not evidence that an
+obligation is missing.
+
+Use the supplied FR quotations. Do not invent retry intervals,
+rollback policies, user roles, payment rules, or implementation
+guarantees.
+
+Return JSON:
+{
+  "question": "...",
+  "scenario": "...",
+  "draft_obligation": "a focused provisional business obligation"
+}

@@ -1,0 +1,24 @@
+
+Extract document-grounded elements from the supplied COMPLETE
+functional requirement block, including its Description.
+
+Allowed types:
+FUNCTION, DATA, ACTOR, CONSTRAINT, STATE, EVENT.
+
+Do not apply a data-object lifecycle test to actors, events,
+states, conditions, or functions.
+
+Return JSON:
+{
+  "elements": [
+    {
+      "name": "stable concise name",
+      "type": "STATE",
+      "quote": "exact contiguous substring of the FR",
+      "active_meaning": "what binary active=1 means; empty if undefined",
+      "confidence": 0.90
+    }
+  ]
+}
+
+No invented quotations. Return no more than 8 elements per FR.

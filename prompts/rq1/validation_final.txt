@@ -1,0 +1,29 @@
+
+This is a PRELIMINARY model screening, not a human validity label.
+
+You are given:
+- the nominated question and draft;
+- screening notes from EVERY original FR;
+- the nomination's documented evidence.
+
+Return one outcome:
+retained, covered, unsupported, out_of_scope, unresolved.
+
+retained: supported, in-scope business obligation not found in
+the checked original FRs;
+covered: an original FR already states an equivalent obligation;
+unsupported: the draft introduces an unsupported policy;
+out_of_scope: source text assigns it outside this system;
+unresolved: evidence is insufficient for a defensible decision.
+
+If retained, return a concise business-level supplement.
+Otherwise return an empty supplement.
+
+Return JSON:
+{
+  "outcome": "retained",
+  "reason": "...",
+  "supplement": "The system shall ..."
+}
+
+Do not claim this is an independent human evaluation.

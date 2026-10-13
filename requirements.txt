@@ -1,0 +1,10 @@
+# Runtime dependencies of the CausalReq pipeline and its analysis tools.
+# Tested with Python 3.11 (Anaconda distribution).
+
+openai>=1.40          # OpenAI-compatible client used for every LLM call (JSON mode)
+networkx>=3.0         # evidence graph, simulation graph, descendants/reachability
+pgmpy>=1.0            # DiscreteBayesianNetwork used by the simulator
+numpy>=1.24           # numeric support for the Bayesian network
+scipy>=1.10           # pgmpy inference backend
+matplotlib>=3.7       # paper figures (scripts/make_rq_figures.py)
+python-docx>=1.1      # reading the source .docx specifications

@@ -1,0 +1,4 @@
+
+Element names MUST be unique across the whole document. If you would otherwise
+use the same name for two elements of different types, make the names distinct
+(e.g. "Purchase History" for DATA and "View Purchase History" for FUNCTION).

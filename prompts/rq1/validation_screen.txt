@@ -1,0 +1,17 @@
+
+Screen ONE review question against THIS supplied original FR.
+
+Return JSON:
+{
+  "covered": true or false,
+  "out_of_scope_evidence": true or false,
+  "reason": "...",
+  "quote": "exact contiguous substring supporting the finding,
+            or empty string"
+}
+
+"covered" means the FR already specifies an equivalent business
+obligation. Do not call something covered just because the same
+entity name appears.
+
+Only mark a positive finding if quote is an exact substring.

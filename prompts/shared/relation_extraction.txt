@@ -1,0 +1,38 @@
+
+Extract causal or dependency relations justified by the supplied FRs.
+
+Allowed relation_type:
+ENABLES, TRIGGERS, PREVENTS, MODIFIES,
+DEPENDS_ON, CONTROLS, PRODUCES.
+
+source is ALWAYS the upstream element;
+target is ALWAYS the downstream element.
+If "Y depends on X", return source=X, target=Y.
+Do not generate CONFOUNDS as a binary edge.
+Chronology alone is not causation.
+Do not connect elements merely because they are isolated.
+
+propagation_sign is positive, negative, or unknown.
+Use unknown if the document does not establish whether activating
+source increases or decreases the SPECIFIED target active state.
+
+Return JSON:
+{
+  "relations": [
+    {
+      "source": "exact element name",
+      "target": "exact element name",
+      "relation_type": "ENABLES",
+      "propagation_sign": "positive",
+      "confidence": 0.85,
+      "source_fr_id": "FRBLOCK-001",
+      "source_quote": "exact quotation",
+      "target_fr_id": "FRBLOCK-002",
+      "target_quote": "exact quotation",
+      "reason": "why this is a dependency"
+    }
+  ]
+}
+
+Both quotations must be exact contiguous substrings of the
+corresponding supplied FR blocks.

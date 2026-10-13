@@ -1,0 +1,28 @@
+# credentials and local configuration
+.env
+*.key
+credentials.yaml
+
+# LLM screening cache (scheduling artefact, regenerated per run)
+samples/*/cache/
+**/cache/validation/
+
+# figure output directory, written by rq2/make_figure.py and rq4/make_figure.py
+figures/
+
+# python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+venv/
+.venv/
+
+# run logs (per-call traces, several MB each)
+*.log
+*.err
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
