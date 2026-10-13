@@ -90,9 +90,7 @@ samples/<DOC_ID>/
 │                               run_settings.json, manifest.json
 ├── review/                     review worksheets (RQ2 candidates, RQ3 Full, ablation-only)
 │                               and w_map.json (Full <-> ablation mapping)
-├── human_review/               RQ2_human_review.csv, RQ3_human_review.csv,
-│                               RQ2_HUMAN_BUDGET.md, RQ3_COMPONENT_CONTRIBUTION.md
-└── RESULTS.md                  single-document report (10 sections)
+└── RESULTS.md                  single-document report (sections 1-6)
 ```
 
 The five `RQ3/<variant>/` folders are `Full`, `NoSignedPropagation`, `NoIsolatedReview`,
@@ -112,8 +110,8 @@ The five `RQ3/<variant>/` folders are `Full`, `NoSignedPropagation`, `NoIsolated
 # the headline record of one document
 less samples/Inventory_MIRC3/RESULTS.md
 
-# which obligations the human review accepted, with the FR ids that support them
-column -s, -t < samples/Inventory_MIRC3/human_review/RQ3_human_review.csv
+# the fixed candidate pool and the three rankings
+column -s, -t < samples/Inventory_MIRC3/RQ2/fixed_pool.json
 
 # one nomination end to end (question, evidence FRs, FR-by-FR screenings, verdict, draft)
 python - <<'PY'

@@ -40,8 +40,13 @@ supplements = {s["source_nomination_id"]: s
                for s in json.loads((full / "supplements.json").read_text(encoding="utf-8"))}
 original = (root / "source" / "original_document.txt").read_text(encoding="utf-8")
 
-with (root / "human_review" / "RQ3_human_review.csv").open(encoding="utf-8-sig") as handle:
-    verdicts = {r["提名ID"]: r for r in csv.DictReader(handle)}
+# the human verdict table is not part of the published repository; the trace
+# then stops at the retained supplement
+verdicts = {}
+verdict_path = root / "human_review" / "RQ3_human_review.csv"
+if verdict_path.exists():
+    with verdict_path.open(encoding="utf-8-sig") as handle:
+        verdicts = {r["提名ID"]: r for r in csv.DictReader(handle)}
 
 
 def source_excerpt(fr_ids):
@@ -72,7 +77,9 @@ def show(nomination_id, heading):
           f"{supplement['text'][:220] if supplement else '(not retained)'}"
           + (f"   [{supplement['output_id']}]" if supplement else ""))
     verdict = verdicts.get(nomination_id)
-    if verdict:
+    if verdict is None:
+        print("  human verdict    : (not published with this repository)")
+    else:
         print(f"  human verdict    : {verdict['人工去向']}"
               f"   obligation {verdict['义务ID'] or '-'}"
               f"   support {verdict['原文依据']}")

@@ -55,10 +55,10 @@ documented in [`prompts/README.md`](prompts/README.md).
 |---|---|
 | `export_graph.py` | Causal-graph export: `causal_graph.png/json`, `evidence_graph.graphml`, `simulation_graph.graphml`, both `.dot`, `causal_graph_summary.md` |
 | `build_review_worksheets.py` | Builds the RQ2 candidate sheet, the RQ3 Full sheet and the ablation sheet (each with the closest reference targets) and `review/w_map.json`, which the RQ3 analysis consumes |
-| `summarize_results.py` | One-document report `RESULTS.md` (10 sections, including the four human-review sections) |
+| `summarize_results.py` | One-document report `RESULTS.md`; if a `human_review/` folder is present it appends the human-review sections |
 | `summarize_all_runs.py` | Cross-document table of all variants: nomination counts, route mix, model dispositions |
 | `list_artifacts.py` | Prints what exists for every document under a run root |
-| `verify_saved.py` | Integrity check of the saved deliverables (row counts, obligation ids, figures) |
+| `verify_saved.py` | Integrity check of the published artefacts (pool, nominations, supplements, figures) |
 | `make_manifest.py` | Regenerates an inventory file `MANIFEST.md` at the repository root if you want one |
 
 ## Prompts — `prompts/`
@@ -92,7 +92,7 @@ template safely.
 | `source_documents/<system>/` | The 42 original test documents (`Document/` only; the delivered `Analysis/` files are excluded — they are not an input to any step) | 42 |
 | `reference_documents/<system>/` | The 42 enhanced reference specifications — the oracle for "genuinely missing obligation" | 42 |
 | `reference_targets/` | Plain-text extracts of the three reference documents used by the review tools | 3 |
-| `MDOT_MDOT_simple2/`, `Inventory_MIRC3/`, `WebStore_MIRC3/` | Fully processed samples: original text, extracted elements and relations, graphs, fixed pool and rankings, five RQ3 variants, human verdict tables, `RESULTS.md` | 182 |
+| `MDOT_MDOT_simple2/`, `Inventory_MIRC3/`, `WebStore_MIRC3/` | Fully processed samples: original text, extracted elements and relations, graphs, fixed pool and rankings, five RQ3 variants and `RESULTS.md` | 166 |
 | `samples/README.md` | The per-document output contract, the dataset description and how to read a sample | 1 |
 
 ## Generated at runtime, not stored here
