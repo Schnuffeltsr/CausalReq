@@ -1,0 +1,145 @@
+# samples — case validation data (reference samples)
+
+These are the artefacts produced by running the code in `core/`, `rq1/`–`rq4/` and
+`tools/` on three specifications. They are kept as **reference samples**: they show that
+the pipeline runs end to end, and they define the exact output contract that the analysis
+scripts expect.
+
+```
+samples/
+├── source_documents/            the original test dataset: 42 DOCX files
+│   ├── CCTNS/        (6)         7 systems x 6 variants
+│   ├── CityMapper/   (6)           filtered_<system>_<variant>_doc.docx
+│   ├── Email/        (6)           variants: MIRC1-3, simple1-3
+│   ├── Inventory/    (6)
+│   ├── MDOT/         (6)
+│   ├── QuickEats/    (6)
+│   └── WebStore/     (6)
+├── reference_documents/         the reference dataset: 42 DOCX files
+│   ├── CCTNS/        (6)         7 systems x 6 variants
+│   ├── CityMapper/   (6)           <system>_requirements_FINAL_clean_<variant>-Reference.docx
+│   ├── Emial/        (6)           variants: MIRC1-3, Simple1-3
+│   ├── Inventory/    (6)
+│   ├── MDOT/         (6)
+│   ├── QuickEats/    (6)
+│   └── WebStore/     (6)
+├── reference_targets/           plain-text extracts used as the validation oracle
+│   ├── reference_MDOT.txt          (MDOT-Simple2, FR-001 … FR-084)
+│   ├── reference_Inventory.txt     (Inventory-MIRC3, FR-01 … FR-107)
+│   └── reference_WebStore.txt      (WebStore-MIRC3, sections 1.1 … 1.45)
+├── MDOT_MDOT_simple2/
+├── Inventory_MIRC3/
+└── WebStore_MIRC3/
+```
+
+## The original test dataset
+
+`source_documents/` holds the specifications under evaluation: **7 software-system cases ×
+6 document variants = 42 documents**, the input corpus of the paper. These are the files the
+pipeline reads (`--source`); stage 1 also stores the text it read in each sample folder as
+`source/original_document.txt`.
+
+The delivered dataset contains a second sub-folder per system (`Analysis/`, 42 further
+DOCX files) which is **not** part of this repository: it is not an input to any step of the
+method.
+
+## The reference dataset
+
+`reference_documents/` holds the enhanced reference specifications for the whole
+evaluation: **7 software-system cases × 6 document variants = 42 documents**, matching the
+42-document corpus of the paper. Each reference document is the original specification
+plus the requirements added by the annotators, and it is the oracle that decides whether a
+nomination is a genuinely missing obligation.
+
+Both datasets are byte-identical copies of the delivered files (SHA-256 verified on
+import). Folder names follow the original delivery, which is why the source folder is
+`Email/` while the reference folder is `Emial/` (both contain `Email_*` files).
+
+| Processed sample | Source document | Reference document |
+|---|---|---|
+| `samples/MDOT_MDOT_simple2/` | `source_documents/MDOT/filtered_MDOT_simple2_doc.docx` | `reference_documents/MDOT/MDOT_requirements_FINAL_clean_Simple2-Reference.docx` |
+| `samples/Inventory_MIRC3/` | `source_documents/Inventory/filtered_Inventory_MIRC3_doc.docx` | `reference_documents/Inventory/Inventory_requirements_FINAL_clean_MIRC3-Reference.docx` |
+| `samples/WebStore_MIRC3/` | `source_documents/WebStore/filtered_WebStore_MIRC3_doc.docx` | `reference_documents/WebStore/WebStore_requirements_FINAL_clean_MIRC3-Reference.docx` |
+
+The remaining 39 document pairs are published so the dataset can be reused for the other
+variants of the corpus.
+
+```bash
+# rerun stage 1 on any of the 42 documents straight from the repository
+python core/run_stage_source.py --doc-id Email_MIRC2 \
+    --source samples/source_documents/Email/filtered_Email_MIRC2_doc.docx \
+    --out-root samples
+```
+
+
+## Per-document folder contract
+
+```
+samples/<DOC_ID>/
+├── stage1_summary.json         counts, timings, model version of stage 1
+├── source/                     original_document.txt, frs.json, elements.json,
+│                               relations.json, simulation_exclusions.json
+│                               (plus name_collisions.json where relevant)
+├── graph/                      causal_graph.{png,json}, evidence_graph.graphml + .dot,
+│                               simulation_graph.graphml + .dot, causal_graph_summary.md
+├── RQ1/                        causalreq_supplements_only.txt, causalreq_complete_document.txt,
+│                               RQ1_review.md, manifest.json, 00_original_document.txt
+├── RQ2/                        fixed_pool.json, ACE_review.csv, Reachability_review.csv,
+│                               Random_review.csv, manifest.json, original_document.txt
+├── RQ3/<variant>/              nominations.json, supplements.json, review.md,
+│                               run_settings.json, manifest.json
+├── review/                     review worksheets (RQ2 candidates, RQ3 Full, ablation-only)
+│                               and w_map.json (Full <-> ablation mapping)
+├── human_review/               RQ2_human_review.csv, RQ3_human_review.csv,
+│                               RQ2_HUMAN_BUDGET.md, RQ3_COMPONENT_CONTRIBUTION.md
+└── RESULTS.md                  single-document report (10 sections)
+```
+
+The five `RQ3/<variant>/` folders are `Full`, `NoSignedPropagation`, `NoIsolatedReview`,
+`NoOperationReview` and `NoFullDocumentValidation`.
+
+## What the samples contain
+
+| Document | FR blocks | Elements (active) | Relations | Simulation graph | Pool | RQ3 variants |
+|---|---:|---:|---:|---:|---:|---:|
+| MDOT_MDOT_simple2 | 8 | 50 (45) | 56 | 45 n / 14 e | 20 | 5 |
+| Inventory_MIRC3 | 27 | 155 (140) | 276 | 140 n / 103 e | 20 | 5 |
+| WebStore_MIRC3 | 33 | 140 (118) | 387 | 118 n / 92 e | 20 | 5 |
+
+## Reading a sample
+
+```bash
+# the headline record of one document
+less samples/Inventory_MIRC3/RESULTS.md
+
+# which obligations the human review accepted, with the FR ids that support them
+column -s, -t < samples/Inventory_MIRC3/human_review/RQ3_human_review.csv
+
+# one nomination end to end (question, evidence FRs, FR-by-FR screenings, verdict, draft)
+python - <<'PY'
+import json, pathlib
+p = pathlib.Path("samples/Inventory_MIRC3/RQ3/Full/nominations.json")
+n = json.loads(p.read_text(encoding="utf-8"))[0]
+print(n["nomination_id"], n["origin"], n["preliminary_outcome"])
+print("question:", n["question"])
+print("screened FRs:", len(n["checked_fr_ids"]))
+PY
+```
+
+## Source specifications
+
+The DOCX specifications are not redistributed. The text as read by the pipeline is
+preserved in every sample folder as `source/original_document.txt`, so the validation data
+is self-contained. To re-run stage 1 on a document:
+
+```bash
+python core/run_stage_source.py --doc-id Inventory_MIRC3 \
+    --source /path/to/filtered_Inventory_MIRC3_doc.docx --out-root samples
+```
+
+## Note on the LLM screening cache
+
+`cache/validation/` (2,435 small JSON files) is excluded from the repository: it is a
+scheduling aid keyed by (document, model, question, draft) and is regenerated on demand.
+Measured hit rate across concurrently running variants was 0, because the model does not
+reproduce identical nomination wording across runs.

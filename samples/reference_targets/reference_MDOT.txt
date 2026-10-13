@@ -1,0 +1,347 @@
+[P|Normal] Functional Requirement
+[P|Normal] 2. Functional Requirements
+[P|Normal] 2.1 Data Collection and Ingestion
+[P|Normal] FR-001 Data Collection and Ingestion
+[P|Normal] Input: GPS data, speed, location, road condition reports, temperature, precipitation, visibility, traveler information data, and source metadata.
+[P|Normal] Output: Normalized data stored in the central database.
+[P|Normal] Description: The system shall accept real-time data inputs from probe vehicles, traffic sensors, weather stations, road sensors, and traveler information systems. The system shall normalize accepted inputs before making them available for processing, publication, storage, and visualization.
+[P|Normal] FR-002 Incoming Data Validation
+[P|Normal] Input: Incoming real-time data, batch data, predefined quality rules, schema rules, and validation metadata.
+[P|Normal] Output: Accepted normalized data, rejected data status, or quarantined input record.
+[P|Normal] Description: The system shall validate incoming data against predefined quality and format rules. Invalid or malformed data shall not disrupt ingestion and shall be rejected or quarantined with the original payload, rejection reason, source identifier, and timestamp.
+[P|Normal] FR-003 Invalid Real-Time Input Quarantine
+[P|Normal] Input: Incoming real-time input and validation rejection reason.
+[P|Normal] Output: Quarantined input record.
+[P|Normal] Description: The system shall quarantine invalid or malformed real-time inputs rather than rejecting them silently or allowing them to disrupt the ingestion pipeline. Quarantined records shall be accessible to operators for review and reprocessing, and their presence shall not block continued ingestion of subsequent valid inputs.
+[P|Normal] FR-004 Weather Input Quality Quarantine
+[P|Normal] Input: Invalid or malformed weather data, data quality rule failure, and last known valid weather data quality outcome.
+[P|Normal] Output: Quarantined weather inputs and safe weather alert inputs.
+[P|Normal] Description: The system shall isolate invalid weather inputs when quality rules fail so that unreliable weather data does not degrade weather alerts or downstream road condition calculations.
+[P|Normal] FR-005 Configurable Data Source Types
+[P|Normal] Input: Data source type definition, connection parameters, enablement parameters, and effective time.
+[P|Normal] Output: Data source configuration identifier and configuration status.
+[P|Normal] Description: The system shall allow authorized administrators to configure new data source types and update or remove existing data source configurations without requiring major software changes.
+[P|Normal] FR-006 Data Source Configuration Lifecycle Management
+[P|Normal] Input: Data source type, connection parameters, enablement parameters, effective time, and removal request.
+[P|Normal] Output: Created, updated, activated, deactivated, or rejected data source configuration.
+[P|Normal] Description: The system shall manage the full lifecycle of data source configurations. Each configuration shall have a unique identifier, version history, activation status, and effective time. Removal shall be prevented when active ingestion jobs depend on the configuration, and the system shall return a clear constraint violation message.
+[P|Normal] FR-007 Data Ingestion Fallback on Source Configuration Failure
+[P|Normal] Input: Data source configuration failure, real-time data inputs, available configured sources, and failed source list.
+[P|Normal] Output: Partial normalized data, failed-source error status, and source coverage indicator.
+[P|Normal] Description: When one or more configured data sources fail, the system shall continue processing inputs from reachable sources and clearly mark outputs as partial. If all configured sources fail, the system shall return an explicit unavailable or empty normalized output status with failed-source details.
+[P|Normal] FR-008 Batch Historical Data Ingestion
+[P|Normal] Input: Batch ingestion request, historical data inputs, historical time range, and source identifiers.
+[P|Normal] Output: Backfilled archived data, partial backfill status, or backfill failure report.
+[P|Normal] Description: The system shall support batch ingestion of historical data for archive backfilling, reporting, and model training. Batch ingestion shall produce completion status and identify skipped or failed sources.
+[P|Normal] FR-009 Batch Ingestion Impact Control
+[P|Normal] Input: Batch ingestion request and ingestion concurrency condition.
+[P|Normal] Output: Ingestion throttling or priority scheduling decision.
+[P|Normal] Description: The system shall limit the resource consumption of batch ingestion operations so that real-time ingestion remains available. Throttling or priority scheduling decisions shall be logged for each batch ingestion session.
+[P|Normal] FR-010 Backfill Duplicate Avoidance
+[P|Normal] Input: Batch backfill request, historical data ranges, processed historical range ledger, and backfill failure report.
+[P|Normal] Output: Duplicate dataset detection outcome and partial backfill completion status.
+[P|Normal] Description: The system shall prevent duplicate or inconsistent historical backfill results by checking requested ranges against a processed historical range ledger. Overlapping ranges shall be skipped or rejected with a clear status, and retries shall not duplicate already processed data.
+[P|Normal] FR-011 Partial Ingestion Reprocessing
+[P|Normal] Input: Partial ingestion failure, failed source identifiers, error classification, and reprocessing request.
+[P|Normal] Output: Reprocessing queue status and recovery outcome.
+[P|Normal] Description: Failed ingestion segments shall be recorded with source identifier, error classification, and reprocessing queue status. The system shall prevent duplicate reprocessing of already recovered segments.
+[P|Normal] 2.2 Data Processing and Analysis
+[P|Normal] FR-012 Traffic Metrics Calculation
+[P|Normal] Input: Normalized traffic data, probe data, sensor data, weather data, and road condition data.
+[P|Normal] Output: Congestion levels, travel times, queue lengths, traffic flow patterns, and processing timestamp.
+[P|Normal] Description: The system shall compute traffic metrics including congestion levels, travel times, queue lengths, and traffic flow patterns.
+[P|Normal] FR-013 Incident Detection and Classification
+[P|Normal] Input: Raw sensor data, probe vehicle data, normalized traffic metrics, weather context, and road condition context.
+[P|Normal] Output: Incident reports with time, location, type, severity, and detection identifier.
+[P|Normal] Description: The system shall detect and classify incidents such as crashes, debris, stalled vehicles, work zones, and road closures.
+[P|Normal] FR-014 Incident Detection Output Access
+[P|Normal] Input: Incident detection output, detection timestamp, and detection identifier.
+[P|Normal] Output: Readable incident detection output for alerting and reporting components.
+[P|Normal] Description: The system shall provide a well-defined access interface for incident detection outputs so that alerting and reporting components can consume detection results without direct coupling to the detection processing pipeline.
+[P|Normal] FR-015 Road Surface Condition Calculation
+[P|Normal] Input: Weather data, road sensor inputs, probe vehicle data, and traffic data.
+[P|Normal] Output: Road surface condition indicators.
+[P|Normal] Description: The system shall calculate road surface conditions based on weather data and sensor inputs.
+[P|Normal] FR-016 Automated Data Quality Checks
+[P|Normal] Input: Normalized data, processing results, predefined quality rules, and anomaly rules.
+[P|Normal] Output: Quality flags, anomaly indicators, rejected data rationale, and processing continuity status.
+[P|Normal] Description: The system shall perform automated data quality checks to flag anomalies, inconsistencies, malformed records, and degraded-quality inputs.
+[P|Normal] FR-017 Quality Rule Failure Handling
+[P|Normal] Input: Quality rules failure, incoming data stream, normalized data exception marking, and affected time range.
+[P|Normal] Output: Normalized data with exception marking, quarantined records, stakeholder notification eligibility, and continuity impact indicator.
+[P|Normal] Description: When quality rules cannot be evaluated successfully, the system shall mark affected normalized data with exception flags, quarantine records that cannot be validated, record rejection rationale, and update processing continuity status.
+[P|Normal] FR-018 Stakeholder Notification for Quality Evaluation Failure
+[P|Normal] Input: Quality rules failure, affected time range, exception-marked normalized data, and analytics impact indicator.
+[P|Normal] Output: Stakeholder notification.
+[P|Normal] Description: The system shall notify relevant stakeholders when quality-rule evaluation failures materially affect analytics availability or output reliability. Notifications shall include the effective timestamp, affected time range, and whether analytics output is degraded or unavailable.
+[P|Normal] FR-019 Processing Continuity Status Recording
+[P|Normal] Input: Processing attempt, normalized output availability determination, failed source list, and processing status candidates.
+[P|Normal] Output: Continuity status record, timestamp, failed-source summary reference, and status value.
+[P|Normal] Description: The system shall record a continuity status entry for each normalized output processing attempt. Status values shall consistently indicate whether output is complete, partial, empty, degraded, or unavailable.
+[P|Normal] FR-020 Best-Effort Normalized Output
+[P|Normal] Input: Data source configuration failure, real-time feed failure, available sources, failed source list, and real-time inputs.
+[P|Normal] Output: Best-effort normalized output, effective source coverage indicator, or empty output indicator.
+[P|Normal] Description: When one or more sources are unavailable, the system shall produce best-effort normalized output from available sources and clearly indicate source coverage. When no source data is available, the system shall provide an explicit unavailable or empty output status.
+[P|Normal] FR-021 Traffic Metrics Fallback on Real-Time Feed Failure
+[P|Normal] Input: Real-time data feed failure, last known valid traffic metrics, and traffic data viewing request.
+[P|Normal] Output: Traffic metrics generated from cached last known valid data with degraded indicator.
+[P|Normal] Description: The system shall keep traffic metrics available when real-time data feeds fail by using the most recently validated traffic metrics where available and marking the output as fallback data.
+[P|Normal] FR-022 Weather Alert Safe Input Fallback
+[P|Normal] Input: Data source configuration failure, quality rule failure, last known valid weather inputs, and weather alert generation request.
+[P|Normal] Output: Weather alerts generated under safe fallback policy.
+[P|Normal] Description: The system shall continue generating weather alerts using the most recently validated weather inputs or last known valid weather quality outcome when data source configuration or quality rule evaluation fails. Alerts produced under fallback conditions shall be flagged.
+[P|Normal] FR-023 Weather Alert Fallback Traceability
+[P|Normal] Input: Weather alert generation outcome and data quality rules failure.
+[P|Normal] Output: Weather alert fallback status.
+[P|Normal] Description: The system shall record whether each weather alert was generated under normal processing or safe fallback processing so operators can distinguish degraded-condition alerts from normal alerts.
+[P|Normal] FR-024 Predictive Analytics Support
+[P|Normal] Input: Historical data, traffic metrics, weather data, incident data, and model configuration.
+[P|Normal] Output: Traffic trend predictions and incident likelihood predictions.
+[P|Normal] Description: The system shall support predictive analysis of traffic trends and incident likelihood using machine learning models or configured predictive algorithms.
+[P|Normal] FR-025 Statistical Traffic Summaries
+[P|Normal] Input: Traffic metrics, incident data, road condition data, and reporting period.
+[P|Normal] Output: Daily, weekly, and monthly statistical summaries.
+[P|Normal] Description: The system shall generate statistical summaries of traffic patterns, incident frequency, and road condition trends.
+[P|Normal] 2.3 Data Storage, Archiving, Backup, and Retrieval
+[P|Normal] FR-026 Long-Term Archive Storage
+[P|Normal] Input: Processed data, traffic metrics, incident reports, weather observations, road condition outputs, and metadata.
+[P|Normal] Output: Archived data stored using Oracle 10G.
+[P|Normal] Description: The system shall maintain a long-term archive of processed data using Oracle 10G for historical analysis, reporting, and audit.
+[P|Normal] FR-027 Dynamic Caching
+[P|Normal] Input: Frequently accessed data and recent processed outputs.
+[P|Normal] Output: Cached data for improved access performance.
+[P|Normal] Description: The system shall implement dynamic caching for frequently accessed data and recent outputs to improve performance and support limited fallback behavior.
+[P|Normal] FR-028 Archived Data Query
+[P|Normal] Input: Archived data request, SQL query, user identity, requested data type, and requested time range.
+[P|Normal] Output: Archived data query result or access denied response.
+[P|Normal] Description: The system shall allow authorized users to query archived data using SQL-based tools or approved retrieval interfaces.
+[P|Normal] FR-029 Archived Data Retrieval Authorization
+[P|Normal] Input: Archived data request, user identity, requested time range, and authorization coverage.
+[P|Normal] Output: Authorized retrieval result, partial access result, or access denied response.
+[P|Normal] Description: Archived data retrieval shall be restricted to authorized users. If a request covers a partially authorized time range, the system shall return authorized data only for permitted portions and provide a clear explanation for denied portions.
+[P|Normal] FR-030 Archived Retrieval Fallback
+[P|Normal] Input: SQL-based query failure and archived data request.
+[P|Normal] Output: Alternative retrieval outcome, query-safe archived result, or user-facing error explanation.
+[P|Normal] Description: When SQL-based archive querying fails, the system shall attempt an approved alternative retrieval path, such as file-based export, precomputed snapshot, or read-only replica query, before surfacing failure to the user.
+[P|Normal] FR-031 Automated Data Purging
+[P|Normal] Input: Purge policy rule, retention period, archived records, and dependency status.
+[P|Normal] Output: Eligible purge dataset and purge outcome.
+[P|Normal] Description: The system shall support automated data purging policies to manage storage limits. Purging shall not remove data required by active publications, scheduled outputs, audit retention, or dependent reports.
+[P|Normal] FR-032 Backup and Restore
+[P|Normal] Input: Database backup request, configuration backup request, restore request, backup metadata, and restore target.
+[P|Normal] Output: Backup identifier, backup completion status, restore result, and documented recovery outcome.
+[P|Normal] Description: The system shall provide backup and restore capabilities for the database and configuration settings. Backup and restore operations shall be logged and traceable.
+[P|Normal] FR-033 Backup Failure Recovery
+[P|Normal] Input: Database backup failure, configuration backup failure, restore request, and most recent successful backup.
+[P|Normal] Output: Database restore result, configuration restore result, and selected backup version.
+[P|Normal] Description: If the latest backup fails or is unusable, the system shall identify and use the most recent successful backup for restore operations after validating backup integrity.
+[P|Normal] FR-034 Configuration Backup Lifecycle Control
+[P|Normal] Input: Configuration backup trigger request, retention parameters, and configuration scope.
+[P|Normal] Output: Configuration backup identifier and backup completion status.
+[P|Normal] Description: The system shall allow authorized administrators to create configuration backups, update backup retention settings, and delete obsolete backups according to retention policy.
+[P|Normal] FR-035 Safe Processing State After Restore Failure
+[P|Normal] Input: Restore request, partial restore result, inconsistent restore detection, previous known safe configuration, and recovery abort condition.
+[P|Normal] Output: Recovery abort outcome, reinstated safe processing state, and operator intervention status.
+[P|Normal] Description: If restore results are partial, unverifiable, or inconsistent, the system shall abort recovery, roll back partial changes, reinstate the last known safe processing state, and signal operator intervention when automatic recovery cannot proceed.
+[P|Normal] FR-036 Restore Completion Notification
+[P|Normal] Input: Restore request outcome, restore target details, backup version used, and affected data scope.
+[P|Normal] Output: Restore status notification delivered to designated stakeholders.
+[P|Normal] Description: The system shall notify designated stakeholders when a restore operation completes, including outcome, target, backup version used, completion time, and known impact on live data or processing.
+[P|Normal] FR-037 Restore Audit Logging
+[P|Normal] Input: Configuration restore result, restore trigger, restored backup identifier, operator or process identity, and timestamp.
+[P|Normal] Output: Configuration restore audit record.
+[P|Normal] Description: The system shall record the outcome of each configuration restore action for operator traceability, including successful and failed restore attempts.
+[P|Normal] 2.4 Data Publication, Output, and External Feeds
+[P|Normal] FR-038 Standardized Data Publication
+[P|Normal] Input: Processed and validated data.
+[P|Normal] Output: Published data in SAE J2354, TMDD, and configured output formats.
+[P|Normal] Description: The system shall publish processed data in standardized formats such as SAE J2354 and TMDD.
+[P|Normal] FR-039 External Data Export
+[P|Normal] Input: Processed data, export request, target format, and authorization context.
+[P|Normal] Output: Exported data in CSV, JSON, XML, KML, or other supported formats.
+[P|Normal] Description: The system shall support exporting data in configured formats for third-party use.
+[P|Normal] FR-040 Output Format Configuration and Propagation
+[P|Normal] Input: Output format configuration change and target export channel.
+[P|Normal] Output: Updated output format behavior and compatibility status.
+[P|Normal] Description: Output format updates shall propagate to subsequent exports and publication feeds. The system shall communicate compatibility status when a format update affects downstream outputs.
+[P|Normal] FR-041 Output Format Failure Fallback for Reports
+[P|Normal] Input: Output format configuration failure, report content, and last known valid output format configuration.
+[P|Normal] Output: Exportable reports generated using the last known valid output configuration.
+[P|Normal] Description: If the current output format configuration fails, the system shall continue producing exportable reports using the last known valid output format configuration and label the output as generated under fallback conditions.
+[P|Normal] FR-042 API for External Applications
+[P|Normal] Input: External application request, requested data type, authorization context, and query parameters.
+[P|Normal] Output: Real-time traffic, weather, incident, road condition, or traveler data.
+[P|Normal] Description: The system shall provide an API for authorized external applications to consume traffic and weather data in real time.
+[P|Normal] FR-043 MI Drive Feed Delivery
+[P|Normal] Input: Real-time traffic data, processed publication snapshot, and MI Drive delivery endpoint.
+[P|Normal] Output: MDOT MI Drive traffic feed and delivery status.
+[P|Normal] Description: The system shall provide real-time data feeds to MDOT’s MI Drive system and record delivery success or failure for each published snapshot.
+[P|Normal] FR-044 MI Drive Delivery Failure Notification
+[P|Normal] Input: MI Drive traffic feed delivery failure, affected snapshot time, and failure reason classification.
+[P|Normal] Output: Stakeholder notification and delivery failure report.
+[P|Normal] Description: The system shall notify operational stakeholders when MI Drive feed delivery fails. Notifications shall include the affected snapshot, time of failure, reason classification, and retry outcome where available.
+[P|Normal] FR-045 Delivery-Status Gating for Publication
+[P|Normal] Input: Delivery channel status, processed data, and publication request.
+[P|Normal] Output: Publication decision and publication status.
+[P|Normal] Description: If a delivery channel reports failure, the system shall withhold or defer publication when required and record the publication decision so operators can identify held or delayed data.
+[P|Normal] FR-046 Traffic Incident Alerting and Reporting Continuity
+[P|Normal] Input: Traffic incident layer failure, road closure layer failure, incident detection outputs, and last known valid incident layer state.
+[P|Normal] Output: Traffic incident alerts and incident reports generated with fallback indicator.
+[P|Normal] Description: The system shall continue traffic incident alerting and reporting when incident or road closure layers fail by using the last known valid layer state and clearly marking fallback outputs as derived from cached or last known data.
+[P|Normal] FR-047 Alert Generation
+[P|Normal] Input: Incident reports, weather events, asset status, road condition data, and configured alert rules.
+[P|Normal] Output: Alerts for traffic incidents, severe weather events, and asset failures.
+[P|Normal] Description: The system shall generate alerts for traffic incidents, severe weather events, road closures, and asset failures.
+[P|Normal] FR-048 Data Quality Status on Published Feeds
+[P|Normal] Input: Published feed data, validation outcome, anomaly handling state, and quality status.
+[P|Normal] Output: Feed status indicators.
+[P|Normal] Description: Published feeds shall include indicators describing whether data was affected by validation failure, anomaly handling, fallback operation, or degraded-quality processing.
+[P|Normal] FR-049 Publication Audit with Configuration Context
+[P|Normal] Input: Processed data publication event, configuration version, and active configuration change outcome.
+[P|Normal] Output: Publication audit record.
+[P|Normal] Description: Each processed data publication shall include an audit record identifying the configuration version and relevant active configuration state used at the time of publication.
+[P|Normal] FR-050 Real-Time Delivery Failure Audit
+[P|Normal] Input: Delivery failure notification, affected snapshot reference, notification content, and failure reason classification.
+[P|Normal] Output: Delivery failure notification audit record.
+[P|Normal] Description: Each notification dispatched in response to a real-time delivery failure shall produce an immutable audit record containing notification content, timestamp, failure reason, and affected snapshot reference.
+[P|Normal] 2.5 User Interface and Presentation
+[P|Normal] FR-051 Web-Based User Interface
+[P|Normal] Input: User request for traffic, incident, traveler, weather, road condition, asset, or report data.
+[P|Normal] Output: Web-based interface displaying requested data.
+[P|Normal] Description: The system shall provide a web-based interface for viewing traffic, incident, traveler, weather, road condition, asset, and reporting data.
+[P|Normal] FR-052 Map Display and Icon Layers
+[P|Normal] Input: Traffic data, incident data, road closure data, weather data, road condition data, and layer configuration.
+[P|Normal] Output: Map displays with icon layers.
+[P|Normal] Description: The user interface shall include map displays with configurable icon layers representing traffic, incidents, road closures, weather, and road conditions.
+[P|Normal] FR-053 Map De-Cluttering
+[P|Normal] Input: High-volume map data, zoom level, layer density, and user preference.
+[P|Normal] Output: De-cluttered map display.
+[P|Normal] Description: The system shall support de-cluttering features to reduce visual complexity during high-volume data display.
+[P|Normal] FR-054 Search and Filtering
+[P|Normal] Input: User role, search query, location, time, event type, and other filter criteria.
+[P|Normal] Output: Filtered search results within the user’s authorization scope.
+[P|Normal] Description: Users shall be able to filter and search data by location, time, event type, and other criteria. Search results shall be filtered server-side so users only receive data they are permitted to view.
+[P|Normal] FR-055 Multi-Language User Interface
+[P|Normal] Input: User language selection and locale preference.
+[P|Normal] Output: User interface content in the selected language where available.
+[P|Normal] Description: The system shall support multi-language UI options to accommodate diverse user groups.
+[P|Normal] FR-056 Custom Dashboard Management
+[P|Normal] Input: Report or dashboard definition, selected data elements, layout preferences, and ownership scope.
+[P|Normal] Output: Report or dashboard identifier and status.
+[P|Normal] Description: The system shall allow users to create, update, and delete custom dashboards and report definitions for frequent data views. Definitions shall be versioned and associated with an ownership scope.
+[P|Normal] 2.6 System Administration and Configuration
+[P|Normal] FR-057 System Configuration Management
+[P|Normal] Input: Data source configuration, algorithm configuration, output format configuration, and administrator request.
+[P|Normal] Output: Applied configuration, rejected configuration, or configuration status.
+[P|Normal] Description: The system shall allow authorized administrators to configure data sources, algorithms, output formats, and related processing settings.
+[P|Normal] FR-058 Configuration Change Authorization
+[P|Normal] Input: Configuration change request, user role, user identity, and requested configuration scope.
+[P|Normal] Output: Configuration change authorization decision.
+[P|Normal] Description: The system shall restrict configuration changes to authorized roles. Authorization checks shall be enforced at submission time and across all system entry points.
+[P|Normal] FR-059 Configuration Change Status Reporting
+[P|Normal] Input: Configuration change event.
+[P|Normal] Output: Activation status report and configuration state history.
+[P|Normal] Description: The system shall provide visibility into whether configuration changes are pending, active, failed, rolled back, or affecting live processing. Recent state history shall be retained for audit.
+[P|Normal] FR-060 Algorithm Configuration Rollback
+[P|Normal] Input: Algorithm configuration change failure and last known good algorithm configuration.
+[P|Normal] Output: Restored algorithm configuration and uninterrupted processing state.
+[P|Normal] Description: When an algorithm configuration change fails, the system shall automatically roll back to the last known good algorithm configuration, validate the restored configuration, log the rollback, and notify administrators.
+[P|Normal] FR-061 Report Consistency After Algorithm Rollback
+[P|Normal] Input: Algorithm configuration rollback event, restored algorithm configuration, and report generation request.
+[P|Normal] Output: Report content consistent with restored algorithm configuration.
+[P|Normal] Description: Reports generated after algorithm configuration rollback shall use the restored configuration context so report content remains consistent with processing results.
+[P|Normal] FR-062 Data Source Configuration Rollback
+[P|Normal] Input: Failed data source type configuration change and last known valid data source configuration.
+[P|Normal] Output: Restored data source configuration state.
+[P|Normal] Description: If a data source type change fails, the system shall restore the last known valid data source configuration atomically and notify the operator.
+[P|Normal] FR-063 Backup and Restore Configuration Status
+[P|Normal] Input: Backup or restore configuration change event.
+[P|Normal] Output: Activation status report and backup or restore configuration state.
+[P|Normal] Description: The system shall report whether backup and restore configuration changes are active, pending, failed, or rolled back.
+[P|Normal] FR-064 Administrative Action and Error Logging
+[P|Normal] Input: Administrative action, configuration change, system error, actor identity, and timestamp.
+[P|Normal] Output: Administrative audit or error log.
+[P|Normal] Description: The system shall log administrative actions and errors for audit, troubleshooting, and compliance purposes.
+[P|Normal] 2.7 Reporting and Analytics
+[P|Normal] FR-065 Predefined Reports
+[P|Normal] Input: Traffic volume data, incident data, road condition data, weather data, and reporting period.
+[P|Normal] Output: Predefined reports on traffic volume, incident frequency, and road condition trends.
+[P|Normal] Description: The system shall generate predefined reports on traffic volume, incident frequency, and road condition trends.
+[P|Normal] FR-066 Scheduled Report Generation
+[P|Normal] Input: Report definition, schedule, recipient list, and delivery preferences.
+[P|Normal] Output: Scheduled report output and delivery status.
+[P|Normal] Description: The system shall allow users to schedule automatic report generation and delivery.
+[P|Normal] FR-067 Ad-Hoc Reporting
+[P|Normal] Input: User query, selected data elements, visualization options, and authorization context.
+[P|Normal] Output: Ad-hoc report or visualization.
+[P|Normal] Description: The system shall provide ad-hoc reporting tools for querying and visualizing data.
+[P|Normal] FR-068 Report Export
+[P|Normal] Input: Report content and selected export format.
+[P|Normal] Output: Report exported in PDF, Excel, HTML, or other configured format.
+[P|Normal] Description: Reports shall be exportable in supported formats.
+[P|Normal] FR-069 Report Template Fallback
+[P|Normal] Input: Missing predefined report template, selected template, and last known valid template.
+[P|Normal] Output: Report generated using last known valid template or error status.
+[P|Normal] Description: If a predefined report template is unavailable, the system shall generate the report using the last known valid template where possible, log the fallback event, and notify the operator.
+[P|Normal] FR-070 Failed Ad-Hoc Report Job Cancellation
+[P|Normal] Input: Failed ad-hoc report generation job.
+[P|Normal] Output: Canceled job record.
+[P|Normal] Description: Operators shall be able to cancel and remove failed ad-hoc report generation jobs. The system shall release held resources, clean partial output artifacts, and record cancellation details for audit.
+[P|Normal] 2.8 Security and Compliance
+[P|Normal] FR-071 Secure Authentication and Authorization
+[P|Normal] Input: User credentials, user role, requested operation, and session context.
+[P|Normal] Output: Authenticated session, authorization decision, or access denial.
+[P|Normal] Description: The system shall enforce secure authentication and authorization for all users.
+[P|Normal] FR-072 Operation-Level Role Enforcement
+[P|Normal] Input: User role, requested operation, target resource, and role-to-operation mapping.
+[P|Normal] Output: Access granted or denied per role.
+[P|Normal] Description: The system shall enforce role-based authorization at the individual operation level before protected actions are executed. Unauthorized attempts shall be rejected and logged.
+[P|Normal] FR-073 Role and Permission Lifecycle Management
+[P|Normal] Input: Role definitions, permission sets, user-to-role assignments, and validity period.
+[P|Normal] Output: Role identifier and assignment status.
+[P|Normal] Description: Administrators shall be able to create, update, and remove roles, permission sets, and user assignments. Role and permission changes shall be versioned, auditable, and applied atomically where dependent assignments exist.
+[P|Normal] FR-074 Secure Data Transmission
+[P|Normal] Input: Data transmission request and security configuration.
+[P|Normal] Output: Encrypted data transmission.
+[P|Normal] Description: All data transmissions shall be encrypted using TLS 1.2 or higher.
+[P|Normal] FR-075 Security Standards Compliance
+[P|Normal] Input: Security controls, encryption settings, audit settings, and compliance requirements.
+[P|Normal] Output: Compliance evidence and security status.
+[P|Normal] Description: The system shall comply with applicable MDIT security standards and FIPS 140-2 encryption requirements.
+[P|Normal] FR-076 Security and User Activity Audit Logging
+[P|Normal] Input: User activity, system event, authentication event, authorization event, and security event.
+[P|Normal] Output: Audit log record.
+[P|Normal] Description: The system shall support audit logging of user activities, system events, access attempts, and security-relevant operations.
+[P|Normal] FR-077 Stakeholder Notification for Secure Transmission Disruption
+[P|Normal] Input: Encrypted data transmission failure, secure transmission disruption, affected data scope, and audit log event.
+[P|Normal] Output: Stakeholder notification with degradation details.
+[P|Normal] Description: The system shall notify designated stakeholders when secure transmission, authentication, or authorization protection is degraded. The notification shall include affected components, time of disruption, data scope, and audit log reference where applicable.
+[P|Normal] FR-078 Access Restriction During Security Degradation
+[P|Normal] Input: Encrypted transmission failure, authentication or authorization degradation condition, user role, and requested action.
+[P|Normal] Output: Restricted authorized action set.
+[P|Normal] Description: During security protection degradation, the system shall continue enforcing role-based restrictions and limit actions to those permitted under the last known safe security state.
+[P|Normal] FR-079 Incident Report Access During Transmission Failure
+[P|Normal] Input: Encrypted transmission failure, access protection degraded condition, and last known access-allowed incident report state.
+[P|Normal] Output: Incident report access result or restricted access response.
+[P|Normal] Description: The system shall maintain incident report access only when it can be served under the last known allowed protection state. If secure access cannot be assured, access shall be restricted and clearly reported rather than silently downgraded.
+[P|Normal] 2.9 Reliability, Fallback, and Traceability
+[P|Normal] FR-080 Fallback State Visibility
+[P|Normal] Input: Fallback condition, affected function, fallback data source, and timestamp.
+[P|Normal] Output: Visible fallback indicator and operator status.
+[P|Normal] Description: Outputs generated under fallback conditions shall be clearly labeled, and operators shall be able to identify when and why fallback behavior is active.
+[P|Normal] FR-081 Idempotent Retry Handling
+[P|Normal] Input: Retried restore, backfill, publication, delivery, report, or reprocessing operation.
+[P|Normal] Output: Stable operation result without duplicate side effects.
+[P|Normal] Description: Retried operations shall be idempotent where repeated execution could otherwise create duplicate outputs, duplicate records, or inconsistent state.
+[P|Normal] FR-082 Atomic Rollback for Critical Operations
+[P|Normal] Input: Configuration change, restore, backup, data source update, subscription-like publication state update, or algorithm update failure.
+[P|Normal] Output: Fully applied operation or restored prior consistent state.
+[P|Normal] Description: Critical multi-step operations shall either complete successfully as a whole or roll back to the last known consistent state.
+[P|Normal] FR-083 Operator and Stakeholder Notification Retry
+[P|Normal] Input: Notification delivery failure and configured notification channel.
+[P|Normal] Output: Retried notification or recorded delivery failure.
+[P|Normal] Description: Stakeholder and operator notifications shall be retried if initial delivery fails, and all notification attempts shall be logged.
+[P|Normal] FR-084 Traceability of Degraded Outputs
+[P|Normal] Input: Degraded output, fallback status, quality status, configuration version, and publication event.
+[P|Normal] Output: Traceable output record.
+[P|Normal] Description: The system shall retain enough traceability information for operators to determine whether an output was produced under normal processing, fallback processing, degraded quality evaluation, restored configuration, or cached data.
