@@ -101,7 +101,7 @@ template safely.
 pip install -r requirements.txt
 export CAUSALREQ_API_KEY="your api key"
 export CAUSALREQ_BASE_URL="your url"
-export CAUSALREQ_MODEL=deepseek-flash  PYTHONIOENCODING=utf-8
+export CAUSALREQ_MODEL="your model"  PYTHONIOENCODING=utf-8
 
 # stage 1 on any of the 42 documents in the repository
 python core/run_stage_source.py --doc-id Email_MIRC2 \

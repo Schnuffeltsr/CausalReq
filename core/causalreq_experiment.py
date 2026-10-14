@@ -22,7 +22,7 @@ CausalReq：依赖关系驱动的需求缺口诊断与证据约束补全（RQ1�
 环境变量：
   CAUSALREQ_API_KEY     your api key
   CAUSALREQ_BASE_URL    your url（可选；不设置则使用客户端默认地址）
-  CAUSALREQ_MODEL       可选，默认 gpt-5.5
+  CAUSALREQ_MODEL       your model（可选；不设置则使用代码内置的默认模型）
 """
 
 from __future__ import annotations
