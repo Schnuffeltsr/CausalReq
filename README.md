@@ -1,6 +1,4 @@
-# CausalReq — where everything is
-
-Reference implementation, analysis code and case data for the paper
+# CausalReq
 
 > **CausalReq: Causal Dependency-Guided Requirement Gap Diagnosis and Evidence-Constrained Completion**
 
