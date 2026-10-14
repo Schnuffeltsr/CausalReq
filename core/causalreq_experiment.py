@@ -1044,9 +1044,6 @@ def export_rq2(
             rows.append({
                 "rank": rank,
                 **item,
-                "human_validity": "",
-                "human_obligation_id": "",
-                "human_notes": "",
             })
 
         write_csv(
@@ -1061,9 +1058,6 @@ def export_rq2(
                 "p_do_0",
                 "reachability",
                 "model_version",
-                "human_validity",
-                "human_obligation_id",
-                "human_notes",
             ],
             rows,
         )
