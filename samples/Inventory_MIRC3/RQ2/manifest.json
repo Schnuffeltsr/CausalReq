@@ -25,6 +25,5 @@
   ],
   "pool_selection": "stable SHA-256 ordering of reachable source–target pairs, before scoring",
   "reachability_definition": "number of descendants of source node",
-  "random_seed": 20261010,
-  "quality_labels": "reserved for human reviewers"
+  "random_seed": 20261010
 }

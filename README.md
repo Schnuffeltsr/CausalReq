@@ -1,4 +1,7 @@
-# CausalReq 
+# CausalReq — where everything is
+
+Reference implementation, analysis code and case data for the paper
+
 > **CausalReq: Causal Dependency-Guided Requirement Gap Diagnosis and Evidence-Constrained Completion**
 
 This file is the map. Every folder and every file in the repository is listed below with
@@ -37,13 +40,13 @@ documented in [`prompts/README.md`](prompts/README.md).
 |---|---|---|
 | `rq1/` | `export_rq1.py` | Rebuilds `samples/<doc>/RQ1/` (the completed requirement set) from an existing run, without any LLM call |
 | `rq2/` | `build_rq2_evidence.py` | Review worksheet for the 20 candidates: source/target evidence plus the relations on the shortest path |
-| `rq2/` | `analyze_human_review.py` | Budget table under the human verdicts (distinct valid obligations at budgets 5 / 10 / 20 per ranking) → `RQ2_HUMAN_BUDGET.md` |
+| `rq2/` | `analyze_human_review.py` | Turns a review table into the budget summary (distinct valid obligations at budgets 5 / 10 / 20 per ranking) |
 | `rq2/` | `make_figure.py` | RQ2 figure (vector PDF + 300 dpi PNG) → `figures/` |
 | `rq3/` | `build_rq3_compact.py` | Compact nomination worksheet with the two closest reference targets, plus `review/w_map.json` (the Full ↔ ablation mapping) |
-| `rq3/` | `merge_rq3_review.py` | Merges the Full verdict table and the ablation-only verdict table → `RQ3_human_review.csv` |
-| `rq3/` | `analyze_component_contribution.py` | Per-variant valid obligation sets with inheritance, lost/gained obligations, and the "did the enlarged route compensate?" check → `RQ3_COMPONENT_CONTRIBUTION.md` |
+| `rq3/` | `merge_rq3_review.py` | Merges the per-variant review rows into a single table |
+| `rq3/` | `analyze_component_contribution.py` | Per-variant valid obligation sets with inheritance, lost/gained obligations, and the "did the enlarged route compensate?" check |
 | `rq3/` | `variant_table.py` | Compact per-variant counter table straight from the run artefacts |
-| `rq4/` | `trace_case.py` | Prints the evidence chain of one supplementary requirement (source FR → nomination → validation → retained text → human verdict) plus a contrasting sibling nomination |
+| `rq4/` | `trace_case.py` | Prints the evidence chain of one supplementary requirement (source FR → nomination → validation → retained text) plus a contrasting sibling nomination |
 | `rq4/` | `make_figure.py` | RQ4 figure (vector PDF + 300 dpi PNG) → `figures/` |
 
 ## Code — `tools/` (cross-cutting)
@@ -52,7 +55,7 @@ documented in [`prompts/README.md`](prompts/README.md).
 |---|---|
 | `export_graph.py` | Causal-graph export: `causal_graph.png/json`, `evidence_graph.graphml`, `simulation_graph.graphml`, both `.dot`, `causal_graph_summary.md` |
 | `build_review_worksheets.py` | Builds the RQ2 candidate sheet, the RQ3 Full sheet and the ablation sheet (each with the closest reference targets) and `review/w_map.json`, which the RQ3 analysis consumes |
-| `summarize_results.py` | One-document report `RESULTS.md`; if a `human_review/` folder is present it appends the human-review sections |
+| `summarize_results.py` | One-document report `RESULTS.md` (extraction and graph, RQ2 pool and rankings, RQ3 variants, retained supplements, nomination detail) |
 | `summarize_all_runs.py` | Cross-document table of all variants: nomination counts, route mix, model dispositions |
 | `list_artifacts.py` | Prints what exists for every document under a run root |
 | `verify_saved.py` | Integrity check of the published artefacts (pool, nominations, supplements, figures) |

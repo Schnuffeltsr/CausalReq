@@ -22,7 +22,6 @@ for label, root in TARGETS:
         print(f"  stage1_summary.json : FR={d['source_fr_count']} elements={d['element_count']} "
               f"relations={d['evidence_relation_count']} sim={d['simulation_nodes']}n/"
               f"{d['simulation_edges']}e pool={d['fixed_pool_count']}")
-    print("  human-review verdict tables: not published with this repository")
     for name in ("causal_graph.png", "causal_graph.json", "evidence_graph.graphml",
                  "simulation_graph.graphml", "causal_graph_summary.md"):
         p = root / "graph" / name

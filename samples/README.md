@@ -83,10 +83,10 @@ samples/<DOC_ID>/
 ├── graph/                      causal_graph.{png,json}, evidence_graph.graphml + .dot,
 │                               simulation_graph.graphml + .dot, causal_graph_summary.md
 ├── RQ1/                        causalreq_supplements_only.txt, causalreq_complete_document.txt,
-│                               RQ1_review.md, manifest.json, 00_original_document.txt
+│                               manifest.json, 00_original_document.txt
 ├── RQ2/                        fixed_pool.json, ACE_review.csv, Reachability_review.csv,
 │                               Random_review.csv, manifest.json, original_document.txt
-├── RQ3/<variant>/              nominations.json, supplements.json, review.md,
+├── RQ3/<variant>/              nominations.json, supplements.json,
 │                               run_settings.json, manifest.json
 ├── review/                     review worksheets (RQ2 candidates, RQ3 Full, ablation-only)
 │                               and w_map.json (Full <-> ablation mapping)
