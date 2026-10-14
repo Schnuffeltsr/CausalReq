@@ -124,10 +124,3 @@ python tools/summarize_results.py samples Email_MIRC2
 
 `samples/` is both the input root and the output root: the tools read the case data and
 write their reports next to it.
-
-## Not in the repository
-
-This README and `samples/README.md` are the only documentation files kept here. A fuller
-set — `docs/` with the code-to-paper map, the reproduction guide and the human-review
-rubrics, plus `MANIFEST.md` and `CITATION.cff` — exists outside the repository and can be
-restored on request.
