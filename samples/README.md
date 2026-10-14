@@ -94,6 +94,13 @@ samples/<DOC_ID>/
 The five `RQ3/<variant>/` folders are `Full`, `NoSignedPropagation`, `NoIsolatedReview`,
 `NoOperationReview` and `NoFullDocumentValidation`.
 
+`RQ2/fixed_pool.json` records, for every candidate, the computed effect (`ace`, `p_do_1`,
+`p_do_0`), the reachability count, and the interpretation aids of Section 3.3 of the paper:
+`shared_upstream` (upstream elements that reach the target without passing through the
+source, each with both paths), `p_observed_1` (the target's probability given that the
+source is observed active), and `association_gap` (that conditional probability minus
+`p_do_1`). None of these three fields enters the pool selection or the rankings.
+
 ## What the samples contain
 
 | Document | FR blocks | Elements (active) | Relations | Simulation graph | Pool | RQ3 variants |

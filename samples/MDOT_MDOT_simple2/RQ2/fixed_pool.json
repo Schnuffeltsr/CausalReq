@@ -7,7 +7,10 @@
     "p_do_1": 0.6887814494906701,
     "p_do_0": 0.46538472710231904,
     "reachability": 3,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.6887814494906701,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-002",
@@ -17,7 +20,10 @@
     "p_do_1": 0.7057850278370112,
     "p_do_0": 0.2689414213699951,
     "reachability": 4,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.7057850278370112,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-003",
@@ -27,7 +33,10 @@
     "p_do_1": 0.7772998611746911,
     "p_do_0": 0.2689414213699951,
     "reachability": 2,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.7772998611746911,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-004",
@@ -37,7 +46,10 @@
     "p_do_1": 0.7549149868676283,
     "p_do_0": 0.2689414213699951,
     "reachability": 2,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.7549149868676283,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-005",
@@ -47,7 +59,10 @@
     "p_do_1": 0.7772998611746911,
     "p_do_0": 0.2689414213699951,
     "reachability": 1,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.7772998611746911,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-006",
@@ -57,7 +72,10 @@
     "p_do_1": 0.5609026785923427,
     "p_do_0": 0.4055502025080291,
     "reachability": 3,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.5609026785923427,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-007",
@@ -67,7 +85,10 @@
     "p_do_1": 0.5688489025834518,
     "p_do_0": 0.37927121796193636,
     "reachability": 3,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.5688489025834518,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-008",
@@ -77,7 +98,10 @@
     "p_do_1": 0.5424202205316679,
     "p_do_0": 0.4123495188508647,
     "reachability": 4,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.5424202205316679,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-009",
@@ -87,7 +111,10 @@
     "p_do_1": 0.7310585786300049,
     "p_do_0": 0.2689414213699951,
     "reachability": 3,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.7310585786300049,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-010",
@@ -97,7 +124,10 @@
     "p_do_1": 0.7735924872709988,
     "p_do_0": 0.4056600627365031,
     "reachability": 4,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.7735924872709988,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-011",
@@ -107,7 +137,10 @@
     "p_do_1": 0.8258740196818047,
     "p_do_0": 0.3864267618096292,
     "reachability": 3,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.8258740196818047,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-012",
@@ -117,7 +150,10 @@
     "p_do_1": 0.7310585786300049,
     "p_do_0": 0.2689414213699951,
     "reachability": 1,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.7310585786300049,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-013",
@@ -127,7 +163,10 @@
     "p_do_1": 0.679178699175393,
     "p_do_0": 0.2689414213699951,
     "reachability": 2,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.679178699175393,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-014",
@@ -137,7 +176,10 @@
     "p_do_1": 0.7772998611746911,
     "p_do_0": 0.2689414213699951,
     "reachability": 2,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.7772998611746911,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-015",
@@ -147,7 +189,10 @@
     "p_do_1": 0.7772998611746911,
     "p_do_0": 0.2689414213699951,
     "reachability": 1,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.7772998611746911,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-016",
@@ -157,7 +202,10 @@
     "p_do_1": 0.6224593312018546,
     "p_do_0": 0.2689414213699951,
     "reachability": 2,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.6224593312018546,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-017",
@@ -167,7 +215,10 @@
     "p_do_1": 0.6622036912437141,
     "p_do_0": 0.4751621379537989,
     "reachability": 4,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.6622036912437143,
+    "association_gap": 1.1102230246251565e-16
   },
   {
     "candidate_id": "DEP-018",
@@ -177,7 +228,10 @@
     "p_do_1": 0.7981867777396212,
     "p_do_0": 0.2689414213699951,
     "reachability": 1,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.7981867777396212,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-019",
@@ -187,7 +241,10 @@
     "p_do_1": 0.7772998611746911,
     "p_do_0": 0.2689414213699951,
     "reachability": 2,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.7772998611746911,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-020",
@@ -197,6 +254,9 @@
     "p_do_1": 0.6405812198081831,
     "p_do_0": 0.4056600627365031,
     "reachability": 3,
-    "model_version": "MODEL-a988258ceab9"
+    "model_version": "MODEL-a988258ceab9",
+    "shared_upstream": [],
+    "p_observed_1": 0.6405812198081831,
+    "association_gap": 0.0
   }
 ]

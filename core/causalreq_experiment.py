@@ -916,6 +916,80 @@ class CausalModel:
 
         return p1 - p0, p1, p0
 
+    def shared_upstream(
+        self,
+        source: str,
+        target: str,
+    ) -> list[dict]:
+        """
+        共享上游条件：既能到达 source、又能不经过 source 到达 target 的元素。
+
+        这是 X 与 Y 在构造图中的共同原因（混淆候选）。只做图检索，
+        不进入任何模型提示词，也不参与 ACE、可达性与排序计算。
+        """
+        graph = self.simulation_graph
+
+        if (
+            source not in graph
+            or target not in graph
+            or source == target
+        ):
+            return []
+
+        without_source = graph.copy()
+        without_source.remove_node(source)
+
+        if target not in without_source:
+            return []
+
+        candidates = nx.ancestors(graph, source) & nx.ancestors(
+            without_source,
+            target,
+        )
+
+        return [
+            {
+                "element": element,
+                "path_to_source": nx.shortest_path(
+                    graph,
+                    element,
+                    source,
+                ),
+                "path_to_target": nx.shortest_path(
+                    without_source,
+                    element,
+                    target,
+                ),
+            }
+            for element in sorted(candidates)
+        ]
+
+    def probability_observed(
+        self,
+        source: str,
+        target: str,
+        state: int,
+    ) -> float:
+        """
+        P(target active | source OBSERVED in `state`)。
+
+        与 probability_do() 的区别：这里保留 source 的入边，因此共同原因
+        会通过 source 传入信息；两者之差即该模型内部的混淆偏差。
+        """
+        if self.model is None:
+            raise ValueError("模拟网络为空。")
+
+        source_variable = self.name_to_variable[source]
+        target_variable = self.name_to_variable[target]
+
+        result = VariableElimination(self.model).query(
+            variables=[target_variable],
+            evidence={source_variable: state},
+            show_progress=False,
+        )
+
+        return float(result.values[1])
+
 
 # ============================================================
 # RQ2：先固定候选池，之后才计算排序
@@ -967,6 +1041,14 @@ def build_fixed_pool(
             target,
         )
 
+        # 条件关联：观测 source 与干预 source 之差，以及共享上游条件。
+        # 这是解释性记录，不参与入池与排序。
+        p_observed = model.probability_observed(
+            source,
+            target,
+            1,
+        )
+
         pool.append({
             "candidate_id": f"DEP-{index:03d}",
             "source": source,
@@ -979,6 +1061,12 @@ def build_fixed_pool(
                 nx.descendants(graph, source)
             ),
             "model_version": model.model_version,
+            "shared_upstream": model.shared_upstream(
+                source,
+                target,
+            ),
+            "p_observed_1": p_observed,
+            "association_gap": p_observed - p1,
         })
 
     return pool

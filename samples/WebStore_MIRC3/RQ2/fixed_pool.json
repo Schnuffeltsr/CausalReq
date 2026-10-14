@@ -7,7 +7,10 @@
     "p_do_1": 0.8119303086006572,
     "p_do_0": 0.4056600627365031,
     "reachability": 4,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [],
+    "p_observed_1": 0.8119303086006572,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-002",
@@ -17,7 +20,10 @@
     "p_do_1": 0.7772998611746911,
     "p_do_0": 0.2689414213699951,
     "reachability": 3,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [],
+    "p_observed_1": 0.7772998611746911,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-003",
@@ -27,7 +33,10 @@
     "p_do_1": 0.7981867777396212,
     "p_do_0": 0.2689414213699951,
     "reachability": 2,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [],
+    "p_observed_1": 0.7981867777396212,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-004",
@@ -37,7 +46,10 @@
     "p_do_1": 0.7772998611746911,
     "p_do_0": 0.2689414213699951,
     "reachability": 3,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [],
+    "p_observed_1": 0.7772998611746911,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-005",
@@ -47,7 +59,22 @@
     "p_do_1": 0.8445794395837912,
     "p_do_0": 0.399639842823173,
     "reachability": 3,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [
+      {
+        "element": "Check Product Availability",
+        "path_to_source": [
+          "Check Product Availability",
+          "Shopping Cart Creation Function"
+        ],
+        "path_to_target": [
+          "Check Product Availability",
+          "Product Added to Shopping Cart"
+        ]
+      }
+    ],
+    "p_observed_1": 0.8713387075723826,
+    "association_gap": 0.026759267988591406
   },
   {
     "candidate_id": "DEP-006",
@@ -57,7 +84,10 @@
     "p_do_1": 0.7772998611746911,
     "p_do_0": 0.2689414213699951,
     "reachability": 1,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [],
+    "p_observed_1": 0.7772998611746911,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-007",
@@ -67,7 +97,10 @@
     "p_do_1": 0.7772998611746911,
     "p_do_0": 0.2689414213699951,
     "reachability": 2,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [],
+    "p_observed_1": 0.7772998611746911,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-008",
@@ -77,7 +110,10 @@
     "p_do_1": 0.793361985309892,
     "p_do_0": 0.6351391899608743,
     "reachability": 3,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [],
+    "p_observed_1": 0.7933619853098921,
+    "association_gap": 1.1102230246251565e-16
   },
   {
     "candidate_id": "DEP-009",
@@ -87,7 +123,10 @@
     "p_do_1": 0.6986517668926504,
     "p_do_0": 0.4836351258379006,
     "reachability": 4,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [],
+    "p_observed_1": 0.6986517668926504,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-010",
@@ -97,7 +136,10 @@
     "p_do_1": 0.7772998611746911,
     "p_do_0": 0.2689414213699951,
     "reachability": 3,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [],
+    "p_observed_1": 0.7772998611746911,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-011",
@@ -107,7 +149,10 @@
     "p_do_1": 0.7981867777396212,
     "p_do_0": 0.2689414213699951,
     "reachability": 3,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [],
+    "p_observed_1": 0.7981867777396212,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-012",
@@ -117,7 +162,10 @@
     "p_do_1": 0.8876674068748305,
     "p_do_0": 0.57224928193448,
     "reachability": 4,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [],
+    "p_observed_1": 0.8876674068748305,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-013",
@@ -127,7 +175,10 @@
     "p_do_1": 0.6986517668926504,
     "p_do_0": 0.4836351258379006,
     "reachability": 4,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [],
+    "p_observed_1": 0.6986517668926504,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-014",
@@ -137,7 +188,10 @@
     "p_do_1": 0.8876674068748305,
     "p_do_0": 0.57224928193448,
     "reachability": 2,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [],
+    "p_observed_1": 0.8876674068748305,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-015",
@@ -147,7 +201,10 @@
     "p_do_1": 0.9479798578373564,
     "p_do_0": 0.5102150839327213,
     "reachability": 3,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [],
+    "p_observed_1": 0.9479798578373564,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-016",
@@ -157,7 +214,10 @@
     "p_do_1": 0.7981867777396212,
     "p_do_0": 0.2689414213699951,
     "reachability": 5,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [],
+    "p_observed_1": 0.7981867777396212,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-017",
@@ -167,7 +227,22 @@
     "p_do_1": 0.8119303086006572,
     "p_do_0": 0.4056600627365031,
     "reachability": 1,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [
+      {
+        "element": "Inventory Management Function",
+        "path_to_source": [
+          "Inventory Management Function",
+          "Management Event Recording"
+        ],
+        "path_to_target": [
+          "Inventory Management Function",
+          "Purchase History Recorded"
+        ]
+      }
+    ],
+    "p_observed_1": 0.8641640989664462,
+    "association_gap": 0.05223379036578901
   },
   {
     "candidate_id": "DEP-018",
@@ -177,7 +252,10 @@
     "p_do_1": 0.7981867777396212,
     "p_do_0": 0.2689414213699951,
     "reachability": 5,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [],
+    "p_observed_1": 0.7981867777396212,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-019",
@@ -187,7 +265,10 @@
     "p_do_1": 0.9286473769073882,
     "p_do_0": 0.399639842823173,
     "reachability": 4,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [],
+    "p_observed_1": 0.9286473769073882,
+    "association_gap": 0.0
   },
   {
     "candidate_id": "DEP-020",
@@ -197,6 +278,9 @@
     "p_do_1": 0.7981867777396212,
     "p_do_0": 0.2689414213699951,
     "reachability": 4,
-    "model_version": "MODEL-ed936aeafef8"
+    "model_version": "MODEL-ed936aeafef8",
+    "shared_upstream": [],
+    "p_observed_1": 0.7981867777396212,
+    "association_gap": 0.0
   }
 ]
