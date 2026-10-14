@@ -31,8 +31,8 @@ for path in sorted(out.iterdir()):
 print("\n--- manifest.json ---")
 print((out / "manifest.json").read_text(encoding="utf-8"))
 
-print("--- RQ1_review.md (head) ---")
-text = (out / "RQ1_review.md").read_text(encoding="utf-8")
+print("--- causalreq_supplements_only.txt (head) ---")
+text = (out / "causalreq_supplements_only.txt").read_text(encoding="utf-8")
 print(text[:900])
 print("...")
 print(text[-700:])

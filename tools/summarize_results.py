@@ -111,63 +111,6 @@ if rq3.exists():
                 f"{item.get('preliminary_outcome', '?')} | "
                 f"{len(item.get('checked_fr_ids', []))} |\n")
 
-# ---------------------------------------------------- human review ----
-hr = root / "human_review"
-if hr.is_dir():
-    import csv as _csv
-
-    rq2p = hr / "RQ2_human_review.csv"
-    if rq2p.exists():
-        with rq2p.open(encoding="utf-8-sig") as handle:
-            rq2 = list(_csv.DictReader(handle))
-        dep_yes = sum(1 for r in rq2 if r["依赖有据"] == "是")
-        mis_yes = sum(1 for r in rq2 if r["缺失义务成立"] == "是")
-        valid_ids = sorted({r["人工义务ID"] for r in rq2 if r["人工义务ID"]})
-        lines.append("\n## 7. 人工判定：RQ2 固定候选池\n")
-        lines.append(f"\n- 候选数 **{len(rq2)}**；依赖有原文依据 **{dep_yes}/{len(rq2)}**；"
-                     f"缺失义务成立 **{mis_yes}/{len(rq2)}**\n")
-        lines.append(f"- 人工义务 ID：**{', '.join(valid_ids) if valid_ids else '无'}**\n")
-        lines.append("\n| 候选ID | 依赖有据 | 缺失义务成立 | 人工义务ID | 依据／否决原因 |\n")
-        lines.append("|---|---|---|---|---|\n")
-        for r in rq2:
-            lines.append(f"| {r['候选ID']} | {r['依赖有据']} | {r['缺失义务成立']} | "
-                         f"{r['人工义务ID']} | {r['依据／否决原因']} |\n")
-
-    rq3p = hr / "RQ3_human_review.csv"
-    if rq3p.exists():
-        with rq3p.open(encoding="utf-8-sig") as handle:
-            rq3 = list(_csv.DictReader(handle))
-        by_variant = Counter(r["版本"] for r in rq3)
-        outcomes = Counter(r["人工去向"] for r in rq3)
-        lines.append("\n## 8. 人工判定：RQ3 提名去向\n")
-        lines.append(f"\n- 审阅行数 **{len(rq3)}**（"
-                     + "，".join(f"{k} {v}" for k, v in sorted(by_variant.items())) + "）\n")
-        lines.append("\n| 人工去向 | 行数 |\n|---|---:|\n")
-        for key, value in outcomes.most_common():
-            lines.append(f"| {key} | {value} |\n")
-        valid_rows = [r for r in rq3 if r["义务ID"]]
-        ids = sorted({r["义务ID"] for r in valid_rows})
-        lines.append(f"\n- 有效且缺失 **{len(valid_rows)}** 行，对应 **{len(ids)}** 个义务 ID："
-                     f"{', '.join(ids) if ids else '无'}\n")
-        lines.append("\n| 义务ID | 版本 | 提名ID | 路线 | 原文依据 | 理由 |\n|---|---|---|---|---|---|\n")
-        for r in valid_rows:
-            lines.append(f"| {r['义务ID']} | {r['版本']} | {r['提名ID']} | {r['路线']} | "
-                         f"{r['原文依据']} | {r['理由']} |\n")
-
-    for name, title in (("RQ2_HUMAN_BUDGET.md", "9. RQ2 预算对比（人工判定）"),
-                        ("RQ3_COMPONENT_CONTRIBUTION.md", "10. RQ3 组件贡献（人工判定）")):
-        p = hr / name
-        if p.exists():
-            lines.append(f"\n---\n\n## {title}\n\n")
-            body_lines = []
-            for ln in p.read_text(encoding="utf-8").splitlines():
-                if ln.startswith("# "):
-                    continue          # drop the report's own H1
-                if ln.startswith("## "):
-                    ln = "#" + ln      # demote H2 -> H3 so numbering stays inside this section
-                body_lines.append(ln)
-            lines.append("\n".join(body_lines).strip() + "\n")
-
 report = "".join(lines)
 out_md = root / "RESULTS.md"
 out_md.write_text(report, encoding="utf-8")

@@ -88,8 +88,6 @@ samples/<DOC_ID>/
 │                               Random_review.csv, manifest.json, original_document.txt
 ├── RQ3/<variant>/              nominations.json, supplements.json,
 │                               run_settings.json, manifest.json
-├── review/                     review worksheets (RQ2 candidates, RQ3 Full, ablation-only)
-│                               and w_map.json (Full <-> ablation mapping)
 └── RESULTS.md                  single-document report (sections 1-6)
 ```
 

@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 
 """
-RQ1–RQ3 人工审查材料生成器。
+CausalReq：依赖关系驱动的需求缺口诊断与证据约束补全（RQ1–RQ3 产物生成器）。
 
-不进行人工有效性判定，不计算论文质量指标。
+有效性判定与论文质量指标由评测环节完成，不由本脚本给出。
 
 输入：
   Data/<case>/Document/*.docx
@@ -1082,7 +1082,6 @@ def export_rq2(
                 "number of descendants of source node"
             ),
             "random_seed": seed,
-            "quality_labels": "reserved for human reviewers",
         },
     )
 
@@ -1749,97 +1748,6 @@ def produce_variant(
         supplements,
     )
 
-    review_lines = [
-        f"# RQ3 审查材料：{doc_id} / {variant_name}\n",
-        "\n**注意：下列去向只是模型初步筛查，"
-        "不是人工有效性结论。**\n",
-        "\n## 运行设置\n\n```json\n",
-        json.dumps(
-            settings,
-            ensure_ascii=False,
-            indent=2,
-        ),
-        "\n```\n",
-    ]
-
-    for route in (
-        "dependency",
-        "isolated",
-        "operation",
-    ):
-        subset = [
-            item
-            for item in nominations
-            if item["origin"] == route
-        ]
-
-        review_lines.append(
-            f"\n## {route}："
-            f"{len(subset)} 条提名\n"
-        )
-
-        for item in subset:
-            review_lines.extend([
-                "\n### "
-                + item["nomination_id"]
-                + "\n",
-                f"- 主题：{item['subject']}\n",
-                f"- 审查问题：{item['question']}\n",
-                f"- 场景：{item['scenario']}\n",
-                "- 模型初步去向："
-                + item[
-                    "preliminary_outcome"
-                ]
-                + "\n",
-                "- 模型解释："
-                + item[
-                    "preliminary_reason"
-                ]
-                + "\n",
-                "- 原文证据 FR："
-                + ", ".join(
-                    item[
-                        "evidence_fr_ids"
-                    ]
-                )
-                + "\n",
-                "- 全文已检查 FR 数："
-                + str(
-                    len(
-                        item[
-                            "checked_fr_ids"
-                        ]
-                    )
-                )
-                + "\n",
-                "- 草案："
-                + item[
-                    "draft_obligation"
-                ]
-                + "\n",
-                "- 人工判定：＿＿＿＿＿＿\n",
-                "- 人工义务编号：＿＿＿＿＿＿\n",
-                "- 人工备注：＿＿＿＿＿＿\n",
-            ])
-
-    review_lines.append(
-        "\n## 本次输出的补充需求\n"
-    )
-
-    for index, item in enumerate(
-        supplements,
-        1,
-    ):
-        review_lines.append(
-            f"\n{index}. [{item['status']}] "
-            f"{item['text']}\n"
-        )
-
-    write_text(
-        out / "RQ3_review.md",
-        "".join(review_lines),
-    )
-
     return nominations, supplements
 
 
@@ -1859,15 +1767,6 @@ def export_rq1(
         out / "00_original_document.txt",
         original_doc,
     )
-
-    review = [
-        f"# RQ1 人工审查材料：{doc_id}\n",
-        "\n本文件只包含原始需求与 CausalReq 生成的新增需求；"
-        "不包含任何基线输出，也没有自动质量评分。\n",
-        "\n## 原始需求\n\n",
-        original_doc,
-        "\n",
-    ]
 
     causalreq_text = "\n\n".join(
         f"{index}. {item['text']}"
@@ -1889,17 +1788,6 @@ def export_rq1(
         + causalreq_text,
     )
 
-    review.extend([
-        "\n---\n\n## CausalReq：仅新增需求\n\n",
-        causalreq_text
-        or "[本次没有模型初步保留的新增需求]",
-        "\n",
-    ])
-
-    write_text(
-        out / "RQ1_review.md",
-        "".join(review),
-    )
 
     write_json(
         out / "manifest.json",

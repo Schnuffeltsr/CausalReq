@@ -73,7 +73,7 @@ lines += ["", "## Case validation data (reference samples)", ""]
 ref = files_under(REPO / "samples" / "reference_targets")
 lines += [f"**samples/reference_targets/** — {len(ref)} files, "
           f"{mb(sum(f.stat().st_size for f in ref))} "
-          "(validation oracle for the human review)", ""]
+          "(the validation oracle)", ""]
 for f in ref:
     lines.append(f"- `{f.relative_to(REPO).as_posix()}` — {mb(f.stat().st_size)}")
 lines.append("")

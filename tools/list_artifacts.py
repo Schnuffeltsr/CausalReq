@@ -8,7 +8,7 @@ sys.stdout.reconfigure(encoding="utf-8")
 OUT_ROOT = Path(__file__).resolve().parents[1] / "samples"
 for doc in sorted(p for p in OUT_ROOT.iterdir() if p.is_dir()):
     print(f"=== {doc.name}")
-    for sub in ("graph", "RQ1", "RQ2", "human_review"):
+    for sub in ("graph", "RQ1", "RQ2"):
         d = doc / sub
         if d.is_dir():
             files = sorted(f.name for f in d.iterdir() if f.is_file())
