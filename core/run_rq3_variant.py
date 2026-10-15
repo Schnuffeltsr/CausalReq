@@ -25,11 +25,21 @@ parser.add_argument("--doc-id", default="MDOT_MDOT_simple2")
 parser.add_argument("--pool-size", type=int, default=M.POOL_SIZE)
 parser.add_argument("--out-root", default="samples")
 parser.add_argument(
+    "--require-evidence",
+    action=argparse.BooleanOptionalAction,
+    default=M.REQUIRE_EVIDENCE_DEFAULT,
+    help="引文级证据闸门（默认开）：只改标注，不丢弃条目。",
+)
+parser.add_argument(
+    "--drop-non-retained",
+    action="store_true",
+    default=M.DROP_NON_RETAINED_DEFAULT,
+    help="淘汰闸门（默认关）：只输出 retained 的提名。",
+)
+parser.add_argument(
     "--enforce-validation",
     action="store_true",
-    default=M.ENFORCE_VALIDATION_DEFAULT,
-    help="打开全文验证的拦截（论文评测使用该设置）；"
-         "默认关闭：验证只记录去向，不淘汰任何提名。",
+    help="同时打开上面两个闸门，即论文评测使用的配置。",
 )
 args = parser.parse_args()
 
@@ -90,7 +100,8 @@ nominations, supplements = M.produce_variant(
     variant_name=args.variant,
     settings=settings,
     output_root=OUT_ROOT,
-    enforce_validation=args.enforce_validation,
+    require_evidence=(True if args.enforce_validation else args.require_evidence),
+    drop_non_retained=(True if args.enforce_validation else args.drop_non_retained),
 )
 
 outcomes = {}

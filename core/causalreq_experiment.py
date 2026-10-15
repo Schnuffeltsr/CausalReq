@@ -124,13 +124,24 @@ PROPAGATION_STRENGTH = 2.5
 MAX_PARENTS = 8
 POOL_SIZE = 20
 
-# 全文验证默认只记录、不淘汰：验证照跑，去向照记，但不丢弃任何提名
-# （没有 supplement 时回落到提名阶段的 draft_obligation）。
-# 论文中报告的评测使用 --enforce-validation，打开下面的拦截：
-#   只有 retained 产出补充需求，且 covered / out_of_scope / retained 需要
-#   相应的引文级或补充需求级证据，否则降级为 unresolved。
-ENFORCE_VALIDATION_DEFAULT = os.getenv(
-    "CAUSALREQ_ENFORCE_VALIDATION",
+# 全文验证的两处拦截，分开控制，默认只保留副作用小的那一处：
+#
+#   require_evidence（默认开）—— 引文级证据闸门。
+#       covered / out_of_scope 必须有引文级逐段证据，retained 必须有补充需求
+#       和证据 FR，否则该条目的去向记为 unresolved。它只改**标注**，不丢东西。
+#
+#   drop_non_retained（默认关）—— 淘汰闸门。
+#       只输出 retained 的提名，其余全部丢弃。副作用最大（会把真实缺口一起丢掉），
+#       因此默认关闭：默认配置下每条提名都会产出，并带上 disposition。
+#
+# 论文报告的评测使用两者都开（--enforce-validation）。
+REQUIRE_EVIDENCE_DEFAULT = os.getenv(
+    "CAUSALREQ_REQUIRE_EVIDENCE",
+    "1",
+).strip().lower() in {"1", "true", "yes", "on"}
+
+DROP_NON_RETAINED_DEFAULT = os.getenv(
+    "CAUSALREQ_DROP_NON_RETAINED",
     "",
 ).strip().lower() in {"1", "true", "yes", "on"}
 
@@ -1574,16 +1585,16 @@ def preliminarily_validate(
     client: OpenAI,
     frs: list[dict],
     nomination: dict,
-    enforce: bool | None = None,
+    require_evidence: bool | None = None,
 ) -> dict:
     """
     逐 FR 筛查 + 汇总初判。
 
-    enforce=False（默认）时只记录模型给出的去向，不因缺少引文级证据而降级；
-    enforce=True 时启用拦截（论文报告的评测使用该设置）。
+    require_evidence=False 时只记录模型给出的去向，不因缺少引文级证据而降级；
+    True（默认）时启用引文级证据闸门。
     """
-    if enforce is None:
-        enforce = ENFORCE_VALIDATION_DEFAULT
+    if require_evidence is None:
+        require_evidence = REQUIRE_EVIDENCE_DEFAULT
     notes = []
 
     # 一次检查一条完整 FR。不能使用 safe_truncate_doc。
@@ -1657,9 +1668,8 @@ def preliminarily_validate(
         response.get("supplement", "")
     ).strip()
 
-    # 拦截（可选项，默认关闭）：不能只靠最终汇总 LLM 宣称 covered / 越界，
-    # 也不能在没有补充需求或证据 FR 的情况下宣称 retained。
-    if enforce:
+    # 引文级证据闸门（默认开启，只改标注、不丢条目）。
+    if require_evidence:
         if (
             outcome == "covered"
             and not any(
@@ -1692,10 +1702,10 @@ def preliminarily_validate(
         ).strip(),
         "supplement": (
             supplement
-            if (outcome == "retained" or not enforce)
+            if (outcome == "retained" or not require_evidence)
             else ""
         ),
-        "validation_enforced": enforce,
+        "evidence_gate_applied": require_evidence,
         "checked_fr_ids": [
             item["fr_id"] for item in notes
         ],
@@ -1718,10 +1728,14 @@ def produce_variant(
     variant_name: str,
     settings: dict,
     output_root: Path,
-    enforce_validation: bool | None = None,
+    require_evidence: bool | None = None,
+    drop_non_retained: bool | None = None,
 ) -> tuple[list[dict], list[dict]]:
-    if enforce_validation is None:
-        enforce_validation = ENFORCE_VALIDATION_DEFAULT
+    if require_evidence is None:
+        require_evidence = REQUIRE_EVIDENCE_DEFAULT
+
+    if drop_non_retained is None:
+        drop_non_retained = DROP_NON_RETAINED_DEFAULT
 
     nominations = generate_nominations(
         client,
@@ -1742,7 +1756,7 @@ def produce_variant(
                     client,
                     frs,
                     nomination,
-                    enforce=enforce_validation,
+                    require_evidence=require_evidence,
                 )
             )
         else:
@@ -1772,9 +1786,9 @@ def produce_variant(
 
     for nomination in nominations:
         validated = settings["full_document_validation"]
-        reported_only = validated and not enforce_validation
+        reported_only = validated and not drop_non_retained
 
-        if validated and enforce_validation:
+        if validated and drop_non_retained:
             if nomination["preliminary_outcome"] != "retained":
                 continue
 
@@ -1820,7 +1834,7 @@ def produce_variant(
             "text": text,
             "status": (
                 "model_preliminarily_retained"
-                if (validated and enforce_validation)
+                if (validated and drop_non_retained)
                 else (
                     "unchecked_draft"
                     if not validated
@@ -1846,7 +1860,8 @@ def produce_variant(
             "doc_id": doc_id,
             "variant": variant_name,
             **settings,
-            "enforce_validation": enforce_validation,
+            "require_evidence": require_evidence,
+            "drop_non_retained": drop_non_retained,
             "model_version": (
                 model.model_version
             ),
@@ -2005,10 +2020,14 @@ def run_one(
     pool_size: int,
     random_seed: int,
     cross_window: int,
-    enforce_validation: bool | None = None,
+    require_evidence: bool | None = None,
+    drop_non_retained: bool | None = None,
 ) -> dict:
-    if enforce_validation is None:
-        enforce_validation = ENFORCE_VALIDATION_DEFAULT
+    if require_evidence is None:
+        require_evidence = REQUIRE_EVIDENCE_DEFAULT
+
+    if drop_non_retained is None:
+        drop_non_retained = DROP_NON_RETAINED_DEFAULT
     original_doc = read_docx_in_order(
         source_path
     )
@@ -2096,7 +2115,8 @@ def run_one(
                 variant_name=variant_name,
                 settings=settings,
                 output_root=output_root,
-                enforce_validation=enforce_validation,
+                require_evidence=require_evidence,
+                drop_non_retained=drop_non_retained,
             )
         )
 
@@ -2181,13 +2201,25 @@ def main() -> None:
         default=2,
     )
     parser.add_argument(
+        "--require-evidence",
+        action=argparse.BooleanOptionalAction,
+        default=REQUIRE_EVIDENCE_DEFAULT,
+        help="引文级证据闸门（默认开）：covered / out_of_scope 需要引文级"
+             "逐段证据，retained 需要补充需求与证据 FR，否则记为 unresolved。"
+             "只改标注，不丢弃条目。",
+    )
+    parser.add_argument(
+        "--drop-non-retained",
+        action="store_true",
+        default=DROP_NON_RETAINED_DEFAULT,
+        help="淘汰闸门（默认关）：只输出 retained 的提名，其余全部丢弃。"
+             "副作用最大，会把真实缺口一起丢掉。",
+    )
+    parser.add_argument(
         "--enforce-validation",
         action="store_true",
-        default=ENFORCE_VALIDATION_DEFAULT,
-        help="打开全文验证的拦截：只有 retained 产出补充需求，"
-             "且 covered / out_of_scope / retained 需要相应证据，"
-             "否则降级为 unresolved（论文评测使用该设置）。"
-             "默认关闭：验证只记录去向，不淘汰任何提名。",
+        help="等价于同时打开 --require-evidence 与 --drop-non-retained，"
+             "即论文评测使用的配置。",
     )
     parser.add_argument(
         "--allow-partial-dataset",
@@ -2260,8 +2292,13 @@ def main() -> None:
                 cross_window=(
                     args.cross_window
                 ),
-                enforce_validation=(
-                    args.enforce_validation
+                require_evidence=(
+                    True if args.enforce_validation
+                    else args.require_evidence
+                ),
+                drop_non_retained=(
+                    True if args.enforce_validation
+                    else args.drop_non_retained
                 ),
             )
             completed.append(result)

@@ -120,23 +120,30 @@ write their reports next to it.
 ## How much of the validation is allowed to filter
 
 Document-wide validation always runs and always records its disposition for every
-nomination (`preliminary_outcome`, the per-passage findings, the quotations). By default it
-**does not discard anything**: every nomination is emitted, with `disposition` and
-`status: model_preliminary_reported` attached, and a nomination without a model-written
-supplement falls back to its `draft_obligation`. Nothing useful is dropped silently.
+nomination (`preliminary_outcome`, the per-passage findings, the quotations). Two
+independent switches control what it is allowed to do with that record:
+
+| Switch | Default | Effect |
+|---|---|---|
+| `--require-evidence` / `--no-require-evidence` | **on** | A claim needs evidence: `covered` and `out_of_scope` require a quotation-verified passage finding, `retained` requires a supplement and a supporting FR, otherwise the disposition is recorded as `unresolved`. This changes labels only — nothing is discarded. |
+| `--drop-non-retained` | **off** | Only `retained` nominations are emitted; everything else is discarded. This is the switch with the large side effect: it also drops genuine gaps, which is why it is off by default. |
+
+With the defaults every nomination is emitted, carrying its `disposition` and
+`status: model_preliminary_reported`; a nomination without a model-written supplement falls
+back to its `draft_obligation`. Nothing useful disappears silently. `--enforce-validation`
+turns both switches on, which is the configuration used for the paper's evaluation.
 
 ```bash
-# default: validation reports, nothing is filtered out
+# defaults: evidence-gated labels, nothing filtered out
 python core/run_rq3_fast.py --variant Full --doc-id MDOT_MDOT_simple2 --workers 8 --out-root samples
 
-# opt in to the filtering used for the paper's evaluation: only `retained` is emitted,
-# and covered / out_of_scope / retained require supporting evidence, otherwise unresolved
+# the paper's evaluation: evidence gates plus the retention filter
 python core/run_rq3_fast.py --variant Full --doc-id MDOT_MDOT_simple2 --workers 8 \
     --out-root samples --enforce-validation
 ```
 
-`CAUSALREQ_ENFORCE_VALIDATION=1` does the same for the single-process entry point
-(`core/causalreq_experiment.py`). The flag is written to each variant's
-`run_settings.json` as `enforce_validation`, so a published run states how its output was
-filtered. The sample in `samples/MDOT_MDOT_simple2/` was produced with the filtering
-enabled, matching the paper.
+`CAUSALREQ_REQUIRE_EVIDENCE=0` and `CAUSALREQ_DROP_NON_RETAINED=1` do the same for the
+single-process entry point (`core/causalreq_experiment.py`). Both settings are written to
+each variant's `run_settings.json`, so a published run states how its output was filtered.
+The sample in `samples/MDOT_MDOT_simple2/` was produced with both switches on, matching the
+paper.
