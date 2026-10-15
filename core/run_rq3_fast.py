@@ -89,11 +89,15 @@ if settings["full_document_validation"]:
     CACHE.mkdir(parents=True, exist_ok=True)
     MODEL = os.getenv("CAUSALREQ_MODEL", "unknown")
     STATS = {"hit": 0, "miss": 0}
+    REQUIRE_EVIDENCE = (
+        True if args.enforce_validation else args.require_evidence
+    )
 
     def cache_path(nomination):
         payload = "\x1f".join([
             args.doc_id, MODEL, nomination.get("question", ""),
             nomination.get("draft_obligation", ""),
+            f"require_evidence={REQUIRE_EVIDENCE}",
         ])
         key = hashlib.sha256(payload.encode("utf-8")).hexdigest()
         return CACHE / f"{key}.json"
@@ -119,7 +123,10 @@ if settings["full_document_validation"]:
         last = None
         for attempt in range(attempts):
             try:
-                result = M.preliminarily_validate(client, frs, nomination)
+                result = M.preliminarily_validate(
+                    client, frs, nomination,
+                    require_evidence=REQUIRE_EVIDENCE,
+                )
                 tmp = path.with_suffix(".tmp")
                 tmp.write_text(json.dumps(result, ensure_ascii=False), encoding="utf-8")
                 tmp.replace(path)
@@ -163,10 +170,17 @@ _original_validate = M.preliminarily_validate
 
 M.generate_nominations = lambda *a, **k: nominations
 if settings["full_document_validation"]:
-    def cached_validate(client_, frs_, nomination_):
+    def cached_validate(client_, frs_, nomination_, require_evidence=None):
+        """
+        Return the result computed in the parallel pass above.
+
+        The cached entries were produced with the same require_evidence setting as this
+        run (the setting is part of the cache key), so they can be returned unchanged.
+        """
         cached = results.get(nomination_["nomination_id"])
         if cached is None:
-            return _original_validate(client_, frs_, nomination_)
+            return _original_validate(client_, frs_, nomination_,
+                                      require_evidence=require_evidence)
         return cached
     M.preliminarily_validate = cached_validate
 
