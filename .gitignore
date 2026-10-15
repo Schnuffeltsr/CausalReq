@@ -10,6 +10,10 @@ samples/*/cache/
 # figure output directory, written by rq2/make_figure.py and rq4/make_figure.py
 figures/
 
+# local experiment run roots (an out-root other than samples/ stays untracked)
+gpt_run/
+runs/
+
 # inventory written by tools/make_manifest.py
 MANIFEST.md
 
