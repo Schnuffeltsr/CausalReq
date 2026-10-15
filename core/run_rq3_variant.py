@@ -24,6 +24,13 @@ parser.add_argument("--variant", required=True, choices=list(M.VARIANTS))
 parser.add_argument("--doc-id", default="MDOT_MDOT_simple2")
 parser.add_argument("--pool-size", type=int, default=M.POOL_SIZE)
 parser.add_argument("--out-root", default="samples")
+parser.add_argument(
+    "--enforce-validation",
+    action="store_true",
+    default=M.ENFORCE_VALIDATION_DEFAULT,
+    help="打开全文验证的拦截（论文评测使用该设置）；"
+         "默认关闭：验证只记录去向，不淘汰任何提名。",
+)
 args = parser.parse_args()
 
 OUT_ROOT = BASE / args.out_root
@@ -83,6 +90,7 @@ nominations, supplements = M.produce_variant(
     variant_name=args.variant,
     settings=settings,
     output_root=OUT_ROOT,
+    enforce_validation=args.enforce_validation,
 )
 
 outcomes = {}

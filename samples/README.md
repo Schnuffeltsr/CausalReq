@@ -1,9 +1,11 @@
-# samples — case validation data (reference samples)
+# samples — case data and the execution sample
 
 These are the artefacts produced by running the code in `core/`, `rq1/`–`rq4/` and
-`tools/` on three specifications. They are kept as **reference samples**: they show that
-the pipeline runs end to end, and they define the exact output contract that the analysis
-scripts expect.
+`tools/` end to end on one specification. They are kept as an **execution example**: they
+show that the released pipeline runs, and they define the exact output contract that the
+analysis scripts expect. They are not the runs behind the quantitative evaluation
+reported in the paper. The sample was produced with document-wide validation filtering
+enabled (`--enforce-validation`), i.e. the configuration used for the paper.
 
 ```
 samples/
@@ -23,13 +25,9 @@ samples/
 │   ├── MDOT/         (6)
 │   ├── QuickEats/    (6)
 │   └── WebStore/     (6)
-├── reference_targets/           plain-text extracts used as the validation oracle
-│   ├── reference_MDOT.txt          (MDOT-Simple2, FR-001 … FR-084)
-│   ├── reference_Inventory.txt     (Inventory-MIRC3, FR-01 … FR-107)
-│   └── reference_WebStore.txt      (WebStore-MIRC3, sections 1.1 … 1.45)
-├── MDOT_MDOT_simple2/
-├── Inventory_MIRC3/
-└── WebStore_MIRC3/
+├── reference_targets/           plain-text extract used as the validation oracle
+│   └── reference_MDOT.txt          (MDOT-Simple2, FR-001 … FR-084)
+└── MDOT_MDOT_simple2/
 ```
 
 ## The original test dataset
@@ -58,10 +56,8 @@ import). Folder names follow the original delivery, which is why the source fold
 | Processed sample | Source document | Reference document |
 |---|---|---|
 | `samples/MDOT_MDOT_simple2/` | `source_documents/MDOT/filtered_MDOT_simple2_doc.docx` | `reference_documents/MDOT/MDOT_requirements_FINAL_clean_Simple2-Reference.docx` |
-| `samples/Inventory_MIRC3/` | `source_documents/Inventory/filtered_Inventory_MIRC3_doc.docx` | `reference_documents/Inventory/Inventory_requirements_FINAL_clean_MIRC3-Reference.docx` |
-| `samples/WebStore_MIRC3/` | `source_documents/WebStore/filtered_WebStore_MIRC3_doc.docx` | `reference_documents/WebStore/WebStore_requirements_FINAL_clean_MIRC3-Reference.docx` |
 
-The remaining 39 document pairs are published so the dataset can be reused for the other
+The other 41 document pairs are published so the dataset can be reused for the remaining
 variants of the corpus.
 
 ```bash
@@ -106,22 +102,20 @@ source is observed active), and `association_gap` (that conditional probability 
 | Document | FR blocks | Elements (active) | Relations | Simulation graph | Pool | RQ3 variants |
 |---|---:|---:|---:|---:|---:|---:|
 | MDOT_MDOT_simple2 | 8 | 50 (45) | 56 | 45 n / 14 e | 20 | 5 |
-| Inventory_MIRC3 | 27 | 155 (140) | 276 | 140 n / 103 e | 20 | 5 |
-| WebStore_MIRC3 | 33 | 140 (118) | 387 | 118 n / 92 e | 20 | 5 |
 
 ## Reading a sample
 
 ```bash
 # the headline record of one document
-less samples/Inventory_MIRC3/RESULTS.md
+less samples/MDOT_MDOT_simple2/RESULTS.md
 
 # the fixed candidate pool and the three rankings
-column -s, -t < samples/Inventory_MIRC3/RQ2/fixed_pool.json
+column -s, -t < samples/MDOT_MDOT_simple2/RQ2/fixed_pool.json
 
 # one nomination end to end (question, evidence FRs, FR-by-FR screenings, verdict, draft)
 python - <<'PY'
 import json, pathlib
-p = pathlib.Path("samples/Inventory_MIRC3/RQ3/Full/nominations.json")
+p = pathlib.Path("samples/MDOT_MDOT_simple2/RQ3/Full/nominations.json")
 n = json.loads(p.read_text(encoding="utf-8"))[0]
 print(n["nomination_id"], n["origin"], n["preliminary_outcome"])
 print("question:", n["question"])
@@ -136,13 +130,12 @@ preserved in every sample folder as `source/original_document.txt`, so the valid
 is self-contained. To re-run stage 1 on a document:
 
 ```bash
-python core/run_stage_source.py --doc-id Inventory_MIRC3 \
-    --source /path/to/filtered_Inventory_MIRC3_doc.docx --out-root samples
+python core/run_stage_source.py --doc-id MDOT_MDOT_simple2 \
+    --source /path/to/filtered_MDOT_simple2_doc.docx --out-root samples
 ```
 
 ## Note on the LLM screening cache
 
-`cache/validation/` (2,435 small JSON files) is excluded from the repository: it is a
-scheduling aid keyed by (document, model, question, draft) and is regenerated on demand.
+`cache/validation/` is excluded from the repository: it is a scheduling aid keyed by (document, model, question, draft) and is regenerated on demand.
 Measured hit rate across concurrently running variants was 0, because the model does not
 reproduce identical nomination wording across runs.

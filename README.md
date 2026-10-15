@@ -13,7 +13,7 @@ its role.
 | `rq1/` … `rq4/` | The RQ-specific code, one folder per research question | 6 `.py` |
 | `tools/` | Utilities that belong to no single research question | 6 `.py` |
 | `prompts/` | Every prompt template as a text file, loaded at run time | 9 files |
-| `samples/` | All case data: datasets, processed runs, validation oracle | 221 files |
+| `samples/` | All case data: datasets, the processed sample, validation oracle | 130 files |
 | `requirements.txt` | Runtime dependencies (needed to run the code) | 1 |
 | `.gitignore` | Keeps caches, logs and generated figures out of the repository | 1 |
 
@@ -83,8 +83,8 @@ template safely.
 |---|---|---:|
 | `source_documents/<system>/` | The 42 original test documents (`Document/` only; the delivered `Analysis/` files are excluded — they are not an input to any step) | 42 |
 | `reference_documents/<system>/` | The 42 enhanced reference specifications — the oracle for "genuinely missing obligation" | 42 |
-| `reference_targets/` | Plain-text extracts of the three reference documents, used as the validation oracle | 3 |
-| `MDOT_MDOT_simple2/`, `Inventory_MIRC3/`, `WebStore_MIRC3/` | Fully processed samples: original text, extracted elements and relations, graphs, fixed pool and rankings, five RQ3 variants and `RESULTS.md` | 133 |
+| `reference_targets/` | Plain-text extract of the reference specification, used as the validation oracle | 1 |
+| `MDOT_MDOT_simple2/` | Fully processed sample: original text, extracted elements and relations, graphs, fixed pool and rankings, five RQ3 variants and `RESULTS.md` | 44 |
 | `samples/README.md` | The per-document output contract, the dataset description and how to read a sample | 1 |
 
 ## Generated at runtime, not stored here
@@ -116,3 +116,27 @@ python tools/summarize_results.py samples Email_MIRC2
 
 `samples/` is both the input root and the output root: the tools read the case data and
 write their reports next to it.
+
+## How much of the validation is allowed to filter
+
+Document-wide validation always runs and always records its disposition for every
+nomination (`preliminary_outcome`, the per-passage findings, the quotations). By default it
+**does not discard anything**: every nomination is emitted, with `disposition` and
+`status: model_preliminary_reported` attached, and a nomination without a model-written
+supplement falls back to its `draft_obligation`. Nothing useful is dropped silently.
+
+```bash
+# default: validation reports, nothing is filtered out
+python core/run_rq3_fast.py --variant Full --doc-id MDOT_MDOT_simple2 --workers 8 --out-root samples
+
+# opt in to the filtering used for the paper's evaluation: only `retained` is emitted,
+# and covered / out_of_scope / retained require supporting evidence, otherwise unresolved
+python core/run_rq3_fast.py --variant Full --doc-id MDOT_MDOT_simple2 --workers 8 \
+    --out-root samples --enforce-validation
+```
+
+`CAUSALREQ_ENFORCE_VALIDATION=1` does the same for the single-process entry point
+(`core/causalreq_experiment.py`). The flag is written to each variant's
+`run_settings.json` as `enforce_validation`, so a published run states how its output was
+filtered. The sample in `samples/MDOT_MDOT_simple2/` was produced with the filtering
+enabled, matching the paper.

@@ -124,6 +124,16 @@ PROPAGATION_STRENGTH = 2.5
 MAX_PARENTS = 8
 POOL_SIZE = 20
 
+# 全文验证默认只记录、不淘汰：验证照跑，去向照记，但不丢弃任何提名
+# （没有 supplement 时回落到提名阶段的 draft_obligation）。
+# 论文中报告的评测使用 --enforce-validation，打开下面的拦截：
+#   只有 retained 产出补充需求，且 covered / out_of_scope / retained 需要
+#   相应的引文级或补充需求级证据，否则降级为 unresolved。
+ENFORCE_VALIDATION_DEFAULT = os.getenv(
+    "CAUSALREQ_ENFORCE_VALIDATION",
+    "",
+).strip().lower() in {"1", "true", "yes", "on"}
+
 
 # ============================================================
 # 通用工具
@@ -1564,7 +1574,16 @@ def preliminarily_validate(
     client: OpenAI,
     frs: list[dict],
     nomination: dict,
+    enforce: bool | None = None,
 ) -> dict:
+    """
+    逐 FR 筛查 + 汇总初判。
+
+    enforce=False（默认）时只记录模型给出的去向，不因缺少引文级证据而降级；
+    enforce=True 时启用拦截（论文报告的评测使用该设置）。
+    """
+    if enforce is None:
+        enforce = ENFORCE_VALIDATION_DEFAULT
     notes = []
 
     # 一次检查一条完整 FR。不能使用 safe_truncate_doc。
@@ -1634,35 +1653,37 @@ def preliminarily_validate(
     if outcome not in VALIDATION_OUTCOMES:
         outcome = "unresolved"
 
-    # 不能只靠最终汇总 LLM 宣称 covered / 越界。
-    if (
-        outcome == "covered"
-        and not any(
-            item["covered"] for item in notes
-        )
-    ):
-        outcome = "unresolved"
-
-    if (
-        outcome == "out_of_scope"
-        and not any(
-            item["out_of_scope_evidence"]
-            for item in notes
-        )
-    ):
-        outcome = "unresolved"
-
     supplement = str(
         response.get("supplement", "")
     ).strip()
 
-    if outcome == "retained" and (
-        not supplement
-        or not nomination[
-            "evidence_fr_ids"
-        ]
-    ):
-        outcome = "unresolved"
+    # 拦截（可选项，默认关闭）：不能只靠最终汇总 LLM 宣称 covered / 越界，
+    # 也不能在没有补充需求或证据 FR 的情况下宣称 retained。
+    if enforce:
+        if (
+            outcome == "covered"
+            and not any(
+                item["covered"] for item in notes
+            )
+        ):
+            outcome = "unresolved"
+
+        if (
+            outcome == "out_of_scope"
+            and not any(
+                item["out_of_scope_evidence"]
+                for item in notes
+            )
+        ):
+            outcome = "unresolved"
+
+        if outcome == "retained" and (
+            not supplement
+            or not nomination[
+                "evidence_fr_ids"
+            ]
+        ):
+            outcome = "unresolved"
 
     return {
         "preliminary_outcome": outcome,
@@ -1671,9 +1692,10 @@ def preliminarily_validate(
         ).strip(),
         "supplement": (
             supplement
-            if outcome == "retained"
+            if (outcome == "retained" or not enforce)
             else ""
         ),
+        "validation_enforced": enforce,
         "checked_fr_ids": [
             item["fr_id"] for item in notes
         ],
@@ -1696,7 +1718,11 @@ def produce_variant(
     variant_name: str,
     settings: dict,
     output_root: Path,
+    enforce_validation: bool | None = None,
 ) -> tuple[list[dict], list[dict]]:
+    if enforce_validation is None:
+        enforce_validation = ENFORCE_VALIDATION_DEFAULT
+
     nominations = generate_nominations(
         client,
         frs,
@@ -1716,6 +1742,7 @@ def produce_variant(
                     client,
                     frs,
                     nomination,
+                    enforce=enforce_validation,
                 )
             )
         else:
@@ -1744,17 +1771,19 @@ def produce_variant(
     seen_exact_text = set()
 
     for nomination in nominations:
-        if settings[
-            "full_document_validation"
-        ]:
-            if nomination[
-                "preliminary_outcome"
-            ] != "retained":
+        validated = settings["full_document_validation"]
+        reported_only = validated and not enforce_validation
+
+        if validated and enforce_validation:
+            if nomination["preliminary_outcome"] != "retained":
                 continue
 
-        text = nomination[
-            "supplement"
-        ].strip()
+        text = nomination["supplement"].strip()
+
+        # 只记录不淘汰时，没有 supplement 的提名回落到提名阶段的草案，
+        # 这样默认配置不会因为验证结论而丢掉任何一条提名。
+        if not text and reported_only:
+            text = str(nomination.get("draft_obligation", "")).strip()
 
         if not text:
             continue
@@ -1791,10 +1820,16 @@ def produce_variant(
             "text": text,
             "status": (
                 "model_preliminarily_retained"
-                if settings[
-                    "full_document_validation"
-                ]
-                else "unchecked_draft"
+                if (validated and enforce_validation)
+                else (
+                    "unchecked_draft"
+                    if not validated
+                    else "model_preliminary_reported"
+                )
+            ),
+            "disposition": nomination.get(
+                "preliminary_outcome",
+                "not_checked",
             ),
         })
 
@@ -1811,6 +1846,7 @@ def produce_variant(
             "doc_id": doc_id,
             "variant": variant_name,
             **settings,
+            "enforce_validation": enforce_validation,
             "model_version": (
                 model.model_version
             ),
@@ -1969,7 +2005,10 @@ def run_one(
     pool_size: int,
     random_seed: int,
     cross_window: int,
+    enforce_validation: bool | None = None,
 ) -> dict:
+    if enforce_validation is None:
+        enforce_validation = ENFORCE_VALIDATION_DEFAULT
     original_doc = read_docx_in_order(
         source_path
     )
@@ -2057,6 +2096,7 @@ def run_one(
                 variant_name=variant_name,
                 settings=settings,
                 output_root=output_root,
+                enforce_validation=enforce_validation,
             )
         )
 
@@ -2141,6 +2181,15 @@ def main() -> None:
         default=2,
     )
     parser.add_argument(
+        "--enforce-validation",
+        action="store_true",
+        default=ENFORCE_VALIDATION_DEFAULT,
+        help="打开全文验证的拦截：只有 retained 产出补充需求，"
+             "且 covered / out_of_scope / retained 需要相应证据，"
+             "否则降级为 unresolved（论文评测使用该设置）。"
+             "默认关闭：验证只记录去向，不淘汰任何提名。",
+    )
+    parser.add_argument(
         "--allow-partial-dataset",
         action="store_true",
         help="调试少量文档时使用",
@@ -2210,6 +2259,9 @@ def main() -> None:
                 ),
                 cross_window=(
                     args.cross_window
+                ),
+                enforce_validation=(
+                    args.enforce_validation
                 ),
             )
             completed.append(result)

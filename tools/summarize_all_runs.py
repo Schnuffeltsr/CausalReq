@@ -12,10 +12,11 @@ OUT_ROOT = Path(sys.argv[1]) if len(sys.argv) > 1 else BASE / "samples"
 ORDER = ["Full", "NoSignedPropagation", "NoIsolatedReview", "NoOperationReview",
          "NoFullDocumentValidation"]
 
-for doc_dir in sorted(p for p in OUT_ROOT.iterdir() if p.is_dir()):
+for doc_dir in sorted(
+    p for p in OUT_ROOT.iterdir()
+    if p.is_dir() and (p / "stage1_summary.json").exists()
+):
     doc_id = doc_dir.name
-    if doc_id == "cache":
-        continue
     stage1 = doc_dir / "stage1_summary.json"
     if stage1.exists():
         s = json.loads(stage1.read_text(encoding="utf-8"))

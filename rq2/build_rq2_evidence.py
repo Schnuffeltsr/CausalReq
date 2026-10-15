@@ -18,7 +18,7 @@ sys.stdout.reconfigure(encoding="utf-8")
 
 BASE = Path(__file__).resolve().parents[1]
 OUT_ROOT = Path(sys.argv[1]) if len(sys.argv) > 1 else BASE / "samples"
-DOC_ID = sys.argv[2] if len(sys.argv) > 2 else "Inventory_MIRC3"
+DOC_ID = sys.argv[2] if len(sys.argv) > 2 else "MDOT_MDOT_simple2"
 
 import networkx as nx  # noqa: E402
 

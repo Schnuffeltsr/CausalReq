@@ -9,9 +9,9 @@ sys.stdout.reconfigure(encoding="utf-8")
 
 BASE = Path(__file__).resolve().parents[1]
 TARGETS = [
-    ("MDOT", BASE / "samples" / "MDOT_MDOT_simple2"),
-    ("Inventory", BASE / "samples" / "Inventory_MIRC3"),
-    ("WebStore", BASE / "samples" / "WebStore_MIRC3"),
+    (folder.name, folder)
+    for folder in sorted((BASE / "samples").iterdir())
+    if (folder / "stage1_summary.json").exists()
 ]
 
 for label, root in TARGETS:
