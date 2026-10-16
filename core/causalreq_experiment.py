@@ -145,6 +145,19 @@ DROP_NON_RETAINED_DEFAULT = os.getenv(
     "",
 ).strip().lower() in {"1", "true", "yes", "on"}
 
+#   refine_output（默认开）—— 输出精炼。
+#       草拟完成后，对同一批补充需求做一次语义级去重/合并/剔除：措辞不同但业务义务
+#       相同的条目并成一条（保留全部实质约束），完全被覆盖或不是义务的条目整条去掉。
+#       这是论文所述的 "a subsequent check rejects semantic duplicates"，也对应
+#       参考实现中的最终精炼阶段；关闭它会让冗余率与条目数明显上升。
+REFINE_OUTPUT_DEFAULT = os.getenv(
+    "CAUSALREQ_REFINE_OUTPUT",
+    "1",
+).strip().lower() in {"1", "true", "yes", "on"}
+
+# 精炼单次送入模型的条目数（与原实现的 MAX_BATCH_SIZE 一致）。
+REFINE_BATCH = int(os.getenv("CAUSALREQ_REFINE_BATCH", "12"))
+
 
 # ============================================================
 # 通用工具
@@ -1716,6 +1729,205 @@ def preliminarily_validate(
     }
 
 
+REFINE_PROMPT = """
+You are given the drafted supplementary requirements produced for ONE document
+(the list can come from more than one nomination route).
+
+Decide exactly one action per draft:
+
+- "keep": it states a business obligation that no other draft already states.
+- "merge": it states the same business obligation as one or more other drafts;
+  list those ids in merge_with and give the merged wording.
+- "remove": it is not a business obligation, or another draft fully contains it.
+
+Merging rules:
+- merge only genuinely equivalent obligations; sharing a subject or a feature
+  is not enough;
+- the merged wording must preserve every substantive constraint of the merged
+  drafts (conditions, objects, actions, failure and recovery paths);
+- never introduce a policy, role, threshold or technology choice that is absent
+  from the drafts themselves;
+- when unsure, keep.
+
+Return JSON:
+{
+  "results": [
+    {"id": "<draft id>", "action": "keep|merge|remove",
+     "merge_with": ["<other draft ids>"],
+     "text": "<merged wording, merge only>",
+     "reason": "..."}
+  ]
+}
+
+Return exactly one entry per supplied draft, in the same order, and nothing else.
+"""
+
+
+def refine_supplements(
+    client: OpenAI,
+    supplements: list[dict],
+) -> tuple[list[dict], list[dict]]:
+    """语义级去重、合并与剔除（论文所述的 semantic-duplicate check）。
+
+    返回 (refined, report)：
+      refined 保留 provenance（merged_from / refine_action）；
+      report 记录每一次合并与删除及其理由，供审计。
+    """
+    if not supplements:
+        return supplements, []
+
+    decisions: dict[str, dict] = {}
+
+    for start in range(0, len(supplements), REFINE_BATCH):
+        batch = supplements[start:start + REFINE_BATCH]
+        response = ask_json(
+            client,
+            REFINE_PROMPT,
+            {
+                "drafts": [
+                    {
+                        "id": item["output_id"],
+                        "text": item["text"],
+                    }
+                    for item in batch
+                ],
+            },
+        )
+        for row in response.get("results", []) or []:
+            if isinstance(row, dict) and row.get("id"):
+                decisions[str(row["id"])] = row
+
+    by_id = {
+        item["output_id"]: item
+        for item in supplements
+    }
+
+    action_of: dict[str, str] = {}
+    head_of: dict[str, str] = {}
+    merged_text: dict[str, str] = {}
+
+    for item in supplements:
+        oid = item["output_id"]
+        row = decisions.get(oid, {})
+        action = str(row.get("action", "keep")).strip().lower()
+        if action not in {"keep", "merge", "remove"}:
+            action = "keep"
+        action_of[oid] = action
+        if action != "merge":
+            continue
+        partners = [
+            partner
+            for partner in row.get("merge_with", []) or []
+            if partner in by_id
+        ]
+        cluster = sorted({oid, *partners})
+        head = cluster[0]
+        for member in cluster:
+            head_of[member] = head
+            if action_of.get(member, "keep") != "remove":
+                action_of[member] = "merge"
+        if head == oid:
+            merged_text[head] = str(row.get("text", "")).strip()
+
+    refined: list[dict] = []
+    report: list[dict] = []
+
+    for item in supplements:
+        oid = item["output_id"]
+        action = action_of.get(oid, "keep")
+        reason = str(decisions.get(oid, {}).get("reason", "")).strip()
+
+        if action == "remove":
+            report.append({
+                "action": "remove",
+                "id": oid,
+                "reason": reason,
+            })
+            continue
+
+        if action == "merge":
+            head = head_of.get(oid, oid)
+            if head != oid:
+                report.append({
+                    "action": "merge",
+                    "id": oid,
+                    "into": head,
+                    "reason": reason,
+                })
+                continue
+            cluster = sorted(
+                member
+                for member, target in head_of.items()
+                if target == head
+            )
+            text = merged_text.get(head) or " ".join(
+                by_id[member]["text"]
+                for member in cluster
+            )
+            entry = dict(item)
+            entry["text"] = text
+            entry["merged_from"] = cluster
+            entry["refine_action"] = "merge"
+            entry["output_id"] = stable_id("OUT", head, text)
+            refined.append(entry)
+            report.append({
+                "action": "merge",
+                "id": head,
+                "merged_from": cluster,
+                "reason": reason,
+            })
+            continue
+
+        entry = dict(item)
+        entry["refine_action"] = "keep"
+        refined.append(entry)
+
+    return refined, report
+
+
+def _write_refinement_report(
+    path: Path,
+    variant_name: str,
+    before: int,
+    after: int,
+    report: list[dict],
+) -> None:
+    groups = [row for row in report if row.get("merged_from")]
+    merged_away = [row for row in report if row.get("into")]
+    removed = [row for row in report if row["action"] == "remove"]
+    lines = [
+        f"# Requirement Refinement Report — {variant_name}",
+        "",
+        "## Summary",
+        "",
+        "| Category | Count |",
+        "|---|---|",
+        f"| Drafts before refinement | {before} |",
+        f"| Outputs after refinement | {after} |",
+        f"| Merge groups | {len(groups)} |",
+        f"| Drafts merged away | {len(merged_away)} |",
+        f"| Drafts removed | {len(removed)} |",
+        "",
+    ]
+    if groups:
+        lines += ["## Merged groups", "",
+                  "| Kept draft | Absorbed drafts | Reason |", "|---|---|---|"]
+        for row in groups:
+            members = ", ".join(
+                member
+                for member in row.get("merged_from", [])
+                if member != row["id"]
+            )
+            lines.append(f"| {row['id']} | {members} | {row.get('reason', '')} |")
+        lines.append("")
+    if removed:
+        lines += ["## Removed", "", "| Draft | Reason |", "|---|---|"]
+        for row in removed:
+            lines.append(f"| {row['id']} | {row.get('reason', '')} |")
+        lines.append("")
+    write_text(path, "\n".join(lines))
+
+
 def produce_variant(
     client: OpenAI,
     doc_id: str,
@@ -1730,12 +1942,16 @@ def produce_variant(
     output_root: Path,
     require_evidence: bool | None = None,
     drop_non_retained: bool | None = None,
+    refine_output: bool | None = None,
 ) -> tuple[list[dict], list[dict]]:
     if require_evidence is None:
         require_evidence = REQUIRE_EVIDENCE_DEFAULT
 
     if drop_non_retained is None:
         drop_non_retained = DROP_NON_RETAINED_DEFAULT
+
+    if refine_output is None:
+        refine_output = REFINE_OUTPUT_DEFAULT
 
     nominations = generate_nominations(
         client,
@@ -1847,6 +2063,22 @@ def produce_variant(
             ),
         })
 
+    # 输出精炼：语义级去重、合并与剔除（论文的 semantic-duplicate check）。
+    drafts_before_refinement = len(supplements)
+    refinement_report: list[dict] = []
+    if refine_output and supplements:
+        supplements, refinement_report = refine_supplements(
+            client,
+            supplements,
+        )
+        print(
+            f"[{variant_name}] refinement: {drafts_before_refinement} -> "
+            f"{len(supplements)} drafts "
+            f"(merge {sum(1 for row in refinement_report if row['action'] == 'merge')}, "
+            f"remove {sum(1 for row in refinement_report if row['action'] == 'remove')})",
+            flush=True,
+        )
+
     out = (
         output_root
         / doc_id
@@ -1862,12 +2094,23 @@ def produce_variant(
             **settings,
             "require_evidence": require_evidence,
             "drop_non_retained": drop_non_retained,
+            "refine_output": refine_output,
+            "drafts_before_refinement": drafts_before_refinement,
+            "outputs_after_refinement": len(supplements),
             "model_version": (
                 model.model_version
             ),
             "source_document_fixed": True,
         },
     )
+    if refine_output:
+        _write_refinement_report(
+            out / "refinement_report.md",
+            variant_name,
+            drafts_before_refinement,
+            len(supplements),
+            refinement_report,
+        )
     write_text(
         out / "original_document.txt",
         original_doc,
@@ -2022,12 +2265,16 @@ def run_one(
     cross_window: int,
     require_evidence: bool | None = None,
     drop_non_retained: bool | None = None,
+    refine_output: bool | None = None,
 ) -> dict:
     if require_evidence is None:
         require_evidence = REQUIRE_EVIDENCE_DEFAULT
 
     if drop_non_retained is None:
         drop_non_retained = DROP_NON_RETAINED_DEFAULT
+
+    if refine_output is None:
+        refine_output = REFINE_OUTPUT_DEFAULT
     original_doc = read_docx_in_order(
         source_path
     )
@@ -2117,6 +2364,7 @@ def run_one(
                 output_root=output_root,
                 require_evidence=require_evidence,
                 drop_non_retained=drop_non_retained,
+                refine_output=refine_output,
             )
         )
 
@@ -2222,6 +2470,13 @@ def main() -> None:
              "即论文评测使用的配置。",
     )
     parser.add_argument(
+        "--refine-output",
+        action=argparse.BooleanOptionalAction,
+        default=REFINE_OUTPUT_DEFAULT,
+        help="输出精炼（默认开）：对补充需求做语义级去重/合并/剔除，"
+             "对应论文的 semantic-duplicate check。--no-refine-output 关闭。",
+    )
+    parser.add_argument(
         "--allow-partial-dataset",
         action="store_true",
         help="调试少量文档时使用",
@@ -2299,6 +2554,9 @@ def main() -> None:
                 drop_non_retained=(
                     True if args.enforce_validation
                     else args.drop_non_retained
+                ),
+                refine_output=(
+                    args.refine_output
                 ),
             )
             completed.append(result)

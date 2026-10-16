@@ -41,6 +41,12 @@ parser.add_argument(
     action="store_true",
     help="同时打开上面两个闸门，即论文评测使用的配置。",
 )
+parser.add_argument(
+    "--refine-output",
+    action=argparse.BooleanOptionalAction,
+    default=M.REFINE_OUTPUT_DEFAULT,
+    help="输出精炼（默认开）：对补充需求做语义级去重/合并/剔除。",
+)
 args = parser.parse_args()
 
 OUT_ROOT = BASE / args.out_root
@@ -102,6 +108,7 @@ nominations, supplements = M.produce_variant(
     output_root=OUT_ROOT,
     require_evidence=(True if args.enforce_validation else args.require_evidence),
     drop_non_retained=(True if args.enforce_validation else args.drop_non_retained),
+    refine_output=args.refine_output,
 )
 
 outcomes = {}
