@@ -158,11 +158,11 @@ REFINE_OUTPUT_DEFAULT = os.getenv(
 # 精炼单次送入模型的条目数（与原实现的 MAX_BATCH_SIZE 一致）。
 REFINE_BATCH = int(os.getenv("CAUSALREQ_REFINE_BATCH", "12"))
 
-#   iterations（默认 1）—— 迭代轮数。
+#   iterations（默认 2）—— 迭代轮数。
 #       论文所述的迭代使用：原文始终是"该义务是否原本缺失"的判据；
 #       另有一份**工作文档**累积已接受的草稿，下一轮在这份工作文档上重新抽取、
 #       重新提名，从而继续定位尚未覆盖的缺口。每轮结果累加，最后统一精炼。
-ITERATIONS_DEFAULT = int(os.getenv("CAUSALREQ_ITERATIONS", "1"))
+ITERATIONS_DEFAULT = int(os.getenv("CAUSALREQ_ITERATIONS", "2"))
 
 #   某一轮没有产出任何新草稿时是否提前结束（默认是）。
 STOP_IF_NO_NEW_DEFAULT = os.getenv(

@@ -51,7 +51,7 @@ parser.add_argument(
     "--iterations",
     type=int,
     default=M.ITERATIONS_DEFAULT,
-    help="迭代轮数（默认 1）。>1 时把本轮草稿追加进工作文档再跑一轮。",
+    help="迭代轮数（默认 2）。>1 时把本轮草稿追加进工作文档再跑一轮。",
 )
 parser.add_argument(
     "--stop-if-no-new",
