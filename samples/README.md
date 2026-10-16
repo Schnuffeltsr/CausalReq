@@ -1,7 +1,7 @@
 # samples — case data and the execution sample
 
-These are the artefacts produced by running the code in `core/`, `rq1/`–`rq4/` and
-`tools/` end to end on one specification. They are kept as an **execution example**: they
+These are the artefacts produced by running the code in `core/` and `rq1/`–`rq4/`
+end to end on one specification. They are kept as an **execution example**: they
 show that the released pipeline runs, and they define the exact output contract that the
 analysis scripts expect. They are not the runs behind the quantitative evaluation
 reported in the paper. The sample was produced with document-wide validation filtering
