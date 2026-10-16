@@ -37,10 +37,8 @@ documented in [`prompts/README.md`](prompts/README.md).
 |---|---|---|
 | `rq1/` | `export_rq1.py` | Rebuilds `samples/<doc>/RQ1/` (the completed requirement set) from an existing run, without any LLM call |
 | `rq2/` | `build_rq2_evidence.py` | Review worksheet for the 20 candidates: source/target evidence plus the relations on the shortest path |
-| `rq2/` | `make_figure.py` | RQ2 figure (vector PDF + 300 dpi PNG) → `figures/` |
 | `rq3/` | `variant_table.py` | Compact per-variant counter table straight from the run artefacts |
 | `rq4/` | `trace_case.py` | Prints the evidence chain of one supplementary requirement (source FR → nomination → validation → retained text) plus a contrasting sibling nomination |
-| `rq4/` | `make_figure.py` | RQ4 figure (vector PDF + 300 dpi PNG) → `figures/` |
 
 ## Code — `tools/` (cross-cutting)
 
@@ -91,7 +89,6 @@ template safely.
 
 | Path | Written by | Note |
 |---|---|---|
-| `figures/` | `rq2/make_figure.py`, `rq4/make_figure.py` | paper figures; the folder is ignored by git |
 | `samples/*/cache/` | `run_rq3_fast.py` | LLM screening cache (scheduling aid, ~33 MB, regenerated on demand) |
 | `__pycache__/` | Python | ignored |
 
