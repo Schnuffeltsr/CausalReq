@@ -14,7 +14,7 @@ its role.
 | `prompts/` | Every prompt template as a text file, loaded at run time | 9 files |
 | `samples/` | All case data: datasets, the processed sample, validation oracle | 130 files |
 | `requirements.txt` | Runtime dependencies (needed to run the code) | 1 |
-| `.gitignore` | Keeps caches, logs and generated figures out of the repository | 1 |
+| `.gitignore` | Keeps caches, logs and local run roots out of the repository | 1 |
 
 `samples/` is documented in [`samples/README.md`](samples/README.md); the prompts are
 documented in [`prompts/README.md`](prompts/README.md).

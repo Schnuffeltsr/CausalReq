@@ -7,14 +7,14 @@ credentials.yaml
 samples/*/cache/
 **/cache/validation/
 
-# figure output directory, written by rq2/make_figure.py and rq4/make_figure.py
+# local figure output (the released scripts do not write figures)
 figures/
 
 # local experiment run roots (an out-root other than samples/ stays untracked)
 gpt_run/
 runs/
 
-# inventory written by tools/make_manifest.py
+# optional local inventory file
 MANIFEST.md
 
 # python
