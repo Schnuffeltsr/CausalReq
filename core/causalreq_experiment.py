@@ -158,6 +158,18 @@ REFINE_OUTPUT_DEFAULT = os.getenv(
 # 精炼单次送入模型的条目数（与原实现的 MAX_BATCH_SIZE 一致）。
 REFINE_BATCH = int(os.getenv("CAUSALREQ_REFINE_BATCH", "12"))
 
+#   iterations（默认 1）—— 迭代轮数。
+#       论文所述的迭代使用：原文始终是"该义务是否原本缺失"的判据；
+#       另有一份**工作文档**累积已接受的草稿，下一轮在这份工作文档上重新抽取、
+#       重新提名，从而继续定位尚未覆盖的缺口。每轮结果累加，最后统一精炼。
+ITERATIONS_DEFAULT = int(os.getenv("CAUSALREQ_ITERATIONS", "1"))
+
+#   某一轮没有产出任何新草稿时是否提前结束（默认是）。
+STOP_IF_NO_NEW_DEFAULT = os.getenv(
+    "CAUSALREQ_STOP_IF_NO_NEW",
+    "1",
+).strip().lower() in {"1", "true", "yes", "on"}
+
 
 # ============================================================
 # 通用工具
@@ -1928,7 +1940,73 @@ def _write_refinement_report(
     write_text(path, "\n".join(lines))
 
 
-def produce_variant(
+def _install_name_collision_fix() -> bool:
+    """装上仓库自带的同名元素消歧（element_fix），避免迭代重建工作文档时整篇中断。
+
+    与 run_stage_source.py 使用的是同一份实现；仅在跨类型同名元素导致
+    extract_elements 抛错时按需安装。
+    """
+    module = sys.modules[__name__]
+    if getattr(module, "_NAME_COLLISION_FIX_INSTALLED", False):
+        return True
+    try:
+        import element_fix
+    except ImportError:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        try:
+            import element_fix
+        except ImportError:
+            return False
+    element_fix.install(module)
+    module._NAME_COLLISION_FIX_INSTALLED = True
+    return True
+
+
+def append_supplements_to_document(
+    document: str,
+    supplements: list[dict],
+) -> str:
+    """把一轮的草稿追加成新的编号段落，得到论文所述的工作文档。
+
+    编号沿用原文的 "N.M" 形式（split_frs 依赖它切块），从原文最大编号往后排。
+    """
+    numbers = [
+        (int(major), int(minor))
+        for major, minor in re.findall(
+            r"(?m)^\s*(\d+)\.(\d+)\b",
+            document,
+        )
+    ]
+    if numbers:
+        major = max(item[0] for item in numbers)
+        minor = max(
+            (item[1] for item in numbers if item[0] == major),
+            default=0,
+        )
+    else:
+        major, minor = 2, 0
+
+    blocks = [document.rstrip(), ""]
+
+    for item in supplements:
+        text = re.sub(
+            r"\s+",
+            " ",
+            str(item.get("text", "")),
+        ).strip()
+
+        if not text:
+            continue
+
+        minor += 1
+        blocks.append(f"{major}.{minor} {text[:60].rstrip(' .')}")
+        blocks.append(f"Description: {text}")
+        blocks.append("")
+
+    return "\n".join(blocks)
+
+
+def _produce_round(
     client: OpenAI,
     doc_id: str,
     original_doc: str,
@@ -1939,19 +2017,22 @@ def produce_variant(
     pool: list[dict],
     variant_name: str,
     settings: dict,
-    output_root: Path,
     require_evidence: bool | None = None,
     drop_non_retained: bool | None = None,
-    refine_output: bool | None = None,
+    reference_frs: list[dict] | None = None,
 ) -> tuple[list[dict], list[dict]]:
+    """跑一轮：提名 → 逐条验证（对 reference_frs）→ 组装草稿。
+
+    reference_frs 始终是**原文**的 FR 段；frs 可以是工作文档的 FR 段。
+    """
     if require_evidence is None:
         require_evidence = REQUIRE_EVIDENCE_DEFAULT
 
     if drop_non_retained is None:
         drop_non_retained = DROP_NON_RETAINED_DEFAULT
 
-    if refine_output is None:
-        refine_output = REFINE_OUTPUT_DEFAULT
+    if reference_frs is None:
+        reference_frs = frs
 
     nominations = generate_nominations(
         client,
@@ -1970,7 +2051,7 @@ def produce_variant(
             nomination.update(
                 preliminarily_validate(
                     client,
-                    frs,
+                    reference_frs,
                     nomination,
                     require_evidence=require_evidence,
                 )
@@ -2063,7 +2144,156 @@ def produce_variant(
             ),
         })
 
+    return nominations, supplements
+
+
+def produce_variant(
+    client: OpenAI,
+    doc_id: str,
+    original_doc: str,
+    frs: list[dict],
+    elements: list[dict],
+    relations: list[dict],
+    model: CausalModel,
+    pool: list[dict],
+    variant_name: str,
+    settings: dict,
+    output_root: Path,
+    require_evidence: bool | None = None,
+    drop_non_retained: bool | None = None,
+    refine_output: bool | None = None,
+    iterations: int | None = None,
+    cross_window: int = 2,
+    pool_size: int = POOL_SIZE,
+    stop_if_no_new: bool | None = None,
+) -> tuple[list[dict], list[dict]]:
+    """迭代地产出补充需求，并在最后统一精炼。
+
+    第 1 轮在原文上工作；若 iterations > 1，则把该轮草稿追加进**工作文档**，
+    下一轮在工作文档上重新抽取、重新提名；**验证始终以原文为判据**
+    （论文：原文用于判断该义务是否原本缺失，工作文档用于继续定位缺口）。
+    所有轮次的结果累加后做一次语义级精炼。
+    """
+    if require_evidence is None:
+        require_evidence = REQUIRE_EVIDENCE_DEFAULT
+
+    if drop_non_retained is None:
+        drop_non_retained = DROP_NON_RETAINED_DEFAULT
+
+    if refine_output is None:
+        refine_output = REFINE_OUTPUT_DEFAULT
+
+    if iterations is None:
+        iterations = ITERATIONS_DEFAULT
+
+    if stop_if_no_new is None:
+        stop_if_no_new = STOP_IF_NO_NEW_DEFAULT
+
+    iterations = max(1, int(iterations))
+
+    working_doc = original_doc
+    working_frs = frs
+    working_elements = elements
+    working_relations = relations
+    working_model = model
+    working_pool = pool
+
+    nominations: list[dict] = []
+    supplements: list[dict] = []
+    rounds: list[dict] = []
+
+    for round_index in range(1, iterations + 1):
+        round_nominations, round_drafts = _produce_round(
+            client=client,
+            doc_id=doc_id,
+            original_doc=original_doc,
+            frs=working_frs,
+            elements=working_elements,
+            relations=working_relations,
+            model=working_model,
+            pool=working_pool,
+            variant_name=variant_name,
+            settings=settings,
+            require_evidence=require_evidence,
+            drop_non_retained=drop_non_retained,
+            reference_frs=frs,
+        )
+
+        for item in round_nominations:
+            item["iteration"] = round_index
+
+        for item in round_drafts:
+            item["iteration"] = round_index
+
+        nominations.extend(round_nominations)
+        supplements.extend(round_drafts)
+
+        rounds.append({
+            "iteration": round_index,
+            "nominations": len(round_nominations),
+            "drafts": len(round_drafts),
+            "fr_blocks_in_working_document": len(working_frs),
+            "elements": len(working_elements),
+            "relations": len(working_relations),
+        })
+        print(
+            f"[{variant_name}] iteration {round_index}/{iterations}: "
+            f"nominations={len(round_nominations)} drafts={len(round_drafts)} "
+            f"(working doc: {len(working_frs)} FR blocks, "
+            f"{len(working_elements)} elements)",
+            flush=True,
+        )
+
+        if round_index >= iterations:
+            break
+
+        if stop_if_no_new and not round_drafts:
+            print(
+                f"[{variant_name}] no new drafts in iteration {round_index}; stopping",
+                flush=True,
+            )
+            break
+
+        # 下一轮的工作文档 = 原文 + 本轮草稿
+        working_doc = append_supplements_to_document(
+            original_doc if round_index == 1 else working_doc,
+            round_drafts,
+        )
+        working_frs = split_frs(working_doc)
+        try:
+            working_elements = extract_elements(client, working_frs)
+        except ValueError as exc:
+            # 跨类型同名元素会让节点身份不唯一；按仓库既有做法消歧后重试一次。
+            if "同名元素" not in str(exc) or not _install_name_collision_fix():
+                raise
+            working_elements = extract_elements(client, working_frs)
+        working_relations = extract_relations(
+            client,
+            working_frs,
+            working_elements,
+            cross_window,
+        )
+        working_model = CausalModel(working_elements, working_relations)
+        # 工作文档重建后的图可能比原图稀疏：可查询对不足时，保留上一轮的候选池，
+        # 而不是让整篇文档中断（固定池是评测装置，不补造候选）。
+        try:
+            working_pool = build_fixed_pool(
+                doc_id,
+                working_model,
+                pool_size,
+            )
+        except ValueError as exc:
+            if "不足固定池" not in str(exc):
+                raise
+            print(
+                f"[{variant_name}] iteration {round_index + 1}: working document has "
+                f"fewer queryable pairs than the pool size; keeping the previous pool",
+                flush=True,
+            )
+            working_pool = pool
+
     # 输出精炼：语义级去重、合并与剔除（论文的 semantic-duplicate check）。
+    # 放在所有轮次之后，因此天然完成跨轮去重。
     drafts_before_refinement = len(supplements)
     refinement_report: list[dict] = []
     if refine_output and supplements:
@@ -2074,8 +2304,8 @@ def produce_variant(
         print(
             f"[{variant_name}] refinement: {drafts_before_refinement} -> "
             f"{len(supplements)} drafts "
-            f"(merge {sum(1 for row in refinement_report if row['action'] == 'merge')}, "
-            f"remove {sum(1 for row in refinement_report if row['action'] == 'remove')})",
+            f"(merge groups {sum(1 for row in refinement_report if row.get('merged_from'))}, "
+            f"removed {sum(1 for row in refinement_report if row['action'] == 'remove')})",
             flush=True,
         )
 
@@ -2095,6 +2325,9 @@ def produce_variant(
             "require_evidence": require_evidence,
             "drop_non_retained": drop_non_retained,
             "refine_output": refine_output,
+            "iterations": iterations,
+            "iterations_completed": len(rounds),
+            "stop_if_no_new": stop_if_no_new,
             "drafts_before_refinement": drafts_before_refinement,
             "outputs_after_refinement": len(supplements),
             "model_version": (
@@ -2102,6 +2335,10 @@ def produce_variant(
             ),
             "source_document_fixed": True,
         },
+    )
+    write_json(
+        out / "iterations.json",
+        rounds,
     )
     if refine_output:
         _write_refinement_report(
@@ -2266,6 +2503,8 @@ def run_one(
     require_evidence: bool | None = None,
     drop_non_retained: bool | None = None,
     refine_output: bool | None = None,
+    iterations: int | None = None,
+    stop_if_no_new: bool | None = None,
 ) -> dict:
     if require_evidence is None:
         require_evidence = REQUIRE_EVIDENCE_DEFAULT
@@ -2275,6 +2514,12 @@ def run_one(
 
     if refine_output is None:
         refine_output = REFINE_OUTPUT_DEFAULT
+
+    if iterations is None:
+        iterations = ITERATIONS_DEFAULT
+
+    if stop_if_no_new is None:
+        stop_if_no_new = STOP_IF_NO_NEW_DEFAULT
     original_doc = read_docx_in_order(
         source_path
     )
@@ -2365,6 +2610,10 @@ def run_one(
                 require_evidence=require_evidence,
                 drop_non_retained=drop_non_retained,
                 refine_output=refine_output,
+                iterations=iterations,
+                cross_window=cross_window,
+                pool_size=pool_size,
+                stop_if_no_new=stop_if_no_new,
             )
         )
 
@@ -2477,6 +2726,19 @@ def main() -> None:
              "对应论文的 semantic-duplicate check。--no-refine-output 关闭。",
     )
     parser.add_argument(
+        "--iterations",
+        type=int,
+        default=ITERATIONS_DEFAULT,
+        help="迭代轮数（默认 1）。>1 时把本轮草稿追加进工作文档，"
+             "下一轮在工作文档上重新抽取与提名；验证始终以原文为判据。",
+    )
+    parser.add_argument(
+        "--stop-if-no-new",
+        action=argparse.BooleanOptionalAction,
+        default=STOP_IF_NO_NEW_DEFAULT,
+        help="某一轮没有产出任何新草稿时提前结束（默认开）。",
+    )
+    parser.add_argument(
         "--allow-partial-dataset",
         action="store_true",
         help="调试少量文档时使用",
@@ -2557,6 +2819,12 @@ def main() -> None:
                 ),
                 refine_output=(
                     args.refine_output
+                ),
+                iterations=(
+                    args.iterations
+                ),
+                stop_if_no_new=(
+                    args.stop_if_no_new
                 ),
             )
             completed.append(result)

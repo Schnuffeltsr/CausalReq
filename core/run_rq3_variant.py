@@ -47,6 +47,24 @@ parser.add_argument(
     default=M.REFINE_OUTPUT_DEFAULT,
     help="输出精炼（默认开）：对补充需求做语义级去重/合并/剔除。",
 )
+parser.add_argument(
+    "--iterations",
+    type=int,
+    default=M.ITERATIONS_DEFAULT,
+    help="迭代轮数（默认 1）。>1 时把本轮草稿追加进工作文档再跑一轮。",
+)
+parser.add_argument(
+    "--stop-if-no-new",
+    action=argparse.BooleanOptionalAction,
+    default=M.STOP_IF_NO_NEW_DEFAULT,
+    help="某一轮没有新草稿时提前结束（默认开）。",
+)
+parser.add_argument(
+    "--cross-window",
+    type=int,
+    default=2,
+    help="迭代重建工作文档时，跨 FR 关系抽取的相邻窗口。",
+)
 args = parser.parse_args()
 
 OUT_ROOT = BASE / args.out_root
@@ -109,6 +127,10 @@ nominations, supplements = M.produce_variant(
     require_evidence=(True if args.enforce_validation else args.require_evidence),
     drop_non_retained=(True if args.enforce_validation else args.drop_non_retained),
     refine_output=args.refine_output,
+    iterations=args.iterations,
+    cross_window=args.cross_window,
+    pool_size=args.pool_size,
+    stop_if_no_new=args.stop_if_no_new,
 )
 
 outcomes = {}
