@@ -10,8 +10,7 @@ its role.
 | Path | What is there | Files |
 |---|---|---:|
 | `core/` | The pipeline, the two patches, the stage drivers, the prompt loader | 7 `.py` |
-| `rq1/` … `rq4/` | The RQ-specific code, one folder per research question | 6 `.py` |
-| `tools/` | Utilities that belong to no single research question | 6 `.py` |
+| `rq1/` … `rq4/` | The RQ-specific code, one folder per research question | 4 `.py` |
 | `prompts/` | Every prompt template as a text file, loaded at run time | 9 files |
 | `samples/` | All case data: datasets, the processed sample, validation oracle | 130 files |
 | `requirements.txt` | Runtime dependencies (needed to run the code) | 1 |
@@ -39,17 +38,6 @@ documented in [`prompts/README.md`](prompts/README.md).
 | `rq2/` | `build_rq2_evidence.py` | Review worksheet for the 20 candidates: source/target evidence plus the relations on the shortest path |
 | `rq3/` | `variant_table.py` | Compact per-variant counter table straight from the run artefacts |
 | `rq4/` | `trace_case.py` | Prints the evidence chain of one supplementary requirement (source FR → nomination → validation → retained text) plus a contrasting sibling nomination |
-
-## Code — `tools/` (cross-cutting)
-
-| File | Role |
-|---|---|
-| `export_graph.py` | Causal-graph export: `causal_graph.png/json`, `evidence_graph.graphml`, `simulation_graph.graphml`, both `.dot`, `causal_graph_summary.md` |
-| `summarize_results.py` | One-document report `RESULTS.md` (extraction and graph, RQ2 pool and rankings, RQ3 variants, retained supplements, nomination detail) |
-| `summarize_all_runs.py` | Cross-document table of all variants: nomination counts, route mix, model dispositions |
-| `list_artifacts.py` | Prints what exists for every document under a run root |
-| `verify_saved.py` | Integrity check of the published artefacts (pool, nominations, supplements, figures) |
-| `make_manifest.py` | Regenerates an inventory file `MANIFEST.md` at the repository root if you want one |
 
 ## Prompts — `prompts/`
 
@@ -107,12 +95,9 @@ python core/run_stage_source.py --doc-id Email_MIRC2 \
 
 # then the five variants (one process each), and the reports
 python core/run_rq3_fast.py --variant Full --doc-id Email_MIRC2 --workers 8 --out-root samples
-python tools/export_graph.py samples Email_MIRC2
-python tools/summarize_results.py samples Email_MIRC2
 ```
 
-`samples/` is both the input root and the output root: the tools read the case data and
-write their reports next to it.
+`samples/` is both the input root and the output root.
 
 ## How much of the validation is allowed to filter
 
